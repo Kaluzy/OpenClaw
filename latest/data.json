@@ -1,7 +1,19 @@
 {
   "dateLocal": "2026-02-06",
-  "generatedAt": "2026-02-06T06:43:13.170Z",
+  "generatedAt": "2026-02-06T12:13:09.259Z",
   "hn": [
+    {
+      "title": "US Immigration on the Easiest Setting",
+      "url": "https://pluralistic.net/2026/02/06/doge-ball/#n-600"
+    },
+    {
+      "title": "Invention of DNA \"Page Numbers\" Opens Up Possibilities for the Bioeconomy",
+      "url": "https://www.caltech.edu/about/news/invention-dna-page-numbers-synthesis-kaihang-wang"
+    },
+    {
+      "title": "A new bill in New York would require disclaimers on AI-generated news content",
+      "url": "https://www.niemanlab.org/2026/02/a-new-bill-in-new-york-would-require-disclaimers-on-ai-generated-news-content/"
+    },
     {
       "title": "Things Unix can do atomically (2010)",
       "url": "https://rcrowley.org/2010/01/06/things-unix-can-do-atomically.html"
@@ -29,18 +41,6 @@
     {
       "title": "GitHub Actions is slowly killing engineering teams",
       "url": "https://www.iankduncan.com/engineering/2026-02-05-github-actions-killing-your-team/"
-    },
-    {
-      "title": "C isn't a programming language anymore (2022)",
-      "url": "https://faultlore.com/blah/c-isnt-a-language/"
-    },
-    {
-      "title": "Show HN: Local task classifier and dispatcher on RTX 3080",
-      "url": "https://github.com/resilientworkflowsentinel/resilient-workflow-sentinel"
-    },
-    {
-      "title": "The RCE that AMD won't fix",
-      "url": "https://mrbruh.com/amd/"
     }
   ],
   "github": {
@@ -49,16 +49,23 @@
     "groups": {
       "AI / Agents": [
         {
+          "name": "gavrielc/nanoclaw",
+          "url": "https://github.com/gavrielc/nanoclaw",
+          "stars": 5562,
+          "description": "A lightweight alternative to Clawdbot / OpenClaw that runs in Apple containers for security. Connects to WhatsApp, has memory, scheduled jobs, and runs directly on Anthropic's Agents SDK",
+          "topics": []
+        },
+        {
           "name": "agno-agi/dash",
           "url": "https://github.com/agno-agi/dash",
-          "stars": 1339,
+          "stars": 1351,
           "description": "Self-learning data agent that grounds its answers in 6 layers of context. Inspired by OpenAI's in-house implementation.",
           "topics": []
         },
         {
           "name": "1186258278/OpenClawChineseTranslation",
           "url": "https://github.com/1186258278/OpenClawChineseTranslation",
-          "stars": 808,
+          "stars": 831,
           "description": "🦞 OpenClaw (Clawdbot/Moltbot) 汉化版 - 开源个人 AI 助手中文版 | Claude/ChatGPT LLM 接入 | WhatsApp/Telegram/Discord 多平台 | 每小时自动同步 | CLI + Dashboard 全中文 | 全流程搭建教程，以及排错指南！",
           "topics": [
             "ai-assistant",
@@ -80,33 +87,10 @@
           ]
         },
         {
-          "name": "BlockRunAI/ClawRouter",
-          "url": "https://github.com/BlockRunAI/ClawRouter",
-          "stars": 605,
-          "description": "Smart LLM router — save 78% on inference costs. 30+ models, one wallet, x402 micropayments.",
-          "topics": [
-            "ai",
-            "ai-agents",
-            "anthropic",
-            "cost-optimization",
-            "crypto",
-            "deepseek",
-            "gemini",
-            "llm",
-            "llm-router",
-            "micropayments",
-            "openai",
-            "openclaw",
-            "smart-routing",
-            "usdc",
-            "x402"
-          ]
-        },
-        {
-          "name": "stepfun-ai/Step-3.5-Flash",
-          "url": "https://github.com/stepfun-ai/Step-3.5-Flash",
-          "stars": 600,
-          "description": "Fast, Sharp & Reliable Agentic Intelligence",
+          "name": "anthropics/claudes-c-compiler",
+          "url": "https://github.com/anthropics/claudes-c-compiler",
+          "stars": 816,
+          "description": "Claude Opus 4.6 wrote a dependency-free C compiler in Rust, with backends targeting x86 (64- and 32-bit), ARM, and RISC-V, capable of compiling a booting Linux kernel.",
           "topics": []
         }
       ],
@@ -114,7 +98,7 @@
         {
           "name": "sheeki03/tirith",
           "url": "https://github.com/sheeki03/tirith",
-          "stars": 1369,
+          "stars": 1415,
           "description": "Your browser catches homograph attacks. Your terminal doesn't. Tirith guards the gate — intercepts suspicious URLs, ANSI injection, and pipe-to-shell attacks before they execute.",
           "topics": [
             "cli",
@@ -134,14 +118,14 @@
         {
           "name": "dwzhu-pku/PaperBanana",
           "url": "https://github.com/dwzhu-pku/PaperBanana",
-          "stars": 1975,
+          "stars": 2087,
           "description": "PaperBanana: Automating Academic Illustration For AI Scientists",
           "topics": []
         },
         {
           "name": "justlovemaki/OpenClaw-Docker-CN-IM",
           "url": "https://github.com/justlovemaki/OpenClaw-Docker-CN-IM",
-          "stars": 630,
+          "stars": 779,
           "description": "OpenClaw 的中国IM平台整合Docker版本，预装并配置了飞书、钉钉、QQ机器人、企业微信等主流中国IM软件的插件，让您可以快速部署一个支持多个中国IM平台的 AI 机器人网关",
           "topics": []
         }
@@ -150,30 +134,34 @@
         {
           "name": "HKUDS/nanobot",
           "url": "https://github.com/HKUDS/nanobot",
-          "stars": 9641,
+          "stars": 10134,
           "description": "\"🐈 nanobot: The Ultra-Lightweight Clawdbot\"",
-          "topics": []
-        },
-        {
-          "name": "gavrielc/nanoclaw",
-          "url": "https://github.com/gavrielc/nanoclaw",
-          "stars": 5436,
-          "description": "My personal Claude assistant that runs in Apple containers. Lightweight, secure, and built to be understood and customized for your own needs.",
           "topics": []
         },
         {
           "name": "Leey21/awesome-ai-research-writing",
           "url": "https://github.com/Leey21/awesome-ai-research-writing",
-          "stars": 3466,
+          "stars": 3594,
           "description": "Elevate your AI research writing, no more tedious polishing ✨ ",
           "topics": []
         },
         {
           "name": "MoonshotAI/Kimi-K2.5",
           "url": "https://github.com/MoonshotAI/Kimi-K2.5",
-          "stars": 756,
+          "stars": 767,
           "description": "Moonshot's most powerful model",
           "topics": []
+        },
+        {
+          "name": "zai-org/GLM-OCR",
+          "url": "https://github.com/zai-org/GLM-OCR",
+          "stars": 635,
+          "description": "GLM-OCR: Accurate ×  Fast × Comprehensive",
+          "topics": [
+            "glm",
+            "image2text",
+            "ocr"
+          ]
         }
       ]
     }
