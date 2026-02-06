@@ -1,46 +1,56 @@
 {
   "dateLocal": "2026-02-06",
-  "generatedAt": "2026-02-06T18:12:27.709Z",
+  "generatedAt": "2026-02-06T21:51:42.041Z",
   "hn": [
     {
-      "title": "Uber Found Liable in Rape by Driver, Setting Stage for Cases",
-      "url": "https://www.nytimes.com/2026/02/05/business/uber-safety-rape-verdict.html"
+      "title": "Oregon raised spending by 80%, math scores dropped",
+      "url": "https://www.educationnext.org/hard-lessons-from-new-naep-results/",
+      "why": "Worth a skim — potential trend / tactic to steal."
     },
     {
-      "title": "Bits About Money: Fraud Investigation Is Believing Your Lying Eyes",
-      "url": "https://www.bitsaboutmoney.com/archive/fraud-investigation/"
+      "title": "Masked namespace vulnerability in Temporal",
+      "url": "https://depthfirst.com/post/the-masked-namespace-vulnerability-in-temporal-cve-2025-14986",
+      "why": "Worth a skim — potential trend / tactic to steal."
     },
     {
-      "title": "The Waymo World Model: A New Frontier for Autonomous Driving Simulation",
-      "url": "https://waymo.com/blog/2026/02/the-waymo-world-model-a-new-frontier-for-autonomous-driving-simulation"
+      "title": "Show HN: I spent 4 years building a UI design tool with only the features I use",
+      "url": "https://vecti.com",
+      "why": "Worth a skim — potential trend / tactic to steal."
     },
     {
-      "title": "Bytes as Braille",
-      "url": "https://www.engrenage.ch/i18n/scripts/bytes_as_braille/"
+      "title": "Show HN: If you lose your memory, how to regain access to your computer?",
+      "url": "https://eljojo.github.io/rememory/",
+      "why": "Worth a skim — potential trend / tactic to steal."
+    },
+    {
+      "title": "How to effectively write quality code with AI",
+      "url": "https://heidenstedt.org/posts/2026/how-to-effectively-write-quality-code-with-ai/",
+      "why": "Worth a skim — potential trend / tactic to steal."
+    },
+    {
+      "title": "Fraud investigation is believing your lying eyes",
+      "url": "https://www.bitsaboutmoney.com/archive/fraud-investigation/",
+      "why": "Worth a skim — potential trend / tactic to steal."
+    },
+    {
+      "title": "Show HN: BioTradingArena – Benchmark for LLMs to predict biotech stock movements",
+      "url": "https://www.biotradingarena.com/hn",
+      "why": "AI/agent signal — workflow + tooling shift."
+    },
+    {
+      "title": "I spent 5 years in DevOps – Solutions engineering gave me what I was missing",
+      "url": "https://infisical.com/blog/devops-to-solutions-engineering",
+      "why": "Worth a skim — potential trend / tactic to steal."
+    },
+    {
+      "title": "The Waymo World Model",
+      "url": "https://waymo.com/blog/2026/02/the-waymo-world-model-a-new-frontier-for-autonomous-driving-simulation",
+      "why": "Worth a skim — potential trend / tactic to steal."
     },
     {
       "title": "Sheldon Brown's Bicycle Technical Info",
-      "url": "https://www.sheldonbrown.com/"
-    },
-    {
-      "title": "Microsoft open-sources LiteBox, a security-focused library OS",
-      "url": "https://github.com/microsoft/litebox"
-    },
-    {
-      "title": "Hackers (1995) Animated Experience",
-      "url": "https://hackers-1995.vercel.app/"
-    },
-    {
-      "title": "LLMs could be, but shouldn't be compilers",
-      "url": "https://alperenkeles.com/posts/llms-could-be-but-shouldnt-be-compilers/"
-    },
-    {
-      "title": "I now assume that all ads on Apple news are scams",
-      "url": "https://kirkville.com/i-now-assume-that-all-ads-on-apple-news-are-scams/"
-    },
-    {
-      "title": "TikTok's 'Addictive Design' Found to Be Illegal in Europe",
-      "url": "https://www.nytimes.com/2026/02/06/business/tiktok-addictive-design-europe.html"
+      "url": "https://www.sheldonbrown.com/",
+      "why": "Worth a skim — potential trend / tactic to steal."
     }
   ],
   "github": {
@@ -51,28 +61,28 @@
         {
           "name": "gavrielc/nanoclaw",
           "url": "https://github.com/gavrielc/nanoclaw",
-          "stars": 5679,
+          "stars": 5735,
           "description": "A lightweight alternative to Clawdbot / OpenClaw that runs in Apple containers for security. Connects to WhatsApp, has memory, scheduled jobs, and runs directly on Anthropic's Agents SDK",
           "topics": []
         },
         {
           "name": "agno-agi/dash",
           "url": "https://github.com/agno-agi/dash",
-          "stars": 1362,
+          "stars": 1376,
           "description": "Self-learning data agent that grounds its answers in 6 layers of context. Inspired by OpenAI's in-house implementation.",
           "topics": []
         },
         {
           "name": "anthropics/claudes-c-compiler",
           "url": "https://github.com/anthropics/claudes-c-compiler",
-          "stars": 1009,
+          "stars": 1080,
           "description": "Claude Opus 4.6 wrote a dependency-free C compiler in Rust, with backends targeting x86 (64- and 32-bit), ARM, and RISC-V, capable of compiling a booting Linux kernel.",
           "topics": []
         },
         {
           "name": "BlockRunAI/ClawRouter",
           "url": "https://github.com/BlockRunAI/ClawRouter",
-          "stars": 878,
+          "stars": 964,
           "description": "Smart LLM router — save 78% on inference costs. 30+ models, one wallet, x402 micropayments.",
           "topics": [
             "ai",
@@ -97,7 +107,7 @@
         {
           "name": "sheeki03/tirith",
           "url": "https://github.com/sheeki03/tirith",
-          "stars": 1449,
+          "stars": 1464,
           "description": "Your browser catches homograph attacks. Your terminal doesn't. Tirith guards the gate — intercepts suspicious URLs, ANSI injection, and pipe-to-shell attacks before they execute.",
           "topics": [
             "cli",
@@ -117,14 +127,14 @@
         {
           "name": "dwzhu-pku/PaperBanana",
           "url": "https://github.com/dwzhu-pku/PaperBanana",
-          "stars": 2160,
+          "stars": 2185,
           "description": "PaperBanana: Automating Academic Illustration For AI Scientists",
           "topics": []
         },
         {
           "name": "justlovemaki/OpenClaw-Docker-CN-IM",
           "url": "https://github.com/justlovemaki/OpenClaw-Docker-CN-IM",
-          "stars": 877,
+          "stars": 885,
           "description": "OpenClaw 的中国IM平台整合Docker版本，预装并配置了飞书、钉钉、QQ机器人、企业微信等主流中国IM软件的插件，让您可以快速部署一个支持多个中国IM平台的 AI 机器人网关",
           "topics": []
         }
@@ -133,28 +143,28 @@
         {
           "name": "HKUDS/nanobot",
           "url": "https://github.com/HKUDS/nanobot",
-          "stars": 10635,
+          "stars": 10817,
           "description": "\"🐈 nanobot: The Ultra-Lightweight Clawdbot\"",
           "topics": []
         },
         {
           "name": "Leey21/awesome-ai-research-writing",
           "url": "https://github.com/Leey21/awesome-ai-research-writing",
-          "stars": 3913,
+          "stars": 3952,
           "description": "Elevate your AI research writing, no more tedious polishing ✨ ",
           "topics": []
         },
         {
           "name": "MoonshotAI/Kimi-K2.5",
           "url": "https://github.com/MoonshotAI/Kimi-K2.5",
-          "stars": 770,
+          "stars": 776,
           "description": "Moonshot's most powerful model",
           "topics": []
         },
         {
           "name": "zai-org/GLM-OCR",
           "url": "https://github.com/zai-org/GLM-OCR",
-          "stars": 654,
+          "stars": 661,
           "description": "GLM-OCR: Accurate ×  Fast × Comprehensive",
           "topics": [
             "glm",
