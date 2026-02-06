@@ -5,25 +5,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Morning Brief — 2026-02-06</title>
 <style>
-  :root{--bg:#f6f7f9;--card:#fff;--text:#0b1220;--muted:#6b7280;--border:#e5e7eb;--shadow:0 1px 2px rgba(0,0,0,.06);}
-  body{margin:0;background:var(--bg);color:var(--text);font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;}
+  :root{
+    --bg:#0b0f17;
+    --card:#101827;
+    --card2:#0f172a;
+    --text:#e5e7eb;
+    --muted:#9ca3af;
+    --border:rgba(255,255,255,.10);
+    --shadow:0 10px 30px rgba(0,0,0,.35);
+    --accent:#60a5fa;
+  }
+  body{margin:0;background:radial-gradient(1200px 700px at 20% 0%, rgba(96,165,250,.08), transparent 55%), var(--bg);color:var(--text);font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;}
   .wrap{max-width:1180px;margin:0 auto;padding:24px;}
   .top{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:16px;}
   .title{font-size:26px;font-weight:800;letter-spacing:-.03em;}
   .meta{font-size:13px;color:var(--muted);}
   .grid{display:grid;grid-template-columns:1.2fr .8fr;gap:14px;}
   @media (max-width: 980px){.grid{grid-template-columns:1fr;}}
-  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow);padding:14px;}
-  .card h2{margin:0 0 10px 0;font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);}
-  .item{display:flex;flex-direction:column;gap:4px;padding:10px;border:1px solid var(--border);border-radius:12px;background:#fbfbfc;}
-  .item a{color:inherit;text-decoration:none;font-weight:700;line-height:1.25;}
+  .card{background:linear-gradient(180deg, rgba(255,255,255,.03), transparent 60%), var(--card);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow);padding:14px;}
+  .card h2{margin:0 0 10px 0;font-size:13px;text-transform:uppercase;letter-spacing:.10em;color:var(--muted);}
+  .item{display:flex;flex-direction:column;gap:4px;padding:10px;border:1px solid var(--border);border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,.02), transparent 60%), var(--card2);}
+  .item a{color:var(--text);text-decoration:none;font-weight:750;line-height:1.25;}
   .item a:hover{text-decoration:underline;}
   .sub{font-size:13px;color:var(--muted);line-height:1.35;}
-  .pill{display:inline-block;font-size:12px;color:#374151;border:1px solid var(--border);background:#f3f4f6;border-radius:999px;padding:2px 8px;}
+  .pill{display:inline-block;font-size:12px;color:var(--text);border:1px solid var(--border);background:rgba(96,165,250,.10);border-radius:999px;padding:2px 8px;}
   .stack{display:flex;flex-direction:column;gap:10px;}
   .actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
   @media (max-width: 980px){.actions{grid-template-columns:1fr;}}
-  .action{font-weight:800;padding:12px;border-radius:12px;border:1px dashed var(--border);background:#fff;}
+  .action{font-weight:800;padding:12px;border-radius:12px;border:1px dashed var(--border);background:rgba(255,255,255,.02);}
+  .link{color:var(--accent);text-decoration:none;}
+  .link:hover{text-decoration:underline;}
 </style>
 </head>
 <body>
@@ -31,15 +42,15 @@
   <div class="top">
     <div>
       <div class="title">Morning Brief</div>
-      <div class="meta">2026-02-06 · GitHub: api-auth · generated 2/6/2026, 7:13:09 AM</div>
+      <div class="meta">2026-02-06 · GitHub: api-auth · generated 2/6/2026, 7:17:39 AM</div>
     </div>
-    <div class="pill">Newspaper v0</div>
+    <div class="pill">Dark mode · Newspaper v0</div>
   </div>
 
   <div class="card" style="margin-bottom:14px">
     <h2>Today’s 2 actions</h2>
     <div class="actions">
-      <div class="action">Define one KPI for today (ship something measurable).</div><div class="action">Send 10 outreach messages (tight list) — get 2 replies.</div>
+      <div class="action">Pick 1 WatchTower niche + lock Starter/Pro pricing (sell one pilot this week).</div><div class="action">Send 10 targeted outbound messages (tight list) — get 2 replies.</div>
     </div>
   </div>
 
@@ -47,7 +58,7 @@
     <div class="card">
       <h2>Hacker News</h2>
       <div class="stack">
-        <div class="item"><a href="https://pluralistic.net/2026/02/06/doge-ball/#n-600">1. US Immigration on the Easiest Setting</a><div class="sub">Tap to read · (add 1-line auto summary next)</div></div><div class="item"><a href="https://www.caltech.edu/about/news/invention-dna-page-numbers-synthesis-kaihang-wang">2. Invention of DNA &quot;Page Numbers&quot; Opens Up Possibilities for the Bioeconomy</a><div class="sub">Tap to read · (add 1-line auto summary next)</div></div><div class="item"><a href="https://www.niemanlab.org/2026/02/a-new-bill-in-new-york-would-require-disclaimers-on-ai-generated-news-content/">3. A new bill in New York would require disclaimers on AI-generated news content</a><div class="sub">Tap to read · (add 1-line auto summary next)</div></div><div class="item"><a href="https://rcrowley.org/2010/01/06/things-unix-can-do-atomically.html">4. Things Unix can do atomically (2010)</a><div class="sub">Tap to read · (add 1-line auto summary next)</div></div><div class="item"><a href="http://theprogrammersparadox.blogspot.com/2026/02/systems-thinking.html">5. Systems Thinking</a><div class="sub">Tap to read · (add 1-line auto summary next)</div></div><div class="item"><a href="https://theodore.net/projects/Polargraph/">6. Generative Pen-Trained Transformer</a><div class="sub">Tap to read · (add 1-line auto summary next)</div></div><div class="item"><a href="https://github.com/artifact-keeper">7. Show HN: Artifact Keeper – Open-Source Artifactory/Nexus Alternative in Rust</a><div class="sub">Tap to read · (add 1-line auto summary next)</div></div><div class="item"><a href="https://www.youtube.com/watch?v=QLb3nhIy2Lc">8. Waiting for Postgres 19: Better planner hints with path generation strategies [video]</a><div class="sub">Tap to read · (add 1-line auto summary next)</div></div>
+        <div class="item"><a href="https://pluralistic.net/2026/02/06/doge-ball/#n-600">1. US Immigration on the Easiest Setting</a><div class="sub">Tap to read</div></div><div class="item"><a href="https://www.caltech.edu/about/news/invention-dna-page-numbers-synthesis-kaihang-wang">2. Invention of DNA &quot;Page Numbers&quot; Opens Up Possibilities for the Bioeconomy</a><div class="sub">Tap to read</div></div><div class="item"><a href="https://www.niemanlab.org/2026/02/a-new-bill-in-new-york-would-require-disclaimers-on-ai-generated-news-content/">3. A new bill in New York would require disclaimers on AI-generated news content</a><div class="sub">Tap to read</div></div><div class="item"><a href="https://rcrowley.org/2010/01/06/things-unix-can-do-atomically.html">4. Things Unix can do atomically (2010)</a><div class="sub">Tap to read</div></div><div class="item"><a href="http://theprogrammersparadox.blogspot.com/2026/02/systems-thinking.html">5. Systems Thinking</a><div class="sub">Tap to read</div></div><div class="item"><a href="https://theodore.net/projects/Polargraph/">6. Generative Pen-Trained Transformer</a><div class="sub">Tap to read</div></div><div class="item"><a href="https://github.com/artifact-keeper">7. Show HN: Artifact Keeper – Open-Source Artifactory/Nexus Alternative in Rust</a><div class="sub">Tap to read</div></div>
       </div>
     </div>
 
@@ -58,34 +69,52 @@
           <div class="item">
             <div class="pill">AI / Agents</div>
             <div style="height:8px"></div>
-            <div class="sub"><a href="https://github.com/gavrielc/nanoclaw" style="font-weight:800;text-decoration:none;color:inherit;">gavrielc/nanoclaw</a> · ⭐ 5562<div class="sub">A lightweight alternative to Clawdbot / OpenClaw that runs in Apple containers for security. Connects to WhatsApp, has memory, scheduled jobs, and runs directly on Anthropic&#39;s Agents SDK</div></div><div class="sub"><a href="https://github.com/agno-agi/dash" style="font-weight:800;text-decoration:none;color:inherit;">agno-agi/dash</a> · ⭐ 1351<div class="sub">Self-learning data agent that grounds its answers in 6 layers of context. Inspired by OpenAI&#39;s in-house implementation.</div></div><div class="sub"><a href="https://github.com/1186258278/OpenClawChineseTranslation" style="font-weight:800;text-decoration:none;color:inherit;">1186258278/OpenClawChineseTranslation</a> · ⭐ 831<div class="sub">🦞 OpenClaw (Clawdbot/Moltbot) 汉化版 - 开源个人 AI 助手中文版 | Claude/ChatGPT LLM 接入 | WhatsApp/Telegram/Discord 多平台 | 每小时自动同步 | CLI + Dashboard 全中文 | 全流程搭建教程，以及排错指南！</div></div>
+            <div class="sub"><a href="https://github.com/gavrielc/nanoclaw" class="link" style="font-weight:800;">gavrielc/nanoclaw</a> · ⭐ 5563<div class="sub">A lightweight alternative to Clawdbot / OpenClaw that runs in Apple containers for security. Connects to WhatsApp, has memory, scheduled jobs, and runs directly on Anthropic&#39;s Agents SDK</div></div><div class="sub"><a href="https://github.com/agno-agi/dash" class="link" style="font-weight:800;">agno-agi/dash</a> · ⭐ 1351<div class="sub">Self-learning data agent that grounds its answers in 6 layers of context. Inspired by OpenAI&#39;s in-house implementation.</div></div><div class="sub"><a href="https://github.com/1186258278/OpenClawChineseTranslation" class="link" style="font-weight:800;">1186258278/OpenClawChineseTranslation</a> · ⭐ 832<div class="sub">🦞 OpenClaw (Clawdbot/Moltbot) 汉化版 - 开源个人 AI 助手中文版 | Claude/ChatGPT LLM 接入 | WhatsApp/Telegram/Discord 多平台 | 每小时自动同步 | CLI + Dashboard 全中文 | 全流程搭建教程，以及排错指南！</div></div>
           </div>
         
           <div class="item">
             <div class="pill">DevTools</div>
             <div style="height:8px"></div>
-            <div class="sub"><a href="https://github.com/sheeki03/tirith" style="font-weight:800;text-decoration:none;color:inherit;">sheeki03/tirith</a> · ⭐ 1415<div class="sub">Your browser catches homograph attacks. Your terminal doesn&#39;t. Tirith guards the gate — intercepts suspicious URLs, ANSI injection, and pipe-to-shell attacks before they execute.</div></div>
+            <div class="sub"><a href="https://github.com/sheeki03/tirith" class="link" style="font-weight:800;">sheeki03/tirith</a> · ⭐ 1416<div class="sub">Your browser catches homograph attacks. Your terminal doesn&#39;t. Tirith guards the gate — intercepts suspicious URLs, ANSI injection, and pipe-to-shell attacks before they execute.</div></div>
           </div>
         
           <div class="item">
             <div class="pill">Infra</div>
             <div style="height:8px"></div>
-            <div class="sub"><a href="https://github.com/dwzhu-pku/PaperBanana" style="font-weight:800;text-decoration:none;color:inherit;">dwzhu-pku/PaperBanana</a> · ⭐ 2087<div class="sub">PaperBanana: Automating Academic Illustration For AI Scientists</div></div><div class="sub"><a href="https://github.com/justlovemaki/OpenClaw-Docker-CN-IM" style="font-weight:800;text-decoration:none;color:inherit;">justlovemaki/OpenClaw-Docker-CN-IM</a> · ⭐ 779<div class="sub">OpenClaw 的中国IM平台整合Docker版本，预装并配置了飞书、钉钉、QQ机器人、企业微信等主流中国IM软件的插件，让您可以快速部署一个支持多个中国IM平台的 AI 机器人网关</div></div>
+            <div class="sub"><a href="https://github.com/dwzhu-pku/PaperBanana" class="link" style="font-weight:800;">dwzhu-pku/PaperBanana</a> · ⭐ 2089<div class="sub">PaperBanana: Automating Academic Illustration For AI Scientists</div></div><div class="sub"><a href="https://github.com/justlovemaki/OpenClaw-Docker-CN-IM" class="link" style="font-weight:800;">justlovemaki/OpenClaw-Docker-CN-IM</a> · ⭐ 780<div class="sub">OpenClaw 的中国IM平台整合Docker版本，预装并配置了飞书、钉钉、QQ机器人、企业微信等主流中国IM软件的插件，让您可以快速部署一个支持多个中国IM平台的 AI 机器人网关</div></div>
           </div>
         
           <div class="item">
             <div class="pill">Other</div>
             <div style="height:8px"></div>
-            <div class="sub"><a href="https://github.com/HKUDS/nanobot" style="font-weight:800;text-decoration:none;color:inherit;">HKUDS/nanobot</a> · ⭐ 10134<div class="sub">&quot;🐈 nanobot: The Ultra-Lightweight Clawdbot&quot;</div></div><div class="sub"><a href="https://github.com/Leey21/awesome-ai-research-writing" style="font-weight:800;text-decoration:none;color:inherit;">Leey21/awesome-ai-research-writing</a> · ⭐ 3594<div class="sub">Elevate your AI research writing, no more tedious polishing ✨ </div></div><div class="sub"><a href="https://github.com/MoonshotAI/Kimi-K2.5" style="font-weight:800;text-decoration:none;color:inherit;">MoonshotAI/Kimi-K2.5</a> · ⭐ 767<div class="sub">Moonshot&#39;s most powerful model</div></div>
+            <div class="sub"><a href="https://github.com/HKUDS/nanobot" class="link" style="font-weight:800;">HKUDS/nanobot</a> · ⭐ 10138<div class="sub">&quot;🐈 nanobot: The Ultra-Lightweight Clawdbot&quot;</div></div><div class="sub"><a href="https://github.com/Leey21/awesome-ai-research-writing" class="link" style="font-weight:800;">Leey21/awesome-ai-research-writing</a> · ⭐ 3596<div class="sub">Elevate your AI research writing, no more tedious polishing ✨ </div></div><div class="sub"><a href="https://github.com/MoonshotAI/Kimi-K2.5" class="link" style="font-weight:800;">MoonshotAI/Kimi-K2.5</a> · ⭐ 767<div class="sub">Moonshot&#39;s most powerful model</div></div>
           </div>
         
       </div>
     </div>
 
     <div class="card" style="grid-column:1 / -1">
+      <h2>WatchTower Pulse (Sales / RevOps / Competitive)</h2>
+      <div class="stack">
+        
+        <div class="item"><a href="https://www.saastr.com/dear-saastr-can-a-saas-startup-really-scale-with-2-co-ceos/">Dear SaaStr:  Can A SaaS Startup Really Scale With 2 Co-CEOs?</a><div class="sub">Source: SaaStr</div></div><div class="item"><a href="https://www.saastr.com/20vc-x-saastr-spacex-at-1-25-trillion-saas-stocks-down-40-and-the-week-we-connected-a-million-ai-agents-sort-of/">20VC x SaaStr: SpaceX at $1.25 Trillion, SaaS Stocks Down 40%, and the Week We Connected a Million AI Agents &amp;#8230; Sort Of</a><div class="sub">Source: SaaStr</div></div><div class="item"><a href="https://www.saastr.com/why-saas-is-still-terrible-you-cant-just-talk-to-it-and-have-it-do-what-you-want-its-time-in-the-age-of-ai/">Why a Lot of SaaS is Still &amp;#8220;Terrible&amp;#8221;: You Can&amp;#8217;t Just Talk to It and Have It Do What You Want. It&amp;#8217;s Time in the Age of AI.</a><div class="sub">Source: SaaStr</div></div><div class="item"><a href="https://www.saastr.com/inference-costs-average-23-of-revenue-at-ai-b2b-companies-how-will-you-pay-for-it/">Inference Costs Average 23% of Revenue at AI B2B Companies. How Will You Pay For It?</a><div class="sub">Source: SaaStr</div></div><div class="item"><a href="https://www.saastr.com/dear-saastr-whats-the-1-most-important-step-in-closing-a-deal/">Dear SaaStr:  What&amp;#8217;s The #1 Most Important Step in Closing a Deal?</a><div class="sub">Source: SaaStr</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Branding / AI business idea</h2>
+      <div class="item">
+        <div style="font-weight:850">Idea: Pricing-Change Radar for SMB SaaS</div>
+        <div class="sub" style="margin-top:6px">
+          • Track competitor pricing + packaging pages weekly; alert on meaningful diffs (not noise).<br/>• Auto-generate 3 sales talk-tracks + 2 marketing response angles per change.<br/>• Sell as subscription “don’t get blindsided” (WatchTower Pulse), not a tool.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
       <h2>Momentum</h2>
-      <div class="stack" style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-        <div class="sub">• Pick one metric to move today; ignore the rest.</div><div class="sub">• Ship the smallest thing that creates a new constraint.</div><div class="sub">• If it can&#39;t be tested this week, it&#39;s not real yet.</div><div class="sub">• Reduce steps, not effort.</div><div class="sub">• Make the next action obvious.</div><div class="sub">• Prefer done over clever.</div><div class="sub">• Tight loops beat big plans.</div><div class="sub">• If it&#39;s fuzzy, write it down.</div><div class="sub">• One outreach message &gt; ten strategy notes.</div><div class="sub">• Build what you can sell, not what you can explain.</div>
+      <div class="stack">
+        <div class="sub">• Pick one metric to move today; ignore the rest.</div><div class="sub">• Ship the smallest thing that creates a new constraint.</div><div class="sub">• If it can&#39;t be tested this week, it&#39;s not real yet.</div><div class="sub">• Reduce steps, not effort.</div><div class="sub">• Make the next action obvious.</div><div class="sub">• Prefer done over clever.</div>
       </div>
     </div>
   </div>
