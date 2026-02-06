@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stella — Morning Brief</title>
+  <style>
+    :root{
+      --bg:#0b0f17;
+      --card:#101827;
+      --card2:#0f172a;
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --border:rgba(255,255,255,.10);
+      --shadow:0 18px 50px rgba(0,0,0,.40);
+      --accent:#60a5fa;
+      --radius:16px;
+    }
+    *{box-sizing:border-box;}
+    body{margin:0;background:radial-gradient(1200px 700px at 20% 0%, rgba(96,165,250,.08), transparent 55%), var(--bg);color:var(--text);font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;}
+    .wrap{max-width:980px;margin:0 auto;padding:28px 18px 40px;}
+    .mast{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:16px;}
+    .title{font-size:28px;font-weight:900;letter-spacing:-.03em;line-height:1.1;}
+    .sub{color:var(--muted);font-size:14px;line-height:1.35;}
+    .pill{display:inline-block;font-size:12px;color:var(--text);border:1px solid var(--border);background:rgba(96,165,250,.10);border-radius:999px;padding:4px 10px;white-space:nowrap;}
+    .grid{display:grid;grid-template-columns:1.2fr .8fr;gap:14px;}
+    @media (max-width: 860px){.grid{grid-template-columns:1fr;}}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.03), transparent 60%), var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px;}
+    .card h2{margin:0 0 10px 0;font-size:13px;text-transform:uppercase;letter-spacing:.10em;color:var(--muted);}
+    a{color:var(--accent);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+    .cta{display:flex;gap:10px;flex-wrap:wrap;}
+    .btn{display:inline-block;background:rgba(96,165,250,.12);border:1px solid rgba(96,165,250,.25);color:var(--text);padding:10px 12px;border-radius:12px;font-weight:800;}
+    .btn.secondary{background:rgba(255,255,255,.04);border-color:var(--border);}
+    .list{display:flex;flex-direction:column;gap:8px;}
+    .item{padding:10px;border:1px solid var(--border);border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,.02), transparent 60%), var(--card2);}
+    .item b{font-weight:850;}
+    .foot{margin-top:14px;color:var(--muted);font-size:13px;}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="mast">
+      <div>
+        <div class="title">Stella ⭐️</div>
+        <div class="sub">Your daily dark-mode Morning Brief — built to be skimmed in 2–3 minutes.</div>
+      </div>
+      <div class="pill">newspaper dashboard</div>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h2>Open the brief</h2>
+        <div class="cta">
+          <a class="btn" href="./latest/">Today’s Morning Brief →</a>
+          <a class="btn secondary" href="./2026-02-06/">View archive example</a>
+        </div>
+        <div class="foot">Tip: bookmark <code>/latest/</code>. It always points to the newest issue.</div>
+      </div>
+
+      <div class="card">
+        <h2>What you’ll see</h2>
+        <div class="list">
+          <div class="item"><b>Tech pulse</b> — Hacker News + GitHub repos worth a glance.</div>
+          <div class="item"><b>WatchTower Pulse</b> — Sales/RevOps & competitive moves (pricing/positioning).</div>
+          <div class="item"><b>Security Pulse</b> — Microsoft + global alerts (MSRC, CISA, SANS).</div>
+          <div class="item"><b>One idea</b> — an AI/branding business angle you can test.</div>
+          <div class="item"><b>2 actions</b> — the only two things you should do today.</div>
+        </div>
+      </div>
+
+      <div class="card" style="grid-column:1 / -1">
+        <h2>Notes</h2>
+        <div class="sub">
+          This site is static output published daily to GitHub Pages. If a source is blocked (e.g., Product Hunt), Stella will skip it and keep the brief moving.
+          <br/><br/>
+          Repo: <a href="https://github.com/Kaluzy/Stella">github.com/Kaluzy/Stella</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
