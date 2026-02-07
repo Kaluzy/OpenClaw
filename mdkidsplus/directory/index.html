@@ -38,6 +38,20 @@ body{
 .nav a:hover{transform:translateY(-1px)}
 .nav a.primary{border-color:rgba(251,113,133,.25);background:rgba(251,113,133,.12)}
 @media(max-width:520px){.nav{gap:8px}.nav a{padding:8px 9px;font-size:13px}}
+
+/* Mobile bottom nav */
+.bottomnav{display:none; position:fixed; left:12px; right:12px; bottom:12px; z-index:50;
+  background:rgba(255,255,255,.90); backdrop-filter: blur(10px);
+  border:1px solid var(--line); border-radius:18px; box-shadow:0 18px 40px rgba(15,23,42,.18);
+  padding:8px; }
+.bottomnav .row{display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px;}
+.bottomnav a{display:flex; gap:8px; align-items:center; justify-content:center; padding:10px 8px;
+  border-radius:14px; text-decoration:none; font-weight:950; color:var(--ink);
+  border:1px solid var(--line); background:rgba(255,255,255,.75);} 
+.bottomnav a.primary{border-color:rgba(251,113,133,.25); background:rgba(251,113,133,.12)}
+.bottomnav .ic{font-size:14px}
+@media(max-width:820px){body{padding-bottom:82px} .bottomnav{display:block}}
+
 .grid{display:grid;grid-template-columns:1.2fr .8fr;gap:14px;}
 @media(max-width:960px){.grid{grid-template-columns:1fr;}}
 .card{background:rgba(255,255,255,.86);backdrop-filter: blur(6px); border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px;}
@@ -81,11 +95,31 @@ small{color:var(--muted);font-weight:700}
     </div>
   
 
-    
+    <div class="card" style="margin-bottom:14px">
+      <h2>Search</h2>
+      <div class="sub">Type a keyword (city, category, or name). Fast and simple.</div>
+      <div style="margin-top:10px; display:flex; gap:10px; flex-wrap:wrap; align-items:center">
+        <input id="q" placeholder="Search (e.g., STEM, Rockville, dance…)" style="flex:1; min-width:220px; padding:12px 12px; border-radius:14px; border:1px solid var(--line); background:rgba(255,255,255,.92); font-weight:800; outline:none" />
+        <a class="btn secondary" href="#" id="clear" style="padding:10px 12px">Clear</a>
+      </div>
+      <div class="chips" style="margin-top:10px">
+        <a class="chip" href="#" data-chip="stem">STEM</a>
+        <a class="chip" href="#" data-chip="dance">Dance</a>
+        <a class="chip" href="#" data-chip="sports">Sports</a>
+        <a class="chip" href="#" data-chip="music">Music</a>
+        <a class="chip" href="#" data-chip="rockville">Rockville</a>
+        <a class="chip" href="#" data-chip="bethesda">Bethesda</a>
+        <a class="chip" href="#" data-chip="silver spring">Silver Spring</a>
+      </div>
+      <div class="foot"><span id="count"></span></div>
+    </div>
+
+    <div id="list">
+      
       <div class="card" style="margin-bottom:14px">
         <h2>Bethesda</h2>
         
-        <div class="item">
+        <div class="item" data-hay="kid museum stem museum &amp; programs bethesda hands-on stem for kids (often ages ~0–10); school-year programs + summer camps">
           <div><a href="https://kid-museum.org/" target="_blank" rel="noopener noreferrer">Kid Museum</a></div>
           <div class="sub">STEM museum &amp; programs · Bethesda</div>
           <div class="chips">
@@ -94,10 +128,9 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Hands-on STEM for kids (often ages ~0–10); school-year programs + summer camps</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
-        <div class="item">
+        <div class="item" data-hay="imagination stage theater/arts education bethesda classes &amp; camps (typically ages 1–18); year-round + summer">
           <div><a href="https://imaginationstage.org/" target="_blank" rel="noopener noreferrer">Imagination Stage</a></div>
           <div class="sub">Theater/arts education · Bethesda</div>
           <div class="chips">
@@ -106,10 +139,9 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Classes &amp; camps (typically ages 1–18); year-round + summer</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
-        <div class="item">
+        <div class="item" data-hay="round house theatre theater education bethesda youth classes/camps; seasonal">
           <div><a href="https://www.roundhousetheatre.org/" target="_blank" rel="noopener noreferrer">Round House Theatre</a></div>
           <div class="sub">Theater education · Bethesda</div>
           <div class="chips">
@@ -118,10 +150,9 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Youth classes/camps; seasonal</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
-        <div class="item">
+        <div class="item" data-hay="bethesda-chevy chase ymca ymca camps &amp; sports bethesda youth sports, swim lessons, camps; year-round + summer">
           <div><a href="https://www.ymcadc.org/locations/bethesda-chevy-chase-ymca/" target="_blank" rel="noopener noreferrer">Bethesda-Chevy Chase YMCA</a></div>
           <div class="sub">YMCA camps &amp; sports · Bethesda</div>
           <div class="chips">
@@ -130,10 +161,9 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Youth sports, swim lessons, camps; year-round + summer</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
-        <div class="item">
+        <div class="item" data-hay="bethesda conservatory of dance dance studio bethesda dance classes (preschool–teen); camps/summer">
           <div><a href="https://bethesdadance.com/" target="_blank" rel="noopener noreferrer">Bethesda Conservatory of Dance</a></div>
           <div class="sub">Dance studio · Bethesda</div>
           <div class="chips">
@@ -142,10 +172,9 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Dance classes (preschool–teen); camps/summer</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
-        <div class="item">
+        <div class="item" data-hay="code ninjas bethesda coding classes &amp; camps bethesda coding for kids; camps + year-round">
           <div><a href="https://www.codeninjas.com/md-bethesda" target="_blank" rel="noopener noreferrer">Code Ninjas Bethesda</a></div>
           <div class="sub">Coding classes &amp; camps · Bethesda</div>
           <div class="chips">
@@ -154,10 +183,9 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Coding for kids; camps + year-round</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
-        <div class="item">
+        <div class="item" data-hay="bethesda soccer club youth sports club bethesda youth soccer programs; seasonal">
           <div><a href="https://www.bethesdasoccer.org/" target="_blank" rel="noopener noreferrer">Bethesda Soccer Club</a></div>
           <div class="sub">Youth sports club · Bethesda</div>
           <div class="chips">
@@ -166,10 +194,9 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Youth soccer programs; seasonal</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
-        <div class="item">
+        <div class="item" data-hay="the little gym of bethesda gymnastics/fitness classes bethesda parent/child–elementary classes; camps/parties">
           <div><a href="https://www.thelittlegym.com/bethesda-md/" target="_blank" rel="noopener noreferrer">The Little Gym of Bethesda</a></div>
           <div class="sub">Gymnastics/fitness classes · Bethesda</div>
           <div class="chips">
@@ -178,7 +205,6 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Parent/child–elementary classes; camps/parties</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
       </div>
@@ -186,7 +212,7 @@ small{color:var(--muted);font-weight:700}
       <div class="card" style="margin-bottom:14px">
         <h2>Chevy Chase</h2>
         
-        <div class="item">
+        <div class="item" data-hay="nature forward (audubon naturalist society) nature center programs &amp; camps chevy chase nature camps &amp; family programs; seasonal">
           <div><a href="https://natureforward.org/" target="_blank" rel="noopener noreferrer">Nature Forward (Audubon Naturalist Society)</a></div>
           <div class="sub">Nature center programs &amp; camps · Chevy Chase</div>
           <div class="chips">
@@ -195,7 +221,6 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Nature camps &amp; family programs; seasonal</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
       </div>
@@ -203,7 +228,7 @@ small{color:var(--muted);font-weight:700}
       <div class="card" style="margin-bottom:14px">
         <h2>Gaithersburg</h2>
         
-        <div class="item">
+        <div class="item" data-hay="washington capital gymnastics gymnastics classes/camps gaithersburg gymnastics camps + classes; year-round">
           <div><a href="https://www.washingtoncapitalgymnastics.com/" target="_blank" rel="noopener noreferrer">Washington Capital Gymnastics</a></div>
           <div class="sub">Gymnastics classes/camps · Gaithersburg</div>
           <div class="chips">
@@ -212,7 +237,6 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Gymnastics camps + classes; year-round</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
       </div>
@@ -220,7 +244,7 @@ small{color:var(--muted);font-weight:700}
       <div class="card" style="margin-bottom:14px">
         <h2>Glen Echo</h2>
         
-        <div class="item">
+        <div class="item" data-hay="adventure theatre mtc children’s theater &amp; classes glen echo kids’ performances + drama camps (elementary–middle school); summer + school-year">
           <div><a href="https://www.adventuretheatre-mtc.org/" target="_blank" rel="noopener noreferrer">Adventure Theatre MTC</a></div>
           <div class="sub">Children’s theater &amp; classes · Glen Echo</div>
           <div class="chips">
@@ -229,10 +253,9 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Kids’ performances + drama camps (elementary–middle school); summer + school-year</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
-        <div class="item">
+        <div class="item" data-hay="glen echo park partnership for arts &amp; culture arts classes/camps/venues glen echo arts classes for kids/teens; summer camps + seasonal events">
           <div><a href="https://glenechopark.org/" target="_blank" rel="noopener noreferrer">Glen Echo Park Partnership for Arts &amp; Culture</a></div>
           <div class="sub">Arts classes/camps/venues · Glen Echo</div>
           <div class="chips">
@@ -241,10 +264,9 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Arts classes for kids/teens; summer camps + seasonal events</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
-        <div class="item">
+        <div class="item" data-hay="washington conservatory of music music lessons &amp; camps glen echo music instruction for kids–adults; camps/workshops">
           <div><a href="https://www.washingtonconservatory.org/" target="_blank" rel="noopener noreferrer">Washington Conservatory of Music</a></div>
           <div class="sub">Music lessons &amp; camps · Glen Echo</div>
           <div class="chips">
@@ -253,7 +275,6 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Music instruction for kids–adults; camps/workshops</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
       </div>
@@ -261,7 +282,7 @@ small{color:var(--muted);font-weight:700}
       <div class="card" style="margin-bottom:14px">
         <h2>North Bethesda</h2>
         
-        <div class="item">
+        <div class="item" data-hay="the music center at strathmore music education/programs north bethesda kids concerts, classes; seasonal + summer programming">
           <div><a href="https://www.strathmore.org/education/" target="_blank" rel="noopener noreferrer">The Music Center at Strathmore</a></div>
           <div class="sub">Music education/programs · North Bethesda</div>
           <div class="chips">
@@ -270,7 +291,6 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Kids concerts, classes; seasonal + summer programming</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
       </div>
@@ -278,7 +298,7 @@ small{color:var(--muted);font-weight:700}
       <div class="card" style="margin-bottom:14px">
         <h2>Potomac</h2>
         
-        <div class="item">
+        <div class="item" data-hay="glenstone museum arts museum (family programs) potomac museum in potomac; periodic family/education programs">
           <div><a href="https://www.glenstone.org/" target="_blank" rel="noopener noreferrer">Glenstone Museum</a></div>
           <div class="sub">Arts museum (family programs) · Potomac</div>
           <div class="chips">
@@ -287,7 +307,6 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Museum in Potomac; periodic family/education programs</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
       </div>
@@ -295,7 +314,7 @@ small{color:var(--muted);font-weight:700}
       <div class="card" style="margin-bottom:14px">
         <h2>Rockville</h2>
         
-        <div class="item">
+        <div class="item" data-hay="visarts visual arts center &amp; classes rockville art classes + camps for kids/teens; year-round + summer">
           <div><a href="https://www.visarts.org/" target="_blank" rel="noopener noreferrer">VisArts</a></div>
           <div class="sub">Visual arts center &amp; classes · Rockville</div>
           <div class="chips">
@@ -304,10 +323,9 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Art classes + camps for kids/teens; year-round + summer</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
-        <div class="item">
+        <div class="item" data-hay="bender jcc of greater washington jcc camps &amp; enrichment rockville day camps + swim/sports/arts; preschool–teen; summer + breaks">
           <div><a href="https://www.benderjccgw.org/" target="_blank" rel="noopener noreferrer">Bender JCC of Greater Washington</a></div>
           <div class="sub">JCC camps &amp; enrichment · Rockville</div>
           <div class="chips">
@@ -316,10 +334,9 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Day camps + swim/sports/arts; preschool–teen; summer + breaks</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
-        <div class="item">
+        <div class="item" data-hay="city of rockville recreation &amp; parks city recreation programs/camps rockville camps + classes + aquatics; seasonal">
           <div><a href="https://www.rockvillemd.gov/158/Recreation-Parks" target="_blank" rel="noopener noreferrer">City of Rockville Recreation &amp; Parks</a></div>
           <div class="sub">City recreation programs/camps · Rockville</div>
           <div class="chips">
@@ -328,10 +345,9 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Camps + classes + aquatics; seasonal</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
-        <div class="item">
+        <div class="item" data-hay="code ninjas rockville coding classes &amp; camps rockville coding for kids (typically 5–14); camps + year-round">
           <div><a href="https://www.codeninjas.com/md-rockville" target="_blank" rel="noopener noreferrer">Code Ninjas Rockville</a></div>
           <div class="sub">Coding classes &amp; camps · Rockville</div>
           <div class="chips">
@@ -340,10 +356,9 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Coding for kids (typically 5–14); camps + year-round</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
-        <div class="item">
+        <div class="item" data-hay="my gym rockville kids fitness/gym classes rockville ages usually 6 weeks–10 years; camps/parties">
           <div><a href="https://www.mygym.com/rockville" target="_blank" rel="noopener noreferrer">My Gym Rockville</a></div>
           <div class="sub">Kids fitness/gym classes · Rockville</div>
           <div class="chips">
@@ -352,10 +367,9 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Ages usually 6 weeks–10 years; camps/parties</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
-        <div class="item">
+        <div class="item" data-hay="rockville ice arena ice skating &amp; hockey rockville skating lessons, hockey programs; year-round">
           <div><a href="https://www.rockvilleicearena.com/" target="_blank" rel="noopener noreferrer">Rockville Ice Arena</a></div>
           <div class="sub">Ice skating &amp; hockey · Rockville</div>
           <div class="chips">
@@ -364,7 +378,6 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Skating lessons, hockey programs; year-round</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
       </div>
@@ -372,7 +385,7 @@ small{color:var(--muted);font-weight:700}
       <div class="card" style="margin-bottom:14px">
         <h2>Rockville (MoCo)</h2>
         
-        <div class="item">
+        <div class="item" data-hay="montgomery soccer inc (msi) youth sports league rockville (moco) rec soccer; seasonal">
           <div><a href="https://www.montgomerysoccer.org/" target="_blank" rel="noopener noreferrer">Montgomery Soccer Inc (MSI)</a></div>
           <div class="sub">Youth sports league · Rockville (MoCo)</div>
           <div class="chips">
@@ -381,7 +394,6 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Rec soccer; seasonal</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
       </div>
@@ -389,7 +401,7 @@ small{color:var(--muted);font-weight:700}
       <div class="card" style="margin-bottom:14px">
         <h2>Silver Spring</h2>
         
-        <div class="item">
+        <div class="item" data-hay="maryland youth ballet ballet school silver spring youth ballet training + camps; year-round">
           <div><a href="https://www.mdyouthballet.org/" target="_blank" rel="noopener noreferrer">Maryland Youth Ballet</a></div>
           <div class="sub">Ballet school · Silver Spring</div>
           <div class="chips">
@@ -398,7 +410,6 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Youth ballet training + camps; year-round</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
       </div>
@@ -406,7 +417,7 @@ small{color:var(--muted);font-weight:700}
       <div class="card" style="margin-bottom:14px">
         <h2>Various (MoCo)</h2>
         
-        <div class="item">
+        <div class="item" data-hay="montgomery county recreation county recreation camps/programs (sports/arts) various (moco) large catalog of youth programs &amp; camps; seasonal">
           <div><a href="https://www.montgomerycountymd.gov/rec/" target="_blank" rel="noopener noreferrer">Montgomery County Recreation</a></div>
           <div class="sub">County recreation camps/programs (sports/arts) · Various (MoCo)</div>
           <div class="chips">
@@ -415,7 +426,6 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Large catalog of youth programs &amp; camps; seasonal</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
       </div>
@@ -423,7 +433,7 @@ small{color:var(--muted);font-weight:700}
       <div class="card" style="margin-bottom:14px">
         <h2>Washington DC</h2>
         
-        <div class="item">
+        <div class="item" data-hay="dc department of parks and recreation city recreation camps/programs washington dc sports, aquatics, summer camps; seasonal">
           <div><a href="https://dpr.dc.gov/" target="_blank" rel="noopener noreferrer">DC Department of Parks and Recreation</a></div>
           <div class="sub">City recreation camps/programs · Washington DC</div>
           <div class="chips">
@@ -432,10 +442,9 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Sports, aquatics, summer camps; seasonal</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
-        <div class="item">
+        <div class="item" data-hay="ymca anthony bowen (dc) ymca camps &amp; programs washington dc youth programs + camps; year-round">
           <div><a href="https://www.ymcadc.org/locations/anthony-bowen-ymca/" target="_blank" rel="noopener noreferrer">YMCA Anthony Bowen (DC)</a></div>
           <div class="sub">YMCA camps &amp; programs · Washington DC</div>
           <div class="chips">
@@ -444,10 +453,9 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Youth programs + camps; year-round</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
-        <div class="item">
+        <div class="item" data-hay="levine music music school (lessons/camps) washington dc multiple campuses; youth music classes + summer">
           <div><a href="https://www.levinemusic.org/" target="_blank" rel="noopener noreferrer">Levine Music</a></div>
           <div class="sub">Music school (lessons/camps) · Washington DC</div>
           <div class="chips">
@@ -456,10 +464,9 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Multiple campuses; youth music classes + summer</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
-        <div class="item">
+        <div class="item" data-hay="smithsonian national zoo animal education &amp; camps washington dc camps/classes (often summer); family programs">
           <div><a href="https://nationalzoo.si.edu/" target="_blank" rel="noopener noreferrer">Smithsonian National Zoo</a></div>
           <div class="sub">Animal education &amp; camps · Washington DC</div>
           <div class="chips">
@@ -468,10 +475,9 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Camps/classes (often summer); family programs</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
-        <div class="item">
+        <div class="item" data-hay="smithsonian national air and space museum museum education/programs washington dc youth/family programs; occasional camps">
           <div><a href="https://airandspace.si.edu/" target="_blank" rel="noopener noreferrer">Smithsonian National Air and Space Museum</a></div>
           <div class="sub">Museum education/programs · Washington DC</div>
           <div class="chips">
@@ -480,10 +486,9 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Youth/family programs; occasional camps</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
-        <div class="item">
+        <div class="item" data-hay="smithsonian national museum of natural history museum education/programs washington dc family programs; occasional camps/school-break">
           <div><a href="https://naturalhistory.si.edu/" target="_blank" rel="noopener noreferrer">Smithsonian National Museum of Natural History</a></div>
           <div class="sub">Museum education/programs · Washington DC</div>
           <div class="chips">
@@ -492,10 +497,9 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Family programs; occasional camps/school-break</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
-        <div class="item">
+        <div class="item" data-hay="smithsonian national museum of american history museum education/programs washington dc family programs; seasonal">
           <div><a href="https://americanhistory.si.edu/" target="_blank" rel="noopener noreferrer">Smithsonian National Museum of American History</a></div>
           <div class="sub">Museum education/programs · Washington DC</div>
           <div class="chips">
@@ -504,10 +508,9 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Family programs; seasonal</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
-        <div class="item">
+        <div class="item" data-hay="smithsonian hirshhorn museum art museum programs washington dc family days &amp; teen programs; seasonal">
           <div><a href="https://hirshhorn.si.edu/" target="_blank" rel="noopener noreferrer">Smithsonian Hirshhorn Museum</a></div>
           <div class="sub">Art museum programs · Washington DC</div>
           <div class="chips">
@@ -516,10 +519,9 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Family days &amp; teen programs; seasonal</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
-        <div class="item">
+        <div class="item" data-hay="the kennedy center education performing arts education washington dc workshops, family shows; seasonal">
           <div><a href="https://www.kennedy-center.org/education/" target="_blank" rel="noopener noreferrer">The Kennedy Center Education</a></div>
           <div class="sub">Performing arts education · Washington DC</div>
           <div class="chips">
@@ -528,10 +530,9 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Workshops, family shows; seasonal</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
-        <div class="item">
+        <div class="item" data-hay="arena stage theater education washington dc youth classes/camps; seasonal">
           <div><a href="https://www.arenastage.org/education/" target="_blank" rel="noopener noreferrer">Arena Stage</a></div>
           <div class="sub">Theater education · Washington DC</div>
           <div class="chips">
@@ -540,10 +541,9 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Youth classes/camps; seasonal</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
-        <div class="item">
+        <div class="item" data-hay="shakespeare theatre company education theater education washington dc student/youth programs; camps/workshops">
           <div><a href="https://www.shakespearetheatre.org/education/" target="_blank" rel="noopener noreferrer">Shakespeare Theatre Company Education</a></div>
           <div class="sub">Theater education · Washington DC</div>
           <div class="chips">
@@ -552,10 +552,9 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Student/youth programs; camps/workshops</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
-        <div class="item">
+        <div class="item" data-hay="studio theatre education theater classes washington dc teen/adult acting classes; youth offerings vary by season">
           <div><a href="https://www.studiotheatre.org/education/" target="_blank" rel="noopener noreferrer">Studio Theatre Education</a></div>
           <div class="sub">Theater classes · Washington DC</div>
           <div class="chips">
@@ -564,10 +563,9 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Teen/adult acting classes; youth offerings vary by season</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
-        <div class="item">
+        <div class="item" data-hay="capitol hill arts workshop (chaw) arts classes &amp; camps washington dc visual/performing arts for youth; camps + year-round">
           <div><a href="https://www.chaw.org/" target="_blank" rel="noopener noreferrer">Capitol Hill Arts Workshop (CHAW)</a></div>
           <div class="sub">Arts classes &amp; camps · Washington DC</div>
           <div class="chips">
@@ -576,10 +574,9 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Visual/performing arts for youth; camps + year-round</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
-        <div class="item">
+        <div class="item" data-hay="hill center at the old naval hospital arts/community classes washington dc community education incl. youth arts; seasonal">
           <div><a href="https://www.hillcenterdc.org/" target="_blank" rel="noopener noreferrer">Hill Center at the Old Naval Hospital</a></div>
           <div class="sub">Arts/community classes · Washington DC</div>
           <div class="chips">
@@ -588,10 +585,9 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Community education incl. youth arts; seasonal</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
-        <div class="item">
+        <div class="item" data-hay="rock creek park nature center nature programs washington dc junior ranger, nature programs; seasonal">
           <div><a href="https://www.nps.gov/rocr/planyourvisit/naturecenter.htm" target="_blank" rel="noopener noreferrer">Rock Creek Park Nature Center</a></div>
           <div class="sub">Nature programs · Washington DC</div>
           <div class="chips">
@@ -600,10 +596,9 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Junior ranger, nature programs; seasonal</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
-        <div class="item">
+        <div class="item" data-hay="national building museum kids programs &amp; camps washington dc hands-on building/design programs; camps often summer">
           <div><a href="https://www.nbm.org/" target="_blank" rel="noopener noreferrer">National Building Museum</a></div>
           <div class="sub">Kids programs &amp; camps · Washington DC</div>
           <div class="chips">
@@ -612,10 +607,9 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Hands-on building/design programs; camps often summer</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
-        <div class="item">
+        <div class="item" data-hay="international spy museum museum education/camps washington dc youth/family programs; occasional camps">
           <div><a href="https://www.spymuseum.org/" target="_blank" rel="noopener noreferrer">International Spy Museum</a></div>
           <div class="sub">Museum education/camps · Washington DC</div>
           <div class="chips">
@@ -624,10 +618,9 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Youth/family programs; occasional camps</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
-        <div class="item">
+        <div class="item" data-hay="the phillips collection art museum programs washington dc family workshops; seasonal">
           <div><a href="https://www.phillipscollection.org/" target="_blank" rel="noopener noreferrer">The Phillips Collection</a></div>
           <div class="sub">Art museum programs · Washington DC</div>
           <div class="chips">
@@ -636,10 +629,9 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Family workshops; seasonal</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
-        <div class="item">
+        <div class="item" data-hay="national gallery of art art museum programs washington dc family programs; seasonal">
           <div><a href="https://www.nga.gov/" target="_blank" rel="noopener noreferrer">National Gallery of Art</a></div>
           <div class="sub">Art museum programs · Washington DC</div>
           <div class="chips">
@@ -648,10 +640,9 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Family programs; seasonal</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
-        <div class="item">
+        <div class="item" data-hay="national children’s museum kids museum programs washington dc play-based learning (toddlers–elementary); camps/events">
           <div><a href="https://nationalchildrensmuseum.org/" target="_blank" rel="noopener noreferrer">National Children’s Museum</a></div>
           <div class="sub">Kids museum programs · Washington DC</div>
           <div class="chips">
@@ -660,10 +651,9 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Play-based learning (toddlers–elementary); camps/events</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
-        <div class="item">
+        <div class="item" data-hay="the washington ballet (the washington school of ballet) dance school/camps washington dc dance classes + intensives; school-year + summer">
           <div><a href="https://www.washingtonballet.org/school/" target="_blank" rel="noopener noreferrer">The Washington Ballet (The Washington School of Ballet)</a></div>
           <div class="sub">Dance school/camps · Washington DC</div>
           <div class="chips">
@@ -672,10 +662,9 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Dance classes + intensives; school-year + summer</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
-        <div class="item">
+        <div class="item" data-hay="joy of motion dance center dance classes &amp; camps washington dc dance for kids–adults; camps + year-round">
           <div><a href="https://www.joyofmotion.org/" target="_blank" rel="noopener noreferrer">Joy of Motion Dance Center</a></div>
           <div class="sub">Dance classes &amp; camps · Washington DC</div>
           <div class="chips">
@@ -684,10 +673,9 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Dance for kids–adults; camps + year-round</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
-        <div class="item">
+        <div class="item" data-hay="citydance (citydance conservatory) dance education washington dc dance classes/camps; seasonal">
           <div><a href="https://citydance.net/" target="_blank" rel="noopener noreferrer">CityDance (CityDance Conservatory)</a></div>
           <div class="sub">Dance education · Washington DC</div>
           <div class="chips">
@@ -696,10 +684,9 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Dance classes/camps; seasonal</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
-        <div class="item">
+        <div class="item" data-hay="mad science of washington dc science camps &amp; enrichment washington dc science enrichment + camps; year-round + summer">
           <div><a href="https://washingtondc.madscience.org/" target="_blank" rel="noopener noreferrer">Mad Science of Washington DC</a></div>
           <div class="sub">Science camps &amp; enrichment · Washington DC</div>
           <div class="chips">
@@ -708,10 +695,9 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Science enrichment + camps; year-round + summer</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
-        <div class="item">
+        <div class="item" data-hay="stoddert soccer youth soccer league washington dc dc youth soccer; seasonal">
           <div><a href="https://www.stoddertsoccer.org/" target="_blank" rel="noopener noreferrer">Stoddert Soccer</a></div>
           <div class="sub">Youth soccer league · Washington DC</div>
           <div class="chips">
@@ -720,7 +706,6 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">DC youth soccer; seasonal</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
       </div>
@@ -728,7 +713,7 @@ small{color:var(--muted);font-weight:700}
       <div class="card" style="margin-bottom:14px">
         <h2>Washington DC area</h2>
         
-        <div class="item">
+        <div class="item" data-hay="baroody camps sports day camps washington dc area sports camps (often ages 4–14); summer">
           <div><a href="https://baroodycamps.com/" target="_blank" rel="noopener noreferrer">Baroody Camps</a></div>
           <div class="sub">Sports day camps · Washington DC area</div>
           <div class="chips">
@@ -737,13 +722,52 @@ small{color:var(--muted);font-weight:700}
             <span class="chip" title="Coming soon">Reviews</span>
           </div>
           <div class="sub">Sports camps (often ages 4–14); summer</div>
-          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
         </div>
       
       </div>
     
+    </div>
 
-    <div class="foot">Want to be listed or featured? (Coming soon.)</div>
+    <div class="foot">Want to be listed or featured? Use <a href="https://docs.google.com/forms/d/1eAHIOFJq4MbHFnhz3wyEtLPxMSpy2tBuMLf3yj95h30/viewform" target="_blank" rel="noopener noreferrer">Suggest a spot</a>.</div>
   </div>
+
+  <script>
+    (function(){
+      const q = document.getElementById('q');
+      const clear = document.getElementById('clear');
+      const count = document.getElementById('count');
+      const items = Array.from(document.querySelectorAll('.item[data-hay]'));
+
+      function apply(val){
+        const v = (val||'').toLowerCase().trim();
+        let shown=0;
+        for (const it of items){
+          const hay = it.getAttribute('data-hay') || '';
+          const ok = !v || hay.indexOf(v) !== -1;
+          it.style.display = ok ? '' : 'none';
+          if (ok) shown++;
+        }
+        if (count) count.textContent = shown + ' results';
+      }
+
+      q && q.addEventListener('input', (e)=>apply(e.target.value));
+      clear && clear.addEventListener('click', (e)=>{e.preventDefault(); if(q){q.value=''; q.focus();} apply('');});
+      document.querySelectorAll('[data-chip]').forEach(el=>{
+        el.addEventListener('click', (e)=>{e.preventDefault(); const v = el.getAttribute('data-chip')||''; if(q){q.value=v; q.focus();} apply(v);});
+      });
+
+      apply('');
+    })();
+  </script>
+
+    
+    <nav class="bottomnav" aria-label="Bottom">
+      <div class="row">
+        <a class="" href="../latest/"><span class="ic">📅</span>Weekend</a>
+        <a class="primary" href="../directory/"><span class="ic">🧭</span>Directory</a>
+        <a class="" href="https://docs.google.com/forms/d/1hEkPUBEMCOZFyZ3EYLbbbI5ylkaB8a7IHGabxthQjhY/viewform" target="_blank" rel="noopener noreferrer"><span class="ic">➕</span>Submit</a>
+      </div>
+    </nav>
+  
 </body>
 </html>

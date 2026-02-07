@@ -38,6 +38,20 @@ body{
 .nav a:hover{transform:translateY(-1px)}
 .nav a.primary{border-color:rgba(251,113,133,.25);background:rgba(251,113,133,.12)}
 @media(max-width:520px){.nav{gap:8px}.nav a{padding:8px 9px;font-size:13px}}
+
+/* Mobile bottom nav */
+.bottomnav{display:none; position:fixed; left:12px; right:12px; bottom:12px; z-index:50;
+  background:rgba(255,255,255,.90); backdrop-filter: blur(10px);
+  border:1px solid var(--line); border-radius:18px; box-shadow:0 18px 40px rgba(15,23,42,.18);
+  padding:8px; }
+.bottomnav .row{display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px;}
+.bottomnav a{display:flex; gap:8px; align-items:center; justify-content:center; padding:10px 8px;
+  border-radius:14px; text-decoration:none; font-weight:950; color:var(--ink);
+  border:1px solid var(--line); background:rgba(255,255,255,.75);} 
+.bottomnav a.primary{border-color:rgba(251,113,133,.25); background:rgba(251,113,133,.12)}
+.bottomnav .ic{font-size:14px}
+@media(max-width:820px){body{padding-bottom:82px} .bottomnav{display:block}}
+
 .grid{display:grid;grid-template-columns:1.2fr .8fr;gap:14px;}
 @media(max-width:960px){.grid{grid-template-columns:1fr;}}
 .card{background:rgba(255,255,255,.86);backdrop-filter: blur(6px); border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px;}
@@ -145,7 +159,17 @@ small{color:var(--muted);font-weight:700}
       </div>
     </div>
 
-    <div class="foot">Tip: bookmark <b>/latest/</b>. It will always be the newest Weekend Picks.</div>
+    <div class="foot">Tip: bookmark <b>/latest/</b>. It will always be the newest Weekend Picks. · <a href="./privacy/">Privacy</a> · <a href="./disclosure/">Sponsor disclosure</a></div>
   </div>
+
+    
+    <nav class="bottomnav" aria-label="Bottom">
+      <div class="row">
+        <a class="" href="../latest/"><span class="ic">📅</span>Weekend</a>
+        <a class="" href="../directory/"><span class="ic">🧭</span>Directory</a>
+        <a class="" href="https://docs.google.com/forms/d/1hEkPUBEMCOZFyZ3EYLbbbI5ylkaB8a7IHGabxthQjhY/viewform" target="_blank" rel="noopener noreferrer"><span class="ic">➕</span>Submit</a>
+      </div>
+    </nav>
+  
 </body>
 </html>
