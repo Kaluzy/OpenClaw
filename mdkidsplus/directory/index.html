@@ -1,0 +1,749 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MyKidsPlus — Directory</title>
+<style>
+:root{
+  --bg1:#fff7ed; /* warm */
+  --bg2:#ecfeff; /* light aqua */
+  --card:#ffffff;
+  --ink:#0b1220;
+  --muted:#475569;
+  --line:rgba(15,23,42,.10);
+  --shadow:0 12px 28px rgba(15,23,42,.10);
+  --radius:18px;
+  --accent:#fb7185; /* playful */
+  --accent2:#60a5fa;
+  --good:#16a34a;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  color:var(--ink);
+  background: radial-gradient(900px 550px at 10% 0%, rgba(251,113,133,.20), transparent 60%),
+              radial-gradient(900px 550px at 90% 10%, rgba(96,165,250,.18), transparent 55%),
+              linear-gradient(180deg, var(--bg1), var(--bg2));
+}
+.wrap{max-width:1100px;margin:0 auto;padding:22px 16px 42px;}
+.mast{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:12px;}
+.title{font-size:30px;font-weight:950;letter-spacing:-.03em;line-height:1.05;}
+.tag{color:var(--muted);font-size:14px;line-height:1.35;max-width:72ch}
+.pill{display:inline-block;padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.7);font-weight:800}
+
+.nav{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 14px;}
+.nav a{display:inline-block;padding:8px 10px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.72);text-decoration:none;font-weight:900;color:var(--ink)}
+.nav a:hover{transform:translateY(-1px)}
+.nav a.primary{border-color:rgba(251,113,133,.25);background:rgba(251,113,133,.12)}
+@media(max-width:520px){.nav{gap:8px}.nav a{padding:8px 9px;font-size:13px}}
+.grid{display:grid;grid-template-columns:1.2fr .8fr;gap:14px;}
+@media(max-width:960px){.grid{grid-template-columns:1fr;}}
+.card{background:rgba(255,255,255,.86);backdrop-filter: blur(6px); border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px;}
+.card h2{margin:0 0 10px 0;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-block;padding:10px 12px;border-radius:14px;border:1px solid rgba(251,113,133,.25);background:rgba(251,113,133,.12);font-weight:900;color:var(--ink);text-decoration:none}
+.btn:hover{filter:saturate(1.05);transform:translateY(-1px)}
+.btn.secondary{border-color:var(--line);background:rgba(255,255,255,.65)}
+.kpis{display:flex;gap:10px;flex-wrap:wrap}
+.kpi{border:1px solid var(--line);border-radius:14px;padding:10px 12px;background:rgba(255,255,255,.75);font-weight:950}
+small{color:var(--muted);font-weight:700}
+.item{padding:10px;border:1px solid var(--line);border-radius:14px;background:#fff}
+.item + .item{margin-top:10px}
+.item a{color:inherit;text-decoration:none;font-weight:900}
+.item a:hover{text-decoration:underline}
+.sub{color:var(--muted);font-size:13px;line-height:1.35;margin-top:4px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.chip{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:2px 8px;background:rgba(96,165,250,.10)}
+.foot{margin-top:12px;color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="mast">
+      <div>
+        <div class="title">Directory</div>
+        <div class="tag">A starter list of kid-friendly providers (classes, camps, museums, studios). We’ll expand + add filters as we validate demand.</div>
+      </div>
+      <div class="pill"><a href="../" style="color:inherit;text-decoration:none">Home</a></div>
+    </div>
+
+    
+    <div class="nav" role="navigation" aria-label="Primary">
+      <a class="" href="../">Home</a>
+      <a class="" href="../latest/">Weekend Picks</a>
+      <a class="primary" href="../directory/">Directory</a>
+      <a class="" href="../camps/">Camps</a>
+      <a class="" href="../sponsors/">Sponsors</a>
+      <a class="" href="../about/">About</a>
+      <a class="" href="https://docs.google.com/forms/d/e/1FAIpQLSecSfnHglEpIyuPu8HXPJidvUcyjavdCmk-L23KnuCVxazTtQ/viewform" target="_blank" rel="noopener noreferrer">Newsletter</a>
+    </div>
+  
+
+    
+      <div class="card" style="margin-bottom:14px">
+        <h2>Bethesda</h2>
+        
+        <div class="item">
+          <div><a href="https://kid-museum.org/" target="_blank" rel="noopener noreferrer">Kid Museum</a></div>
+          <div class="sub">STEM museum &amp; programs · Bethesda</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/kidmuseummd/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Hands-on STEM for kids (often ages ~0–10); school-year programs + summer camps</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+        <div class="item">
+          <div><a href="https://imaginationstage.org/" target="_blank" rel="noopener noreferrer">Imagination Stage</a></div>
+          <div class="sub">Theater/arts education · Bethesda</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/imaginationstage/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Classes &amp; camps (typically ages 1–18); year-round + summer</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+        <div class="item">
+          <div><a href="https://www.roundhousetheatre.org/" target="_blank" rel="noopener noreferrer">Round House Theatre</a></div>
+          <div class="sub">Theater education · Bethesda</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/roundhousetheatre/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Youth classes/camps; seasonal</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+        <div class="item">
+          <div><a href="https://www.ymcadc.org/locations/bethesda-chevy-chase-ymca/" target="_blank" rel="noopener noreferrer">Bethesda-Chevy Chase YMCA</a></div>
+          <div class="sub">YMCA camps &amp; sports · Bethesda</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/ymcadc/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Youth sports, swim lessons, camps; year-round + summer</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+        <div class="item">
+          <div><a href="https://bethesdadance.com/" target="_blank" rel="noopener noreferrer">Bethesda Conservatory of Dance</a></div>
+          <div class="sub">Dance studio · Bethesda</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/bethesdadance/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Dance classes (preschool–teen); camps/summer</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+        <div class="item">
+          <div><a href="https://www.codeninjas.com/md-bethesda" target="_blank" rel="noopener noreferrer">Code Ninjas Bethesda</a></div>
+          <div class="sub">Coding classes &amp; camps · Bethesda</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/codeninjasbethesda/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Coding for kids; camps + year-round</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+        <div class="item">
+          <div><a href="https://www.bethesdasoccer.org/" target="_blank" rel="noopener noreferrer">Bethesda Soccer Club</a></div>
+          <div class="sub">Youth sports club · Bethesda</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/bethesdasoccerclub/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Youth soccer programs; seasonal</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+        <div class="item">
+          <div><a href="https://www.thelittlegym.com/bethesda-md/" target="_blank" rel="noopener noreferrer">The Little Gym of Bethesda</a></div>
+          <div class="sub">Gymnastics/fitness classes · Bethesda</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/thelittlegymbethesda/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Parent/child–elementary classes; camps/parties</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+      </div>
+    
+      <div class="card" style="margin-bottom:14px">
+        <h2>Chevy Chase</h2>
+        
+        <div class="item">
+          <div><a href="https://natureforward.org/" target="_blank" rel="noopener noreferrer">Nature Forward (Audubon Naturalist Society)</a></div>
+          <div class="sub">Nature center programs &amp; camps · Chevy Chase</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/natureforwarddc/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Nature camps &amp; family programs; seasonal</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+      </div>
+    
+      <div class="card" style="margin-bottom:14px">
+        <h2>Gaithersburg</h2>
+        
+        <div class="item">
+          <div><a href="https://www.washingtoncapitalgymnastics.com/" target="_blank" rel="noopener noreferrer">Washington Capital Gymnastics</a></div>
+          <div class="sub">Gymnastics classes/camps · Gaithersburg</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/washingtoncapitalgymnastics/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Gymnastics camps + classes; year-round</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+      </div>
+    
+      <div class="card" style="margin-bottom:14px">
+        <h2>Glen Echo</h2>
+        
+        <div class="item">
+          <div><a href="https://www.adventuretheatre-mtc.org/" target="_blank" rel="noopener noreferrer">Adventure Theatre MTC</a></div>
+          <div class="sub">Children’s theater &amp; classes · Glen Echo</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/adventuretheatremtc/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Kids’ performances + drama camps (elementary–middle school); summer + school-year</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+        <div class="item">
+          <div><a href="https://glenechopark.org/" target="_blank" rel="noopener noreferrer">Glen Echo Park Partnership for Arts &amp; Culture</a></div>
+          <div class="sub">Arts classes/camps/venues · Glen Echo</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/glenechopark/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Arts classes for kids/teens; summer camps + seasonal events</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+        <div class="item">
+          <div><a href="https://www.washingtonconservatory.org/" target="_blank" rel="noopener noreferrer">Washington Conservatory of Music</a></div>
+          <div class="sub">Music lessons &amp; camps · Glen Echo</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/washingtonconservatory/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Music instruction for kids–adults; camps/workshops</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+      </div>
+    
+      <div class="card" style="margin-bottom:14px">
+        <h2>North Bethesda</h2>
+        
+        <div class="item">
+          <div><a href="https://www.strathmore.org/education/" target="_blank" rel="noopener noreferrer">The Music Center at Strathmore</a></div>
+          <div class="sub">Music education/programs · North Bethesda</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/strathmorearts/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Kids concerts, classes; seasonal + summer programming</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+      </div>
+    
+      <div class="card" style="margin-bottom:14px">
+        <h2>Potomac</h2>
+        
+        <div class="item">
+          <div><a href="https://www.glenstone.org/" target="_blank" rel="noopener noreferrer">Glenstone Museum</a></div>
+          <div class="sub">Arts museum (family programs) · Potomac</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/glenstone_museum/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Museum in Potomac; periodic family/education programs</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+      </div>
+    
+      <div class="card" style="margin-bottom:14px">
+        <h2>Rockville</h2>
+        
+        <div class="item">
+          <div><a href="https://www.visarts.org/" target="_blank" rel="noopener noreferrer">VisArts</a></div>
+          <div class="sub">Visual arts center &amp; classes · Rockville</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/visartscenter/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Art classes + camps for kids/teens; year-round + summer</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+        <div class="item">
+          <div><a href="https://www.benderjccgw.org/" target="_blank" rel="noopener noreferrer">Bender JCC of Greater Washington</a></div>
+          <div class="sub">JCC camps &amp; enrichment · Rockville</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/benderjccgw/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Day camps + swim/sports/arts; preschool–teen; summer + breaks</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+        <div class="item">
+          <div><a href="https://www.rockvillemd.gov/158/Recreation-Parks" target="_blank" rel="noopener noreferrer">City of Rockville Recreation &amp; Parks</a></div>
+          <div class="sub">City recreation programs/camps · Rockville</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/rockvillecity/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Camps + classes + aquatics; seasonal</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+        <div class="item">
+          <div><a href="https://www.codeninjas.com/md-rockville" target="_blank" rel="noopener noreferrer">Code Ninjas Rockville</a></div>
+          <div class="sub">Coding classes &amp; camps · Rockville</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/codeninjasrockville/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Coding for kids (typically 5–14); camps + year-round</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+        <div class="item">
+          <div><a href="https://www.mygym.com/rockville" target="_blank" rel="noopener noreferrer">My Gym Rockville</a></div>
+          <div class="sub">Kids fitness/gym classes · Rockville</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/mygymrockville/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Ages usually 6 weeks–10 years; camps/parties</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+        <div class="item">
+          <div><a href="https://www.rockvilleicearena.com/" target="_blank" rel="noopener noreferrer">Rockville Ice Arena</a></div>
+          <div class="sub">Ice skating &amp; hockey · Rockville</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/rockvilleicearena/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Skating lessons, hockey programs; year-round</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+      </div>
+    
+      <div class="card" style="margin-bottom:14px">
+        <h2>Rockville (MoCo)</h2>
+        
+        <div class="item">
+          <div><a href="https://www.montgomerysoccer.org/" target="_blank" rel="noopener noreferrer">Montgomery Soccer Inc (MSI)</a></div>
+          <div class="sub">Youth sports league · Rockville (MoCo)</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/montgomerysoccerinc/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Rec soccer; seasonal</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+      </div>
+    
+      <div class="card" style="margin-bottom:14px">
+        <h2>Silver Spring</h2>
+        
+        <div class="item">
+          <div><a href="https://www.mdyouthballet.org/" target="_blank" rel="noopener noreferrer">Maryland Youth Ballet</a></div>
+          <div class="sub">Ballet school · Silver Spring</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/marylandyouthballet/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Youth ballet training + camps; year-round</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+      </div>
+    
+      <div class="card" style="margin-bottom:14px">
+        <h2>Various (MoCo)</h2>
+        
+        <div class="item">
+          <div><a href="https://www.montgomerycountymd.gov/rec/" target="_blank" rel="noopener noreferrer">Montgomery County Recreation</a></div>
+          <div class="sub">County recreation camps/programs (sports/arts) · Various (MoCo)</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/mocorec/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Large catalog of youth programs &amp; camps; seasonal</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+      </div>
+    
+      <div class="card" style="margin-bottom:14px">
+        <h2>Washington DC</h2>
+        
+        <div class="item">
+          <div><a href="https://dpr.dc.gov/" target="_blank" rel="noopener noreferrer">DC Department of Parks and Recreation</a></div>
+          <div class="sub">City recreation camps/programs · Washington DC</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/dcparksandrec/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Sports, aquatics, summer camps; seasonal</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+        <div class="item">
+          <div><a href="https://www.ymcadc.org/locations/anthony-bowen-ymca/" target="_blank" rel="noopener noreferrer">YMCA Anthony Bowen (DC)</a></div>
+          <div class="sub">YMCA camps &amp; programs · Washington DC</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/ymcadc/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Youth programs + camps; year-round</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+        <div class="item">
+          <div><a href="https://www.levinemusic.org/" target="_blank" rel="noopener noreferrer">Levine Music</a></div>
+          <div class="sub">Music school (lessons/camps) · Washington DC</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/levinemusic/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Multiple campuses; youth music classes + summer</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+        <div class="item">
+          <div><a href="https://nationalzoo.si.edu/" target="_blank" rel="noopener noreferrer">Smithsonian National Zoo</a></div>
+          <div class="sub">Animal education &amp; camps · Washington DC</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/nationalzoo/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Camps/classes (often summer); family programs</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+        <div class="item">
+          <div><a href="https://airandspace.si.edu/" target="_blank" rel="noopener noreferrer">Smithsonian National Air and Space Museum</a></div>
+          <div class="sub">Museum education/programs · Washington DC</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/airandspace/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Youth/family programs; occasional camps</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+        <div class="item">
+          <div><a href="https://naturalhistory.si.edu/" target="_blank" rel="noopener noreferrer">Smithsonian National Museum of Natural History</a></div>
+          <div class="sub">Museum education/programs · Washington DC</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/natural_history_museum/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Family programs; occasional camps/school-break</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+        <div class="item">
+          <div><a href="https://americanhistory.si.edu/" target="_blank" rel="noopener noreferrer">Smithsonian National Museum of American History</a></div>
+          <div class="sub">Museum education/programs · Washington DC</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/amhistorymuseum/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Family programs; seasonal</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+        <div class="item">
+          <div><a href="https://hirshhorn.si.edu/" target="_blank" rel="noopener noreferrer">Smithsonian Hirshhorn Museum</a></div>
+          <div class="sub">Art museum programs · Washington DC</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/hirshhorn/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Family days &amp; teen programs; seasonal</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+        <div class="item">
+          <div><a href="https://www.kennedy-center.org/education/" target="_blank" rel="noopener noreferrer">The Kennedy Center Education</a></div>
+          <div class="sub">Performing arts education · Washington DC</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/kennedycenter/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Workshops, family shows; seasonal</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+        <div class="item">
+          <div><a href="https://www.arenastage.org/education/" target="_blank" rel="noopener noreferrer">Arena Stage</a></div>
+          <div class="sub">Theater education · Washington DC</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/arenastage/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Youth classes/camps; seasonal</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+        <div class="item">
+          <div><a href="https://www.shakespearetheatre.org/education/" target="_blank" rel="noopener noreferrer">Shakespeare Theatre Company Education</a></div>
+          <div class="sub">Theater education · Washington DC</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/shakespearetheatre/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Student/youth programs; camps/workshops</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+        <div class="item">
+          <div><a href="https://www.studiotheatre.org/education/" target="_blank" rel="noopener noreferrer">Studio Theatre Education</a></div>
+          <div class="sub">Theater classes · Washington DC</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/studiotheatre/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Teen/adult acting classes; youth offerings vary by season</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+        <div class="item">
+          <div><a href="https://www.chaw.org/" target="_blank" rel="noopener noreferrer">Capitol Hill Arts Workshop (CHAW)</a></div>
+          <div class="sub">Arts classes &amp; camps · Washington DC</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/chawdc/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Visual/performing arts for youth; camps + year-round</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+        <div class="item">
+          <div><a href="https://www.hillcenterdc.org/" target="_blank" rel="noopener noreferrer">Hill Center at the Old Naval Hospital</a></div>
+          <div class="sub">Arts/community classes · Washington DC</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/hillcenterdc/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Community education incl. youth arts; seasonal</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+        <div class="item">
+          <div><a href="https://www.nps.gov/rocr/planyourvisit/naturecenter.htm" target="_blank" rel="noopener noreferrer">Rock Creek Park Nature Center</a></div>
+          <div class="sub">Nature programs · Washington DC</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/rockcreeknps/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Junior ranger, nature programs; seasonal</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+        <div class="item">
+          <div><a href="https://www.nbm.org/" target="_blank" rel="noopener noreferrer">National Building Museum</a></div>
+          <div class="sub">Kids programs &amp; camps · Washington DC</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/nationalbuildingmuseum/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Hands-on building/design programs; camps often summer</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+        <div class="item">
+          <div><a href="https://www.spymuseum.org/" target="_blank" rel="noopener noreferrer">International Spy Museum</a></div>
+          <div class="sub">Museum education/camps · Washington DC</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/spymuseum/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Youth/family programs; occasional camps</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+        <div class="item">
+          <div><a href="https://www.phillipscollection.org/" target="_blank" rel="noopener noreferrer">The Phillips Collection</a></div>
+          <div class="sub">Art museum programs · Washington DC</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/phillipscollection/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Family workshops; seasonal</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+        <div class="item">
+          <div><a href="https://www.nga.gov/" target="_blank" rel="noopener noreferrer">National Gallery of Art</a></div>
+          <div class="sub">Art museum programs · Washington DC</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/nationalgalleryofart/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Family programs; seasonal</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+        <div class="item">
+          <div><a href="https://nationalchildrensmuseum.org/" target="_blank" rel="noopener noreferrer">National Children’s Museum</a></div>
+          <div class="sub">Kids museum programs · Washington DC</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/nationalchildrensmuseum/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Play-based learning (toddlers–elementary); camps/events</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+        <div class="item">
+          <div><a href="https://www.washingtonballet.org/school/" target="_blank" rel="noopener noreferrer">The Washington Ballet (The Washington School of Ballet)</a></div>
+          <div class="sub">Dance school/camps · Washington DC</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/washingtonballet/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Dance classes + intensives; school-year + summer</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+        <div class="item">
+          <div><a href="https://www.joyofmotion.org/" target="_blank" rel="noopener noreferrer">Joy of Motion Dance Center</a></div>
+          <div class="sub">Dance classes &amp; camps · Washington DC</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/joyofmotiondance/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Dance for kids–adults; camps + year-round</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+        <div class="item">
+          <div><a href="https://citydance.net/" target="_blank" rel="noopener noreferrer">CityDance (CityDance Conservatory)</a></div>
+          <div class="sub">Dance education · Washington DC</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/citydance/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Dance classes/camps; seasonal</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+        <div class="item">
+          <div><a href="https://washingtondc.madscience.org/" target="_blank" rel="noopener noreferrer">Mad Science of Washington DC</a></div>
+          <div class="sub">Science camps &amp; enrichment · Washington DC</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/madscience/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Science enrichment + camps; year-round + summer</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+        <div class="item">
+          <div><a href="https://www.stoddertsoccer.org/" target="_blank" rel="noopener noreferrer">Stoddert Soccer</a></div>
+          <div class="sub">Youth soccer league · Washington DC</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/stoddertsoccer/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">DC youth soccer; seasonal</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+      </div>
+    
+      <div class="card" style="margin-bottom:14px">
+        <h2>Washington DC area</h2>
+        
+        <div class="item">
+          <div><a href="https://baroodycamps.com/" target="_blank" rel="noopener noreferrer">Baroody Camps</a></div>
+          <div class="sub">Sports day camps · Washington DC area</div>
+          <div class="chips">
+            <a class="chip" href="https://www.instagram.com/baroodycamps/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            
+            <span class="chip" title="Coming soon">Reviews</span>
+          </div>
+          <div class="sub">Sports camps (often ages 4–14); summer</div>
+          <div class="sub">Reviews coming soon: ⭐ rating + 1 short comment (email magic-link; no passwords).</div>
+        </div>
+      
+      </div>
+    
+
+    <div class="foot">Want to be listed or featured? (Coming soon.)</div>
+  </div>
+</body>
+</html>
