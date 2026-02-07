@@ -1,0 +1,55 @@
+{
+  "brand": {
+    "name": "Kaluzy Music",
+    "tagline": "Groove-first. Albums + playlists."
+  },
+  "albums": [
+    {
+      "id": "placeholder-amapiano-vol1",
+      "title": "Amapiano / Afro-Deep House — Vol. 1",
+      "year": "2026",
+      "cover": null,
+      "tracks": [
+        {
+          "id": "t1",
+          "title": "(placeholder) Night Drive Groove",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": null,
+          "genre": "amapiano"
+        },
+        {
+          "id": "t2",
+          "title": "(placeholder) Soft Life Loop",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": null,
+          "genre": "amapiano"
+        }
+      ]
+    },
+    {
+      "id": "placeholder-afrobeats-vol1",
+      "title": "Afro-Fusion / Afrobeats — Vol. 1",
+      "year": "2026",
+      "cover": null,
+      "tracks": [
+        {
+          "id": "t3",
+          "title": "(placeholder) Joy Bounce",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": null,
+          "genre": "afrobeats"
+        }
+      ]
+    }
+  ],
+  "featuredPlaylists": [
+    {
+      "id": "p1",
+      "title": "Starter Mix (placeholders)",
+      "trackRefs": ["t1", "t3"]
+    }
+  ]
+}
