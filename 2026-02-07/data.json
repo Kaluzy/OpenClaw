@@ -1,26 +1,46 @@
 {
   "dateLocal": "2026-02-07",
-  "generatedAt": "2026-02-07T16:56:16.587Z",
+  "generatedAt": "2026-02-07T20:53:56.134Z",
   "hn": [
     {
-      "title": "British drivers over 70 to face eye tests every three years",
-      "url": "https://www.bbc.com/news/articles/c205nxy0p31o",
+      "title": "Microsoft Account bugs locked me out of Notepad – are Thin Clients ruining PCs?",
+      "url": "https://www.windowscentral.com/microsoft/windows-11/windows-locked-me-out-of-notepad-is-the-thin-client-era-ruining-pcs",
       "why": "Worth a skim — potential trend / tactic to steal."
     },
     {
-      "title": "Leisure Suit Larry's Al Lowe on model trains, funny deaths and Disney",
+      "title": "Brookhaven Lab's RHIC Concludes 25-Year Run with Final Collisions",
+      "url": "https://www.hpcwire.com/off-the-wire/brookhaven-labs-rhic-concludes-25-year-run-with-final-collisions/",
+      "why": "Worth a skim — potential trend / tactic to steal."
+    },
+    {
+      "title": "We Mourn Our Craft",
+      "url": "https://nolanlawson.com/2026/02/07/we-mourn-our-craft/",
+      "why": "Worth a skim — potential trend / tactic to steal."
+    },
+    {
+      "title": "Show HN: I saw this cool navigation reveal, so I made a simple HTML+CSS version",
+      "url": "https://github.com/Momciloo/fun-with-clip-path",
+      "why": "Worth a skim — potential trend / tactic to steal."
+    },
+    {
+      "title": "I Write Games in C (yes, C)",
+      "url": "https://jonathanwhiting.com/writing/blog/games_in_c/",
+      "why": "Worth a skim — potential trend / tactic to steal."
+    },
+    {
+      "title": "SectorC: A C Compiler in 512 bytes",
+      "url": "https://xorvoid.com/sectorc.html",
+      "why": "Worth a skim — potential trend / tactic to steal."
+    },
+    {
+      "title": "U.S. Jobs Disappear at Fastest January Pace Since Great Recession",
+      "url": "https://www.forbes.com/sites/mikestunson/2026/02/05/us-jobs-disappear-at-fastest-january-pace-since-great-recession/",
+      "why": "Worth a skim — potential trend / tactic to steal."
+    },
+    {
+      "title": "Al Lowe on model trains, funny deaths and working with Disney",
       "url": "https://spillhistorie.no/2026/02/06/interview-with-sierra-veteran-al-lowe/",
       "why": "Worth a skim — potential trend / tactic to steal."
-    },
-    {
-      "title": "First Proof",
-      "url": "https://arxiv.org/abs/2602.05192",
-      "why": "Worth a skim — potential trend / tactic to steal."
-    },
-    {
-      "title": "Software Factories and the Agentic Moment",
-      "url": "https://factory.strongdm.ai/",
-      "why": "AI/agent signal — workflow + tooling shift."
     },
     {
       "title": "Stories from 25 Years of Software Development",
@@ -31,26 +51,6 @@
       "title": "France's homegrown open source online office suite",
       "url": "https://github.com/suitenumerique",
       "why": "Security signal — may affect patching or controls."
-    },
-    {
-      "title": "Coding agents have replaced every framework I used",
-      "url": "https://blog.alaindichiappari.dev/p/software-engineering-is-back",
-      "why": "AI/agent signal — workflow + tooling shift."
-    },
-    {
-      "title": "Reinforcement Learning from Human Feedback",
-      "url": "https://arxiv.org/abs/2504.12501",
-      "why": "Security signal — may affect patching or controls."
-    },
-    {
-      "title": "Hoot: Scheme on WebAssembly",
-      "url": "https://www.spritely.institute/hoot/",
-      "why": "Worth a skim — potential trend / tactic to steal."
-    },
-    {
-      "title": "Vocal Guide – belt sing without killing yourself",
-      "url": "https://jesperordrup.github.io/vocal-guide/",
-      "why": "Worth a skim — potential trend / tactic to steal."
     }
   ],
   "github": {
@@ -61,7 +61,7 @@
         {
           "name": "gavrielc/nanoclaw",
           "url": "https://github.com/gavrielc/nanoclaw",
-          "stars": 5968,
+          "stars": 6022,
           "description": "A lightweight alternative to Clawdbot / OpenClaw that runs in Apple containers for security. Connects to WhatsApp, has memory, scheduled jobs, and runs directly on Anthropic's Agents SDK",
           "topics": [],
           "take": "Agent/LLM tooling — could change your workflow speed."
@@ -69,7 +69,7 @@
         {
           "name": "BlockRunAI/ClawRouter",
           "url": "https://github.com/BlockRunAI/ClawRouter",
-          "stars": 1437,
+          "stars": 1495,
           "description": "Smart LLM router — save 78% on inference costs. 30+ models, one wallet, x402 micropayments.",
           "topics": [
             "ai",
@@ -93,7 +93,7 @@
         {
           "name": "anthropics/claudes-c-compiler",
           "url": "https://github.com/anthropics/claudes-c-compiler",
-          "stars": 1365,
+          "stars": 1416,
           "description": "Claude Opus 4.6 wrote a dependency-free C compiler in Rust, with backends targeting x86 (64- and 32-bit), ARM, and RISC-V, capable of compiling a booting Linux kernel.",
           "topics": [],
           "take": "Worth a skim — could be a useful building block."
@@ -101,7 +101,7 @@
         {
           "name": "antonpk1/excalidraw-mcp-app",
           "url": "https://github.com/antonpk1/excalidraw-mcp-app",
-          "stars": 767,
+          "stars": 820,
           "description": "Excalidraw MCP App Server — hand-drawn diagrams for Claude",
           "topics": [],
           "take": "Agent/LLM tooling — could change your workflow speed."
@@ -111,7 +111,7 @@
         {
           "name": "sheeki03/tirith",
           "url": "https://github.com/sheeki03/tirith",
-          "stars": 1521,
+          "stars": 1527,
           "description": "Your browser catches homograph attacks. Your terminal doesn't. Tirith guards the gate — intercepts suspicious URLs, ANSI injection, and pipe-to-shell attacks before they execute.",
           "topics": [
             "cli",
@@ -132,7 +132,7 @@
         {
           "name": "justlovemaki/OpenClaw-Docker-CN-IM",
           "url": "https://github.com/justlovemaki/OpenClaw-Docker-CN-IM",
-          "stars": 1058,
+          "stars": 1068,
           "description": "OpenClaw 的中国IM平台整合Docker版本，预装并配置了飞书、钉钉、QQ机器人、企业微信等主流中国IM软件的插件，让您可以快速部署一个支持多个中国IM平台的 AI 机器人网关",
           "topics": [],
           "take": "Infra/ops tooling — potential reliability + cost leverage."
@@ -142,7 +142,7 @@
         {
           "name": "HKUDS/nanobot",
           "url": "https://github.com/HKUDS/nanobot",
-          "stars": 12067,
+          "stars": 12217,
           "description": "\"🐈 nanobot: The Ultra-Lightweight Clawdbot\"",
           "topics": [],
           "take": "Worth a skim — could be a useful building block."
@@ -150,7 +150,7 @@
         {
           "name": "zai-org/GLM-OCR",
           "url": "https://github.com/zai-org/GLM-OCR",
-          "stars": 710,
+          "stars": 721,
           "description": "GLM-OCR: Accurate ×  Fast × Comprehensive",
           "topics": [
             "glm",
@@ -162,7 +162,7 @@
         {
           "name": "foru17/clash-master",
           "url": "https://github.com/foru17/clash-master",
-          "stars": 649,
+          "stars": 670,
           "description": "A modern and elegant dashboard for visualizing and managing Clash network traffic.",
           "topics": [
             "clash",
