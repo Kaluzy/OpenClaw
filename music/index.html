@@ -6,16 +6,16 @@
   <title>Kaluzy Music</title>
   <style>
     :root{
-      --bg:#070a12;
-      --panel:#0e1424;
-      --panel2:#0b1020;
-      --text:#e5e7eb;
-      --muted:#9ca3af;
-      --line:rgba(255,255,255,.10);
+      --bg:#0b0b0f;
+      --panel:#121218;
+      --panel2:#17171f;
+      --text:#e8e8ee;
+      --muted:#a1a1b3;
+      --line:rgba(255,255,255,.08);
       --shadow:0 18px 60px rgba(0,0,0,.55);
-      --radius:18px;
-      --accent:#22c55e;
-      --accent2:#60a5fa;
+      --radius:14px;
+      --green:#1db954;
+      --green2:#22c55e;
       --danger:#fb7185;
       --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
     }
@@ -25,112 +25,157 @@
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       color:var(--text);
       background:
-        radial-gradient(900px 550px at 15% 0%, rgba(34,197,94,.10), transparent 60%),
-        radial-gradient(900px 550px at 85% 10%, rgba(96,165,250,.10), transparent 55%),
+        radial-gradient(1200px 700px at 20% 0%, rgba(29,185,84,.10), transparent 55%),
+        radial-gradient(900px 550px at 95% 10%, rgba(96,165,250,.08), transparent 55%),
         var(--bg);
     }
-    .wrap{max-width:1200px;margin:0 auto;padding:22px 16px 110px;}
-    .top{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;margin-bottom:14px;}
-    .title{font-size:28px;font-weight:950;letter-spacing:-.03em;line-height:1.05}
-    .tag{color:var(--muted);font-size:14px;line-height:1.35;max-width:72ch}
-    .pill{display:inline-block;padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.06);font-weight:800}
 
-    .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:14px;}
-    @media(max-width:980px){.grid{grid-template-columns:1fr;}}
-
-    .card{background:linear-gradient(180deg, rgba(255,255,255,.03), transparent 60%), var(--panel);
-      border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px;}
-    .card h2{margin:0 0 10px 0;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
-
-    .row{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
-    .btn{display:inline-block;padding:10px 12px;border-radius:14px;border:1px solid rgba(96,165,250,.25);background:rgba(96,165,250,.10);font-weight:900;color:var(--text);text-decoration:none}
-    .btn:hover{transform:translateY(-1px)}
-    .btn.green{border-color:rgba(34,197,94,.25);background:rgba(34,197,94,.10)}
-
-    .list{display:flex;flex-direction:column;gap:10px}
-    .item{padding:10px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,.02), transparent 60%), var(--panel2)}
-    .item .name{font-weight:950}
-    .sub{color:var(--muted);font-size:13px;line-height:1.35;margin-top:4px}
-    .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
-    .chip{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:2px 8px;background:rgba(255,255,255,.06);color:var(--text);text-decoration:none}
-
-    .track{display:grid;grid-template-columns:36px 1fr auto;gap:10px;align-items:center;padding:10px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.03)}
-    .play{width:36px;height:36px;border-radius:12px;border:1px solid var(--line);background:rgba(34,197,94,.12);color:var(--text);font-weight:950;cursor:pointer}
-    .play:disabled{opacity:.45;cursor:not-allowed}
-    .meta{display:flex;gap:10px;align-items:center;justify-content:flex-end;color:var(--muted);font-size:12px}
-
-    .player{
-      position:fixed;left:0;right:0;bottom:0;
-      background:rgba(7,10,18,.88);
-      backdrop-filter: blur(10px);
-      border-top:1px solid var(--line);
-      padding:12px 14px;
+    /* Layout */
+    .app{height:100vh;display:grid;grid-template-rows:1fr auto;}
+    .top{display:grid;grid-template-columns:280px 1fr;gap:12px;padding:12px;height:calc(100vh - 92px);} 
+    @media(max-width:980px){
+      .top{grid-template-columns:1fr; height:calc(100vh - 108px);} 
     }
-    .player-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center}
-    @media(max-width:900px){.player-inner{grid-template-columns:1fr;}}
+
+    .sidebar{background:linear-gradient(180deg, rgba(255,255,255,.03), transparent 60%), var(--panel);
+      border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:12px;overflow:auto;}
+
+    .main{background:linear-gradient(180deg, rgba(255,255,255,.03), transparent 60%), var(--panel);
+      border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:auto;}
+
+    .mainHeader{padding:16px 16px 10px;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(18,18,24,.92);backdrop-filter:blur(10px);z-index:5;}
+
+    .brand{font-weight:950;letter-spacing:-.02em;font-size:18px;}
+    .tag{color:var(--muted);font-size:13px;margin-top:4px;}
+
+    .nav{display:flex;flex-direction:column;gap:6px;margin-top:10px;}
+    .nav a{display:flex;gap:10px;align-items:center;padding:10px 10px;border-radius:12px;color:var(--text);text-decoration:none;font-weight:850;}
+    .nav a:hover{background:rgba(255,255,255,.06)}
+    .nav a.active{background:rgba(29,185,84,.12);border:1px solid rgba(29,185,84,.22)}
+
+    .sectionTitle{margin:14px 0 8px;color:var(--muted);font-size:12px;letter-spacing:.14em;text-transform:uppercase;}
+
+    .pill{display:inline-block;border:1px solid var(--line);background:rgba(255,255,255,.05);padding:2px 8px;border-radius:999px;font-size:12px;color:var(--muted)}
+
+    /* Cards */
+    .grid{display:grid;grid-template-columns:repeat(5, minmax(0, 1fr));gap:12px;padding:16px;}
+    @media(max-width:1200px){.grid{grid-template-columns:repeat(4,1fr);}}
+    @media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:520px){.grid{grid-template-columns:1fr;}}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.03), transparent 55%), var(--panel2);
+      border:1px solid var(--line);border-radius:16px;padding:12px;cursor:pointer;transition:transform .12s ease, background .12s ease;}
+    .card:hover{transform:translateY(-2px);background:rgba(255,255,255,.06)}
+    .cover{width:100%;aspect-ratio:1/1;border-radius:14px;background:radial-gradient(600px 400px at 30% 0%, rgba(29,185,84,.22), transparent 60%), rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.08);display:flex;align-items:flex-end;justify-content:flex-start;padding:10px;}
+    .cover .badge{font-family:var(--mono);font-size:12px;color:rgba(255,255,255,.75)}
+    .cardTitle{margin-top:10px;font-weight:950;line-height:1.2}
+    .cardSub{margin-top:4px;color:var(--muted);font-size:13px;line-height:1.35}
+
+    /* Tracklist */
+    .trackWrap{padding:16px;}
+    .albumHeader{display:flex;gap:14px;align-items:flex-end;margin-bottom:14px;}
+    .albumArt{width:120px;height:120px;border-radius:18px;background:radial-gradient(700px 400px at 30% 0%, rgba(96,165,250,.18), transparent 60%), rgba(255,255,255,.06);
+      border:1px solid var(--line);}
+    .albumMeta{flex:1}
+    .albumName{font-size:26px;font-weight:950;letter-spacing:-.03em;line-height:1.05}
+    .albumSub{margin-top:6px;color:var(--muted);font-size:13px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+
+    .tracks{display:flex;flex-direction:column;gap:6px}
+    .track{display:grid;grid-template-columns:40px 1fr auto;gap:10px;align-items:center;padding:10px 10px;border-radius:12px;border:1px solid transparent;}
+    .track:hover{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.06)}
+    .tbtn{width:36px;height:36px;border-radius:12px;border:1px solid rgba(255,255,255,.10);background:rgba(29,185,84,.14);color:var(--text);font-weight:950;cursor:pointer}
+    .tbtn:disabled{opacity:.45;cursor:not-allowed;background:rgba(255,255,255,.04)}
+    .tname{font-weight:900}
+    .tmeta{color:var(--muted);font-size:12px;margin-top:3px}
+    .tadd{border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.04);color:var(--text);border-radius:999px;padding:6px 10px;font-weight:850;cursor:pointer}
+    .tadd:hover{background:rgba(255,255,255,.07)}
+
+    /* Player */
+    .player{border-top:1px solid var(--line);background:rgba(11,11,15,.88);backdrop-filter:blur(10px);padding:12px 14px;}
+    .playerInner{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;}
+    @media(max-width:980px){.playerInner{grid-template-columns:1fr;gap:10px}}
 
     .now{display:flex;flex-direction:column;gap:2px}
     .now .t{font-weight:950}
+    .now .s{color:var(--muted);font-size:12px}
+
     .controls{display:flex;gap:10px;justify-content:center;align-items:center}
-    .ctrl{padding:10px 12px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.06);color:var(--text);font-weight:950;cursor:pointer}
-    .ctrl.primary{border-color:rgba(34,197,94,.30);background:rgba(34,197,94,.12)}
+    .ctrl{padding:10px 12px;border-radius:14px;border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.05);color:var(--text);font-weight:950;cursor:pointer}
+    .ctrl.primary{border-color:rgba(29,185,84,.30);background:rgba(29,185,84,.16)}
 
     .right{display:flex;gap:10px;align-items:center;justify-content:flex-end;color:var(--muted);font-size:12px}
     .range{width:100%}
     .small{font-family:var(--mono);font-size:12px}
 
-    .toast{position:fixed;top:12px;right:12px;background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:14px;padding:10px 12px;color:var(--text);display:none;max-width:320px}
+    .toast{position:fixed;top:12px;right:12px;background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:14px;padding:10px 12px;color:var(--text);display:none;max-width:320px;z-index:50}
   </style>
 </head>
 <body>
-  <div class="wrap">
+  <div class="app">
     <div class="top">
-      <div>
-        <div class="title" id="brandName">Kaluzy Music</div>
-        <div class="tag" id="brandTag">A private-ish library for your Suno tracks. Albums + playlists, with a simple player.</div>
-      </div>
-      <div class="pill">public link · v0</div>
-    </div>
+      <aside class="sidebar">
+        <div class="brand" id="brandName">Kaluzy Music</div>
+        <div class="tag" id="brandTag">Albums + playlists with a simple player.</div>
 
-    <div class="grid">
-      <div class="card">
-        <h2>Albums</h2>
-        <div class="list" id="albums"></div>
-      </div>
-
-      <div class="card">
-        <div class="row">
-          <h2 style="margin:0">Playlists</h2>
-          <button class="btn green" id="newPlaylist">+ New playlist</button>
+        <div class="nav">
+          <a href="#" class="active" id="navLibrary">Library</a>
+          <a href="#" id="navPlaylists">Playlists</a>
         </div>
-        <div class="sub">Playlists are saved in your browser (localStorage) for now — no accounts yet.</div>
-        <div style="height:10px"></div>
-        <div class="list" id="playlists"></div>
-      </div>
 
-      <div class="card" style="grid-column:1 / -1">
-        <h2>How to add real audio later</h2>
-        <div class="sub">When you’re ready, you’ll upload MP3s into Google Drive (organized by album). We’ll generate direct links and update <span class="small">library.json</span>. The UI is already built for it.</div>
-      </div>
-    </div>
-  </div>
+        <div class="sectionTitle">Your playlists</div>
+        <div id="playlistList"></div>
+        <div class="tag" style="margin-top:10px">Playlists are saved in your browser for now (no accounts yet).</div>
 
-  <div class="player">
-    <div class="player-inner">
-      <div class="now">
-        <div class="t" id="nowTitle">Nothing playing</div>
-        <div class="sub" id="nowArtist">Pick a track</div>
-      </div>
-      <div class="controls">
-        <button class="ctrl" id="prev">Prev</button>
-        <button class="ctrl primary" id="playPause">Play</button>
-        <button class="ctrl" id="next">Next</button>
-      </div>
-      <div class="right">
-        <span class="small" id="time">00:00 / 00:00</span>
-        <input class="range" id="seek" type="range" min="0" max="100" value="0" />
-      </div>
+        <div class="sectionTitle">Actions</div>
+        <button class="ctrl primary" id="newPlaylist" style="width:100%">+ New playlist</button>
+        <div class="tag" style="margin-top:10px">
+          Real audio will be added via Google Drive later. This is the UI foundation.
+        </div>
+      </aside>
+
+      <main class="main">
+        <div class="mainHeader">
+          <div class="brand" id="viewTitle">Library</div>
+          <div class="tag" id="viewSubtitle">Pick an album to see tracks.</div>
+        </div>
+
+        <div id="libraryView">
+          <div class="grid" id="albums"></div>
+        </div>
+
+        <div id="albumView" style="display:none">
+          <div class="trackWrap">
+            <div class="albumHeader">
+              <div class="albumArt" id="albumArt"></div>
+              <div class="albumMeta">
+                <div class="albumName" id="albumName">Album</div>
+                <div class="albumSub" id="albumSub"></div>
+              </div>
+            </div>
+            <div class="tracks" id="tracks"></div>
+          </div>
+        </div>
+      </main>
     </div>
+
+    <footer class="player">
+      <div class="playerInner">
+        <div class="now">
+          <div class="t" id="nowTitle">Nothing playing</div>
+          <div class="s" id="nowArtist">Pick a track</div>
+        </div>
+        <div class="controls">
+          <button class="ctrl" id="prev">Prev</button>
+          <button class="ctrl primary" id="playPause">Play</button>
+          <button class="ctrl" id="next">Next</button>
+        </div>
+        <div class="right">
+          <span class="small" id="time">00:00 / 00:00</span>
+          <input class="range" id="seek" type="range" min="0" max="100" value="0" />
+        </div>
+      </div>
+    </footer>
   </div>
 
   <div class="toast" id="toast"></div>
@@ -142,7 +187,7 @@
       const t = $('toast');
       t.textContent = msg;
       t.style.display = 'block';
-      setTimeout(()=>t.style.display='none', 2500);
+      setTimeout(()=>t.style.display='none', 2200);
     };
 
     const fmt = (sec) => {
@@ -153,14 +198,14 @@
       return `${m}:${s}`;
     };
 
-    const LS_KEY = 'kaluzy_music_playlists_v0';
+    const LS_KEY = 'kaluzy_music_playlists_v1';
+    const audio = $('audio');
 
     let library;
     let allTracks = new Map();
+    let currentAlbum = null;
     let queue = [];
     let idx = -1;
-
-    const audio = $('audio');
 
     function getUserPlaylists(){
       try{ return JSON.parse(localStorage.getItem(LS_KEY) || '[]'); } catch { return []; }
@@ -176,114 +221,117 @@
       }
     }
 
-    function renderAlbums(){
-      const root = $('albums');
+    function renderPlaylistList(){
+      const root = $('playlistList');
       root.innerHTML = '';
-
-      for (const album of library.albums){
-        const wrap = document.createElement('div');
-        wrap.className = 'item';
-
-        const header = document.createElement('div');
-        header.innerHTML = `<div class="name">${album.title}</div><div class="sub">${album.year || ''}</div>`;
-        wrap.appendChild(header);
-
-        const tracksEl = document.createElement('div');
-        tracksEl.style.marginTop = '10px';
-        tracksEl.style.display = 'flex';
-        tracksEl.style.flexDirection = 'column';
-        tracksEl.style.gap = '10px';
-
-        album.tracks.forEach((t, i) => {
-          const row = document.createElement('div');
-          row.className = 'track';
-          const playable = !!t.src;
-          row.innerHTML = `
-            <button class="play" ${playable ? '' : 'disabled'}>${playable ? '▶' : '—'}</button>
-            <div>
-              <div style="font-weight:950">${t.title}</div>
-              <div class="sub">${t.artist || ''} ${t.genre ? '· ' + t.genre : ''}</div>
-            </div>
-            <div class="meta">
-              <button class="chip" data-add="${t.id}">+ Playlist</button>
-            </div>
-          `;
-
-          row.querySelector('.play').addEventListener('click', () => {
-            queue = album.tracks;
-            idx = i;
-            playCurrent();
-          });
-
-          row.querySelector('[data-add]')?.addEventListener('click', () => addToPlaylistFlow(t.id));
-
-          tracksEl.appendChild(row);
+      const pls = getUserPlaylists();
+      if (!pls.length){
+        const div = document.createElement('div');
+        div.className = 'tag';
+        div.textContent = 'No playlists yet.';
+        root.appendChild(div);
+        return;
+      }
+      for (const p of pls){
+        const a = document.createElement('a');
+        a.href = '#';
+        a.className = 'navlink';
+        a.style.display = 'block';
+        a.style.padding = '10px 10px';
+        a.style.borderRadius = '12px';
+        a.style.color = 'var(--text)';
+        a.style.textDecoration = 'none';
+        a.style.fontWeight = '850';
+        a.style.border = '1px solid rgba(255,255,255,.08)';
+        a.style.background = 'rgba(255,255,255,.04)';
+        a.style.marginTop = '8px';
+        a.textContent = p.title;
+        a.addEventListener('click', (e)=>{
+          e.preventDefault();
+          const ids = p.trackRefs || [];
+          queue = ids.map(id => allTracks.get(id)).filter(Boolean);
+          idx = 0;
+          $('viewTitle').textContent = 'Playlist';
+          $('viewSubtitle').textContent = p.title;
+          showAlbumView(null, true);
+          renderTrackList(queue, p.title);
+          playCurrent();
         });
-
-        wrap.appendChild(tracksEl);
-        root.appendChild(wrap);
+        root.appendChild(a);
       }
     }
 
-    function renderPlaylists(){
-      const root = $('playlists');
+    function renderAlbums(){
+      const root = $('albums');
       root.innerHTML = '';
-
-      const featured = library.featuredPlaylists || [];
-      const user = getUserPlaylists();
-
-      const section = (title, items, kind) => {
-        const box = document.createElement('div');
-        box.className = 'item';
-        box.innerHTML = `<div class="name">${title}</div>`;
-        const list = document.createElement('div');
-        list.className = 'chips';
-        list.style.marginTop = '10px';
-
-        if (!items.length) {
-          const s = document.createElement('div');
-          s.className = 'sub';
-          s.textContent = 'None yet.';
-          box.appendChild(s);
-        } else {
-          for (const p of items){
-            const btn = document.createElement('a');
-            btn.href = '#';
-            btn.className = 'chip';
-            btn.textContent = p.title;
-            btn.addEventListener('click', (e)=>{
-              e.preventDefault();
-              const ids = p.trackRefs || [];
-              queue = ids.map(id => allTracks.get(id)).filter(Boolean);
-              idx = 0;
-              playCurrent();
-            });
-            list.appendChild(btn);
-          }
-          box.appendChild(list);
-        }
-
-        if (kind==='user' && user.length){
-          const del = document.createElement('div');
-          del.className = 'sub';
-          del.style.marginTop = '10px';
-          del.textContent = 'Tip: playlists live in this browser only (for now).';
-          box.appendChild(del);
-        }
-
-        return box;
+      for (const album of library.albums){
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <div class="cover"><span class="badge">${album.year || ''}</span></div>
+          <div class="cardTitle">${album.title}</div>
+          <div class="cardSub">${album.tracks.length} tracks</div>
+        `;
+        card.addEventListener('click', ()=>{
+          currentAlbum = album;
+          $('viewTitle').textContent = 'Album';
+          $('viewSubtitle').textContent = album.title;
+          showAlbumView(album);
+        });
+        root.appendChild(card);
       }
+    }
 
-      root.appendChild(section('Featured', featured, 'featured'));
-      root.appendChild(section('Your playlists', user, 'user'));
+    function showAlbumView(album, keepAlbumView=false){
+      $('libraryView').style.display = keepAlbumView ? 'none' : 'none';
+      $('albumView').style.display = 'block';
+      if (!album) {
+        $('albumName').textContent = 'Playlist';
+        $('albumSub').innerHTML = `<span class="pill">local</span>`;
+        return;
+      }
+      $('albumName').textContent = album.title;
+      const chips = [album.year && `<span class="pill">${album.year}</span>`].filter(Boolean).join(' ');
+      $('albumSub').innerHTML = chips;
+      renderTrackList(album.tracks, album.title);
+    }
+
+    function showLibrary(){
+      $('libraryView').style.display = 'block';
+      $('albumView').style.display = 'none';
+      $('viewTitle').textContent = 'Library';
+      $('viewSubtitle').textContent = 'Pick an album to see tracks.';
+    }
+
+    function renderTrackList(tracks, label){
+      const root = $('tracks');
+      root.innerHTML = '';
+      tracks.forEach((t, i)=>{
+        const playable = !!t.src;
+        const row = document.createElement('div');
+        row.className = 'track';
+        row.innerHTML = `
+          <button class="tbtn" ${playable ? '' : 'disabled'}>${playable ? '▶' : '—'}</button>
+          <div>
+            <div class="tname">${t.title}</div>
+            <div class="tmeta">${t.artist || ''}${t.genre ? ' · ' + t.genre : ''}</div>
+          </div>
+          <button class="tadd" title="Add to playlist">+ Playlist</button>
+        `;
+
+        row.querySelector('.tbtn').addEventListener('click', ()=>{
+          queue = tracks;
+          idx = i;
+          playCurrent();
+        });
+        row.querySelector('.tadd').addEventListener('click', ()=> addToPlaylistFlow(t.id));
+        root.appendChild(row);
+      });
     }
 
     function addToPlaylistFlow(trackId){
       const user = getUserPlaylists();
-      if (!user.length){
-        toast('Create a playlist first (right panel).');
-        return;
-      }
+      if (!user.length){ toast('Create a playlist first (sidebar).'); return; }
       const names = user.map((p,i)=> `${i+1}) ${p.title}`).join('\n');
       const choice = prompt(`Add to which playlist?\n${names}\n\nType a number:`);
       const n = Number(choice);
@@ -291,7 +339,7 @@
       const p = user[n-1];
       p.trackRefs = Array.from(new Set([...(p.trackRefs||[]), trackId]));
       setUserPlaylists(user);
-      renderPlaylists();
+      renderPlaylistList();
       toast(`Added to: ${p.title}`);
     }
 
@@ -326,41 +374,40 @@
         $('playPause').textContent = 'Play';
       }
     });
-
-    $('next').addEventListener('click', () => {
+    $('next').addEventListener('click', ()=>{
       if (!queue.length) return;
-      idx = (idx + 1) % queue.length;
+      idx = (idx+1) % queue.length;
+      playCurrent();
+    });
+    $('prev').addEventListener('click', ()=>{
+      if (!queue.length) return;
+      idx = (idx-1+queue.length) % queue.length;
       playCurrent();
     });
 
-    $('prev').addEventListener('click', () => {
-      if (!queue.length) return;
-      idx = (idx - 1 + queue.length) % queue.length;
-      playCurrent();
-    });
-
-    audio.addEventListener('timeupdate', () => {
+    audio.addEventListener('timeupdate', ()=>{
       $('time').textContent = `${fmt(audio.currentTime)} / ${fmt(audio.duration)}`;
       if (isFinite(audio.duration) && audio.duration > 0){
         $('seek').value = String(Math.floor((audio.currentTime / audio.duration) * 100));
       }
     });
-
-    $('seek').addEventListener('input', (e) => {
+    $('seek').addEventListener('input', (e)=>{
       if (!isFinite(audio.duration) || audio.duration <= 0) return;
       const pct = Number(e.target.value) / 100;
       audio.currentTime = pct * audio.duration;
     });
 
-    $('newPlaylist').addEventListener('click', () => {
+    $('newPlaylist').addEventListener('click', ()=>{
       const name = prompt('Playlist name:');
       if (!name) return;
       const user = getUserPlaylists();
       user.push({ id: 'u' + Date.now(), title: name, trackRefs: [] });
       setUserPlaylists(user);
-      renderPlaylists();
+      renderPlaylistList();
       toast('Playlist created.');
     });
+
+    $('navLibrary').addEventListener('click', (e)=>{ e.preventDefault(); showLibrary(); });
 
     async function main(){
       const res = await fetch('./library.json');
@@ -369,12 +416,10 @@
       $('brandTag').textContent = library.brand?.tagline || '';
       rebuildAllTracks();
       renderAlbums();
-      renderPlaylists();
+      renderPlaylistList();
+      showLibrary();
     }
-    main().catch(e => {
-      console.error(e);
-      toast('Failed to load library.json');
-    });
+    main().catch((e)=>{ console.error(e); toast('Failed to load library.json'); });
   </script>
 </body>
 </html>
