@@ -1,0 +1,80 @@
+<!doctype html><html><head><meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Stella — Status</title>
+<style>:root{--bg:#0b1220;--card:#0f172a;--ink:#e5e7eb;--mut:#9ca3af;--line:rgba(148,163,184,.18);--acc:#fb7185;}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(1200px 600px at 10% -10%, rgba(251,113,133,.18), transparent 60%), var(--bg);color:var(--ink);font:14px/1.55 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+a{color:inherit} .wrap{max-width:980px;margin:0 auto;padding:22px}
+.h1{font-size:22px;font-weight:950;letter-spacing:-.02em}
+.sub{color:var(--mut);margin-top:4px}
+.grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:14px}
+@media(min-width:900px){.grid{grid-template-columns:1fr 1fr}}
+.card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));border:1px solid var(--line);border-radius:16px;padding:14px 14px 12px}
+.k{display:flex;gap:8px;align-items:center;margin-bottom:8px}
+.badge{font-size:12px;font-weight:900;padding:3px 8px;border-radius:999px;border:1px solid rgba(251,113,133,.35);background:rgba(251,113,133,.12)}
+.small{font-size:12px;color:var(--mut)}
+.ul{margin:0;padding-left:18px} .ul li{margin:4px 0}
+.hr{height:1px;background:var(--line);margin:10px 0}
+.pillrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.pill{display:inline-block;padding:7px 10px;border-radius:999px;border:1px solid var(--line);text-decoration:none;background:rgba(255,255,255,.03);font-weight:850}
+.pill:hover{border-color:rgba(251,113,133,.35)}
+pre{white-space:pre-wrap;background:rgba(0,0,0,.22);border:1px solid var(--line);padding:10px;border-radius:12px;color:#d1d5db}
+</style>
+</head><body><div class="wrap">
+  <div class="h1">Stella — Project Status</div>
+  <div class="sub">Generated: 2/7/2026, 3:50:20 PM · Source-of-truth: repo files (no Notion required)</div>
+
+  <div class="pillrow">
+    <a class="pill" href="https://Kaluzy.github.io/Stella/latest/" target="_blank" rel="noopener noreferrer">Morning Brief →</a>
+    <a class="pill" href="https://Kaluzy.github.io/Stella/watchtower/latest/" target="_blank" rel="noopener noreferrer">WatchTower →</a>
+    <a class="pill" href="https://Kaluzy.github.io/Stella/mdkidsplus/" target="_blank" rel="noopener noreferrer">MyKidsPlus →</a>
+  </div>
+
+  <div class="grid">
+    <div class="card"><div class="k"><span class="badge">Morning Brief (TODO)</span></div><ul class="ul"><li>Add 1–2 line descriptions under each item (HN/GitHub/Security/WatchTower)</li><li>Make cards more newspaper-like (serif headlines + tighter grid)</li><li>Add a short &quot;What changed since yesterday&quot; strip</li><li>Replace blocked sources (PH/YC) with reliable alternatives or official APIs</li><li>Add Microsoft ops card (M365 service health / Windows release health)</li><li>Telegram message: include 3–5 one-line highlights + link (done)</li><li>Optional Notion archive page creation</li></ul></div>
+    <div class="card"><div class="k"><span class="badge">WatchTower (TODO)</span></div><ul class="ul"><li>Meaningful-change detection (less noise)</li><li>Ignore obvious dynamic text (cookie banners, timestamps)</li><li>Focus diff on key terms (price symbols, plan names, per-seat, per-endpoint)</li><li>Extract pricing table text when possible</li><li>Writeup quality</li><li>Make “what changed” more specific (quote the changed snippet)</li><li>Add “risk / buyer objection” bullet</li></ul></div>
+    <div class="card"><div class="k"><span class="badge">MyKidsPlus (Phase 0 Done)</span></div><ul class="ul"><li>Public web hub live (GitHub Pages)</li><li>Directory seeded (50 providers)</li><li>Weekend Picks live at /latest and archived at /weekend/YYYY-MM-DD</li><li>Submission intake live (Suggest a Spot / Submit an Event)</li><li>Feedback loop live (Quick Vote)</li><li>Newsletter signup live (Google Form)</li><li>Sponsors page + sponsor intake form live</li></ul><div class="hr"></div><div class="small">Next: sponsor kit + directory search/filters + camps tracker.</div></div>
+    <div class="card"><div class="k"><span class="badge">ShowRate (Spec highlights)</span></div><ul class="ul"><li>Workflow A (Outbound Reminders)</li><li>Workflow B (Inbound SMS Handler)</li><li>Quiet hours 23:00 → 06:00</li></ul></div>
+  </div>
+
+  <div class="card" style="margin-top:12px">
+    <div class="k"><span class="badge">Repo snapshot</span><span class="small">(PROJECTS.md excerpt)</span></div>
+    <pre># Projects (Stella)
+
+## Morning Brief (Stella dashboard)
+- Live: https://Kaluzy.github.io/Stella/latest/
+- Code/Generator: `~/.openclaw/workspace/morning-brief-v0/`
+- Publisher: `~/.openclaw/workspace/morning-brief-v0/scripts/publish-simple.sh`
+
+### Status
+- Publishing to `Kaluzy/Stella` (`gh-pages`) ✅
+- Dark mode dashboard ✅
+- Security Pulse (MSRC/CISA/SANS + KEV) ✅
+- WatchTower Pulse (competitive/RevOps feed items) ✅
+- Telegram delivery: link + 2 actions ✅
+- Telegram delivery: 3–5 one-line highlights ✅
+- **TODO:** add 1–2 line descriptions under each item on the website (HN/GitHub/Security/WatchTower) ⏳
+
+## WatchTower Pulse (prototype)
+- Live: https://Kaluzy.github.io/Stella/watchtower/latest/
+- Code/Config: `~/.openclaw/workspace/watchtower/`
+- Publisher into Stella Pages: `~/.openclaw/workspace/watchtower/scripts/publish-to-stella.sh`
+
+### Status
+- MSP-focused watchlist ✅
+- Daily publish cron (6:10am ET) ✅
+- Change detection via hash diff ✅
+- Links open in new tab ✅
+- **Writeup blocks** added (what changed/why it matters/talk track/marketing response) — will populate after baseline exists ✅
+- **TODO:** improve “meaningful change” detection (reduce false diffs)
+- **TODO:** store/compare specific page sections (pricing tables, plan names) instead of whole-page text
+
+## ShowRate System
+- Docs/Templates: `~/.openclaw/workspace/showrate/`
+- Status: foundational docs + Sheets schema + n8n spec done; implementation pending.
+
+## Memory / Search
+- OpenClaw already supports semantic recall via `memory_search` across `MEMORY.md` + `memory/*.md`.
+- **TODO:** add a short “how to use memory + project notes” section somewhere visible (README/PROJECTS).
+</pre>
+  </div>
+</div></body></html>
