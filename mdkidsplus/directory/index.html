@@ -81,6 +81,7 @@ small{color:var(--muted);font-weight:750}
 .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
 .chip{display:inline-flex;align-items:center;font-size:12px;border:1px solid var(--line2);border-radius:999px;padding:3px 9px;background:rgba(96,165,250,.10);text-decoration:none;color:inherit}
 .chip:hover{border-color:rgba(96,165,250,.25)}
+.chip.active{border-color:rgba(251,113,133,.28); background:rgba(251,113,133,.14)}
 .foot{margin-top:12px;color:var(--muted);font-size:13px;line-height:1.45}
 .footer{margin-top:14px;padding-top:12px;border-top:1px solid var(--line2);color:var(--muted);font-size:13px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
 .footer a{color:inherit;font-weight:900;text-decoration:none}
@@ -743,6 +744,20 @@ small{color:var(--muted);font-weight:750}
     </div>
 
     <div class="foot">Want to be listed or featured? Use <a href="https://docs.google.com/forms/d/1eAHIOFJq4MbHFnhz3wyEtLPxMSpy2tBuMLf3yj95h30/viewform" target="_blank" rel="noopener noreferrer">Suggest a spot</a>.</div>
+
+    
+    <div class="footer" role="contentinfo">
+      <span style="font-weight:950">MyKidsPlus</span>
+      <span>·</span>
+      <a href="../privacy/">Privacy</a>
+      <span>·</span>
+      <a href="../disclosure/">Sponsor disclosure</a>
+      <span>·</span>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSecSfnHglEpIyuPu8HXPJidvUcyjavdCmk-L23KnuCVxazTtQ/viewform" target="_blank" rel="noopener noreferrer">Newsletter</a>
+      <span>·</span>
+      <a href="https://docs.google.com/forms/d/1hEkPUBEMCOZFyZ3EYLbbbI5ylkaB8a7IHGabxthQjhY/viewform" target="_blank" rel="noopener noreferrer">Submit an event</a>
+    </div>
+  
   </div>
 
   <script>
@@ -751,6 +766,22 @@ small{color:var(--muted);font-weight:750}
       const clear = document.getElementById('clear');
       const count = document.getElementById('count');
       const items = Array.from(document.querySelectorAll('.item[data-hay]'));
+      const chips = Array.from(document.querySelectorAll('[data-chip]'));
+
+      function updateCityCards(){
+        // Hide entire city cards when all items inside are hidden.
+        document.querySelectorAll('#list .card').forEach(card=>{
+          const visible = Array.from(card.querySelectorAll('.item[data-hay]')).some(it => it.style.display !== 'none');
+          card.style.display = visible ? '' : 'none';
+        });
+      }
+
+      function setActiveChip(val){
+        chips.forEach(c=>{
+          const v = (c.getAttribute('data-chip')||'').toLowerCase();
+          c.classList.toggle('active', val && v === val);
+        });
+      }
 
       function apply(val){
         const v = (val||'').toLowerCase().trim();
@@ -762,12 +793,23 @@ small{color:var(--muted);font-weight:750}
           if (ok) shown++;
         }
         if (count) count.textContent = shown + ' results';
+        setActiveChip(v || '');
+        updateCityCards();
       }
 
       q && q.addEventListener('input', (e)=>apply(e.target.value));
       clear && clear.addEventListener('click', (e)=>{e.preventDefault(); if(q){q.value=''; q.focus();} apply('');});
-      document.querySelectorAll('[data-chip]').forEach(el=>{
-        el.addEventListener('click', (e)=>{e.preventDefault(); const v = el.getAttribute('data-chip')||''; if(q){q.value=v; q.focus();} apply(v);});
+
+      chips.forEach(el=>{
+        el.addEventListener('click', (e)=>{
+          e.preventDefault();
+          const v = (el.getAttribute('data-chip')||'').toLowerCase();
+          // Toggle: clicking active chip clears the filter.
+          const cur = (q?.value||'').toLowerCase().trim();
+          const next = (cur === v) ? '' : v;
+          if (q){ q.value = next; q.focus(); }
+          apply(next);
+        });
       });
 
       apply('');
