@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ops Dashboard</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <style>
+    :root{
+      --bg:#070b13;--card:#0b1220;--ink:#e5e7eb;--mut:#9ca3af;--line:rgba(148,163,184,.18);
+      --shadow:0 18px 60px rgba(0,0,0,.35);
+      --acc:#60a5fa;--acc2:#fb7185;--good:#34d399;--warn:#fbbf24;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:
+      radial-gradient(1200px 700px at 12% -10%, rgba(96,165,250,.12), transparent 60%),
+      radial-gradient(1200px 700px at 88% 10%, rgba(251,113,133,.10), transparent 55%),
+      var(--bg);
+      color:var(--ink);font:14px/1.6 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+    }
+    a{color:inherit}
+    .wrap{max-width:1060px;margin:0 auto;padding:24px}
+    .header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .brand{display:flex;gap:10px;align-items:center}
+    .mark{width:34px;height:34px;border-radius:12px;display:grid;place-items:center;font-weight:950;
+      background:linear-gradient(135deg, rgba(96,165,250,.26), rgba(251,113,133,.18));border:1px solid var(--line);
+      box-shadow:0 10px 30px rgba(0,0,0,.25)
+    }
+    .brandname{font-weight:950;letter-spacing:-.02em}
+    .sub{color:var(--mut);font-size:12px;margin-top:2px}
+
+    .grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:12px}
+    @media(min-width:980px){.grid{grid-template-columns:1.2fr .8fr}}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--line);border-radius:18px;padding:14px;box-shadow:var(--shadow)}
+    .k{font-weight:950;margin:0 0 8px;letter-spacing:-.02em}
+    .mut{color:var(--mut)}
+    .hr{height:1px;background:var(--line);margin:10px 0}
+
+    .pillrow{display:flex;flex-wrap:wrap;gap:10px}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:8px 11px;border-radius:999px;border:1px solid var(--line);
+      text-decoration:none;background:rgba(255,255,255,.03);font-weight:900}
+    .pill:hover{border-color:rgba(96,165,250,.5)}
+
+    .list{display:flex;flex-direction:column;gap:8px}
+    .row{display:flex;gap:10px;align-items:flex-start;justify-content:space-between;border:1px solid var(--line);
+      background:rgba(0,0,0,.18);border-radius:14px;padding:10px}
+    .left{min-width:0}
+    .name{font-weight:950}
+    .meta{color:var(--mut);font-size:12px;margin-top:2px}
+    .actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:flex-end}
+
+    button{
+      cursor:pointer;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      color:var(--ink);
+      font-weight:900;
+      padding:7px 10px;
+      border-radius:12px;
+    }
+    button:hover{border-color:rgba(96,165,250,.45)}
+    button.good{border-color:rgba(52,211,153,.35);background:rgba(52,211,153,.08)}
+    button.warn{border-color:rgba(251,191,36,.35);background:rgba(251,191,36,.07)}
+    button.bad{border-color:rgba(251,113,133,.35);background:rgba(251,113,133,.08)}
+
+    input[type="text"], input[type="password"]{
+      width:100%;
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.22);
+      color:var(--ink);
+      outline:none;
+    }
+
+    .login{max-width:520px;margin:60px auto 0}
+    .note{font-size:12px;color:var(--mut)}
+    .tiny{font-size:12px;color:var(--mut)}
+    .badge{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:950;
+      padding:5px 9px;border-radius:999px;border:1px solid rgba(251,191,36,.35);background:rgba(251,191,36,.10)
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <div class="brand">
+        <div class="mark">Ops</div>
+        <div>
+          <div class="brandname">Kaluzy — Ops Dashboard</div>
+          <div class="sub">Lightweight tracker (client-side). Don’t store secrets here.</div>
+        </div>
+      </div>
+      <div class="pillrow">
+        <a class="pill" href="../agency/" target="_blank" rel="noopener">Agency page →</a>
+        <a class="pill" href="../" target="_blank" rel="noopener">Root →</a>
+      </div>
+    </div>
+
+    <div id="locked" class="login card">
+      <div class="k">Enter password</div>
+      <div class="mut">This is a privacy curtain (static site). It keeps honest people honest.</div>
+      <div class="hr"></div>
+      <input id="pw" type="password" placeholder="Password" autocomplete="current-password" />
+      <div style="display:flex;gap:10px;align-items:center;margin-top:10px">
+        <button class="good" id="unlock">Unlock</button>
+        <span id="err" class="note"></span>
+      </div>
+      <div class="hr"></div>
+      <div class="note">Tip: your progress is saved to this browser (localStorage).</div>
+    </div>
+
+    <div id="app" style="display:none">
+      <div class="grid">
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap">
+            <div>
+              <div class="k" style="margin-bottom:2px">Today’s Send Set (8 emails)</div>
+              <div class="mut">Goal: send + mark status so follow-ups happen.</div>
+            </div>
+            <div class="badge">Next follow‑up: Day 3</div>
+          </div>
+          <div class="hr"></div>
+          <div id="sendList" class="list"></div>
+          <div class="hr"></div>
+          <div class="tiny">Copy lives in: <code>agency/outreach-today.personalized.md</code></div>
+        </div>
+
+        <div class="card">
+          <div class="k">Quick Links</div>
+          <div class="pillrow">
+            <a class="pill" href="../agency/" target="_blank" rel="noopener">Offer page</a>
+            <a class="pill" href="../agency/" target="_blank" rel="noopener">Proof link (same)</a>
+          </div>
+          <div class="hr"></div>
+
+          <div class="k" style="margin-top:0">Follow‑ups (manual)</div>
+          <div class="mut">Day 3: bump email. Day 5: bump + call block.</div>
+          <div class="hr"></div>
+
+          <div class="k" style="margin-top:0">Notes</div>
+          <input id="notes" type="text" placeholder="e.g., sent 8 emails, waiting for replies, schedule follow-ups" />
+          <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap">
+            <button class="good" id="save">Save</button>
+            <button class="warn" id="export">Export JSON</button>
+            <button class="bad" id="reset">Reset</button>
+          </div>
+          <div class="hr"></div>
+          <div class="note">This page is static. Real security later = domain + Cloudflare Access.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // SECURITY NOTE: This is NOT real security (static site). We store only a SHA-256 hash so the password isn’t plain text.
+    const PASS_SHA256 = "ba2472e7c2dd9c8cdf8b5d62bb02d5f85aff65d4cd4e6849d64a8da95a1c0437";
+    const KEY_UNLOCK = "ops_unlock";
+    const KEY_STATE  = "ops_state_v1";
+
+    const defaultState = {
+      notes: "",
+      send: [
+        { id:"godsw", name:"Gods Workers", city:"Waldorf, MD", vertical:"Plumbing", to:"godsworkers247@gmail.com", status:"TODO" },
+        { id:"hpc", name:"HPC Services", city:"Waldorf, MD", vertical:"HVAC", to:"office@hpcsvcs.com", status:"TODO" },
+        { id:"better", name:"A Better Plumber", city:"Waldorf, MD", vertical:"Plumbing", to:"abetterplumberforyou@verizon.net", status:"TODO" },
+        { id:"jw", name:"J&W Plumbing Services", city:"Waldorf, MD", vertical:"Plumbing", to:"jwplumbingsevice1@gmail.com", status:"TODO" },
+        { id:"brick", name:"Brick Street Plumbing & HVAC", city:"Frederick, MD", vertical:"Plumbing", to:"brickstreetplumbing@gmail.com", status:"TODO" },
+        { id:"warner", name:"Warner Service", city:"Frederick, MD", vertical:"HVAC/Plumbing", to:"josh.via@warnerservice.com", status:"TODO" },
+        { id:"waltz", name:"N.E. Bob Waltz", city:"Frederick, MD", vertical:"Plumbing/HVAC", to:"sales@nebobwaltz.com", status:"TODO" },
+        { id:"zo", name:"Zo Plumbing & Drain Cleaning", city:"Frederick, MD", vertical:"Plumbing", to:"info@zoplumbing.com", status:"TODO" },
+      ]
+    };
+
+    function loadState(){
+      try{
+        const raw = localStorage.getItem(KEY_STATE);
+        if(!raw) return structuredClone(defaultState);
+        const s = JSON.parse(raw);
+        return { ...structuredClone(defaultState), ...s };
+      }catch(e){
+        return structuredClone(defaultState);
+      }
+    }
+
+    function saveState(s){
+      localStorage.setItem(KEY_STATE, JSON.stringify(s));
+    }
+
+    function statusColor(st){
+      if(st==="SENT") return "good";
+      if(st==="REPLIED") return "warn";
+      if(st==="BOOKED") return "good";
+      if(st==="NO") return "bad";
+      return "";
+    }
+
+    function render(){
+      const s = loadState();
+      document.getElementById('notes').value = s.notes || "";
+
+      const el = document.getElementById('sendList');
+      el.innerHTML = "";
+
+      s.send.forEach(item => {
+        const row = document.createElement('div');
+        row.className = 'row';
+
+        const left = document.createElement('div');
+        left.className = 'left';
+        left.innerHTML = `<div class="name">${item.name}</div>` +
+          `<div class="meta">${item.city} • ${item.vertical}<br/>To: ${item.to} • Status: <b>${item.status}</b></div>`;
+
+        const actions = document.createElement('div');
+        actions.className = 'actions';
+
+        const mk = (label, next, cls='') => {
+          const b=document.createElement('button');
+          b.textContent=label;
+          b.className = cls;
+          b.onclick=()=>{
+            const s2=loadState();
+            const t=s2.send.find(x=>x.id===item.id);
+            if(t){ t.status=next; saveState(s2); render(); }
+          };
+          return b;
+        };
+
+        actions.appendChild(mk('Sent', 'SENT', 'good'));
+        actions.appendChild(mk('Replied', 'REPLIED', 'warn'));
+        actions.appendChild(mk('Booked', 'BOOKED', 'good'));
+        actions.appendChild(mk('No', 'NO', 'bad'));
+        actions.appendChild(mk('Reset', 'TODO', ''));
+
+        row.appendChild(left);
+        row.appendChild(actions);
+        el.appendChild(row);
+      });
+    }
+
+    async function sha256(str){
+      const enc = new TextEncoder().encode(str);
+      const buf = await crypto.subtle.digest('SHA-256', enc);
+      return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
+    }
+
+    async function unlock(){
+      const pw = document.getElementById('pw').value || "";
+      const h = await sha256(pw);
+      if(h === PASS_SHA256){
+        localStorage.setItem(KEY_UNLOCK, '1');
+        document.getElementById('locked').style.display='none';
+        document.getElementById('app').style.display='block';
+        render();
+      } else {
+        document.getElementById('err').textContent = 'Wrong password.';
+      }
+    }
+
+    document.getElementById('unlock').addEventListener('click', unlock);
+    document.getElementById('pw').addEventListener('keydown', (e)=>{ if(e.key==='Enter') unlock(); });
+
+    document.getElementById('save').addEventListener('click', ()=>{
+      const s = loadState();
+      s.notes = document.getElementById('notes').value || "";
+      saveState(s);
+    });
+
+    document.getElementById('export').addEventListener('click', ()=>{
+      const s = loadState();
+      const blob = new Blob([JSON.stringify(s,null,2)], {type:'application/json'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'ops-state.json';
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+
+    document.getElementById('reset').addEventListener('click', ()=>{
+      if(!confirm('Reset local ops state on this device?')) return;
+      localStorage.removeItem(KEY_STATE);
+      render();
+    });
+
+    // boot
+    if(localStorage.getItem(KEY_UNLOCK)==='1'){
+      document.getElementById('locked').style.display='none';
+      document.getElementById('app').style.display='block';
+      render();
+    }
+  </script>
+</body>
+</html>
