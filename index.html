@@ -4,22 +4,61 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Kaluzy</title>
-  <meta name="robots" content="noindex,nofollow" />
-  <meta http-equiv="refresh" content="0; url=/agency/" />
-  <script>
-    // Hard redirect to keep the root domain focused on the agency offer.
-    window.location.replace('/agency/');
-  </script>
+  <meta name="description" content="Local visibility + conversion installs for home service businesses in Maryland." />
   <style>
-    body{margin:0;font:15px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; padding:24px}
+    :root{--bg:#070b13;--card:#0b1220;--ink:#e5e7eb;--mut:#9ca3af;--line:rgba(148,163,184,.18);--shadow:0 18px 60px rgba(0,0,0,.35);--acc:#60a5fa;--acc2:#fb7185}
+    *{box-sizing:border-box}
+    body{margin:0;background:
+      radial-gradient(1200px 700px at 12% -10%, rgba(96,165,250,.14), transparent 60%),
+      radial-gradient(1200px 700px at 88% 10%, rgba(251,113,133,.12), transparent 55%),
+      var(--bg);
+      color:var(--ink);font:15px/1.65 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+    }
     a{color:inherit}
-    .mut{opacity:.75}
+    .wrap{max-width:920px;margin:0 auto;padding:28px}
+    .brand{display:flex;gap:10px;align-items:center}
+    .mark{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;font-weight:950;
+      background:linear-gradient(135deg, rgba(96,165,250,.28), rgba(251,113,133,.22));border:1px solid var(--line);
+      box-shadow:0 10px 30px rgba(0,0,0,.25)
+    }
+    .brandname{font-weight:980;letter-spacing:-.02em}
+    .sub{color:var(--mut);margin-top:2px;font-size:13px}
+    .card{margin-top:14px;background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:var(--shadow)}
+    .h1{font-size:34px;font-weight:980;letter-spacing:-.03em;margin:12px 0 0}
+    .mut{color:var(--mut)}
+    .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;border:1px solid rgba(96,165,250,.35);
+      text-decoration:none;background:linear-gradient(135deg, rgba(96,165,250,.18), rgba(96,165,250,.06));font-weight:950}
+    .pill:hover{border-color:rgba(96,165,250,.55)}
+    .pill2{border:1px solid var(--line);background:rgba(255,255,255,.03)}
+    .pill2:hover{border-color:rgba(251,113,133,.35)}
+    .fine{margin-top:12px;font-size:12px;color:var(--mut)}
+    code{background:rgba(0,0,0,.22);border:1px solid var(--line);padding:1px 6px;border-radius:8px}
   </style>
 </head>
 <body>
-  <div>
-    <div><b>Redirecting…</b></div>
-    <div class="mut" style="margin-top:6px">If you’re not redirected, open <a href="/agency/">/agency/</a>.</div>
+  <div class="wrap">
+    <div class="brand">
+      <div class="mark">K</div>
+      <div>
+        <div class="brandname">Kaluzy</div>
+        <div class="sub">Local visibility + conversion installs for home services (MD)</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="mut">Fixed-scope installs to help plumbing/HVAC (and similar home service businesses) win more calls from Google Maps and convert more quote requests.</div>
+      <div class="h1">7‑Day Local Lead Engine Install</div>
+      <div class="mut" style="margin-top:8px">Clear scope. Clear timeline. Before/after snapshot.</div>
+
+      <div class="actions">
+        <a class="pill" href="/agency/">View the offer →</a>
+        <a class="pill pill2" href="mailto:stella@kaluzy.com">Email: stella@kaluzy.com</a>
+      </div>
+
+      <div class="fine">If you’re looking for internal dashboards, use the direct links you were provided. (This homepage stays client‑facing.)</div>
+    </div>
   </div>
 </body>
 </html>
