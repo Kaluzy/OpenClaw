@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kaluzy — Dashboards & Tools</title>
+  <meta name="description" content="Kaluzy’s live dashboards and product prototypes (Morning Brief, Agency, WatchTower, MyKidsPlus, Status)." />
+  <style>
+    :root{
+      --bg:#070b13;--card:#0b1220;--ink:#e5e7eb;--mut:#9ca3af;--line:rgba(148,163,184,.18);
+      --shadow:0 18px 60px rgba(0,0,0,.35);
+      --acc:#fb7185;--acc2:#60a5fa;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:
+      radial-gradient(1200px 700px at 12% -10%, rgba(96,165,250,.14), transparent 60%),
+      radial-gradient(1200px 700px at 88% 10%, rgba(251,113,133,.12), transparent 55%),
+      var(--bg);
+      color:var(--ink);font:15px/1.65 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+    }
+    a{color:inherit}
+    .wrap{max-width:1020px;margin:0 auto;padding:28px}
+    .header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .brand{display:flex;gap:10px;align-items:center}
+    .mark{width:36px;height:36px;border-radius:12px;display:grid;place-items:center;font-weight:950;
+      background:linear-gradient(135deg, rgba(96,165,250,.28), rgba(251,113,133,.22));border:1px solid var(--line);
+      box-shadow:0 10px 30px rgba(0,0,0,.25)
+    }
+    .brandname{font-weight:950;letter-spacing:-.02em}
+    .sub{color:var(--mut);margin-top:2px;font-size:13px}
+
+    .grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:14px}
+    @media(min-width:960px){.grid{grid-template-columns:1fr 1fr}}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:var(--shadow)}
+    .k{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 6px}
+    .title{font-weight:980;letter-spacing:-.02em}
+    .tag{font-size:12px;font-weight:900;padding:4px 10px;border-radius:999px;border:1px solid rgba(96,165,250,.3);background:rgba(96,165,250,.10);color:var(--ink)}
+    .mut{color:var(--mut)}
+    .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:9px 12px;border-radius:999px;border:1px solid var(--line);
+      text-decoration:none;background:rgba(255,255,255,.03);font-weight:900}
+    .pill:hover{border-color:rgba(251,113,133,.35)}
+
+    .footer{margin-top:14px;color:var(--mut);font-size:12px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <div class="brand">
+        <div class="mark">K</div>
+        <div>
+          <div class="brandname">Kaluzy</div>
+          <div class="sub">Live dashboards & product prototypes</div>
+        </div>
+      </div>
+      <div class="mut" style="max-width:58ch">This is the landing hub for everything published to GitHub Pages.</div>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="k"><div class="title">Agency — 7‑Day Local Lead Engine Install</div><div class="tag">$500 install</div></div>
+        <div class="mut">Install-first offer page for plumbing/HVAC and home services (MD).</div>
+        <div class="actions">
+          <a class="pill" href="./agency/">Open →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="k"><div class="title">Morning Brief</div><div class="tag">daily</div></div>
+        <div class="mut">Newspaper-style dashboard (latest + dated archives).</div>
+        <div class="actions">
+          <a class="pill" href="./latest/">Latest →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="k"><div class="title">WatchTower Pulse</div><div class="tag">monitor</div></div>
+        <div class="mut">Competitive/pricing monitoring prototype.</div>
+        <div class="actions">
+          <a class="pill" href="./watchtower/latest/">Latest →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="k"><div class="title">MyKidsPlus</div><div class="tag">directory</div></div>
+        <div class="mut">Weekend picks + directory + camps + sponsors.</div>
+        <div class="actions">
+          <a class="pill" href="./mdkidsplus/">Open →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="k"><div class="title">Status</div><div class="tag">ops</div></div>
+        <div class="mut">Repo-backed status page (high-level snapshot).</div>
+        <div class="actions">
+          <a class="pill" href="./status/">Open →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="k"><div class="title">Contact</div><div class="tag">email</div></div>
+        <div class="mut">For now: reply to the outreach email from Kaluzy.</div>
+      </div>
+    </div>
+
+    <div class="footer">Hosted on GitHub Pages. Some pages may take a minute to propagate after updates.</div>
+  </div>
+</body>
+</html>
