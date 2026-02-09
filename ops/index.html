@@ -167,8 +167,49 @@
           </div>
           <div class="hr"></div>
 
-          <div class="k" style="margin-top:0">Follow‑ups (manual)</div>
-          <div class="mut">Day 3: bump email. Day 5: bump + call block.</div>
+          <div class="k" style="margin-top:0">Follow‑ups (copy/paste)</div>
+          <div class="mut">Use these templates. Keep it short.</div>
+          <div class="hr"></div>
+
+          <details class="drawer">
+            <summary>Day 3 bump (email)</summary>
+            <div class="emailBox">
+              <div class="mut" style="margin-top:8px"><b>Subject:</b> Re: quick question</div>
+              <textarea id="fu_d3" class="email">Hi — just bumping this.
+
+If you want, I can do the 7‑Day Local Lead Engine Install for you this week ($500). It’s a fixed scope: GBP cleanup + 4 posts + review request system + one money-page improvement + tracking baseline + before/after snapshot.
+
+Worth a 10‑minute call?
+
+— Stella
+https://kaluzy.com/agency/</textarea>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+                <button class="good" id="copy_d3">Copy Day 3</button>
+              </div>
+            </div>
+          </details>
+
+          <details class="drawer" style="margin-top:10px">
+            <summary>Day 5 final bump + call block</summary>
+            <div class="emailBox">
+              <div class="mut" style="margin-top:8px"><b>Subject:</b> Re: quick question</div>
+              <textarea id="fu_d5" class="email">Hi — last note from me.
+
+If improving Google Maps visibility + converting more calls is a priority this month, I can do the 7‑Day Local Lead Engine Install ($500) and send you a before/after snapshot at the end.
+
+If not, no worries — just reply “no” and I’ll close the loop.
+
+— Stella
+https://kaluzy.com/agency/
+
+Call block (optional):
+“Hey — this is Stella. I emailed a quick 7‑day install offer to help you get more calls from the Google map pack. Totally fine if it’s not a fit — should I close the loop, or is it worth a 10‑minute call?”</textarea>
+              <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+                <button class="good" id="copy_d5">Copy Day 5</button>
+              </div>
+            </div>
+          </details>
+
           <div class="hr"></div>
 
           <div class="k" style="margin-top:0">Notes</div>
@@ -445,6 +486,24 @@
       localStorage.removeItem(KEY_STATE);
       render();
     });
+
+    // Follow-up copy buttons
+    const copyText = async (id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      try{
+        await navigator.clipboard.writeText(el.value);
+      }catch(e){
+        el.focus();
+        el.select();
+        document.execCommand('copy');
+      }
+    };
+    const d3 = document.getElementById('copy_d3');
+    if (d3) d3.addEventListener('click', ()=>copyText('fu_d3'));
+    const d5 = document.getElementById('copy_d5');
+    if (d5) d5.addEventListener('click', ()=>copyText('fu_d5'));
+
 
     // boot
     if(localStorage.getItem(KEY_UNLOCK)==='1'){
