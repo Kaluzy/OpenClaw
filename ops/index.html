@@ -47,6 +47,20 @@
     .list{display:flex;flex-direction:column;gap:8px}
     .row{display:flex;gap:10px;align-items:flex-start;justify-content:space-between;border:1px solid var(--line);
       background:rgba(0,0,0,.18);border-radius:14px;padding:10px}
+
+    /* email drawer */
+    details.drawer{border:1px solid var(--line);border-radius:14px;background:rgba(0,0,0,.12);padding:10px}
+    details.drawer summary{cursor:pointer;font-weight:950}
+    .emailBox{margin-top:10px}
+    textarea.email{
+      width:100%;min-height:220px;resize:vertical;
+      padding:10px 12px;border-radius:14px;border:1px solid var(--line);
+      background:rgba(0,0,0,.22);color:var(--ink);outline:none;
+      font:13px/1.45 ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+      white-space:pre;
+    }
+    .strategy{font-size:13px;color:var(--mut)}
+    .strategy b{color:var(--ink)}
     .left{min-width:0}
     .name{font-weight:950}
     .meta{color:var(--mut);font-size:12px;margin-top:2px}
@@ -123,10 +137,26 @@
             </div>
             <div class="badge">Next follow‑up: Day 3</div>
           </div>
+
           <div class="hr"></div>
+
+          <details class="drawer">
+            <summary>Send strategy (Day 1 → Day 3 → Day 5)</summary>
+            <div class="emailBox strategy">
+              <div><b>Day 1:</b> send 8 personalized emails (one-by-one, no BCC). Log each as <b>SENT</b>.</div>
+              <div style="margin-top:6px"><b>Day 3:</b> short bump ("just bumping this") + ask for 10-min call.</div>
+              <div style="margin-top:6px"><b>Day 5:</b> final bump + call block (if you can). Keep it polite.</div>
+              <div style="margin-top:8px">Offer link: <a href="https://kaluzy.com/agency/" target="_blank" rel="noopener">https://kaluzy.com/agency/</a></div>
+              <div style="margin-top:6px">Sender: <b>stella@kaluzy.com</b> • Signature name: <b>Stella</b></div>
+            </div>
+          </details>
+
+          <div class="hr"></div>
+
           <div id="sendList" class="list"></div>
+
           <div class="hr"></div>
-          <div class="tiny">Copy lives in: <code>agency/outreach-today.personalized.sig-noprice.md</code></div>
+          <div class="tiny">Source file: <code>agency/outreach-today.personalized.sig-noprice.md</code></div>
         </div>
 
         <div class="card">
@@ -160,6 +190,41 @@
     const PASS_SHA256 = "ba2472e7c2dd9c8cdf8b5d62bb02d5f85aff65d4cd4e6849d64a8da95a1c0437";
     const KEY_UNLOCK = "ops_unlock";
     const KEY_STATE  = "ops_state_v1";
+
+    const EMAILS = {
+      godsw: {
+        subject: 'Quick question about your Waldorf plumber calls',
+        body: `Hi — quick note.\n\nI came across your site and noticed you cover Waldorf/La Plata/Ft. Washington (plumbing + more) — you’re clearly serving a wide area.\n\nWhen people search “plumber Waldorf” the top 3 Google map listings get most of the calls. We run a fixed-scope 7‑Day Local Lead Engine Install to help businesses show up better there and convert more calls.\n\nIn 7 days we install: GBP optimization (categories/services/service areas) + 4 GBP posts + a review request system + one key “money page” improvement + tracking baseline + a before/after snapshot.\n\nIt’s $500. Your time needed: ~5 minutes for access + a 15‑min handoff on Day 7.\n\nWorth a 10‑minute call this week?\n\n— Stella\n7‑Day Local Lead Engine Install\nhttps://kaluzy.com/agency/`
+      },
+      hpc: {
+        subject: '7‑day install to capture more HVAC calls in Waldorf',
+        body: `Hi — quick note.\n\nI saw your headline “Expert HVAC Services in Charles County” — strong positioning, and you’re already covering the right geography.\n\nIf you want more calls from the Google map pack (top 3 results), I do a fixed-scope 7‑Day Local Lead Engine Install.\n\nWhat gets installed: GBP cleanup (categories/services/service areas) + 4 GBP posts scheduled + review request system (SMS/email templates + tracking) + one conversion-focused page improvement + tracking baseline + before/after snapshot.\n\nFlat $500. Low interaction: 5 minutes to add access + Day‑7 handoff (15 min).\n\nWant to do a quick 10‑minute call and see if it fits?\n\n— Stella\n7‑Day Local Lead Engine Install\nhttps://kaluzy.com/agency/`
+      },
+      better: {
+        subject: 'Waldorf plumbing — quick win to convert more calls',
+        body: `Hi — quick note.\n\nI found your Waldorf page and saw the “#1 rated local” angle + strong call-to-action — you’re already doing a lot right.\n\nWhere most plumbers still leak money is Google Maps visibility + follow-through (reviews pipeline + conversion flow). I run a fixed-scope 7‑Day Local Lead Engine Install to tighten that.\n\nIn 7 days: GBP optimization + 4 GBP posts scheduled + review request system + one high-impact money-page improvement + tracking baseline + before/after snapshot.\n\nIt’s $500. Minimal time from you: access + Day‑7 handoff.\n\nWorth a 10‑minute call this week?\n\n— Stella\n7‑Day Local Lead Engine Install\nhttps://kaluzy.com/agency/`
+      },
+      jw: {
+        subject: 'J&W Plumbing — quick question (Waldorf)',
+        body: `Hi — quick note.\n\nI came across your Google Sites page for J&W Plumbing Service LLC. A lot of solid operators run into the same issue: the work is good, but the online setup isn’t built to win the top Google map spots.\n\nI do a fixed-scope 7‑Day Local Lead Engine Install ($500) for plumbing/HVAC:\n- Google Business Profile optimization\n- 4 GBP posts scheduled\n- review request system (templates + tracking)\n- one conversion-focused landing page improvement + tracking baseline\n- before/after snapshot\n\nIf you want, we can do a 10‑minute call this week and I’ll tell you if it’s worth doing for your service area.\n\n— Stella\n7‑Day Local Lead Engine Install\nhttps://kaluzy.com/agency/`
+      },
+      brick: {
+        subject: 'Frederick map pack visibility (Brick Street)',
+        body: `Hi — quick note.\n\nI saw your site targeting “Plumbers Frederick, MD” with a strong call-to-action — that’s exactly the right intent.\n\nIf you want to capture more of the calls that go to the top 3 Google map listings, I run a fixed-scope 7‑Day Local Lead Engine Install.\n\nWe install: GBP optimization + 4 posts scheduled + review request system + one key money-page improvement (conversion + local relevance) + tracking baseline + before/after snapshot.\n\nFlat $500. Minimal time from you: access + Day‑7 handoff.\n\nWorth a quick 10‑minute call?\n\n— Stella\n7‑Day Local Lead Engine Install\nhttps://kaluzy.com/agency/`
+      },
+      warner: {
+        subject: 'Warner Service — quick question about Frederick calls',
+        body: `Hi — quick note.\n\nI found your site positioning as “Expert HVAC & Plumbing Services” — clearly a full-service operator.\n\nI help home service businesses improve two things that drive revenue fast: (1) Google map pack visibility, and (2) conversion (calls + quote requests). The product is a fixed-scope 7‑Day Local Lead Engine Install.\n\nIn 7 days: GBP cleanup + 4 GBP posts + review request system + one high-impact landing/service page improvement + tracking baseline + before/after snapshot.\n\nIt’s $500. If it’s not a fit, I’ll tell you quickly.\n\nWorth a 10‑minute call this week?\n\n— Stella\n7‑Day Local Lead Engine Install\nhttps://kaluzy.com/agency/`
+      },
+      waltz: {
+        subject: 'Quick win for more calls (Frederick)',
+        body: `Hi — quick note.\n\nI came across your site — you do plumbing, heating, and air conditioning for residential + commercial, which is exactly the kind of business the Google map pack can fuel.\n\nI run a fixed-scope 7‑Day Local Lead Engine Install to tighten map visibility + conversion.\n\nIncluded: GBP optimization + 4 posts scheduled + review request system (templates + tracking) + one key page improvement + tracking baseline + before/after snapshot.\n\nFlat $500 and low interaction (access + Day‑7 handoff).\n\nWorth a 10‑minute call?\n\n— Stella\n7‑Day Local Lead Engine Install\nhttps://kaluzy.com/agency/`
+      },
+      zo: {
+        subject: 'Zo Plumbing — Google Maps visibility in Frederick',
+        body: `Hi — quick note.\n\nI saw you’re licensed & insured and you highlight emergency plumbing / drain cleaning / water heaters — great “need it now” services.\n\nIf you want more of those high-intent calls from the Google map pack, I do a fixed-scope 7‑Day Local Lead Engine Install for $500.\n\nIn 7 days: GBP optimization + 4 posts scheduled + review request system + one money-page improvement focused on call conversion + tracking baseline + before/after snapshot.\n\nWorth a 10‑minute call this week?\n\n— Stella\n7‑Day Local Lead Engine Install\nhttps://kaluzy.com/agency/`
+      },
+    };
 
     const defaultState = {
       notes: "",
@@ -217,6 +282,103 @@
         const actions = document.createElement('div');
         actions.className = 'actions';
 
+        const view = document.createElement('button');
+        view.textContent = 'Email';
+        view.onclick = () => {
+          const d = document.getElementById(`email_${item.id}`);
+          if (d) d.open = !d.open;
+        };
+        actions.appendChild(view);
+
+        const copy = document.createElement('button');
+        copy.textContent = 'Copy';
+        copy.onclick = async () => {
+          const e = EMAILS[item.id];
+          const subj = e?.subject || '';
+          const body = e?.body || '';
+          const txt = `To: ${item.to}\nSubject: ${subj}\n\n${body}`;
+          try{
+            await navigator.clipboard.writeText(txt);
+          }catch(err){
+            // fallback
+            const ta = document.getElementById(`ta_${item.id}`);
+            if (ta){ ta.focus(); ta.select(); document.execCommand('copy'); }
+          }
+        };
+        actions.appendChild(copy);
+
+        const mail = document.createElement('a');
+        mail.textContent = 'Gmail';
+        mail.className = 'pill';
+        mail.style.padding = '7px 10px';
+        mail.style.borderRadius = '12px';
+        mail.style.textDecoration = 'none';
+        mail.style.display = 'inline-flex';
+        mail.style.alignItems = 'center';
+        mail.style.justifyContent = 'center';
+        mail.href = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(item.to)}&su=${encodeURIComponent(EMAILS[item.id]?.subject||'')}`;
+        mail.target = '_blank';
+        mail.rel = 'noopener';
+        actions.appendChild(mail);
+
+        row.appendChild(left);
+
+        // email drawer (in-list)
+        const drawer = document.createElement('details');
+        drawer.className = 'drawer';
+        drawer.id = `email_${item.id}`;
+        const summary = document.createElement('summary');
+        summary.textContent = `Email copy — ${item.name}`;
+        drawer.appendChild(summary);
+
+        const box = document.createElement('div');
+        box.className = 'emailBox';
+        const subj = EMAILS[item.id]?.subject || '';
+        const body = EMAILS[item.id]?.body || '';
+        box.innerHTML = `
+          <div class="mut" style="margin-top:8px"><b>To:</b> ${item.to}</div>
+          <div class="mut" style="margin-top:4px"><b>Subject:</b> ${subj}</div>
+        `;
+        const ta = document.createElement('textarea');
+        ta.className = 'email';
+        ta.id = `ta_${item.id}`;
+        ta.value = body;
+        box.appendChild(ta);
+
+        const btnRow = document.createElement('div');
+        btnRow.style.display = 'flex';
+        btnRow.style.gap = '10px';
+        btnRow.style.flexWrap = 'wrap';
+        btnRow.style.marginTop = '10px';
+
+        const c2 = document.createElement('button');
+        c2.textContent = 'Copy full (To+Subject+Body)';
+        c2.className = 'good';
+        c2.onclick = async () => copy.onclick();
+        btnRow.appendChild(c2);
+
+        box.appendChild(btnRow);
+        drawer.appendChild(box);
+
+        const stack = document.createElement('div');
+        stack.style.display='flex';
+        stack.style.flexDirection='column';
+        stack.style.gap='8px';
+        stack.style.flex='1';
+        stack.appendChild(drawer);
+
+        // attach stack to row
+        const right = document.createElement('div');
+        right.style.display='flex';
+        right.style.flexDirection='column';
+        right.style.gap='8px';
+        right.style.alignItems='stretch';
+        right.appendChild(actions);
+        right.appendChild(stack);
+
+        row.appendChild(right);
+
+        // status buttons get appended after the email tools
         const mk = (label, next, cls='') => {
           const b=document.createElement('button');
           b.textContent=label;
@@ -235,8 +397,6 @@
         actions.appendChild(mk('No', 'NO', 'bad'));
         actions.appendChild(mk('Reset', 'TODO', ''));
 
-        row.appendChild(left);
-        row.appendChild(actions);
         el.appendChild(row);
       });
     }
