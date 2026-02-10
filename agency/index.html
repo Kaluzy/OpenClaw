@@ -143,6 +143,13 @@ input[type="text"], input[type="email"], input[type="url"], textarea{
   outline:none;
 }
 input:focus, textarea:focus{border-color:rgba(96,165,250,.55)}
+
+    /* modal */
+    .modal{display:none;position:fixed;inset:0;z-index:50}
+    .modalBackdrop{position:absolute;inset:0;background:rgba(0,0,0,.6)}
+    .modalPanel{position:relative;max-width:960px;margin:40px auto;padding:16px}
+    .modalPanel > div{background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:var(--shadow)}
+    @media(max-width:520px){.modalPanel{margin:16px auto;padding:12px}}
   </style>
 </head>
 <body>
@@ -179,7 +186,7 @@ input:focus, textarea:focus{border-color:rgba(96,165,250,.55)}
         </div>
         <div class="hr"></div>
         <div class="small"><b>Low interaction:</b> you fill the form (2 minutes) + a 10‑minute call if it’s a fit.</div>
-        <a class="primaryBtn" href="#request">Request a quote →</a>
+        <button class="primaryBtn" type="button" id="openQuote">Request a quote</button>
         <div class="legal" style="margin-top:10px">No results are guaranteed. We focus on implementation + measurement.</div>
       </div>
     </div>
@@ -241,14 +248,9 @@ input:focus, textarea:focus{border-color:rgba(96,165,250,.55)}
 
     <div class="card" id="request" style="margin-top:12px">
       <p class="k">Request a quote</p>
-      <div class="mut">Fill this out and I’ll reply by email with a recommended scope + a price + the access checklist.</div>
+      <div class="mut">Click “Request a quote” above to open the form.</div>
       <div class="hr"></div>
-
-      <!-- Form endpoint: use Formspree (recommended) or a similar service.
-           Replace the action URL with your endpoint.
-           Example Formspree: https://formspree.io/f/XXXXYYYY
-      -->
-      <form class="form" method="POST" action="https://formspree.io/f/REPLACE_ME">
+      <form class="form" id="quoteForm">
         <div class="two" style="margin-top:8px">
           <div class="mini">
             <div class="k">Your info</div>
@@ -296,6 +298,110 @@ input:focus, textarea:focus{border-color:rgba(96,165,250,.55)}
 
       <div class="legal" style="margin-top:10px">This form is for quote requests. No spam.</div>
     </div>
+
+    <!-- modal (opened by Get started / Request a quote) -->
+    <div class="modal" id="quoteModal" aria-hidden="true">
+      <div class="modalBackdrop" id="closeQuote"></div>
+      <div class="modalPanel">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+          <div>
+            <div class="k" style="margin:0">Request a quote</div>
+            <div class="mut" style="margin-top:4px">I’ll reply to <b>stella@kaluzy.com</b> with scope + price + the checklist.</div>
+          </div>
+          <button type="button" class="pill" id="closeQuoteBtn" aria-label="Close">Close</button>
+        </div>
+        <div class="hr"></div>
+        <div id="modalFormMount"></div>
+      </div>
+    </div>
+
+    <script>
+      // Optional: set this to your Google Apps Script Web App URL later
+      // Example: https://script.google.com/macros/s/AKfycb.../exec
+      const QUOTE_ENDPOINT = '';
+
+      const openBtn = document.getElementById('openQuote');
+      const modal = document.getElementById('quoteModal');
+      const closeBg = document.getElementById('closeQuote');
+      const closeBtn = document.getElementById('closeQuoteBtn');
+      const mount = document.getElementById('modalFormMount');
+      const form = document.getElementById('quoteForm');
+
+      // Move the existing on-page form into the modal (so the page stays clean)
+      if (form && mount) mount.appendChild(form);
+
+      function openModal(){
+        modal.style.display = 'block';
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeModal(){
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      if (openBtn) openBtn.addEventListener('click', openModal);
+      if (closeBg) closeBg.addEventListener('click', closeModal);
+      if (closeBtn) closeBtn.addEventListener('click', closeModal);
+      document.addEventListener('keydown', (e)=>{ if (e.key === 'Escape') closeModal(); });
+
+      async function submitToEndpoint(payload){
+        const res = await fetch(QUOTE_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        if (!res.ok) throw new Error('Submit failed: ' + res.status);
+        return res;
+      }
+
+      function asObject(formEl){
+        const fd = new FormData(formEl);
+        const obj = {};
+        for (const [k,v] of fd.entries()) obj[k] = v;
+        return obj;
+      }
+
+      if (form){
+        form.addEventListener('submit', async (e)=>{
+          e.preventDefault();
+          const btn = form.querySelector('button[type=submit]');
+          const old = btn ? btn.textContent : '';
+          if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+
+          try {
+            const payload = asObject(form);
+            payload.source = payload.source || 'kaluzy.com/agency';
+            payload.userAgent = navigator.userAgent;
+            payload.page = location.href;
+            payload.submittedAt = new Date().toISOString();
+
+            if (!QUOTE_ENDPOINT){
+              // fallback: open mail client (no backend)
+              const subject = encodeURIComponent('Agency quote request — ' + (payload.business_name || ''));
+              const body = encodeURIComponent(JSON.stringify(payload, null, 2));
+              window.location.href = `mailto:stella@kaluzy.com?subject=${subject}&body=${body}`;
+            } else {
+              await submitToEndpoint(payload);
+              alert('Request sent. Stella will reply shortly.');
+              form.reset();
+              closeModal();
+            }
+          } catch (err){
+            console.error(err);
+            alert('Could not send. Please email stella@kaluzy.com.');
+          } finally {
+            if (btn) { btn.disabled = false; btn.textContent = old || 'Send request'; }
+          }
+        });
+      }
+
+      // Optional: open modal automatically when #request is visited
+      if (location.hash === '#request') {
+        setTimeout(openModal, 100);
+      }
+    </script>
 
   </div>
 </body>
