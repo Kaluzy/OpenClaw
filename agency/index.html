@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>7‑Day Local Lead Engine Install — $500</title>
-  <meta name="description" content="A fixed-scope 7-day install to improve Google Maps visibility and convert more calls for local home service businesses." />
+  <title>7‑Day Local Lead Engine Install</title>
+  <meta name="description" content="A fixed-scope 7-day setup to help more local customers find you on Google and contact you (calls + quote requests)." />
   <meta name="robots" content="index,follow" />
   <style>
     :root{
@@ -78,7 +78,7 @@
 
     .ctaCard{min-width:320px;flex:1}
     .k{font-weight:950;margin:0 0 8px}
-    .price{font-weight:980;font-size:26px;letter-spacing:-.02em}
+    /* (price removed; quote-based) */
     .mut{color:var(--mut)}
     .small{font-size:12px;color:var(--mut)}
     .hr{height:1px;background:var(--line);margin:12px 0}
@@ -117,6 +117,32 @@
     .legal{color:var(--mut);font-size:12px}
 
     code{background:rgba(0,0,0,.22);border:1px solid var(--line);padding:1px 6px;border-radius:8px}
+
+/* form */
+label.small{display:block;margin-top:6px}
+input[type="text"], input[type="email"], input[type="url"], textarea{
+  width:100%;
+  padding:10px 12px;
+  border-radius:14px;
+  border:1px solid var(--line);
+  background:rgba(0,0,0,.22);
+  color:var(--ink);
+  outline:none;
+}
+input:focus, textarea:focus{border-color:rgba(96,165,250,.55)}
+
+/* form */
+label.small{display:block;margin-top:6px}
+input[type="text"], input[type="email"], input[type="url"], textarea{
+  width:100%;
+  padding:10px 12px;
+  border-radius:14px;
+  border:1px solid var(--line);
+  background:rgba(0,0,0,.22);
+  color:var(--ink);
+  outline:none;
+}
+input:focus, textarea:focus{border-color:rgba(96,165,250,.55)}
   </style>
 </head>
 <body>
@@ -143,14 +169,18 @@
       </div>
 
       <div class="card ctaCard">
-        <div class="k">Flat pricing</div>
-        <div class="price">$500 <span class="mut" style="font-size:14px;font-weight:900">one‑time</span></div>
-        <div class="mut">Fixed scope. Fixed timeline. You get a before/after summary of what we changed.</div>
-        <div class="hr"></div>
-        <div class="small"><b>Low interaction:</b> 5 minutes to grant access + a 15‑minute handoff on Day 7.</div>
-        <a class="primaryBtn" href="#next">Get the checklist →</a>
-        <div class="legal" style="margin-top:10px">No results are guaranteed. We focus on implementation + measurement.
+        <div class="k">Get a quote + checklist</div>
+        <div class="mut">Tell me a few basics and I’ll reply with:
+          <ul class="ul" style="margin-top:8px">
+            <li>a clear scope recommendation (what I’d do first)</li>
+            <li>a price based on project heaviness</li>
+            <li>the 5‑minute access checklist</li>
+          </ul>
         </div>
+        <div class="hr"></div>
+        <div class="small"><b>Low interaction:</b> you fill the form (2 minutes) + a 10‑minute call if it’s a fit.</div>
+        <a class="primaryBtn" href="#request">Request a quote →</a>
+        <div class="legal" style="margin-top:10px">No results are guaranteed. We focus on implementation + measurement.</div>
       </div>
     </div>
 
@@ -209,9 +239,62 @@
       </div>
     </div>
 
-    <div class="card" id="next" style="margin-top:12px">
-      <p class="k">Next step</p>
-      <div class="mut">Reply to the email/text you received from <b>Stella</b> with “yes” and I’ll send a simple 5‑minute checklist (what access we need and what to send).</div>
+    <div class="card" id="request" style="margin-top:12px">
+      <p class="k">Request a quote</p>
+      <div class="mut">Fill this out and I’ll reply by email with a recommended scope + a price + the access checklist.</div>
+      <div class="hr"></div>
+
+      <!-- Form endpoint: use Formspree (recommended) or a similar service.
+           Replace the action URL with your endpoint.
+           Example Formspree: https://formspree.io/f/XXXXYYYY
+      -->
+      <form class="form" method="POST" action="https://formspree.io/f/REPLACE_ME">
+        <div class="two" style="margin-top:8px">
+          <div class="mini">
+            <div class="k">Your info</div>
+            <label class="small">Name</label>
+            <input required name="name" type="text" placeholder="Your name" />
+            <div style="height:10px"></div>
+            <label class="small">Business name</label>
+            <input required name="business_name" type="text" placeholder="Company" />
+            <div style="height:10px"></div>
+            <label class="small">Email</label>
+            <input required name="reply_to" type="email" placeholder="you@company.com" />
+            <div style="height:10px"></div>
+            <label class="small">Phone (optional)</label>
+            <input name="phone" type="text" placeholder="(###) ###‑####" />
+          </div>
+
+          <div class="mini">
+            <div class="k">Project basics</div>
+            <label class="small">City / service area</label>
+            <input required name="service_area" type="text" placeholder="e.g., Waldorf / Frederick" />
+            <div style="height:10px"></div>
+            <label class="small">Website URL (optional)</label>
+            <input name="website" type="url" placeholder="https://…" />
+            <div style="height:10px"></div>
+            <label class="small">Google Business Profile link (optional)</label>
+            <input name="gbp" type="url" placeholder="https://maps.google.com/…" />
+            <div style="height:10px"></div>
+            <label class="small">What do you want more of?</label>
+            <input required name="goal" type="text" placeholder="More calls, more quotes, better Google visibility…" />
+          </div>
+        </div>
+
+        <div style="margin-top:12px" class="mini">
+          <div class="k">Notes (optional)</div>
+          <textarea name="notes" style="width:100%;min-height:120px;resize:vertical;padding:10px 12px;border-radius:14px;border:1px solid var(--line);background:rgba(0,0,0,.22);color:var(--ink);outline:none;font:14px/1.5 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;" placeholder="Anything I should know? Busy season timing, staff count, budget range, etc."></textarea>
+        </div>
+
+        <input type="hidden" name="source" value="kaluzy.com/agency" />
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px">
+          <button type="submit" class="primaryBtn" style="width:auto">Send request</button>
+          <span class="small">You’ll get a reply from Stella.</span>
+        </div>
+      </form>
+
+      <div class="legal" style="margin-top:10px">This form is for quote requests. No spam.</div>
     </div>
 
   </div>
