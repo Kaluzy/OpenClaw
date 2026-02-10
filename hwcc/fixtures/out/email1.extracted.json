@@ -1,0 +1,147 @@
+{
+  "schemaVersion": "extracted-plan.v1",
+  "source": {
+    "email": {
+      "messageId": "demo-m1",
+      "subject": "Weekly Update — 1st Grade",
+      "from": "Ms. Pebble <pebble@mcpsmd.org>",
+      "to": [
+        "parent@example.com"
+      ],
+      "receivedAt": "2026-02-09T19:00:00-05:00",
+      "snippet": "Hi families,\n\nHere is our 1st grade update for the week.\n\nMonday: Reading 20 minutes. Math: page 41 (odd problems).\nTuesday: Library day — p"
+    },
+    "rawText": "Hi families,\n\nHere is our 1st grade update for the week.\n\nMonday: Reading 20 minutes. Math: page 41 (odd problems).\nTuesday: Library day — please bring your library book.\nWednesday: Permission slip due for Friday’s field trip.\nFriday: Field trip (all day). Bring a packed lunch.\n\nThank you,\nMs. Pebble\n"
+  },
+  "routing": {
+    "childKey": "abi",
+    "grade": "1st",
+    "confidence": 0.9,
+    "reason": "Matched teacher name/grade keywords (Pebble / 1st grade)"
+  },
+  "week": {
+    "anchorDate": "2026-02-09",
+    "tz": "America/New_York",
+    "startDate": "2026-02-08",
+    "endDate": "2026-02-14",
+    "teacherDisplay": "Ms. Pebble <pebble@mcpsmd.org>"
+  },
+  "summary": {
+    "oneSentence": "Weekly update parsed into tasks, events, and parent actions for abi.",
+    "focusTags": [
+      "homework",
+      "dates",
+      "parent-actions"
+    ]
+  },
+  "entities": {
+    "children": [
+      {
+        "childKey": "abi",
+        "displayName": "Abi",
+        "grade": "1st"
+      },
+      {
+        "childKey": "raphi",
+        "displayName": "Raphi",
+        "grade": "3rd"
+      }
+    ],
+    "teachers": [
+      {
+        "teacherKey": "pebble",
+        "displayName": "Pebble",
+        "email": "unknown@mcpsmd.org"
+      },
+      {
+        "teacherKey": "mcclure",
+        "displayName": "McClure",
+        "email": "unknown@mcpsmd.org"
+      }
+    ]
+  },
+  "items": {
+    "tasks": [
+      {
+        "id": "task_demo-m1_0",
+        "type": "task",
+        "childKey": "abi",
+        "subject": "Reading 20 minutes. Math",
+        "title": "Reading 20 minutes. Math: page 41 (odd problems).",
+        "instructions": "Reading 20 minutes. Math: page 41 (odd problems).",
+        "kidFriendly": {
+          "steps": [
+            "Reading 20 minutes",
+            "Math: page 41 (odd problems)"
+          ]
+        },
+        "due": {
+          "date": "2026-02-09",
+          "timeOfDay": "EOD"
+        },
+        "priority": "MED",
+        "status": "TODO",
+        "links": [],
+        "source": {
+          "messageId": "demo-m1",
+          "quote": "Monday: Reading 20 minutes. Math: page 41 (odd problems)."
+        }
+      }
+    ],
+    "events": [
+      {
+        "id": "event_demo-m1_0",
+        "type": "event",
+        "childKey": "abi",
+        "title": "Library day — please bring your library book.",
+        "when": {
+          "start": "2026-02-10",
+          "allDay": true
+        },
+        "source": {
+          "messageId": "demo-m1",
+          "quote": "Tuesday: Library day — please bring your library book."
+        }
+      },
+      {
+        "id": "event_demo-m1_1",
+        "type": "event",
+        "childKey": "abi",
+        "title": "Field trip (all day). Bring a packed lunch.",
+        "when": {
+          "start": "2026-02-13",
+          "allDay": true
+        },
+        "source": {
+          "messageId": "demo-m1",
+          "quote": "Friday: Field trip (all day). Bring a packed lunch."
+        }
+      }
+    ],
+    "alerts": [
+      {
+        "id": "alert_demo-m1_0",
+        "type": "alert",
+        "childKey": "abi",
+        "title": "Permission slip due",
+        "severity": "HIGH",
+        "action": {
+          "kind": "SIGN",
+          "text": "Permission slip due for Friday’s field trip.",
+          "dueDate": "2026-02-11"
+        },
+        "source": {
+          "messageId": "demo-m1",
+          "quote": "Wednesday: Permission slip due for Friday’s field trip."
+        }
+      }
+    ],
+    "links": []
+  },
+  "quality": {
+    "confidence": 0.9,
+    "needsReview": false,
+    "warnings": [],
+    "missingInfo": []
+  }
+}

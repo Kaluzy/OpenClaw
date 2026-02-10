@@ -1,0 +1,114 @@
+{
+  "schemaVersion": "extracted-plan.v1",
+  "source": {
+    "email": {
+      "messageId": "demo-m2",
+      "subject": "3rd Grade Newsletter",
+      "from": "McClure <mcclure@mcpsmd.org>",
+      "to": [
+        "parent@example.com"
+      ],
+      "receivedAt": "2026-02-09T19:10:00-05:00",
+      "snippet": "Hello 3rd grade families,\n\nThis week:\n- Spelling test Friday.\n- Science worksheet due Thursday.\n- Please return reading log by Friday.\n\nThan"
+    },
+    "rawText": "Hello 3rd grade families,\n\nThis week:\n- Spelling test Friday.\n- Science worksheet due Thursday.\n- Please return reading log by Friday.\n\nThanks,\nMs. McClure\n"
+  },
+  "routing": {
+    "childKey": "raphi",
+    "grade": "3rd",
+    "confidence": 0.9,
+    "reason": "Matched teacher name/grade keywords (McClure / 3rd grade)"
+  },
+  "week": {
+    "anchorDate": "2026-02-09",
+    "tz": "America/New_York",
+    "startDate": "2026-02-08",
+    "endDate": "2026-02-14",
+    "teacherDisplay": "McClure <mcclure@mcpsmd.org>"
+  },
+  "summary": {
+    "oneSentence": "Weekly update parsed into tasks, events, and parent actions for raphi.",
+    "focusTags": [
+      "homework",
+      "dates",
+      "parent-actions"
+    ]
+  },
+  "entities": {
+    "children": [
+      {
+        "childKey": "abi",
+        "displayName": "Abi",
+        "grade": "1st"
+      },
+      {
+        "childKey": "raphi",
+        "displayName": "Raphi",
+        "grade": "3rd"
+      }
+    ],
+    "teachers": [
+      {
+        "teacherKey": "pebble",
+        "displayName": "Pebble",
+        "email": "unknown@mcpsmd.org"
+      },
+      {
+        "teacherKey": "mcclure",
+        "displayName": "McClure",
+        "email": "unknown@mcpsmd.org"
+      }
+    ]
+  },
+  "items": {
+    "tasks": [
+      {
+        "id": "task_demo-m2_0",
+        "type": "task",
+        "childKey": "raphi",
+        "title": "Science worksheet due Thursday.",
+        "instructions": "- Science worksheet due Thursday.",
+        "kidFriendly": {
+          "steps": [
+            "Science worksheet due Thursday."
+          ]
+        },
+        "due": {
+          "date": "2026-02-12",
+          "timeOfDay": "EOD"
+        },
+        "priority": "MED",
+        "status": "TODO",
+        "links": [],
+        "source": {
+          "messageId": "demo-m2",
+          "quote": "- Science worksheet due Thursday."
+        }
+      }
+    ],
+    "events": [
+      {
+        "id": "event_demo-m2_0",
+        "type": "event",
+        "childKey": "raphi",
+        "title": "Spelling test Friday.",
+        "when": {
+          "start": "2026-02-13",
+          "allDay": true
+        },
+        "source": {
+          "messageId": "demo-m2",
+          "quote": "- Spelling test Friday."
+        }
+      }
+    ],
+    "alerts": [],
+    "links": []
+  },
+  "quality": {
+    "confidence": 0.9,
+    "needsReview": false,
+    "warnings": [],
+    "missingInfo": []
+  }
+}
