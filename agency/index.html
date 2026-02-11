@@ -87,14 +87,17 @@
       display:inline-flex;align-items:center;justify-content:center;gap:10px;
       width:100%;
       margin-top:10px;
-      padding:11px 12px;
+      padding:11px 14px;
       border-radius:14px;
       text-decoration:none;
       font-weight:950;
-      border:1px solid rgba(96,165,250,.35);
-      background:linear-gradient(135deg, rgba(96,165,250,.18), rgba(96,165,250,.06));
+      color:var(--ink);
+      border:1px solid rgba(96,165,250,.45);
+      background:linear-gradient(135deg, rgba(96,165,250,.28), rgba(96,165,250,.10));
     }
-    .primaryBtn:hover{border-color:rgba(96,165,250,.55)}
+    .primaryBtn:hover{border-color:rgba(96,165,250,.70)}
+    .primaryBtn:focus{outline:2px solid rgba(96,165,250,.35); outline-offset:2px}
+    .primaryBtn.compact{width:auto}
 
     /* content grid */
     .grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:14px}
@@ -146,10 +149,18 @@ input:focus, textarea:focus{border-color:rgba(96,165,250,.55)}
 
     /* modal */
     .modal{display:none;position:fixed;inset:0;z-index:50}
-    .modalBackdrop{position:absolute;inset:0;background:rgba(0,0,0,.6)}
-    .modalPanel{position:relative;max-width:960px;margin:40px auto;padding:16px}
-    .modalPanel > div{background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:var(--shadow)}
-    @media(max-width:520px){.modalPanel{margin:16px auto;padding:12px}}
+    .modalBackdrop{position:absolute;inset:0;background:rgba(0,0,0,.65)}
+    .modalPanel{position:relative;max-width:980px;margin:32px auto;padding:12px}
+    .modalCard{
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:16px;
+      box-shadow:var(--shadow);
+      max-height:calc(100vh - 64px);
+      overflow:auto;
+    }
+    @media(max-width:520px){.modalPanel{margin:12px auto;padding:10px}.modalCard{max-height:calc(100vh - 24px)}}
   </style>
 </head>
 <body>
@@ -186,7 +197,7 @@ input:focus, textarea:focus{border-color:rgba(96,165,250,.55)}
         </div>
         <div class="hr"></div>
         <div class="small"><b>Low interaction:</b> you fill the form (2 minutes) + a 10‑minute call if it’s a fit.</div>
-        <button class="primaryBtn" type="button" id="openQuote">Request a quote</button>
+        <button class="primaryBtn compact" type="button" id="openQuote">Request a quote</button>
         <div class="legal" style="margin-top:10px">No results are guaranteed. We focus on implementation + measurement.</div>
       </div>
     </div>
@@ -302,16 +313,18 @@ input:focus, textarea:focus{border-color:rgba(96,165,250,.55)}
     <!-- modal (opened by Get started / Request a quote) -->
     <div class="modal" id="quoteModal" aria-hidden="true">
       <div class="modalBackdrop" id="closeQuote"></div>
-      <div class="modalPanel">
-        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
-          <div>
-            <div class="k" style="margin:0">Request a quote</div>
-            <div class="mut" style="margin-top:4px">I’ll reply to <b>stella@kaluzy.com</b> with scope + price + the checklist.</div>
+      <div class="modalPanel" role="dialog" aria-modal="true" aria-label="Request a quote">
+        <div class="modalCard">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+            <div>
+              <div class="k" style="margin:0">Request a quote</div>
+              <div class="mut" style="margin-top:4px">I’ll reply to <b>stella@kaluzy.com</b> with scope + price + the checklist.</div>
+            </div>
+            <button type="button" class="pill" id="closeQuoteBtn" aria-label="Close">Close</button>
           </div>
-          <button type="button" class="pill" id="closeQuoteBtn" aria-label="Close">Close</button>
+          <div class="hr"></div>
+          <div id="modalFormMount"></div>
         </div>
-        <div class="hr"></div>
-        <div id="modalFormMount"></div>
       </div>
     </div>
 
