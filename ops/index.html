@@ -96,6 +96,14 @@
     .badge{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:950;
       padding:5px 9px;border-radius:999px;border:1px solid rgba(251,191,36,.35);background:rgba(251,191,36,.10)
     }
+
+    .chip{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:950;padding:4px 8px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.03)}
+    .chip.good{border-color:rgba(52,211,153,.35);background:rgba(52,211,153,.08)}
+    .chip.warn{border-color:rgba(251,191,36,.35);background:rgba(251,191,36,.08)}
+    .chip.bad{border-color:rgba(251,113,133,.35);background:rgba(251,113,133,.08)}
+    .chip.blue{border-color:rgba(96,165,250,.35);background:rgba(96,165,250,.08)}
+    .rowCol{display:flex;flex-direction:column;gap:6px;min-width:0}
+    .rowTop2{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline}
   </style>
 </head>
 <body>
@@ -128,6 +136,19 @@
     </div>
 
     <div id="app" style="display:none">
+
+      <div class="card" style="margin-top:12px">
+        <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline">
+          <div>
+            <div class="k" style="margin-bottom:2px">Project Progress</div>
+            <div class="mut">Where we are + what’s next (high level).</div>
+          </div>
+          <div class="tiny">Updated manually for v1 (can sync to Notion later)</div>
+        </div>
+        <div class="hr"></div>
+        <div id="projectsList" class="list"></div>
+      </div>
+
       <div class="grid">
         <div class="card">
           <div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap">
@@ -231,6 +252,118 @@ Call block (optional):
     const PASS_SHA256 = "ba2472e7c2dd9c8cdf8b5d62bb02d5f85aff65d4cd4e6849d64a8da95a1c0437";
     const KEY_UNLOCK = "ops_unlock";
     const KEY_STATE  = "ops_state_v1";
+
+    const PROJECTS = [
+      {
+        key: 'showrate',
+        name: 'ShowRate v1 (No‑Show Killer)',
+        phase: 'Build → Pilot',
+        status: 'Planned',
+        live: '',
+        next: 'Implement n8n + Sheets (TEST_MODE) + land 1 paid pilot + 14‑day proof report'
+      },
+      {
+        key: 'hwcc',
+        name: 'HW Command Center (HWCC)',
+        phase: 'Intake working; Extraction next',
+        status: 'Active',
+        live: 'https://kaluzy.com/hwcc/',
+        next: 'Supabase Edge Function + Gemini extraction → extracted_plans (immediate per email)'
+      },
+      {
+        key: 'agency',
+        name: 'Agency (Local Lead Engine)',
+        phase: 'Offer + intake live',
+        status: 'Active',
+        live: 'https://kaluzy.com/agency/',
+        next: 'Send Day‑3 followups + sequence tracking automation'
+      },
+      {
+        key: 'brief',
+        name: 'Morning Brief',
+        phase: 'Daily publish stable',
+        status: 'Active',
+        live: 'https://kaluzy.com/latest/',
+        next: 'Add 1–2 line descriptions under each item (more skimmable)'
+      },
+      {
+        key: 'watchtower',
+        name: 'WatchTower Pulse',
+        phase: 'Daily publish stable',
+        status: 'Active',
+        live: 'https://kaluzy.com/watchtower/latest/',
+        next: 'Improve meaningful-change detection (reduce false diffs)'
+      },
+      {
+        key: 'mkp',
+        name: 'MyKidsPlus',
+        phase: 'Phase 0 shipped; content cadence next',
+        status: 'Active',
+        live: 'https://kaluzy.com/mdkidsplus/',
+        next: 'Publish Feb 14 Weekend Picks + sponsor kit + directory filters'
+      },
+    ];
+
+    function chipClass(kind){
+      if (kind==='Active') return 'good';
+      if (kind==='Planned') return 'blue';
+      if (kind==='Blocked') return 'bad';
+      return '';
+    }
+
+    function renderProjects(){
+      const el = document.getElementById('projectsList');
+      if (!el) return;
+      el.innerHTML = '';
+
+      for (const p of PROJECTS){
+        const row = document.createElement('div');
+        row.className = 'row';
+
+        const left = document.createElement('div');
+        left.className = 'rowCol left';
+
+        const top = document.createElement('div');
+        top.className = 'rowTop2';
+
+        const name = document.createElement('div');
+        name.className = 'name';
+        name.textContent = p.name;
+
+        const chips = document.createElement('div');
+        chips.className = 'actions';
+        const s = document.createElement('span');
+        s.className = 'chip ' + chipClass(p.status);
+        s.textContent = p.status;
+        const ph = document.createElement('span');
+        ph.className = 'chip';
+        ph.textContent = p.phase;
+        chips.appendChild(s);
+        chips.appendChild(ph);
+
+        top.appendChild(name);
+        top.appendChild(chips);
+
+        const meta = document.createElement('div');
+        meta.className = 'meta';
+        meta.textContent = 'Next: ' + p.next;
+
+        left.appendChild(top);
+        if (p.live){
+          const a = document.createElement('a');
+          a.href = p.live;
+          a.target = '_blank';
+          a.rel = 'noopener';
+          a.className = 'mut';
+          a.textContent = p.live;
+          left.appendChild(a);
+        }
+        left.appendChild(meta);
+
+        row.appendChild(left);
+        el.appendChild(row);
+      }
+    }
 
     const EMAILS = {
       godsw: {
