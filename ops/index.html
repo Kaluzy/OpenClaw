@@ -588,6 +588,7 @@ Call block (optional):
         localStorage.setItem(KEY_UNLOCK, '1');
         document.getElementById('locked').style.display='none';
         document.getElementById('app').style.display='block';
+        renderProjects();
         render();
       } else {
         document.getElementById('err').textContent = 'Wrong password.';
@@ -617,6 +618,7 @@ Call block (optional):
     document.getElementById('reset').addEventListener('click', ()=>{
       if(!confirm('Reset local ops state on this device?')) return;
       localStorage.removeItem(KEY_STATE);
+      renderProjects();
       render();
     });
 
@@ -642,6 +644,7 @@ Call block (optional):
     if(localStorage.getItem(KEY_UNLOCK)==='1'){
       document.getElementById('locked').style.display='none';
       document.getElementById('app').style.display='block';
+      renderProjects();
       render();
     }
   </script>
