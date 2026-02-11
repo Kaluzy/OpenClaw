@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects — Ops</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <style>
+    :root{
+      --bg:#070b13;--card:#0b1220;--ink:#e5e7eb;--mut:#9ca3af;--line:rgba(148,163,184,.18);
+      --shadow:0 18px 60px rgba(0,0,0,.35);
+      --acc:#60a5fa;--acc2:#fb7185;--good:#34d399;--warn:#fbbf24;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:
+      radial-gradient(1200px 700px at 12% -10%, rgba(96,165,250,.12), transparent 60%),
+      radial-gradient(1200px 700px at 88% 10%, rgba(251,113,133,.10), transparent 55%),
+      var(--bg);
+      color:var(--ink);font:14px/1.6 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+    }
+    a{color:inherit}
+    .wrap{max-width:1060px;margin:0 auto;padding:24px}
+    .header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .brand{display:flex;gap:10px;align-items:center}
+    .mark{width:34px;height:34px;border-radius:12px;display:grid;place-items:center;font-weight:950;
+      background:linear-gradient(135deg, rgba(96,165,250,.26), rgba(251,113,133,.18));border:1px solid var(--line);
+      box-shadow:0 10px 30px rgba(0,0,0,.25)
+    }
+    .brandname{font-weight:950;letter-spacing:-.02em}
+    .sub{color:var(--mut);font-size:12px;margin-top:2px}
+
+    .pillrow{display:flex;flex-wrap:wrap;gap:10px}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:8px 11px;border-radius:999px;border:1px solid var(--line);
+      text-decoration:none;background:rgba(255,255,255,.03);font-weight:900}
+    .pill:hover{border-color:rgba(96,165,250,.5)}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--line);border-radius:18px;padding:14px;box-shadow:var(--shadow)}
+    .k{font-weight:950;margin:0 0 8px;letter-spacing:-.02em}
+    .mut{color:var(--mut)}
+    .hr{height:1px;background:var(--line);margin:10px 0}
+    .list{display:flex;flex-direction:column;gap:8px}
+    .row{display:flex;gap:10px;align-items:flex-start;justify-content:space-between;border:1px solid var(--line);
+      background:rgba(0,0,0,.18);border-radius:14px;padding:10px}
+
+    .chip{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:950;padding:4px 8px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.03)}
+    .chip.good{border-color:rgba(52,211,153,.35);background:rgba(52,211,153,.08)}
+    .chip.blue{border-color:rgba(96,165,250,.35);background:rgba(96,165,250,.08)}
+    .chip.bad{border-color:rgba(251,113,133,.35);background:rgba(251,113,133,.08)}
+    .rowCol{display:flex;flex-direction:column;gap:6px;min-width:0}
+    .rowTop2{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline}
+    .name{font-weight:950}
+    .meta{color:var(--mut);font-size:12px;margin-top:2px}
+    .actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:flex-end}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <div class="brand">
+        <div class="mark">Ops</div>
+        <div>
+          <div class="brandname">Projects</div>
+          <div class="sub">High-level progress tracker</div>
+        </div>
+      </div>
+      <div class="pillrow">
+        <a class="pill" href="./" rel="noopener">Ops home</a>
+        <a class="pill" href="../agency/" target="_blank" rel="noopener">Agency</a>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:12px">
+      <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline">
+        <div>
+          <div class="k" style="margin-bottom:2px">Project Progress</div>
+          <div class="mut">Status + phase + next action.</div>
+        </div>
+        <div class="mut" style="font-size:12px">(Manual for v1 — can sync to Notion later)</div>
+      </div>
+      <div class="hr"></div>
+      <div id="projectsList" class="list"></div>
+    </div>
+  </div>
+
+  <script>
+    const PROJECTS = [
+      { name: 'ShowRate v1 (No‑Show Killer)', phase: 'Build → Pilot', status: 'Planned', live: '', next: 'Implement n8n + Sheets (TEST_MODE) + land 1 paid pilot + 14‑day proof report' },
+      { name: 'HW Command Center (HWCC)', phase: 'Intake working; Extraction next', status: 'Active', live: 'https://kaluzy.com/hwcc/', next: 'Supabase Edge Function + Gemini extraction → extracted_plans (immediate per email)' },
+      { name: 'Agency (Local Lead Engine)', phase: 'Offer + intake live', status: 'Active', live: 'https://kaluzy.com/agency/', next: 'Send Day‑3 followups + sequence tracking automation' },
+      { name: 'Morning Brief', phase: 'Daily publish stable', status: 'Active', live: 'https://kaluzy.com/latest/', next: 'Add 1–2 line descriptions under each item (more skimmable)' },
+      { name: 'WatchTower Pulse', phase: 'Daily publish stable', status: 'Active', live: 'https://kaluzy.com/watchtower/latest/', next: 'Improve meaningful-change detection (reduce false diffs)' },
+      { name: 'MyKidsPlus', phase: 'Phase 0 shipped; content cadence next', status: 'Active', live: 'https://kaluzy.com/mdkidsplus/', next: 'Publish Feb 14 Weekend Picks + sponsor kit + directory filters' },
+    ];
+
+    function chipClass(kind){
+      if (kind==='Active') return 'good';
+      if (kind==='Planned') return 'blue';
+      if (kind==='Blocked') return 'bad';
+      return '';
+    }
+
+    function renderProjects(){
+      const el = document.getElementById('projectsList');
+      el.innerHTML = '';
+      for (const p of PROJECTS){
+        const row = document.createElement('div');
+        row.className = 'row';
+
+        const left = document.createElement('div');
+        left.className = 'rowCol';
+
+        const top = document.createElement('div');
+        top.className = 'rowTop2';
+
+        const name = document.createElement('div');
+        name.className = 'name';
+        name.textContent = p.name;
+
+        const chips = document.createElement('div');
+        chips.className = 'actions';
+        const s = document.createElement('span');
+        s.className = 'chip ' + chipClass(p.status);
+        s.textContent = p.status;
+        const ph = document.createElement('span');
+        ph.className = 'chip';
+        ph.textContent = p.phase;
+        chips.appendChild(s);
+        chips.appendChild(ph);
+
+        top.appendChild(name);
+        top.appendChild(chips);
+
+        const meta = document.createElement('div');
+        meta.className = 'meta';
+        meta.textContent = 'Next: ' + p.next;
+
+        left.appendChild(top);
+        if (p.live){
+          const a = document.createElement('a');
+          a.href = p.live;
+          a.target = '_blank';
+          a.rel = 'noopener';
+          a.className = 'mut';
+          a.textContent = p.live;
+          left.appendChild(a);
+        }
+        left.appendChild(meta);
+
+        row.appendChild(left);
+        el.appendChild(row);
+      }
+    }
+
+    renderProjects();
+  </script>
+</body>
+</html>
