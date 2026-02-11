@@ -86,12 +86,99 @@
 
   <script>
     const PROJECTS = [
-      { name: 'ShowRate v1 (No‑Show Killer)', phase: 'Build → Pilot', status: 'Planned', live: '', next: 'Implement n8n + Sheets (TEST_MODE) + land 1 paid pilot + 14‑day proof report' },
-      { name: 'HW Command Center (HWCC)', phase: 'Intake working; Extraction next', status: 'Active', live: 'https://kaluzy.com/hwcc/', next: 'Supabase Edge Function + Gemini extraction → extracted_plans (immediate per email)' },
-      { name: 'Agency (Local Lead Engine)', phase: 'Offer + intake live', status: 'Active', live: 'https://kaluzy.com/agency/', next: 'Send Day‑3 followups + sequence tracking automation' },
-      { name: 'Morning Brief', phase: 'Daily publish stable', status: 'Active', live: 'https://kaluzy.com/latest/', next: 'Add 1–2 line descriptions under each item (more skimmable)' },
-      { name: 'WatchTower Pulse', phase: 'Daily publish stable', status: 'Active', live: 'https://kaluzy.com/watchtower/latest/', next: 'Improve meaningful-change detection (reduce false diffs)' },
-      { name: 'MyKidsPlus', phase: 'Phase 0 shipped; content cadence next', status: 'Active', live: 'https://kaluzy.com/mdkidsplus/', next: 'Publish Feb 14 Weekend Picks + sponsor kit + directory filters' },
+      {
+        name: 'ShowRate v1 (No‑Show Killer)',
+        status: 'Planned',
+        phaseNow: 'Build v1 (TEST_MODE)',
+        phaseNext: 'Paid pilot → 14‑day proof report',
+        live: '',
+        nextActions: [
+          'Implement n8n workflows + Google Sheets schema (TEST_MODE=true)',
+          'Create allowlist-based test send + quiet hours enforcement',
+          'Outreach to Bethesda/Rockville/Gaithersburg barbers/salons for 1 paid pilot this week',
+        ],
+        improvements: [
+          'Tighten the “manager alert + reschedule capture” loop so ROI is obvious',
+          'Pilot report template: no-shows prevented, reschedules captured, revenue saved',
+        ],
+      },
+      {
+        name: 'HW Command Center (HWCC)',
+        status: 'Active',
+        phaseNow: 'Gmail → label → Apps Script → Supabase (gmail_ingest)',
+        phaseNext: 'Gemini extraction → extracted_plans → kid dashboards',
+        live: 'https://kaluzy.com/hwcc/',
+        nextActions: [
+          'Add Gemini API key to Supabase secrets (later, when you have it)',
+          'Build Supabase Edge Function to extract JSON per email (immediate per new ingest)',
+          'Merge extracted plans per child in UI + review/override routing',
+        ],
+        improvements: [
+          'RLS tightening (only stella@ can read)',
+          'Better dedupe + “same thread” handling in extraction pipeline',
+        ],
+      },
+      {
+        name: 'Agency (Local Lead Engine)',
+        status: 'Active',
+        phaseNow: 'Offer + in-house intake live',
+        phaseNext: 'Follow-up system + sequence automation',
+        live: 'https://kaluzy.com/agency/',
+        nextActions: [
+          'Send Day‑3 followups (8) from agency/outreach-day3.md',
+          'Update ops follow-up templates to match quote-based pricing (no $ anchors)',
+          'Build sequence updater script (day3/day5) so follow-ups never slip',
+        ],
+        improvements: [
+          'Pitch rotation variants (reduce template detection)',
+          'Add proof asset once first client closes (before/after snapshot PDF)',
+        ],
+      },
+      {
+        name: 'Morning Brief',
+        status: 'Active',
+        phaseNow: 'Daily publish stable',
+        phaseNext: 'More skimmable + higher-signal',
+        live: 'https://kaluzy.com/latest/',
+        nextActions: [
+          'Add 1–2 line descriptions under each item',
+          'Reduce noise: better dedupe across sections',
+          'Add a “Top 2 actions” module above the fold',
+        ],
+        improvements: [
+          'Cache busting + performance polish',
+        ],
+      },
+      {
+        name: 'WatchTower Pulse',
+        status: 'Active',
+        phaseNow: 'Daily publish stable',
+        phaseNext: 'Sharper change detection + talk tracks',
+        live: 'https://kaluzy.com/watchtower/latest/',
+        nextActions: [
+          'Improve meaningful-change detection (reduce false diffs)',
+          'Store/compare pricing tables / plan names vs whole-page text',
+        ],
+        improvements: [
+          'Alerting thresholds (only notify on true competitive moves)',
+        ],
+      },
+      {
+        name: 'MyKidsPlus',
+        status: 'Active',
+        phaseNow: 'Phase 0 shipped (site + redesign)',
+        phaseNext: 'Content cadence + monetization',
+        live: 'https://kaluzy.com/mdkidsplus/',
+        nextActions: [
+          'Publish Feb 14 Weekend Picks',
+          'Sponsor kit + pricing tiers',
+          'Directory filters/search polish',
+        ],
+        improvements: [
+          'Better OG images (PNG/JPG) for sharing',
+          'Analytics activation once stable',
+        ],
+      },
     ];
 
     function chipClass(kind){
@@ -101,9 +188,17 @@
       return '';
     }
 
+    function li(text){
+      const d=document.createElement('div');
+      d.className='meta';
+      d.textContent='• ' + text;
+      return d;
+    }
+
     function renderProjects(){
       const el = document.getElementById('projectsList');
       el.innerHTML = '';
+
       for (const p of PROJECTS){
         const row = document.createElement('div');
         row.className = 'row';
@@ -125,18 +220,14 @@
         s.textContent = p.status;
         const ph = document.createElement('span');
         ph.className = 'chip';
-        ph.textContent = p.phase;
+        ph.textContent = p.phaseNow;
         chips.appendChild(s);
         chips.appendChild(ph);
 
         top.appendChild(name);
         top.appendChild(chips);
-
-        const meta = document.createElement('div');
-        meta.className = 'meta';
-        meta.textContent = 'Next: ' + p.next;
-
         left.appendChild(top);
+
         if (p.live){
           const a = document.createElement('a');
           a.href = p.live;
@@ -146,7 +237,25 @@
           a.textContent = p.live;
           left.appendChild(a);
         }
-        left.appendChild(meta);
+
+        const nextPhase = document.createElement('div');
+        nextPhase.className = 'meta';
+        nextPhase.textContent = 'Next phase: ' + p.phaseNext;
+        left.appendChild(nextPhase);
+
+        const na = document.createElement('div');
+        na.className = 'meta';
+        na.style.marginTop = '6px';
+        na.textContent = 'Next actions:';
+        left.appendChild(na);
+        (p.nextActions||[]).forEach(x=>left.appendChild(li(x)));
+
+        const imp = document.createElement('div');
+        imp.className = 'meta';
+        imp.style.marginTop = '8px';
+        imp.textContent = 'Areas to improve:';
+        left.appendChild(imp);
+        (p.improvements||[]).forEach(x=>left.appendChild(li(x)));
 
         row.appendChild(left);
         el.appendChild(row);
