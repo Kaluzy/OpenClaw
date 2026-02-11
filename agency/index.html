@@ -149,14 +149,14 @@ input:focus, textarea:focus{border-color:rgba(96,165,250,.55)}
 
     /* modal */
     .modal{display:none;position:fixed;inset:0;z-index:50}
-    .modalBackdrop{position:absolute;inset:0;background:rgba(0,0,0,.65)}
+    .modalBackdrop{position:absolute;inset:0;background:rgba(0,0,0,.78)}
     .modalPanel{position:relative;max-width:980px;margin:32px auto;padding:12px}
     .modalCard{
-      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
-      border:1px solid var(--line);
+      background:var(--card);
+      border:1px solid rgba(148,163,184,.28);
       border-radius:18px;
       padding:16px;
-      box-shadow:var(--shadow);
+      box-shadow:0 24px 80px rgba(0,0,0,.55);
       max-height:calc(100vh - 64px);
       overflow:auto;
     }
