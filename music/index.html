@@ -316,7 +316,7 @@
         card.className = 'card';
         const coverStyle = album.cover ? ` style="background-image:url('${album.cover}')"` : '';
         card.innerHTML = `
-          <div class="cover"${coverStyle}><span class="badge">${album.year || ''}</span></div>
+          <div class="cover"${coverStyle}></div>
           <div class="cardTitle">${album.title}</div>
           <div class="cardSub">${album.tracks.length} tracks</div>
         `;
@@ -339,7 +339,7 @@
         return;
       }
       $('albumName').textContent = album.title;
-      const chips = [album.year && `<span class="pill">${album.year}</span>`].filter(Boolean).join(' ');
+      const chips = ``;
       $('albumSub').innerHTML = chips;
       $('albumArt').style.backgroundImage = album.cover ? `url('${album.cover}')` : '';
       $('albumArt').style.backgroundSize = 'cover';
