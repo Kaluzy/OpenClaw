@@ -8,7 +8,7 @@
       "id": "drive-1WTAE7pxJXO56rcJJKIjt4lCSF183OBjY",
       "title": "Afrobeats",
       "year": "2026",
-      "cover": null,
+      "cover": "art/afrobeats.svg",
       "tracks": [
         {
           "id": "d1",
@@ -320,7 +320,7 @@
       "id": "drive-18yhD4h5VDQeUEFLYG6yJ5GruxV5Plbck",
       "title": "Amapiano",
       "year": "2026",
-      "cover": null,
+      "cover": "art/amapiano.svg",
       "tracks": [
         {
           "id": "d39",
@@ -552,7 +552,7 @@
       "id": "drive-1bGwOVfCTdoavHOd8nXrbZVeQkupJHxs5",
       "title": "Ethio Jazz",
       "year": "2026",
-      "cover": null,
+      "cover": "art/ethio-jazz.svg",
       "tracks": [
         {
           "id": "d67",
@@ -624,7 +624,7 @@
       "id": "drive-1AW6f3MzLmFxHhM-WbvOzcqwhymSkq4jf",
       "title": "Salsa",
       "year": "2026",
-      "cover": null,
+      "cover": "art/salsa.svg",
       "tracks": [
         {
           "id": "d75",

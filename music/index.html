@@ -66,8 +66,12 @@
     .card{background:linear-gradient(180deg, rgba(255,255,255,.03), transparent 55%), var(--panel2);
       border:1px solid var(--line);border-radius:16px;padding:12px;cursor:pointer;transition:transform .12s ease, background .12s ease;}
     .card:hover{transform:translateY(-2px);background:rgba(255,255,255,.06)}
-    .cover{width:100%;aspect-ratio:1/1;border-radius:14px;background:radial-gradient(600px 400px at 30% 0%, rgba(29,185,84,.22), transparent 60%), rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.08);display:flex;align-items:flex-end;justify-content:flex-start;padding:10px;}
+    .cover{width:100%;aspect-ratio:1/1;border-radius:14px;
+      background:radial-gradient(600px 400px at 30% 0%, rgba(29,185,84,.22), transparent 60%), rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.08);
+      display:flex;align-items:flex-end;justify-content:flex-start;padding:10px;
+      background-size:cover; background-position:center;
+    }
     .cover .badge{font-family:var(--mono);font-size:12px;color:rgba(255,255,255,.75)}
     .cardTitle{margin-top:10px;font-weight:950;line-height:1.2}
     .cardSub{margin-top:4px;color:var(--muted);font-size:13px;line-height:1.35}
@@ -267,8 +271,9 @@
       for (const album of library.albums){
         const card = document.createElement('div');
         card.className = 'card';
+        const coverStyle = album.cover ? ` style="background-image:url('${album.cover}')"` : '';
         card.innerHTML = `
-          <div class="cover"><span class="badge">${album.year || ''}</span></div>
+          <div class="cover"${coverStyle}><span class="badge">${album.year || ''}</span></div>
           <div class="cardTitle">${album.title}</div>
           <div class="cardSub">${album.tracks.length} tracks</div>
         `;
@@ -293,6 +298,9 @@
       $('albumName').textContent = album.title;
       const chips = [album.year && `<span class="pill">${album.year}</span>`].filter(Boolean).join(' ');
       $('albumSub').innerHTML = chips;
+      $('albumArt').style.backgroundImage = album.cover ? `url('${album.cover}')` : '';
+      $('albumArt').style.backgroundSize = 'cover';
+      $('albumArt').style.backgroundPosition = 'center';
       renderTrackList(album.tracks, album.title);
     }
 
