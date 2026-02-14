@@ -1,0 +1,5 @@
+name = "groovely-audio"
+main = "src/index.ts"
+compatibility_date = "2026-02-13"
+
+# Optional: add routes/custom domain later in Cloudflare dashboard.
