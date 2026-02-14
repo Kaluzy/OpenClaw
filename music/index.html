@@ -350,8 +350,14 @@
       $('viewSubtitle').textContent = 'Pick an album to see tracks.';
     }
 
+    function getPlaybackQueue(){
+      // Do not auto-generate shuffle order here; playCurrent() handles creation.
+      return shuffleOn ? (shuffledQueue || queue) : queue;
+    }
+
     function getActiveTrack(){
-      return queue[idx] || null;
+      const q = getPlaybackQueue();
+      return q[idx] || null;
     }
 
     function updatePlayButtons(){
@@ -443,6 +449,8 @@
       }
       return shuffledQueue;
     }
+
+    // NOTE: getPlaybackQueue()/getActiveTrack() rely on this without re-randomizing.
 
     function playCurrent(){
       const q = getQueueForPlayback();
