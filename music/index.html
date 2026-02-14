@@ -88,6 +88,7 @@
     .tracks{display:flex;flex-direction:column;gap:6px}
     .track{display:grid;grid-template-columns:40px 1fr auto;gap:10px;align-items:center;padding:10px 10px;border-radius:12px;border:1px solid transparent;}
     .track:hover{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.06)}
+    .track.active{background:rgba(29,185,84,.10);border-color:rgba(29,185,84,.18)}
     .tbtn{width:36px;height:36px;border-radius:12px;border:1px solid rgba(255,255,255,.10);background:rgba(29,185,84,.14);color:var(--text);font-weight:950;cursor:pointer}
     .tbtn:disabled{opacity:.45;cursor:not-allowed;background:rgba(255,255,255,.04)}
     .tname{font-weight:900}
@@ -192,6 +193,7 @@
         <div class="right">
           <span class="small" id="time">00:00 / 00:00</span>
           <input class="range" id="seek" type="range" min="0" max="100" value="0" />
+          <input class="range" id="vol" type="range" min="0" max="100" value="85" title="Volume" style="max-width:140px" />
         </div>
       </div>
     </footer>
@@ -259,6 +261,8 @@
       allTracks = new Map();
       for (const a of library.albums){
         for (const t of a.tracks){
+          // enrich so the UI can show what’s playing
+          t.albumTitle = a.title;
           allTracks.set(t.id, t);
         }
       }
@@ -361,22 +365,35 @@
     }
 
     function updatePlayButtons(){
-      // Update tracklist buttons
+      // Update tracklist buttons + active highlight
       const btns = document.querySelectorAll('[data-track-id]');
       const active = getActiveTrack();
+
       btns.forEach((b)=>{
         const id = b.getAttribute('data-track-id');
+        const row = b.closest('.track');
         const isActive = active && String(active.id) === String(id);
+
+        if (row) row.classList.toggle('active', !!isActive);
+
         if (!isActive) {
           b.textContent = '▶';
           return;
         }
+
         const playing = !audio.paused;
         b.textContent = playing ? '❚❚' : '▶';
       });
 
       // Update main play/pause icon
       setIcon($('playPause'), audio.paused ? 'play' : 'pause');
+
+      // Update "Now Playing" subtitle with album/genre
+      const t = active;
+      if (t) {
+        const meta = [t.genre, t.albumTitle].filter(Boolean).join(' · ');
+        $('nowArtist').textContent = meta || (t.artist || '');
+      }
     }
 
     function renderTrackList(tracks, label){
@@ -498,6 +515,7 @@
         repeatMode = st.repeatMode || 'off';
         if (typeof st.vol === 'number') audio.volume = st.vol;
         if (typeof st.muted === 'boolean') audio.muted = st.muted;
+        if (typeof st.pos === 'number') audio.currentTime = st.pos;
       } catch {}
     }
 
@@ -621,6 +639,15 @@
       setIcon($('shuffle'), 'shuffle');
       setIcon($('repeat'), repeatMode === 'one' ? 'repeat1' : 'repeat');
       updateModeButtons();
+
+      // Volume
+      $('vol').value = String(Math.round((audio.volume ?? 0.85) * 100));
+      $('vol').addEventListener('input', (e)=>{
+        const v = Number(e.target.value)/100;
+        audio.volume = Math.max(0, Math.min(1, v));
+        audio.muted = false;
+        saveState();
+      });
 
       const res = await fetch('./library.json');
       library = await res.json();
