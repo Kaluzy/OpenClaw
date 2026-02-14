@@ -1,0 +1,681 @@
+{
+  "brand": {
+    "name": "Groovely",
+    "tagline": "Groove-first. Albums + playlists."
+  },
+  "albums": [
+    {
+      "id": "drive-1WTAE7pxJXO56rcJJKIjt4lCSF183OBjY",
+      "title": "Afrobeats",
+      "year": "2026",
+      "cover": null,
+      "tracks": [
+        {
+          "id": "d1",
+          "title": "Aligned (1)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1Y5fAGUdzLC0-tKJASkW0dpuXdAdIcYnD",
+          "genre": "afrobeats"
+        },
+        {
+          "id": "d2",
+          "title": "Body Language",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=10YTbnBXYPuyXXRF_cfdx8uutlaJX457K",
+          "genre": "afrobeats"
+        },
+        {
+          "id": "d3",
+          "title": "BRIGHT SOFT POWER - JOY DUET  (1)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1-1CHNzx44RL3IszIxtO73FtmuykeGzCK",
+          "genre": "afrobeats"
+        },
+        {
+          "id": "d4",
+          "title": "BRIGHT SOFT POWER - JOY DUET",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=13gfrrzLO7codc5MzeHbncrELQxLbANXf",
+          "genre": "afrobeats"
+        },
+        {
+          "id": "d5",
+          "title": "Calculator Jam (1)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1oF7gdulFWofUTJJ4XqjkirwGQntbBlhH",
+          "genre": "afrobeats"
+        },
+        {
+          "id": "d6",
+          "title": "Calculator Jam",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1D1xfEwJfxgqsQV0yv3tOlzK3lCZCZk4c",
+          "genre": "afrobeats"
+        },
+        {
+          "id": "d7",
+          "title": "Choose My Joy (1)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1bdtCH850Tup8RFHCcjV1ij2SxJdHaaYd",
+          "genre": "afrobeats"
+        },
+        {
+          "id": "d8",
+          "title": "Choose My Joy",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1hWPIN9Hq59O4LnPV-X2zXkpr3CjpT5W1",
+          "genre": "afrobeats"
+        },
+        {
+          "id": "d9",
+          "title": "Energy High (1)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1yABst_178rWTiy-uSt1t4n1o-crSQ-oG",
+          "genre": "afrobeats"
+        },
+        {
+          "id": "d10",
+          "title": "Energy High",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1VDzVVI6T1tgSLlaf-mZnFZ1SlddxSVz-",
+          "genre": "afrobeats"
+        },
+        {
+          "id": "d11",
+          "title": "Favorite Stress (1)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1TyiZu-IR10Sw8qm8ZqicPUkcOcd2WksR",
+          "genre": "afrobeats"
+        },
+        {
+          "id": "d12",
+          "title": "Favorite Stress",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1XNy4lOl3M4-_bULH9sCs6esm-piXa4Vy",
+          "genre": "afrobeats"
+        },
+        {
+          "id": "d13",
+          "title": "Fifty Fifty (I Let You Go) - Im not angry. Im done! (1)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=16xiVh-GzJtXGIi8R8FphPSbOlWqOmAyg",
+          "genre": "afrobeats"
+        },
+        {
+          "id": "d14",
+          "title": "Fifty Fifty (I Let You Go) - Im not angry. Im done!",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=16HC9Wem3rcQPm3bPQbzFhlEB_8n4ZsbI",
+          "genre": "afrobeats"
+        },
+        {
+          "id": "d15",
+          "title": "GOOD FOR ME",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=151cA8mQveIg2BZPLoZx4iNwKT0Y1pMo9",
+          "genre": "afrobeats"
+        },
+        {
+          "id": "d16",
+          "title": "JOY COMING BACK (1)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1ZhQvpO5Kbeu6FswVvTlDr-6hm1Q4dZhI",
+          "genre": "afrobeats"
+        },
+        {
+          "id": "d17",
+          "title": "JOY COMING BACK (Add Vocal) (1)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1L6qCPS--rw_-6ANZBMKgr4NM_sHzKxvQ",
+          "genre": "afrobeats"
+        },
+        {
+          "id": "d18",
+          "title": "JOY COMING BACK (Add Vocal)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1aoDQcmIhPWSeyG7Qrbv9qmYpcxJlStWq",
+          "genre": "afrobeats"
+        },
+        {
+          "id": "d19",
+          "title": "JOY COMING BACK",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=18ljtoKGN4ZENi-gjqpB2bejBkksfnuxY",
+          "genre": "afrobeats"
+        },
+        {
+          "id": "d20",
+          "title": "LATE FLIGHTS (RIGHT NOW) (1)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=19HGhkwkH9p5EA3o3p03fY0ODAIPuZmEA",
+          "genre": "afrobeats"
+        },
+        {
+          "id": "d21",
+          "title": "LATE FLIGHTS (RIGHT NOW)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1-ab_QE9NrjXfiId3MQc_TdSXVuyvAlAq",
+          "genre": "afrobeats"
+        },
+        {
+          "id": "d22",
+          "title": "Na Small Small (Immigrant Groove) (1)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1RaENFcBimtzhUEUw1WOC4HDyvq1zdZbp",
+          "genre": "afrobeats"
+        },
+        {
+          "id": "d23",
+          "title": "Na Small Small (Immigrant Groove)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1pOs4SB0tgUCuOzdpP0laTok9gttQ5t0H",
+          "genre": "afrobeats"
+        },
+        {
+          "id": "d24",
+          "title": "New Day (1)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=12X-r1mdF5zYRKQTSmlZK05okBRlEBHqM",
+          "genre": "afrobeats"
+        },
+        {
+          "id": "d25",
+          "title": "New Day",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=15sU-P4pZpGmuNfPkNfQMk8dTkv8q6iOH",
+          "genre": "afrobeats"
+        },
+        {
+          "id": "d26",
+          "title": "No Rush, Just Right (1)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1JiJF266Ri2RkQvIAIlkoRgOWEg_Loe3t",
+          "genre": "afrobeats"
+        },
+        {
+          "id": "d27",
+          "title": "No Rush, Just Right (2)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1LhgKLVludfIfMcNoDLHHG2g_E0TVgZ6R",
+          "genre": "afrobeats"
+        },
+        {
+          "id": "d28",
+          "title": "No Rush, Just Right (3)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1rIKMHPLVUtyRdnJbgR47erlrYIpDdvyq",
+          "genre": "afrobeats"
+        },
+        {
+          "id": "d29",
+          "title": "No Rush, Just Right",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1qCPA1YCi-FuJouoIJJSeBR4K0Z0Oq3WJ",
+          "genre": "afrobeats"
+        },
+        {
+          "id": "d30",
+          "title": "NO WAHALA (BUT I’M SERIOUS) (Remastered)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1rUuq2ZTRLzF_89odASszuK9m45y3MgHD",
+          "genre": "afrobeats"
+        },
+        {
+          "id": "d31",
+          "title": "NO WAHALA (BUT I’M SERIOUS) (Remix) (1)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1N1sKR7KQlKbZKjCbAPtxeJ9swdpiXqMG",
+          "genre": "afrobeats"
+        },
+        {
+          "id": "d32",
+          "title": "NO WAHALA (BUT I’M SERIOUS) (Remix)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1iD5ptujdE0M4yPVRDh0ZqDIiTitDzJP8",
+          "genre": "afrobeats"
+        },
+        {
+          "id": "d33",
+          "title": "Sweet Fire",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1GmiCXabP32jvlNEoH92AMR0TN8kPOoK6",
+          "genre": "afrobeats"
+        },
+        {
+          "id": "d34",
+          "title": "Sweet Wahala (1)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1kXopRrvkutsdRSRpKjQ5wK81Y6VSmFj5",
+          "genre": "afrobeats"
+        },
+        {
+          "id": "d35",
+          "title": "Sweet Wahala",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=10SHc75SmHXPqiKKKxKSKYjYRvPAp9St_",
+          "genre": "afrobeats"
+        },
+        {
+          "id": "d36",
+          "title": "That “Do Whatever” (1)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=13vFM0EcAgqx25QZAac4YNnCd8B_Dk_8Y",
+          "genre": "afrobeats"
+        },
+        {
+          "id": "d37",
+          "title": "That “Do Whatever”",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1-1-BfguTnDJ1UQTgvPbF6nZJRZebOofX",
+          "genre": "afrobeats"
+        },
+        {
+          "id": "d38",
+          "title": "Name",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=15EP0oJdhzJ2VVB-faK9iHDWLuDSekoOo",
+          "genre": "afrobeats"
+        }
+      ]
+    },
+    {
+      "id": "drive-18yhD4h5VDQeUEFLYG6yJ5GruxV5Plbck",
+      "title": "Amapiano",
+      "year": "2026",
+      "cover": null,
+      "tracks": [
+        {
+          "id": "d39",
+          "title": "One More Time (1)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1zEUPp-CFjUS9GdVmQf5hy0qulX5fy6xU",
+          "genre": "amapiano"
+        },
+        {
+          "id": "d40",
+          "title": "Power Move",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=11trnfwIyzwYt2KBHdxoDfOGoKDnMC2bP",
+          "genre": "amapiano"
+        },
+        {
+          "id": "d41",
+          "title": "Quiet Wins (1)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1iRrD_QRdZMBRJVGmvZAD_1W1oUmYGV_P",
+          "genre": "amapiano"
+        },
+        {
+          "id": "d42",
+          "title": "Quiet Wins",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1dbvqA731F30ERBI7BQK-I-wHHCmkGEF4",
+          "genre": "amapiano"
+        },
+        {
+          "id": "d43",
+          "title": "Right Now (1)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1c9_FKCxZ3LYEY_KIK44umTCBoStji9UJ",
+          "genre": "amapiano"
+        },
+        {
+          "id": "d44",
+          "title": "Right Now",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1P5IrnQmIteyWjx8ultno3tHE991WwQcr",
+          "genre": "amapiano"
+        },
+        {
+          "id": "d45",
+          "title": "Small Small Groove (Afro-Fusion Instrumental) (1)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1s5XisKbqByj4xxldYpef_Kyr38Mh_6FI",
+          "genre": "amapiano"
+        },
+        {
+          "id": "d46",
+          "title": "Small Small Groove (Afro-Fusion Instrumental)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1LSghZOv65JaBdiUC1prSqCS4-oeLxyjU",
+          "genre": "amapiano"
+        },
+        {
+          "id": "d47",
+          "title": "Soft Focus _It implies_",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1St_saThYWV7jC4phKOdjFTnGOchl098B",
+          "genre": "amapiano"
+        },
+        {
+          "id": "d48",
+          "title": "Soft Focus (1)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1HHMfbVm2Wf48s4KKHmuyEdkfu8WlTjL8",
+          "genre": "amapiano"
+        },
+        {
+          "id": "d49",
+          "title": "Soft Focus (2)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1k_iVsyZuEejMz94NTs1zB95H8CSTy7Km",
+          "genre": "amapiano"
+        },
+        {
+          "id": "d50",
+          "title": "Soft Focus (Remastered) (1)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1ZORAVPR91e-3BmhqIsCjEDteF7hBhbd8",
+          "genre": "amapiano"
+        },
+        {
+          "id": "d51",
+          "title": "Soft Focus (Remastered)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1-YKhjUOOKn1AM7QlOelaG8mmmYdT1aMw",
+          "genre": "amapiano"
+        },
+        {
+          "id": "d52",
+          "title": "Soft Focus v2",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1Dma82PIqqfd7qMyMVfU_7_8HVndZqHlk",
+          "genre": "amapiano"
+        },
+        {
+          "id": "d53",
+          "title": "Soft Focus",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1-4LWQBlMvOJprD8WVYSZpowtOVwGKlFi",
+          "genre": "amapiano"
+        },
+        {
+          "id": "d54",
+          "title": "Soft Life ( No Rush) (1)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1gnUWOt8Oj0LksSM8eLDWGerebPIlvsnh",
+          "genre": "amapiano"
+        },
+        {
+          "id": "d55",
+          "title": "Soft Life ( No Rush)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1It75bx_C0Wj0YWcIeo5LcIYNRg3fiXa1",
+          "genre": "amapiano"
+        },
+        {
+          "id": "d56",
+          "title": "Soft Life (1)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=14WxPleKLvIH9mu0ktXqimQTXNqsrkhen",
+          "genre": "amapiano"
+        },
+        {
+          "id": "d57",
+          "title": "Soft Life",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1vPt1FN91dvo3rjbJRcEFbohLYpA3wUFH",
+          "genre": "amapiano"
+        },
+        {
+          "id": "d58",
+          "title": "Soft Power, Sweet Fire (1)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1qj3dQZ9M6UxLrQZIsVxl3hd4r6XACMYF",
+          "genre": "amapiano"
+        },
+        {
+          "id": "d59",
+          "title": "Soft Power, Sweet Fire (2)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=10TsPySBnlFLbPdT2oBqWGYe2SUMauliA",
+          "genre": "amapiano"
+        },
+        {
+          "id": "d60",
+          "title": "Soft Power, Sweet Fire",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1jhESemSFB3hKgrJ70NqSFKKKWZZCZ1uB",
+          "genre": "amapiano"
+        },
+        {
+          "id": "d61",
+          "title": "Stay the Course (1)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1FQY87vWgfe86g3oHoaE75rz6YOXJCJRC",
+          "genre": "amapiano"
+        },
+        {
+          "id": "d62",
+          "title": "Stay the Course (2)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1oH0pDSXa1GUFY0XzG7kQFwsS7RmrDUCP",
+          "genre": "amapiano"
+        },
+        {
+          "id": "d63",
+          "title": "Stay the Course (3)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1NDPlXw-OvOKPjflTk4IEeS-LLRr96yk1",
+          "genre": "amapiano"
+        },
+        {
+          "id": "d64",
+          "title": "Stay the Course (4)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1We2FE67g56od7SfcSbsZZLnhIVGfnNgt",
+          "genre": "amapiano"
+        },
+        {
+          "id": "d65",
+          "title": "That _Okay_",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=126IWsriB5yEOKwEcbvSpFFE8V8nKJk2Q",
+          "genre": "amapiano"
+        },
+        {
+          "id": "d66",
+          "title": "Name",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1mqwBcy93GAAAtu6ZGlYiJRLvCgIBrRKO",
+          "genre": "amapiano"
+        }
+      ]
+    },
+    {
+      "id": "drive-1bGwOVfCTdoavHOd8nXrbZVeQkupJHxs5",
+      "title": "Ethio Jazz",
+      "year": "2026",
+      "cover": null,
+      "tracks": [
+        {
+          "id": "d67",
+          "title": "Aligned",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1ALmO7ywXmWX2GU8KrKWOu8ttQlpDMXmT",
+          "genre": "ethio jazz"
+        },
+        {
+          "id": "d68",
+          "title": "Between Pages \\u0026 Light v2",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1sHJlxsq9yVs0hUEaRmVXXd5zvRdWpJn0",
+          "genre": "ethio jazz"
+        },
+        {
+          "id": "d69",
+          "title": "Between Pages \\u0026 Light_It",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1zMV5alCYj4UebLdZAu9pXKZIM5y4hSmx",
+          "genre": "ethio jazz"
+        },
+        {
+          "id": "d70",
+          "title": "Eyob Mekonnen - Wekil Nesh (Lyrics) _ Ethiopian Music",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1ca5SMSxARt7beAAfsEDpWw4xQR2yPdt-",
+          "genre": "ethio jazz"
+        },
+        {
+          "id": "d71",
+          "title": "Stay the Course",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1lRHcIaE9hqAbGR4MkB1c2BSjnhNXMBWm",
+          "genre": "ethio jazz"
+        },
+        {
+          "id": "d72",
+          "title": "Viral (I Moved On) (1)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1VxXD_bCNAU2wmFH_xWM8gH5lY-36Eniw",
+          "genre": "ethio jazz"
+        },
+        {
+          "id": "d73",
+          "title": "Viral (I Moved On)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1e9U5IjMW3nWbWF-pDz-XAQEjFmYQy50z",
+          "genre": "ethio jazz"
+        },
+        {
+          "id": "d74",
+          "title": "Name",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1vPPA6lkxmumQMt-kyKrbEL9FLZpXN9Mn",
+          "genre": "ethio jazz"
+        }
+      ]
+    },
+    {
+      "id": "drive-1AW6f3MzLmFxHhM-WbvOzcqwhymSkq4jf",
+      "title": "Salsa",
+      "year": "2026",
+      "cover": null,
+      "tracks": [
+        {
+          "id": "d75",
+          "title": "When I’m With You (Living Out Loud - Salsa Groove)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1hN26H4H2WrRWOsYNy5bbTYwCuW3MbPHg",
+          "genre": "salsa"
+        },
+        {
+          "id": "d76",
+          "title": "When I’m With You (Living Out Loud – Groove Edit)",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1bxXMMuBMMYj07NoYtxytbpJk68iKv3Mw",
+          "genre": "salsa"
+        },
+        {
+          "id": "d77",
+          "title": "Name",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1JukQmBoGwswEfC-Lr1w6orjv2NEOpDal",
+          "genre": "salsa"
+        }
+      ]
+    },
+    {
+      "id": "drive-root-1fB0PBvwnhGjB8ZQ_MobzEyKaIgyGD_qV",
+      "title": "Loose Tracks",
+      "year": "2026",
+      "cover": null,
+      "tracks": [
+        {
+          "id": "d78",
+          "title": "Voice 260109_185847",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1UQeLBpwrfCDcL5963FkxUAWZ-Qi5jpIq",
+          "genre": "misc"
+        },
+        {
+          "id": "d79",
+          "title": "Name",
+          "artist": "Kaluzy",
+          "durationSec": null,
+          "src": "https://drive.google.com/uc?export=download&id=1XkDCkaFd_gHamXE6xMIYxNlxmbRPbzWB",
+          "genre": "misc"
+        }
+      ]
+    }
+  ],
+  "featuredPlaylists": []
+}
