@@ -361,7 +361,11 @@
       btns.forEach((b)=>{
         const id = b.getAttribute('data-track-id');
         const isActive = active && String(active.id) === String(id);
-        const playing = isActive && !audio.paused;
+        if (!isActive) {
+          b.textContent = '▶';
+          return;
+        }
+        const playing = !audio.paused;
         b.textContent = playing ? '❚❚' : '▶';
       });
 
@@ -386,6 +390,17 @@
         `;
 
         row.querySelector('.tbtn').addEventListener('click', ()=>{
+          const active = getActiveTrack();
+          const isSame = active && String(active.id) === String(t.id);
+
+          // If clicking the currently active track, toggle pause/play.
+          if (isSame) {
+            if (audio.paused) audio.play(); else audio.pause();
+            updatePlayButtons();
+            saveState();
+            return;
+          }
+
           queue = tracks;
           idx = i;
           shuffledQueue = null;
