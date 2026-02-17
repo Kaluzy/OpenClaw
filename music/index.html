@@ -1906,7 +1906,10 @@ const state = {
 /* ========================================================================
    CONSTANTS & CONFIG
    ======================================================================== */
+// API_BASE is only needed if you deploy the optional Cloudflare Worker API.
+// For now we run fully static: load ./library.json and use track.src URLs.
 const API_BASE = '';
+const AUDIO_PROXY_BASE = 'https://groovely-audio.kmariozzy.workers.dev';
 
 /* ========================================================================
    DOM REFS
@@ -2017,10 +2020,24 @@ function getAllTracks() {
 }
 
 function getStreamUrl(track) {
+  // Prefer explicit streaming URL from the manifest (current production setup)
+  if (track && track.src) return track.src;
+
+  // Fallback: if a track has a Drive file id, use the existing proxy worker
+  if (track && track.driveFileId) return `${AUDIO_PROXY_BASE}/p/${track.driveFileId}`;
+
+  // Worker API mode (not enabled by default)
   return `${API_BASE}/api/stream/${track.driveFileId}`;
 }
 
 function renderArtPlaceholder(album) {
+  // If we have an actual cover image/path, render it.
+  if (album && album.cover) {
+    // If cover is a Google Drive "view" link, try to keep it as-is (may not render).
+    // Prefer relative paths like "art/afrobeats.svg".
+    return `<img class="art-img" src="${album.cover}" alt="${escapeHtml(album.title || 'Album cover')}" />`;
+  }
+
   const emoji = album ? album.coverEmoji || '\uD83C\uDFB5' : '\uD83C\uDFB5';
   const color = album ? album.coverColor || '#282828' : '#282828';
   return `<div class="art-placeholder" style="background:${color}">${emoji}</div>`;
@@ -2066,13 +2083,42 @@ function loadFromStorage() {
    DATA LOADING
    ======================================================================== */
 async function loadLibrary() {
+  // Default: load static manifest packaged with the site.
   try {
-    const res = await fetch(`${API_BASE}/api/library`);
-    if (!res.ok) throw new Error('API error');
-    state.library = await res.json();
-  } catch {
+    const res = await fetch('./library.json', { cache: 'no-store' });
+    if (!res.ok) throw new Error('manifest fetch failed');
+    const manifest = await res.json();
+
+    // Support both shapes:
+    // - Production Groovely manifest: { brand, albums:[{id,title,cover,tracks:[{id,title,src,durationSec,...}]}] }
+    // - Worker API shape (future): already normalized album array
+    const albums = Array.isArray(manifest) ? manifest : (manifest.albums || []);
+
+    // Normalize tracks to include albumId + duration (seconds)
+    state.library = albums.map((a) => {
+      const tracks = (a.tracks || []).map((t, i) => ({
+        ...t,
+        albumId: t.albumId || a.id,
+        // support durationSec (our current manifest) or duration
+        duration: (typeof t.duration === 'number') ? t.duration : (typeof t.durationSec === 'number' ? t.durationSec : 0),
+        trackNumber: t.trackNumber || t.trackNo || (i + 1),
+      }));
+      return {
+        ...a,
+        tracks,
+        artist: a.artist || 'Groovely',
+      };
+    });
+
+    // Optional: reflect brand in title
+    if (manifest.brand && manifest.brand.name) {
+      document.title = manifest.brand.name;
+    }
+  } catch (e) {
+    // Fallback demo data so the UI still loads
     state.library = DEMO_LIBRARY;
   }
+
   render();
 }
 
@@ -2218,7 +2264,7 @@ function renderAlbum() {
         <div class="album-header-type">Album</div>
         <h1 class="album-header-title">${escapeHtml(album.title)}</h1>
         <div class="album-header-meta">
-          <span>${escapeHtml(album.artist)}</span> &middot; ${album.year} &middot; ${album.tracks.length} songs, ${formatTime(totalDuration)}
+          <span>${escapeHtml(album.artist)}</span> &middot; ${album.tracks.length} songs, ${formatTime(totalDuration)}
         </div>
         <div class="album-actions">
           <button class="play-album-btn" id="play-album-btn" title="Play album">${ICONS.play}</button>
