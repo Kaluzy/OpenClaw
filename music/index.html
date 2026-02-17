@@ -612,7 +612,7 @@ a:hover { color: var(--accent-hover); }
 
 .track-list-header {
   display: grid;
-  grid-template-columns: 40px 40px 1fr 80px;
+  grid-template-columns: 40px 40px 1fr 80px 120px;
   gap: 8px;
   padding: 0 16px 8px;
   border-bottom: 1px solid var(--border);
@@ -626,7 +626,7 @@ a:hover { color: var(--accent-hover); }
 
 .track-row {
   display: grid;
-  grid-template-columns: 40px 40px 1fr 80px;
+  grid-template-columns: 40px 40px 1fr 80px 120px;
   gap: 8px;
   padding: 8px 16px;
   border-radius: var(--radius);
@@ -694,6 +694,19 @@ a:hover { color: var(--accent-hover); }
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
+
+.track-add-btn{
+  justify-self:end;
+  height:32px;
+  padding:0 10px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:transparent;
+  color:var(--text-secondary);
+  font-weight:600;
+  font-size:0.82rem;
+}
+.track-add-btn:hover{ background: var(--surface-hover); color: var(--text-primary); }
 
 /* ========================================================================
    PLAYLISTS VIEW
@@ -2278,6 +2291,7 @@ function renderAlbum() {
         <div></div>
         <div>Title</div>
         <div style="text-align:right">Duration</div>
+        <div></div>
       </div>`;
 
   album.tracks.forEach((track, i) => {
@@ -2291,6 +2305,7 @@ function renderAlbum() {
         </button>
         <div class="track-title">${escapeHtml(track.title)}</div>
         <div class="track-duration">${formatTime(track.duration)}</div>
+        <button class="track-add-btn" data-track-id="${track.id}" title="Add track to playlist">+ Playlist</button>
       </div>`;
   });
 
@@ -2319,6 +2334,17 @@ function renderAlbum() {
       } else {
         playTrackFromAlbum(album, idx);
       }
+    });
+  });
+
+  // Add single track to playlist
+  mainContent.querySelectorAll('.track-add-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const trackId = btn.dataset.trackId;
+      const track = getTrackById(trackId);
+      if (!track) return;
+      showPlaylistPicker([track]);
     });
   });
 }
