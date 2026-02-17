@@ -1,0 +1,161 @@
+{
+  "version": 1,
+  "generated": "2025-01-15T10:00:00Z",
+  "albums": [
+    {
+      "id": "album-a1f4c8e93d02",
+      "title": "Phosphene Dreams",
+      "artist": "Solara Veil",
+      "cover": "https://drive.google.com/file/d/1ABCphospheneCover/view",
+      "year": 2024,
+      "tracks": [
+        {
+          "id": "track-e7b201cf4a81",
+          "title": "01 Warm Static",
+          "duration": 234,
+          "driveFileId": "1ABCwarmStatic0001",
+          "trackNumber": 1
+        },
+        {
+          "id": "track-3dc9f2a810b5",
+          "title": "02 Halcyon Gate",
+          "duration": 307,
+          "driveFileId": "1ABChalcyonGate002",
+          "trackNumber": 2
+        },
+        {
+          "id": "track-901ab4e57c3f",
+          "title": "03 Dissolve Into Color",
+          "duration": 261,
+          "driveFileId": "1ABCdissolveClr003",
+          "trackNumber": 3
+        },
+        {
+          "id": "track-b82cf601d94a",
+          "title": "04 Neon Moss",
+          "duration": 198,
+          "driveFileId": "1ABCneonMoss00004",
+          "trackNumber": 4
+        },
+        {
+          "id": "track-54e8a3f7bc20",
+          "title": "05 Afterimage",
+          "duration": 342,
+          "driveFileId": "1ABCafterimage005",
+          "trackNumber": 5
+        }
+      ]
+    },
+    {
+      "id": "album-7c3b90df1e56",
+      "title": "Glass Frequencies",
+      "artist": "Solara Veil",
+      "cover": "https://drive.google.com/file/d/1ABCglassFreqCover/view",
+      "year": 2023,
+      "tracks": [
+        {
+          "id": "track-f42de8a01b73",
+          "title": "01 Refracted Light",
+          "duration": 275,
+          "driveFileId": "1ABCrefractedLt001",
+          "trackNumber": 1
+        },
+        {
+          "id": "track-18cd3b72ef04",
+          "title": "02 Sine Language",
+          "duration": 224,
+          "driveFileId": "1ABCsineLang00002",
+          "trackNumber": 2
+        },
+        {
+          "id": "track-6a9ef5d4c312",
+          "title": "03 Cathedral Hum",
+          "duration": 389,
+          "driveFileId": "1ABCcathedralHm03",
+          "trackNumber": 3
+        },
+        {
+          "id": "track-d07b4ca2e198",
+          "title": "04 Prismatic Drift",
+          "duration": 246,
+          "driveFileId": "1ABCprismaticDr04",
+          "trackNumber": 4
+        }
+      ]
+    },
+    {
+      "id": "album-2e8d14fa6b90",
+      "title": "Concrete Daydream",
+      "artist": "Koda & The Phantom Loop",
+      "cover": "https://drive.google.com/file/d/1ABCconcreteDCover/view",
+      "year": 2024,
+      "tracks": [
+        {
+          "id": "track-c35f92a1d847",
+          "title": "01 Rooftop Sketch",
+          "duration": 186,
+          "driveFileId": "1ABCrooftopSk0001",
+          "trackNumber": 1
+        },
+        {
+          "id": "track-a01d7f43b926",
+          "title": "02 Rainy Commute",
+          "duration": 213,
+          "driveFileId": "1ABCrainyCommu002",
+          "trackNumber": 2
+        },
+        {
+          "id": "track-8b4e2c07fa53",
+          "title": "03 Windowsill Jazz",
+          "duration": 247,
+          "driveFileId": "1ABCwindowJazz003",
+          "trackNumber": 3
+        }
+      ]
+    },
+    {
+      "id": "album-5f0a73c8d214",
+      "title": "Late Checkout",
+      "artist": "Koda & The Phantom Loop",
+      "cover": "https://drive.google.com/file/d/1ABClateCkoutCovr/view",
+      "year": 2023,
+      "tracks": [
+        {
+          "id": "track-72bf01e4d5a9",
+          "title": "01 Lobby Hours",
+          "duration": 202,
+          "driveFileId": "1ABClobbyHours001",
+          "trackNumber": 1
+        },
+        {
+          "id": "track-e9a304f7b182",
+          "title": "02 Elevator Warp",
+          "duration": 178,
+          "driveFileId": "1ABCelevatorWp002",
+          "trackNumber": 2
+        },
+        {
+          "id": "track-4df18c5a0e67",
+          "title": "03 Poolside Rhodes",
+          "duration": 265,
+          "driveFileId": "1ABCpoolsideRh003",
+          "trackNumber": 3
+        },
+        {
+          "id": "track-b6c27d39f041",
+          "title": "04 Do Not Disturb",
+          "duration": 294,
+          "driveFileId": "1ABCdoNotDistrb04",
+          "trackNumber": 4
+        },
+        {
+          "id": "track-1e8fa04b3d95",
+          "title": "05 Minibar Serenade",
+          "duration": 231,
+          "driveFileId": "1ABCminibarSer005",
+          "trackNumber": 5
+        }
+      ]
+    }
+  ]
+}
