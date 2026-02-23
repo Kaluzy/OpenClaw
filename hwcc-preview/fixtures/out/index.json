@@ -1,0 +1,33 @@
+{
+  "generatedAt": "2026-02-10T03:19:49.202Z",
+  "items": [
+    {
+      "base": "email1",
+      "messageId": "demo-m1",
+      "subject": "Weekly Update — 1st Grade",
+      "from": "Ms. Pebble <pebble@mcpsmd.org>",
+      "receivedAt": "2026-02-09T19:00:00-05:00",
+      "routing": {
+        "childKey": "abi",
+        "grade": "1st",
+        "confidence": 0.9,
+        "reason": "Matched teacher name/grade keywords (Pebble / 1st grade)"
+      },
+      "extractedPath": "fixtures/out/email1.extracted.json"
+    },
+    {
+      "base": "email2",
+      "messageId": "demo-m2",
+      "subject": "3rd Grade Newsletter",
+      "from": "McClure <mcclure@mcpsmd.org>",
+      "receivedAt": "2026-02-09T19:10:00-05:00",
+      "routing": {
+        "childKey": "raphi",
+        "grade": "3rd",
+        "confidence": 0.9,
+        "reason": "Matched teacher name/grade keywords (McClure / 3rd grade)"
+      },
+      "extractedPath": "fixtures/out/email2.extracted.json"
+    }
+  ]
+}
