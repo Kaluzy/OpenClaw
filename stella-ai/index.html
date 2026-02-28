@@ -6,6 +6,13 @@
   <title>AI at Work — Without the Risk</title>
   <meta name="description" content="A practical AI safety playbook for IT teams: prompts, risk map, and checklist for using AI without leaking sensitive data." />
 
+  <!-- Open Graph / Twitter (placeholders) -->
+  <meta property="og:title" content="AI at Work — Without the Risk" />
+  <meta property="og:description" content="30 prompt templates, a risk map, and a security checklist for IT teams. $29." />
+  <meta property="og:image" content="https://example.com/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
@@ -159,7 +166,8 @@
       pointer-events:none;
     }
 
-    .heroInner{text-align:center;position:relative;}
+    .heroInner{text-align:center;position:relative;animation: floaty 6s ease-in-out infinite;}
+    @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 
     /* (2) Product preview mockup */
     .mockWrap{display:flex;justify-content:center;margin:18px 0 32px;}
