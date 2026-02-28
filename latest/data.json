@@ -1,6 +1,6 @@
 {
   "dateLocal": "2026-02-28",
-  "generatedAt": "2026-02-28T13:06:59.724Z",
+  "generatedAt": "2026-02-28T13:10:30.879Z",
   "hn": [
     {
       "title": "Show HN: SplatHash – A lightweight alternative to BlurHash and ThumbHash",
@@ -61,7 +61,7 @@
         {
           "name": "anthropics/financial-services-plugins",
           "url": "https://github.com/anthropics/financial-services-plugins",
-          "stars": 4773,
+          "stars": 4775,
           "description": null,
           "topics": [],
           "take": "Worth a skim — could be a useful building block."
@@ -69,7 +69,7 @@
         {
           "name": "RightNow-AI/openfang",
           "url": "https://github.com/RightNow-AI/openfang",
-          "stars": 4733,
+          "stars": 4740,
           "description": "Open-source Agent Operating System",
           "topics": [
             "agent-framework",
@@ -86,7 +86,7 @@
         {
           "name": "Panniantong/Agent-Reach",
           "url": "https://github.com/Panniantong/Agent-Reach",
-          "stars": 2813,
+          "stars": 2818,
           "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
           "topics": [
             "agent-infrastructure",
@@ -112,7 +112,7 @@
         {
           "name": "agentscope-ai/CoPaw",
           "url": "https://github.com/agentscope-ai/CoPaw",
-          "stars": 1505,
+          "stars": 1512,
           "description": "Your Personal AI Assistant; easy to install, deploy on your own machine or on the cloud; supports multiple chat apps with easily extensible capabilities.",
           "topics": [],
           "take": "Agent/LLM tooling — could change your workflow speed."
@@ -122,7 +122,7 @@
         {
           "name": "cloudflare/vinext",
           "url": "https://github.com/cloudflare/vinext",
-          "stars": 4614,
+          "stars": 4615,
           "description": "Vite plugin that reimplements the Next.js API surface — deploy anywhere",
           "topics": [],
           "take": "Worth a skim — could be a useful building block."
@@ -138,7 +138,7 @@
         {
           "name": "eooce/python-ws",
           "url": "https://github.com/eooce/python-ws",
-          "stars": 730,
+          "stars": 733,
           "description": "build vless / trojan /shadowsocks  proxies on python server,no need core",
           "topics": [
             "proxy",
