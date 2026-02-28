@@ -1,6 +1,6 @@
 {
   "dateLocal": "2026-02-28",
-  "generatedAt": "2026-02-28T13:10:30.879Z",
+  "generatedAt": "2026-02-28T13:15:31.239Z",
   "hn": [
     {
       "title": "Show HN: SplatHash – A lightweight alternative to BlurHash and ThumbHash",
@@ -61,7 +61,7 @@
         {
           "name": "anthropics/financial-services-plugins",
           "url": "https://github.com/anthropics/financial-services-plugins",
-          "stars": 4775,
+          "stars": 4777,
           "description": null,
           "topics": [],
           "take": "Worth a skim — could be a useful building block."
@@ -69,7 +69,7 @@
         {
           "name": "RightNow-AI/openfang",
           "url": "https://github.com/RightNow-AI/openfang",
-          "stars": 4740,
+          "stars": 4744,
           "description": "Open-source Agent Operating System",
           "topics": [
             "agent-framework",
@@ -86,7 +86,7 @@
         {
           "name": "Panniantong/Agent-Reach",
           "url": "https://github.com/Panniantong/Agent-Reach",
-          "stars": 2818,
+          "stars": 2824,
           "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
           "topics": [
             "agent-infrastructure",
@@ -112,7 +112,7 @@
         {
           "name": "agentscope-ai/CoPaw",
           "url": "https://github.com/agentscope-ai/CoPaw",
-          "stars": 1512,
+          "stars": 1520,
           "description": "Your Personal AI Assistant; easy to install, deploy on your own machine or on the cloud; supports multiple chat apps with easily extensible capabilities.",
           "topics": [],
           "take": "Agent/LLM tooling — could change your workflow speed."
@@ -171,7 +171,7 @@
         {
           "name": "kevinho/clawfeed",
           "url": "https://github.com/kevinho/clawfeed",
-          "stars": 1296,
+          "stars": 1297,
           "description": "ClawFeed — AI-powered news digest with structured summaries from Twitter/RSS feeds and web dashboard",
           "topics": [],
           "take": "Worth a skim — could be a useful building block."
