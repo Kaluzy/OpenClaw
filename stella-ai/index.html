@@ -21,16 +21,21 @@
       --muted:#8a8a9a;
       --accent:#6366f1;
       --accentHover:#818cf8;
+      --purple:#a78bfa;
       --green:#22c55e;
       --yellow:#eab308;
       --red:#ef4444;
       --shadow:0 18px 60px rgba(0,0,0,.45);
       --radius:16px;
       --max:1140px;
+      --navH:80px;
     }
 
     *{box-sizing:border-box;}
-    html{scroll-behavior:smooth;}
+    html{
+      scroll-behavior:smooth;
+      scroll-padding-top: 80px; /* (8) offset for sticky nav */
+    }
     body{
       margin:0;
       background:var(--bg);
@@ -59,7 +64,7 @@
       border-bottom:1px solid rgba(255,255,255,0.06);
       backdrop-filter: blur(20px);
     }
-    .navInner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0;}
+    .navInner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0;min-height:var(--navH);}
 
     .brand{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:-.01em;}
     .dot{width:8px;height:8px;border-radius:999px;background:var(--accent);box-shadow:0 0 0 6px rgba(99,102,241,.10);}
@@ -77,6 +82,7 @@
       letter-spacing:.02em;
       color:var(--text);
       transition: transform .18s ease, background .18s ease, border-color .18s ease, box-shadow .18s ease;
+      cursor:pointer;
     }
     .navCta:hover{
       transform: translateY(-1px);
@@ -155,7 +161,25 @@
 
     .heroInner{text-align:center;position:relative;}
 
-    .heroButtons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:18px;}
+    /* (2) Product preview mockup */
+    .mockWrap{display:flex;justify-content:center;margin:18px 0 32px;}
+    .coverMock{
+      width:320px;max-width:320px;
+      border-radius:18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), transparent 60%), #16161f;
+      border:1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 20px 60px rgba(99,102,241,0.15);
+      transform: perspective(800px) rotateY(-5deg);
+      padding:22px;
+      text-align:left;
+    }
+    .mockKicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,240,245,.75);}
+    .mockTitle{margin-top:14px;font-size:26px;font-weight:800;letter-spacing:-.03em;line-height:1.1;}
+    .mockTitle em{font-family:"Instrument Serif", ui-serif; font-style:italic; font-weight:400; color:var(--accent);}
+    .mockBar{margin-top:16px;height:10px;border-radius:999px;background:rgba(99,102,241,.18);border:1px solid rgba(99,102,241,.22);}
+    .mockFine{margin-top:10px;color:rgba(138,138,154,.95);font-size:13px;}
+
+    .heroButtons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:0;}
 
     .btn{
       display:inline-flex;align-items:center;justify-content:center;
@@ -166,6 +190,7 @@
       letter-spacing:.02em;
       text-decoration:none;
       transition: transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+      cursor:pointer;
     }
 
     .btnPrimary{
@@ -176,6 +201,7 @@
       background: var(--accentHover);
       box-shadow: 0 0 30px rgba(99,102,241,0.30);
       transform: translateY(-1px);
+      text-decoration:none;
     }
 
     .btnGhost{
@@ -242,14 +268,19 @@
 
     .bInner{position:relative;}
 
-    .icon{
-      width:34px;height:34px;border-radius:12px;
-      border:1px solid rgba(255,255,255,0.10);
-      background: rgba(99,102,241,.10);
+    /* (3) Styled icon circles */
+    .i{
+      width:48px;height:48px;border-radius:999px;
+      background: rgba(99,102,241,0.10);
+      border:1px solid rgba(99,102,241,0.20);
       display:flex;align-items:center;justify-content:center;
-      font-size:16px;
+      color: var(--accent);
+      font-size:20px;
+      font-weight:700;
       margin-bottom:12px;
+      flex:0 0 auto;
     }
+
     .bTitle{font-size:18px;font-weight:600;margin:0 0 8px;}
     .bText{margin:0;color:var(--muted);}
 
@@ -271,22 +302,53 @@
       overflow:auto;
     }
 
-    /* PROOF STRIP */
-    .strip{
-      display:flex;
-      gap:18px;
-      align-items:center;
-      justify-content:center;
-      flex-wrap:wrap;
-      color:var(--muted);
-      font-size:14px;
+    /* (5) Peek inside */
+    .peekGrid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+      margin-top:40px;
     }
-    .stripItem{display:flex;align-items:center;gap:10px;}
-    .divider{width:1px;height:18px;background:rgba(255,255,255,0.10);}
+    .miniTable{margin-top:10px;display:grid;gap:8px;}
+    .row{
+      display:flex;gap:10px;align-items:flex-start;
+      padding:10px 10px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,0.08);
+      background: rgba(10,10,15,0.50);
+      color: rgba(240,240,245,0.92);
+      font-size:13px;
+      line-height:1.35;
+    }
+    .tag{font-weight:800;letter-spacing:.06em;text-transform:uppercase;font-size:12px;opacity:.95;}
+    .tag.g{color:var(--green);} .tag.y{color:var(--yellow);} .tag.r{color:var(--red);} 
+
+    .checklist{margin-top:12px;display:grid;gap:10px;color:rgba(240,240,245,0.90);}
+    .cb{display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.35;}
+    .sq{width:14px;height:14px;border-radius:4px;border:1px solid rgba(255,255,255,0.16);background:rgba(255,255,255,0.03);margin-top:2px;flex:0 0 auto;}
+
+    /* (6) Credibility strip -> cards */
+    .cred{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:12px;
+      margin:0 auto;
+      max-width: 980px;
+    }
+    .credCard{
+      background: rgba(22,22,31,0.70);
+      border:1px solid var(--line);
+      border-radius: 16px;
+      padding:16px;
+      box-shadow: 0 10px 40px rgba(0,0,0,.18);
+    }
+    .stat{font-size:32px;font-weight:800;letter-spacing:-.02em;line-height:1;margin:0;}
+    .statLabel{margin-top:8px;color:var(--muted);font-size:14px;}
+    .credRow{display:flex;gap:12px;align-items:center;}
 
     /* WHO */
     .whoList{max-width:820px;margin:34px auto 0;display:grid;gap:12px;}
-    .whoItem{display:flex;gap:12px;align-items:flex-start;color:var(--muted);}
+    .whoItem{display:flex;gap:14px;align-items:flex-start;color:var(--muted);}
     .whoItem b{color:var(--text);font-weight:600;}
 
     /* PRICING */
@@ -302,6 +364,10 @@
     }
     .launch{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;}
     .bigPrice{font-size:64px;line-height:1.0;font-weight:800;margin:12px 0 6px;}
+    /* (4) urgency line */
+    .urgency{font-size:14px;color:var(--purple);margin:6px 0 12px;animation:pulse 2s ease-in-out infinite;}
+    @keyframes pulse{0%,100%{opacity:.7}50%{opacity:1}}
+
     .priceMeta{color:var(--muted);font-size:14px;}
     .priceBtn{width:100%;margin-top:18px;}
 
@@ -355,7 +421,7 @@
     .finalBox h2{margin:0 auto 10px;max-width:820px;}
     .finalBox p{margin:0 auto 22px;color:var(--muted);max-width:620px;}
     .btnInvert{background:#ffffff;color:#0a0a0f;}
-    .btnInvert:hover{background:#f0f0f5;box-shadow: 0 0 30px rgba(255,255,255,0.16);}
+    .btnInvert:hover{background:#f0f0f5;box-shadow: 0 0 30px rgba(255,255,255,0.16);text-decoration:none;}
 
     /* FOOTER */
     footer{padding:38px 0 50px;color:var(--muted);font-size:12px;}
@@ -369,19 +435,26 @@
       .riskRow{grid-template-columns:1fr;}
       .bento{grid-template-columns:1fr;}
       .bLarge{grid-column:auto;grid-row:auto;}
+      .peekGrid{grid-template-columns:1fr;}
       .licenseRow{grid-template-columns:1fr;}
+      .cred{grid-template-columns:1fr 1fr;}
+    }
+
+    @media (max-width: 520px){
+      .cred{grid-template-columns:1fr;}
+      .coverMock{width:100%;max-width:320px;}
     }
 
     @media (prefers-reduced-motion: reduce){
       html{scroll-behavior:auto;}
-      *{transition:none !important;}
+      *{transition:none !important;animation:none !important;}
     }
   </style>
 </head>
 <body>
   <script>
-    // Set once so every CTA stays consistent.
-    window.GUMROAD_URL = 'https://starlit4410.gumroad.com/l/ai-at-work-without-the-risk?utm_source=stella-ai&utm_medium=website&utm_campaign=launch';
+    // (1) CTA destination — placeholder per instructions.
+    window.GUMROAD_URL = 'https://YOURGUMROAD.gumroad.com/l/YOURPRODUCT';
   </script>
 
   <header class="nav" id="nav">
@@ -391,7 +464,7 @@
           <div class="dot" aria-hidden="true"></div>
           <span>AI at Work</span>
         </div>
-        <a class="navCta" data-cta href="#" aria-label="Get the Playbook">Get the Playbook</a>
+        <a class="navCta" data-cta href="https://YOURGUMROAD.gumroad.com/l/YOURPRODUCT" aria-label="Get the Playbook">Get the Playbook</a>
       </div>
     </div>
   </header>
@@ -405,9 +478,22 @@
         <h1>Use AI at work without putting your job at risk</h1>
         <p class="lead">30 prompt templates, a risk classification map, and a security checklist your team can use starting tomorrow morning.</p>
 
+        <!-- (2) Product preview: CSS-only mockup (swap to <img> when ready)
+          Replace this block with:
+          <img class="productImg" src="YOUR_IMAGE.png" alt="AI at Work — Without the Risk (PDF cover)" />
+        -->
+        <div class="mockWrap" aria-label="Product preview">
+          <div class="coverMock">
+            <div class="mockKicker">PDF Playbook</div>
+            <div class="mockTitle">AI at Work<br/><em>Without the Risk</em></div>
+            <div class="mockBar" aria-hidden="true"></div>
+            <div class="mockFine">Risk Map · Templates · Checklist</div>
+          </div>
+        </div>
+
         <div class="heroButtons">
-          <a class="btn btnPrimary" data-cta href="#">Get the Playbook — $29</a>
-          <a class="btn btnGhost" href="#inside">See what’s inside ↓</a>
+          <a class="btn btnPrimary" data-cta href="https://YOURGUMROAD.gumroad.com/l/YOURPRODUCT">Get the Playbook — $29</a>
+          <button class="btn btnGhost" type="button" data-scroll="inside">See what’s inside ↓</button>
         </div>
 
         <div class="heroMeta">PDF · Instant delivery · Used by IT teams in healthcare, finance, and government</div>
@@ -467,7 +553,7 @@
       <div class="bento">
         <div class="card bCard bLarge">
           <div class="bInner">
-            <div class="icon" aria-hidden="true">⌘</div>
+            <div class="i" aria-hidden="true">❯_</div>
             <div class="bTitle">30 Safe Prompt Templates</div>
             <p class="bText">Ticket summaries. Incident timelines. PowerShell scaffolding. KB rewrites. Outage notifications. Executive summaries. Every template is pre-sanitized — no PII, no credentials, no internal identifiers required.</p>
 
@@ -481,7 +567,7 @@
 
         <div class="card bCard">
           <div class="bInner">
-            <div class="icon" aria-hidden="true">🛡</div>
+            <div class="i" aria-hidden="true">◆</div>
             <div class="bTitle">AI Risk Map</div>
             <p class="bText">Green, Yellow, Red. A one-page decision framework for what’s safe, what needs sanitization, and what never enters a prompt. Print it. Post it at your desk.</p>
           </div>
@@ -489,7 +575,7 @@
 
         <div class="card bCard">
           <div class="bInner">
-            <div class="icon" aria-hidden="true">☑</div>
+            <div class="i" aria-hidden="true">✓</div>
             <div class="bTitle">Security Checklist</div>
             <p class="bText">Pre-use and post-use. Seven checks before every prompt, five after every output. Printable. Designed to become muscle memory.</p>
           </div>
@@ -497,7 +583,7 @@
 
         <div class="card bCard">
           <div class="bInner">
-            <div class="icon" aria-hidden="true">💬</div>
+            <div class="i" aria-hidden="true">▸</div>
             <div class="bTitle">Manager Scripts + Pilot Plan</div>
             <p class="bText">Four conversation scripts for introducing AI to leadership. Plus a structured 30-day pilot proposal with measurement criteria and exit conditions.</p>
           </div>
@@ -505,7 +591,7 @@
 
         <div class="card bCard">
           <div class="bInner">
-            <div class="icon" aria-hidden="true">⚖</div>
+            <div class="i" aria-hidden="true">⟺</div>
             <div class="bTitle">Copilot vs ChatGPT</div>
             <p class="bText">Enterprise data handling, training data retention, compliance certifications, audit logging. A security comparison, not a product review.</p>
           </div>
@@ -513,7 +599,7 @@
 
         <div class="card bCard">
           <div class="bInner">
-            <div class="icon" aria-hidden="true">⚡</div>
+            <div class="i" aria-hidden="true">↯</div>
             <div class="bTitle">5 Workflow Examples</div>
             <p class="bText">Real before-and-after scenarios: ticket triage, script development, incident comms, KB overhauls, executive reporting. With time-saved estimates.</p>
           </div>
@@ -522,19 +608,77 @@
     </div>
   </section>
 
-  <section class="alt" aria-label="Credibility strip">
+  <!-- (5) Peek inside -->
+  <section class="alt" id="peek">
     <div class="container">
-      <div class="strip">
-        <div class="stripItem">📘 <span><b style="color:var(--text)">20 pages</b></span></div>
-        <div class="divider" aria-hidden="true"></div>
-        <div class="stripItem">📄 <span><b style="color:var(--text)">30 templates</b></span></div>
-        <div class="divider" aria-hidden="true"></div>
-        <div class="stripItem">🛡 <span><b style="color:var(--text)">Built in healthcare IT</b></span></div>
+      <div class="center">
+        <div class="eyebrow">PEEK INSIDE</div>
+        <h2>Three pages from the <span class="accentSerif">playbook</span></h2>
+      </div>
+
+      <div class="peekGrid">
+        <div class="card">
+          <div class="bTitle" style="margin-top:0">The Risk Map</div>
+          <div class="miniTable" aria-label="Risk map mini">
+            <div class="row"><span class="tag g">Green</span> → Public knowledge, generic docs</div>
+            <div class="row"><span class="tag y">Yellow</span> → Internal context, sanitize first</div>
+            <div class="row"><span class="tag r">Red</span> → Credentials, PII, regulated data — never</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="bTitle" style="margin-top:0">Prompt Template #1</div>
+          <pre>Summarize this IT support interaction in 3-4 sentences. Do not include names, usernames, or ticket numbers. Focus on: symptoms reported, actions taken, current status.</pre>
+        </div>
+
+        <div class="card">
+          <div class="bTitle" style="margin-top:0">Pre-Use Checklist</div>
+          <div class="checklist" aria-label="Checklist preview">
+            <div class="cb"><span class="sq" aria-hidden="true"></span> No PII in this prompt</div>
+            <div class="cb"><span class="sq" aria-hidden="true"></span> No credentials or tokens</div>
+            <div class="cb"><span class="sq" aria-hidden="true"></span> All hostnames replaced with placeholders</div>
+            <div class="cb"><span class="sq" aria-hidden="true"></span> I would be comfortable if this appeared in an audit log</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="team">
+  <!-- (6) Credibility strip upgraded -->
+  <section aria-label="Credibility strip">
+    <div class="container">
+      <div class="cred">
+        <div class="credCard">
+          <div class="stat">20</div>
+          <div class="statLabel">pages</div>
+        </div>
+        <div class="credCard">
+          <div class="stat">30</div>
+          <div class="statLabel">templates</div>
+        </div>
+        <div class="credCard">
+          <div class="credRow">
+            <div class="i" aria-hidden="true">●</div>
+            <div>
+              <div style="font-weight:700;letter-spacing:-.01em">Built in healthcare IT</div>
+              <div class="statLabel">security-first constraints</div>
+            </div>
+          </div>
+        </div>
+        <div class="credCard">
+          <div class="credRow">
+            <div class="i" aria-hidden="true">▦</div>
+            <div>
+              <div style="font-weight:700;letter-spacing:-.01em">6 categories</div>
+              <div class="statLabel">mapped to daily work</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="team" class="alt">
     <div class="container">
       <div class="center">
         <div class="eyebrow">YOUR TEAM</div>
@@ -542,10 +686,10 @@
       </div>
 
       <div class="whoList">
-        <div class="whoItem"><div>🖥</div><div><b>Sysadmins and IT administrators</b></div></div>
-        <div class="whoItem"><div>👥</div><div><b>Small IT teams (5–50 people)</b></div></div>
-        <div class="whoItem"><div>🔒</div><div><b>Security-conscious environments (healthcare, finance, government)</b></div></div>
-        <div class="whoItem"><div>⚡</div><div><b>Anyone already using ChatGPT or Copilot</b> who wants it documented and defensible</div></div>
+        <div class="whoItem"><div class="i" aria-hidden="true">▪</div><div><b>Sysadmins and IT administrators</b></div></div>
+        <div class="whoItem"><div class="i" aria-hidden="true">▪▪</div><div><b>Small IT teams (5–50 people)</b></div></div>
+        <div class="whoItem"><div class="i" aria-hidden="true">●</div><div><b>Security-conscious environments</b> (healthcare, finance, government)</div></div>
+        <div class="whoItem"><div class="i" aria-hidden="true">↗</div><div><b>Anyone already using ChatGPT or Copilot</b> who wants it documented and defensible</div></div>
       </div>
     </div>
   </section>
@@ -560,8 +704,9 @@
         <div class="priceCard">
           <div class="launch">LAUNCH PRICE</div>
           <div class="bigPrice">$29</div>
+          <div class="urgency">Launch price — increases to $49 after the first 50 sales</div>
           <div class="priceMeta">One-time purchase · Instant PDF delivery · Free updates through v1.x</div>
-          <a class="btn btnPrimary priceBtn" data-cta href="#">Get the Playbook →</a>
+          <a class="btn btnPrimary priceBtn" data-cta href="https://YOURGUMROAD.gumroad.com/l/YOURPRODUCT">Get the Playbook →</a>
 
           <div class="licenseRow">
             <div class="license">
@@ -627,7 +772,7 @@
       <div class="finalBox">
         <h2>Your team is already using AI. <span class="accentSerif">Make it defensible.</span></h2>
         <p>Written by someone who actually does this work every day.</p>
-        <a class="btn btnInvert" data-cta href="#">Get the Playbook — $29</a>
+        <a class="btn btnInvert" data-cta href="https://YOURGUMROAD.gumroad.com/l/YOURPRODUCT">Get the Playbook — $29</a>
       </div>
     </div>
   </section>
@@ -636,16 +781,19 @@
     <div class="container">
       <div class="footRow">
         <div>© 2025 AI at Work</div>
-        <div>Questions? <span style="opacity:.9">kaluzy@email.com</span></div>
       </div>
     </div>
   </footer>
 
   <script>
     (function(){
-      // Wire every CTA to the same Gumroad URL.
+      // (1) Ensure every CTA points to the same Gumroad URL.
       const url = window.GUMROAD_URL;
-      document.querySelectorAll('[data-cta]').forEach(a => { a.setAttribute('href', url); a.setAttribute('target','_blank'); a.setAttribute('rel','noopener'); });
+      document.querySelectorAll('[data-cta]').forEach(a => {
+        a.setAttribute('href', url);
+        a.setAttribute('target','_blank');
+        a.setAttribute('rel','noopener');
+      });
 
       // Sticky nav background on scroll.
       const nav = document.getElementById('nav');
@@ -662,18 +810,28 @@
         const panel = box.querySelector('.a');
         btn.addEventListener('click', () => {
           const open = box.classList.toggle('open');
-          if (open){
-            panel.style.maxHeight = panel.scrollHeight + 'px';
-          } else {
-            panel.style.maxHeight = '0px';
-          }
+          if (open){ panel.style.maxHeight = panel.scrollHeight + 'px'; }
+          else { panel.style.maxHeight = '0px'; }
         });
       });
-
-      // Ensure opened panels stay sized when fonts load / resize.
       window.addEventListener('resize', () => {
         document.querySelectorAll('.qa.open .a').forEach(p => { p.style.maxHeight = p.scrollHeight + 'px'; });
       });
+
+      // (8) Smooth scroll button (no "#" links on CTAs)
+      document.querySelectorAll('[data-scroll]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = btn.getAttribute('data-scroll');
+          const el = document.getElementById(id);
+          if (!el) return;
+          const top = el.getBoundingClientRect().top + window.pageYOffset - 80;
+          window.scrollTo({ top, behavior: 'smooth' });
+        });
+      });
+
+      // Safety check: warn in console if any href="#" remains.
+      const bad = [...document.querySelectorAll('a[href="#"]')];
+      if (bad.length) console.warn('Found placeholder # links:', bad);
     })();
   </script>
 </body>
