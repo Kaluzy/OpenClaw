@@ -1,55 +1,55 @@
 {
   "dateLocal": "2026-02-28",
-  "generatedAt": "2026-02-28T13:15:31.239Z",
+  "generatedAt": "2026-02-28T22:59:15.867Z",
   "hn": [
     {
-      "title": "Show HN: SplatHash – A lightweight alternative to BlurHash and ThumbHash",
-      "url": "https://github.com/junevm/splathash",
+      "title": "The Windows 95 User Interface: A Case Study in Usability Engineering",
+      "url": "https://dl.acm.org/doi/fullHtml/10.1145/238386.238611",
       "why": "Worth a skim — potential trend / tactic to steal."
     },
     {
-      "title": "OpenAI – How to delete your account",
-      "url": "https://help.openai.com/en/articles/6378407-how-to-delete-your-account",
+      "title": "Iran's Ayatollah Ali Khamenei is killed in Israeli strike, ending 36-year rule",
+      "url": "https://www.npr.org/2026/02/28/1123499337/iran-israel-ayatollah-ali-khamenei-killed",
       "why": "Worth a skim — potential trend / tactic to steal."
     },
     {
-      "title": "Unsloth Dynamic 2.0 GGUFs",
-      "url": "https://unsloth.ai/docs/basics/unsloth-dynamic-2.0-ggufs",
+      "title": "Building a Minimal Transformer for 10-digit Addition",
+      "url": "https://alexlitzenberger.com/blog/post.html?post=/building_a_minimal_transformer_for_10_digit_addition",
       "why": "Worth a skim — potential trend / tactic to steal."
     },
     {
-      "title": "Inferring car movement patterns from passive TPMS measurements",
-      "url": "https://dspace.networks.imdea.org/handle/20.500.12761/2011",
+      "title": "\"We do not think Anthropic should be designated as a supply chain risk\"",
+      "url": "https://twitter.com/OpenAI/status/2027846016423321831",
       "why": "Worth a skim — potential trend / tactic to steal."
     },
     {
-      "title": "US and Israel launch strikes on Iran, as Trump says ‘massive’ campaign underway",
-      "url": "https://www.cnn.com/2026/02/28/middleeast/israel-attack-iran-intl-hnk",
+      "title": "MinIO Is Dead, Long Live MinIO",
+      "url": "https://blog.vonng.com/en/db/minio-resurrect/",
       "why": "Worth a skim — potential trend / tactic to steal."
     },
     {
-      "title": "Cash issuing terminals",
-      "url": "https://computer.rip/2026-02-27-ibm-atm.html",
+      "title": "Our Agreement with the Department of War",
+      "url": "https://openai.com/index/our-agreement-with-the-department-of-war",
       "why": "Worth a skim — potential trend / tactic to steal."
     },
     {
-      "title": "OpenAI agrees with Dept. of War to deploy models in their classified network",
-      "url": "https://twitter.com/sama/status/2027578652477821175",
+      "title": "Qwen3.5 122B and 35B models offer Sonnet 4.5 performance on local computers",
+      "url": "https://venturebeat.com/technology/alibabas-new-open-source-qwen3-5-medium-models-offer-sonnet-4-5-performance",
       "why": "Worth a skim — potential trend / tactic to steal."
     },
     {
-      "title": "Bootc and OSTree: Modernizing Linux System Deployment",
-      "url": "https://a-cup-of.coffee/blog/ostree-bootc/",
+      "title": "Block the \"Upgrade to Tahoe\" Alerts",
+      "url": "https://robservatory.com/block-the-upgrade-to-tahoe-alerts-and-system-settings-indicator/",
       "why": "Worth a skim — potential trend / tactic to steal."
     },
     {
-      "title": "Croatia declared free of landmines after 31 years",
-      "url": "https://glashrvatske.hrt.hr/en/domestic/croatia-declared-free-of-landmines-after-31-years-12593533",
+      "title": "Verified Spec-Driven Development (VSDD)",
+      "url": "https://gist.github.com/dollspace-gay/d8d3bc3ecf4188df049d7a4726bb2a00",
       "why": "Worth a skim — potential trend / tactic to steal."
     },
     {
-      "title": "Statement on the comments from Secretary of War Pete Hegseth",
-      "url": "https://www.anthropic.com/news/statement-comments-secretary-war",
+      "title": "The whole thing was a scam",
+      "url": "https://garymarcus.substack.com/p/the-whole-thing-was-scam",
       "why": "Worth a skim — potential trend / tactic to steal."
     }
   ],
@@ -59,17 +59,9 @@
     "groups": {
       "AI / Agents": [
         {
-          "name": "anthropics/financial-services-plugins",
-          "url": "https://github.com/anthropics/financial-services-plugins",
-          "stars": 4777,
-          "description": null,
-          "topics": [],
-          "take": "Worth a skim — could be a useful building block."
-        },
-        {
           "name": "RightNow-AI/openfang",
           "url": "https://github.com/RightNow-AI/openfang",
-          "stars": 4744,
+          "stars": 5496,
           "description": "Open-source Agent Operating System",
           "topics": [
             "agent-framework",
@@ -84,9 +76,17 @@
           "take": "Agent/LLM tooling — could change your workflow speed."
         },
         {
+          "name": "anthropics/financial-services-plugins",
+          "url": "https://github.com/anthropics/financial-services-plugins",
+          "stars": 4867,
+          "description": null,
+          "topics": [],
+          "take": "Worth a skim — could be a useful building block."
+        },
+        {
           "name": "Panniantong/Agent-Reach",
           "url": "https://github.com/Panniantong/Agent-Reach",
-          "stars": 2824,
+          "stars": 3024,
           "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
           "topics": [
             "agent-infrastructure",
@@ -112,7 +112,7 @@
         {
           "name": "agentscope-ai/CoPaw",
           "url": "https://github.com/agentscope-ai/CoPaw",
-          "stars": 1520,
+          "stars": 1973,
           "description": "Your Personal AI Assistant; easy to install, deploy on your own machine or on the cloud; supports multiple chat apps with easily extensible capabilities.",
           "topics": [],
           "take": "Agent/LLM tooling — could change your workflow speed."
@@ -122,7 +122,7 @@
         {
           "name": "cloudflare/vinext",
           "url": "https://github.com/cloudflare/vinext",
-          "stars": 4615,
+          "stars": 4705,
           "description": "Vite plugin that reimplements the Next.js API surface — deploy anywhere",
           "topics": [],
           "take": "Worth a skim — could be a useful building block."
@@ -130,7 +130,7 @@
         {
           "name": "Polymarket/polymarket-cli",
           "url": "https://github.com/Polymarket/polymarket-cli",
-          "stars": 1308,
+          "stars": 1333,
           "description": null,
           "topics": [],
           "take": "Worth a skim — could be a useful building block."
@@ -138,7 +138,7 @@
         {
           "name": "eooce/python-ws",
           "url": "https://github.com/eooce/python-ws",
-          "stars": 733,
+          "stars": 819,
           "description": "build vless / trojan /shadowsocks  proxies on python server,no need core",
           "topics": [
             "proxy",
@@ -153,7 +153,7 @@
         {
           "name": "apple/python-apple-fm-sdk",
           "url": "https://github.com/apple/python-apple-fm-sdk",
-          "stars": 698,
+          "stars": 724,
           "description": "Python bindings for access to the on-device model at the core of Apple Intelligence through the Foundation Models framework",
           "topics": [],
           "take": "Worth a skim — could be a useful building block."
@@ -163,7 +163,7 @@
         {
           "name": "peteromallet/dataclaw",
           "url": "https://github.com/peteromallet/dataclaw",
-          "stars": 1559,
+          "stars": 1602,
           "description": null,
           "topics": [],
           "take": "Worth a skim — could be a useful building block."
@@ -171,17 +171,24 @@
         {
           "name": "kevinho/clawfeed",
           "url": "https://github.com/kevinho/clawfeed",
-          "stars": 1297,
+          "stars": 1341,
           "description": "ClawFeed — AI-powered news digest with structured summaries from Twitter/RSS feeds and web dashboard",
           "topics": [],
           "take": "Worth a skim — could be a useful building block."
         },
         {
-          "name": "andyhuo520/aetherviz-master",
-          "url": "https://github.com/andyhuo520/aetherviz-master",
-          "stars": 718,
-          "description": "AetherViz Master - 互动教育可视化建筑师，将任意教学主题转化为沉浸式3D交互网页",
-          "topics": [],
+          "name": "taigrr/spank",
+          "url": "https://github.com/taigrr/spank",
+          "stars": 754,
+          "description": "Slap your MacBook, it yells back. Uses Apple Silicon accelerometer via IOKit HID.",
+          "topics": [
+            "accelerometer",
+            "apple-silicon",
+            "fun",
+            "go",
+            "iokit",
+            "macos"
+          ],
           "take": "Worth a skim — could be a useful building block."
         }
       ]
@@ -189,6 +196,16 @@
   },
   "watchtower": {
     "items": [
+      {
+        "source": "SaaStr",
+        "title": "20VC x SaaStr This Week: Anthropic Wiped $20B Off Cybersecurity, 100K Deca-Millionaires Are Coming, and Why Every B2B Product Feels Dated Now",
+        "url": "https://www.saastr.com/20vc-x-saastr-this-week-anthropic-wiped-20b-off-cybersecurity-100k-deca-millionaires-are-coming-and-why-every-b2b-product-feels-dated-now/"
+      },
+      {
+        "source": "SaaStr",
+        "title": "10 Months Ago, We Were Barely Using Salesforce. Now It&#8217;s Our AI Agent Hub.",
+        "url": "https://www.saastr.com/10-months-ago-we-were-barely-using-salesforce-now-its-our-ai-agent-hub/"
+      },
       {
         "source": "SaaStr",
         "title": "Dear SaaStr: Should I Take On Venture Debt?",
@@ -208,16 +225,6 @@
         "source": "SaaStr",
         "title": "Dear SaaStr: Is it Wisest to Approach One Investor at a Time?",
         "url": "https://www.saastr.com/is-it-wisest-to-approach-one-investor-at-a-time/"
-      },
-      {
-        "source": "SaaStr",
-        "title": "The Boomerang Founders: Why UiPath and Workday&#8217;s Creators Had to Come Back — And Who&#8217;s Next",
-        "url": "https://www.saastr.com/the-boomerang-founders-why-uipath-and-workdays-creators-had-to-come-back-and-whos-next/"
-      },
-      {
-        "source": "SaaStr",
-        "title": "SaaStr AI App of the Week: Lightfield — The AI-Native CRM That Updates Itself, Preps Your Meetings, and Actually Knows Your Customers Cold",
-        "url": "https://www.saastr.com/saastr-ai-app-of-the-week-lightfield-the-ai-native-crm-that-killed-tomes-25-million-users-to-build-something-better/"
       }
     ],
     "note": null
