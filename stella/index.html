@@ -17,16 +17,20 @@
 
   <style>
     :root{
-      --bg:#ffffff;
-      --ink:#0b1220;
-      --muted:#4b5563;
-      --muted2:#6b7280;
-      --panel:#f8fafc;
-      --border:rgba(15,23,42,.10);
-      --shadow:0 18px 55px rgba(2,6,23,.10);
-      --accent:#2563eb;
-      --accent2:#0ea5e9;
-      --focus:rgba(37,99,235,.25);
+      --bg:#0a0d14;
+      --panel:#0f1625;
+      --panel2:#0c1320;
+      --ink:#e9eef9;
+      --muted:#a7b3c8;
+      --muted2:#7f8aa0;
+      --line:rgba(255,255,255,.10);
+      --shadow:0 24px 70px rgba(0,0,0,.50);
+      --blue:#7dd3fc;
+      --violet:#a78bfa;
+      --green:#34d399;
+      --yellow:#fbbf24;
+      --red:#fb7185;
+      --focus:rgba(125,211,252,.35);
     }
     *{box-sizing:border-box;}
     html{scroll-behavior:smooth;}
@@ -34,112 +38,171 @@
       margin:0;
       color:var(--ink);
       background:
-        radial-gradient(900px 420px at 15% -10%, rgba(14,165,233,.10), transparent 60%),
-        radial-gradient(780px 420px at 90% 0%, rgba(37,99,235,.08), transparent 60%),
+        radial-gradient(1000px 520px at 18% -10%, rgba(125,211,252,.18), transparent 60%),
+        radial-gradient(900px 560px at 90% 10%, rgba(167,139,250,.15), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.03), transparent 20%),
         var(--bg);
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       line-height:1.55;
     }
-    a{color:var(--accent);text-decoration:none;}
+    a{color:inherit;text-decoration:none;}
     a:hover{text-decoration:underline;}
-    .wrap{max-width:1080px;margin:0 auto;padding:22px 18px 70px;}
 
-    /* Sticky nav */
-    .nav{
-      position:sticky; top:0; z-index:10;
-      backdrop-filter:saturate(180%) blur(10px);
-      background:rgba(255,255,255,.78);
-      border-bottom:1px solid var(--border);
+    /* subtle grid to differentiate from the “card dashboard” look */
+    .gridbg{
+      position:fixed; inset:0;
+      background-image:
+        linear-gradient(to right, rgba(255,255,255,.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,.05) 1px, transparent 1px);
+      background-size:68px 68px;
+      mask-image: radial-gradient(900px 420px at 30% 0%, rgba(0,0,0,.9), transparent 70%);
+      pointer-events:none;
+      opacity:.12;
     }
-    .navInner{max-width:1080px;margin:0 auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
-    .brand{display:flex;align-items:center;gap:10px;min-width:180px;}
-    .mark{width:30px;height:30px;border-radius:10px;background:linear-gradient(135deg, rgba(37,99,235,.18), rgba(14,165,233,.16));border:1px solid var(--border);box-shadow:0 10px 30px rgba(2,6,23,.08);}
-    .brand strong{letter-spacing:-.02em;}
+
+    .wrap{max-width:1140px;margin:0 auto;padding:26px 18px 78px;position:relative;}
+
+    /* Nav */
+    .nav{
+      position:sticky; top:0; z-index:20;
+      background:rgba(10,13,20,.72);
+      backdrop-filter:saturate(150%) blur(12px);
+      border-bottom:1px solid var(--line);
+    }
+    .navInner{max-width:1140px;margin:0 auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+    .brand{display:flex;align-items:center;gap:12px;min-width:210px;}
+    .mark{
+      width:30px;height:30px;border-radius:10px;
+      background:linear-gradient(135deg, rgba(125,211,252,.25), rgba(167,139,250,.22));
+      border:1px solid var(--line);
+      box-shadow:0 14px 40px rgba(0,0,0,.45);
+    }
+    .brandName{font-weight:950;letter-spacing:-.02em;}
+    .brandSub{font-size:12px;color:var(--muted2);margin-top:1px;}
     .links{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-end;}
-    .links a{color:var(--muted);font-size:13px;font-weight:700;}
+    .links a{font-size:13px;font-weight:800;color:var(--muted);padding:6px 8px;border-radius:10px;}
+    .links a:hover{background:rgba(255,255,255,.04);text-decoration:none;}
 
     /* Hero */
-    .hero{padding:36px 0 10px;}
-    .kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);}
-    h1{margin:10px 0 10px;font-size:44px;line-height:1.06;letter-spacing:-.045em;}
-    @media (max-width:720px){h1{font-size:36px;}}
-    .subhead{margin:0 0 14px;font-size:16px;color:var(--muted);max-width:72ch;}
-    .value{margin:0 0 18px;font-size:18px;font-weight:800;max-width:72ch;}
-
-    .ctaRow{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:10px;}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;
-      padding:11px 14px;border-radius:12px;
-      border:1px solid var(--border);
-      font-weight:900;
-      color:var(--ink);
-      background:rgba(255,255,255,.85);
-      box-shadow:0 12px 30px rgba(2,6,23,.06);
+    .hero{
+      margin-top:22px;
+      border:1px solid var(--line);
+      border-radius:22px;
+      background:
+        radial-gradient(900px 340px at 25% 0%, rgba(125,211,252,.14), transparent 60%),
+        radial-gradient(900px 420px at 92% 12%, rgba(167,139,250,.12), transparent 62%),
+        linear-gradient(180deg, rgba(255,255,255,.06), transparent 55%),
+        var(--panel);
+      box-shadow:var(--shadow);
+      overflow:hidden;
     }
-    .btn.primary{background:linear-gradient(135deg, rgba(37,99,235,.12), rgba(14,165,233,.10));border-color:rgba(37,99,235,.18);}
-    .btn.primary span{color:var(--accent);}
-    .btn:focus{outline:none;box-shadow:0 0 0 4px var(--focus), 0 12px 30px rgba(2,6,23,.06);} 
+    .heroInner{display:grid;grid-template-columns:1.1fr .9fr;gap:16px;padding:24px;}
+    @media (max-width: 980px){.heroInner{grid-template-columns:1fr;}}
+
+    .kicker{
+      display:inline-flex;gap:10px;align-items:center;
+      color:var(--muted);
+      font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+    }
+    .dot{width:7px;height:7px;border-radius:99px;background:var(--green);box-shadow:0 0 0 3px rgba(52,211,153,.18);}
+
+    h1{margin:12px 0 12px;font-size:48px;line-height:1.02;letter-spacing:-.05em;}
+    @media (max-width: 680px){h1{font-size:38px;}}
+    .subhead{margin:0 0 14px;color:var(--muted);font-size:16px;max-width:72ch;}
+
+    .value{margin:0 0 18px;font-size:18px;font-weight:900;max-width:72ch;}
+
+    .ctaRow{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:8px;}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:12px 14px;border-radius:14px;
+      border:1px solid var(--line);
+      font-weight:950;
+      background:rgba(255,255,255,.04);
+      color:var(--ink);
+    }
+    .btn.primary{
+      background:linear-gradient(135deg, rgba(125,211,252,.18), rgba(167,139,250,.14));
+      border-color:rgba(255,255,255,.16);
+    }
+    .btn:hover{filter:brightness(1.08);text-decoration:none;}
+    .btn:focus{outline:none;box-shadow:0 0 0 4px var(--focus);} 
     .note{font-size:13px;color:var(--muted2);}
 
-    /* Layout */
-    .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:16px;margin-top:22px;}
-    @media (max-width:980px){.grid{grid-template-columns:1fr;}}
+    /* Right hero panel: “Risk Map” */
+    .riskPanel{
+      border:1px solid var(--line);
+      border-radius:18px;
+      background:linear-gradient(180deg, rgba(255,255,255,.04), transparent 70%), var(--panel2);
+      padding:16px;
+    }
+    .riskTitle{display:flex;align-items:center;justify-content:space-between;gap:10px;}
+    .riskTitle strong{font-weight:950;letter-spacing:-.02em;}
+    .chip{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:4px 8px;background:rgba(255,255,255,.03);}
+    .riskList{margin:12px 0 0;display:flex;flex-direction:column;gap:10px;}
+    .risk{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:10px;
+      background:rgba(255,255,255,.02);
+    }
+    .riskHdr{display:flex;gap:10px;align-items:center;font-weight:950;}
+    .sw{width:10px;height:10px;border-radius:4px;}
+    .sw.g{background:var(--green);} .sw.y{background:var(--yellow);} .sw.r{background:var(--red);} 
+    .risk p{margin:6px 0 0;color:var(--muted);font-size:13px;}
+
+    /* Main sections */
+    .section{margin-top:16px;}
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+    @media (max-width: 980px){.two{grid-template-columns:1fr;}}
 
     .card{
-      background:linear-gradient(180deg, rgba(255,255,255,1), rgba(248,250,252,1));
-      border:1px solid var(--border);
+      border:1px solid var(--line);
       border-radius:18px;
+      background:linear-gradient(180deg, rgba(255,255,255,.035), transparent 70%), rgba(15,22,37,.55);
+      box-shadow:0 16px 50px rgba(0,0,0,.35);
       padding:18px;
-      box-shadow:var(--shadow);
     }
     .card h2{margin:0 0 10px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);}
     .card p{margin:0 0 10px;color:var(--muted);}
+
     .list{margin:0;padding-left:18px;color:var(--muted);}
     .list li{margin:8px 0;}
-    .list strong{color:var(--ink);}
-
-    /* Callout */
-    .callout{
-      background:linear-gradient(135deg, rgba(37,99,235,.06), rgba(14,165,233,.05));
-      border:1px solid rgba(37,99,235,.18);
-      border-radius:16px;
-      padding:14px;
-      margin-top:12px;
-    }
-    .calloutTitle{font-weight:950;margin:0 0 8px;}
-
-    /* Steps */
-    .steps{display:grid;grid-template-columns:repeat(3, 1fr);gap:12px;}
-    @media (max-width:980px){.steps{grid-template-columns:1fr;}}
-    .step{border:1px solid var(--border);border-radius:16px;padding:14px;background:#fff;}
-    .step .n{display:inline-block;width:26px;height:26px;border-radius:8px;background:rgba(37,99,235,.10);color:var(--accent);font-weight:950;line-height:26px;text-align:center;margin-bottom:8px;}
+    .list strong{color:var(--ink);} 
 
     /* Pricing */
     .pricing{display:grid;grid-template-columns:repeat(3, 1fr);gap:12px;}
-    @media (max-width:980px){.pricing{grid-template-columns:1fr;}}
-    .price{border:1px solid var(--border);border-radius:18px;padding:16px;background:#fff;}
+    @media (max-width: 980px){.pricing{grid-template-columns:1fr;}}
+    .price{
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:16px;
+      background:linear-gradient(180deg, rgba(255,255,255,.04), transparent 70%), rgba(0,0,0,.10);
+    }
     .tier{font-weight:950;}
-    .amt{font-size:28px;font-weight:1000;margin-top:4px;letter-spacing:-.02em;}
+    .amt{font-size:30px;font-weight:1000;margin-top:4px;letter-spacing:-.02em;}
     .desc{font-size:13px;color:var(--muted2);margin-top:6px;}
-    .badge{display:inline-block;font-size:12px;border-radius:999px;padding:3px 8px;border:1px solid var(--border);background:rgba(14,165,233,.08);color:var(--ink);}
+    .badge{display:inline-block;font-size:12px;border-radius:999px;padding:3px 8px;border:1px solid var(--line);background:rgba(125,211,252,.12);}
 
     /* FAQ */
-    details{border:1px solid var(--border);border-radius:16px;padding:12px 12px;background:#fff;}
+    details{border:1px solid var(--line);border-radius:16px;padding:12px;background:rgba(255,255,255,.02);} 
     details+details{margin-top:10px;}
-    summary{cursor:pointer;font-weight:900;color:var(--ink);} 
+    summary{cursor:pointer;font-weight:950;}
     details p{margin:10px 0 0;color:var(--muted);} 
 
     footer{margin-top:18px;color:var(--muted2);font-size:13px;}
   </style>
 </head>
 <body>
+  <div class="gridbg" aria-hidden="true"></div>
+
   <div class="nav">
     <div class="navInner">
       <div class="brand">
         <div class="mark" aria-hidden="true"></div>
         <div>
-          <strong>Stella.ai</strong>
-          <div class="note">AI at Work — Without the Risk</div>
+          <div class="brandName">Stella.ai</div>
+          <div class="brandSub">AI at Work — Without the Risk</div>
         </div>
       </div>
       <nav class="links" aria-label="Primary">
@@ -153,126 +216,127 @@
 
   <main class="wrap">
     <section class="hero" id="top">
-      <div class="kicker">Practical • Security-aware • IT-first</div>
-      <h1>AI at Work — Without the Risk</h1>
-      <p class="subhead">A practical AI safety playbook for IT teams in security-conscious environments.</p>
-      <p class="value">Stop shadow AI. Keep the speed. Use AI for tickets, documentation, and scripting — without leaking sensitive data.</p>
+      <div class="heroInner">
+        <div>
+          <div class="kicker"><span class="dot" aria-hidden="true"></span> Practical • Security-aware • IT-first</div>
+          <h1>AI at Work — Without the Risk</h1>
+          <p class="subhead">A practical AI safety playbook for IT teams in security-conscious environments.</p>
+          <p class="value">Stop shadow AI. Keep the speed. Use AI for tickets, documentation, and scripting — without leaking sensitive data.</p>
 
-      <div class="ctaRow">
-        <!-- Replace with Gumroad or Stripe checkout URL -->
-        <!-- Stripe placeholder: https://buy.stripe.com/REPLACE_ME -->
-        <a class="btn primary" href="#pricing"><span>Get the playbook</span> — $19</a>
-        <a class="btn" href="#inside">See what’s inside</a>
-        <span class="note">Instant download (PDF). Not legal advice. No compliance guarantees.</span>
+          <div class="ctaRow">
+            <!-- TODO: replace with your Gumroad URL (preferred) -->
+            <!-- Stripe placeholder: https://buy.stripe.com/REPLACE_ME -->
+            <a class="btn primary" href="#pricing">Get the playbook — $19</a>
+            <a class="btn" href="#inside">See what’s inside</a>
+            <span class="note">Instant download (PDF). Not legal advice. No compliance guarantees.</span>
+          </div>
+        </div>
+
+        <aside class="riskPanel" aria-label="Risk map preview">
+          <div class="riskTitle">
+            <strong>Risk Map (preview)</strong>
+            <span class="chip">Green / Yellow / Red</span>
+          </div>
+          <div class="riskList">
+            <div class="risk">
+              <div class="riskHdr"><span class="sw g" aria-hidden="true"></span>Green: safe by default</div>
+              <p>Summarize non-sensitive tickets, draft KB structure, reformat docs, generate generic scripts.</p>
+            </div>
+            <div class="risk">
+              <div class="riskHdr"><span class="sw y" aria-hidden="true"></span>Yellow: sanitize + review</div>
+              <p>Logs, configs, user impact notes — strip secrets/PII and add a review checkpoint.</p>
+            </div>
+            <div class="risk">
+              <div class="riskHdr"><span class="sw r" aria-hidden="true"></span>Red: don’t paste</div>
+              <p>Credentials, customer data, proprietary code, incident evidence. Use internal workflows only.</p>
+            </div>
+          </div>
+        </aside>
       </div>
     </section>
 
-    <div class="grid">
-      <section class="card" id="problem">
+    <section class="section two">
+      <div class="card" id="problem">
         <h2>The problem</h2>
-        <p>AI usage is already happening inside your organization. Tickets are being summarized in ChatGPT. Scripts are being drafted in Copilot. Log files are being pasted into consumer tools with unclear data protections.</p>
+        <p>AI usage is already happening inside your organization. Tickets are being summarized in ChatGPT. Scripts are being drafted in Copilot. Logs are being pasted into tools that were never approved for sensitive data.</p>
         <p><strong style="color:var(--ink)">The risk is not AI. The risk is uncontrolled AI.</strong></p>
-        <p>Most IT teams have no formal policy, no approved tools list, and no guidelines for what data is safe to prompt. This playbook is a fast way to move from “everyone improvising” to controlled, documented usage.</p>
+        <p>This playbook is built for IT teams who want useful AI workflows without turning incident review into a surprise.</p>
+      </div>
 
-        <div class="callout" aria-label="Safe by default">
-          <div class="calloutTitle">Safe by default</div>
-          <ul class="list" style="margin:0;">
-            <li><strong>Sanitization-first prompts</strong></li>
-            <li><strong>Review checkpoints before use</strong></li>
-            <li><strong>Corporate-friendly workflows</strong></li>
-          </ul>
-        </div>
-      </section>
-
-      <aside class="card" id="who">
+      <div class="card" id="who">
         <h2>Who it’s for</h2>
         <ul class="list">
           <li>Sysadmins and IT administrators</li>
           <li>IT managers trying to control shadow AI without banning everything</li>
           <li>Security-conscious environments where “don’t paste data” isn’t enough</li>
         </ul>
-        <p class="note" style="margin-top:10px">Not for you if you want hype, guarantees, or “compliance in a PDF.”</p>
-      </aside>
+        <p class="note" style="margin:10px 0 0">Not for you if you want hype, guarantees, or “compliance in a PDF.”</p>
+      </div>
+    </section>
 
-      <section class="card" id="inside" style="grid-column:1 / -1">
-        <h2>What you get</h2>
-        <ul class="list">
-          <li><strong>AI Risk Map</strong> — Green / Yellow / Red classification so people can make consistent daily decisions</li>
-          <li><strong>30 Safe Prompt Templates</strong> — ticket summaries, scripts, KB drafts, exec summaries, outage comms</li>
-          <li><strong>5 Workflow Examples</strong> — before/after patterns you can copy into your environment</li>
-          <li><strong>Copilot vs ChatGPT Comparison</strong> — enterprise lens (neutral, not a product review)</li>
-          <li><strong>Printable Security Checklist</strong> — pre-use, post-use, and team-level controls</li>
-          <li><strong>Manager Scripts</strong> — talk to leadership without sounding reckless</li>
-          <li><strong>30-Day Pilot Plan</strong> — a rollout sequence you can get approved</li>
-        </ul>
-      </section>
+    <section class="section card" id="inside">
+      <h2>What you get</h2>
+      <ul class="list">
+        <li><strong>AI Risk Map</strong> — Green / Yellow / Red classification for daily decisions</li>
+        <li><strong>30 Safe Prompt Templates</strong> — for tickets, scripts, KBs, exec summaries, outage comms</li>
+        <li><strong>5 Workflow Examples</strong> — real before/after patterns you can copy</li>
+        <li><strong>Copilot vs ChatGPT Comparison</strong> — enterprise lens (neutral, not a product review)</li>
+        <li><strong>Printable Security Checklist</strong> — pre-use, post-use, and organizational</li>
+        <li><strong>Manager Scripts</strong> — introduce AI to leadership without sounding reckless</li>
+        <li><strong>30-Day Pilot Plan</strong> — structured rollout ready for approval</li>
+      </ul>
+    </section>
 
-      <section class="card" id="how" style="grid-column:1 / -1">
-        <h2>How it works</h2>
-        <div class="steps">
-          <div class="step"><div class="n">1</div><div style="font-weight:950">Buy</div><div class="note">Purchase the PDF (solo, team, or consultant).</div></div>
-          <div class="step"><div class="n">2</div><div style="font-weight:950">Download</div><div class="note">Instant download (PDF). Keep it on your desk.</div></div>
-          <div class="step"><div class="n">3</div><div style="font-weight:950">Apply</div><div class="note">Use the templates + checklist to set safe defaults fast.</div></div>
+    <section class="section card" id="pricing">
+      <h2>Pricing</h2>
+      <div class="pricing">
+        <div class="price">
+          <div class="tier">Solo</div>
+          <div class="amt">$19 <span class="badge">Launch</span></div>
+          <div class="desc">Complete playbook (PDF) + updates through v1.x.</div>
         </div>
-      </section>
-
-      <section class="card" id="pricing" style="grid-column:1 / -1">
-        <h2>Pricing</h2>
-        <div class="pricing">
-          <div class="price">
-            <div class="tier">Solo</div>
-            <div class="amt">$19 <span class="badge">Launch</span></div>
-            <div class="desc">Complete playbook (PDF) + updates through v1.x.</div>
-          </div>
-          <div class="price">
-            <div class="tier">Team</div>
-            <div class="amt">$79</div>
-            <div class="desc">Up to 10 users. Share internally without friction.</div>
-          </div>
-          <div class="price">
-            <div class="tier">MSP / Consultant</div>
-            <div class="amt">$199</div>
-            <div class="desc">For client delivery + reuse across engagements.</div>
-          </div>
+        <div class="price">
+          <div class="tier">Team</div>
+          <div class="amt">$79</div>
+          <div class="desc">Up to 10 users. Share internally without friction.</div>
         </div>
-
-        <div class="ctaRow" style="margin-top:14px;">
-          <!-- TODO: replace with your Gumroad URL (preferred) or Stripe checkout URL -->
-          <a class="btn primary" href="https://buy.stripe.com/REPLACE_ME">Download now</a>
-          <span class="note">Instant download (PDF). Not legal advice. No compliance guarantees.</span>
+        <div class="price">
+          <div class="tier">MSP / Consultant</div>
+          <div class="amt">$199</div>
+          <div class="desc">For client delivery + reuse across engagements.</div>
         </div>
-      </section>
+      </div>
 
-      <section class="card" id="faq" style="grid-column:1 / -1">
-        <h2>FAQ</h2>
-        <details>
-          <summary>Is this legal advice?</summary>
-          <p>No. This is operational guidance based on enterprise IT best practices. Use your legal and compliance teams for final policy decisions.</p>
-        </details>
-        <details>
-          <summary>Does this guarantee compliance?</summary>
-          <p>No. It gives your team a practical way to reduce unmanaged risk and document safer defaults. It does not provide legal protection.</p>
-        </details>
-        <details>
-          <summary>Who is this for?</summary>
-          <p>Sysadmins and IT managers in security-conscious environments who want to allow useful AI workflows without turning incident review into a surprise.</p>
-        </details>
-        <details>
-          <summary>Is this technical?</summary>
-          <p>It’s practical. You’ll get templates, scripts, and rollout steps that work across stacks — without requiring a specific tool or platform.</p>
-        </details>
-      </section>
+      <div class="ctaRow" style="margin-top:14px;">
+        <!-- TODO: replace with your Gumroad URL (preferred) -->
+        <a class="btn primary" href="https://buy.stripe.com/REPLACE_ME">Download now</a>
+        <span class="note">Instant download (PDF). Not legal advice. No compliance guarantees.</span>
+      </div>
+    </section>
 
-      <section class="card" style="grid-column:1 / -1">
-        <h2>Footer</h2>
-        <p style="margin:0;color:var(--muted)">No fluff. No hype. Just an IT-first playbook for using AI safely.</p>
-        <p class="note" style="margin:10px 0 0;">Contact: <a href="mailto:hello@stella.ai">hello@stella.ai</a> (placeholder)</p>
-      </section>
-    </div>
+    <section class="section card" id="faq">
+      <h2>FAQ</h2>
+      <details>
+        <summary>Is this legal or compliance advice?</summary>
+        <p>No. This is operational guidance based on enterprise IT best practices. Use your legal and compliance teams for final policy decisions.</p>
+      </details>
+      <details>
+        <summary>Does this guarantee compliance?</summary>
+        <p>No. It gives your team a practical way to reduce unmanaged risk and document safer defaults. It does not provide legal protection.</p>
+      </details>
+      <details>
+        <summary>Does this work for both Copilot and ChatGPT?</summary>
+        <p>Yes. The playbook is tool-agnostic. It focuses on what you put into prompts and how you operate — not which specific tool you use.</p>
+      </details>
+      <details>
+        <summary>Is this technical?</summary>
+        <p>It’s practical. You’ll get templates, scripts, and rollout steps that work across stacks — without requiring a specific tool or platform.</p>
+      </details>
+    </section>
 
     <footer>
-      <div>© Stella.ai · Built for calm, security-aware IT teams.</div>
+      <div>© Stella.ai · No hype. No guarantees. Just practical controls for real IT teams.</div>
+      <div style="margin-top:6px;">Contact: <a href="mailto:hello@stella.ai">hello@stella.ai</a> (placeholder)</div>
     </footer>
   </main>
-</body>
 </html>
