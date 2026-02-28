@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stella.ai — AI at Work, Without the Risk</title>
+  <meta name="description" content="A practical AI safety playbook for IT teams in security-conscious environments." />
+
+  <!-- TODO: replace with your GA4 Measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-REPLACE_ME"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-REPLACE_ME');
+  </script>
+
+  <style>
+    :root{
+      --bg:#ffffff;
+      --ink:#0b1220;
+      --muted:#4b5563;
+      --muted2:#6b7280;
+      --panel:#f8fafc;
+      --border:rgba(15,23,42,.10);
+      --shadow:0 18px 55px rgba(2,6,23,.10);
+      --accent:#2563eb;
+      --accent2:#0ea5e9;
+      --focus:rgba(37,99,235,.25);
+    }
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:
+        radial-gradient(900px 420px at 15% -10%, rgba(14,165,233,.10), transparent 60%),
+        radial-gradient(780px 420px at 90% 0%, rgba(37,99,235,.08), transparent 60%),
+        var(--bg);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      line-height:1.55;
+    }
+    a{color:var(--accent);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+    .wrap{max-width:1080px;margin:0 auto;padding:22px 18px 70px;}
+
+    /* Sticky nav */
+    .nav{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter:saturate(180%) blur(10px);
+      background:rgba(255,255,255,.78);
+      border-bottom:1px solid var(--border);
+    }
+    .navInner{max-width:1080px;margin:0 auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+    .brand{display:flex;align-items:center;gap:10px;min-width:180px;}
+    .mark{width:30px;height:30px;border-radius:10px;background:linear-gradient(135deg, rgba(37,99,235,.18), rgba(14,165,233,.16));border:1px solid var(--border);box-shadow:0 10px 30px rgba(2,6,23,.08);}
+    .brand strong{letter-spacing:-.02em;}
+    .links{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-end;}
+    .links a{color:var(--muted);font-size:13px;font-weight:700;}
+
+    /* Hero */
+    .hero{padding:36px 0 10px;}
+    .kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);}
+    h1{margin:10px 0 10px;font-size:44px;line-height:1.06;letter-spacing:-.045em;}
+    @media (max-width:720px){h1{font-size:36px;}}
+    .subhead{margin:0 0 14px;font-size:16px;color:var(--muted);max-width:72ch;}
+    .value{margin:0 0 18px;font-size:18px;font-weight:800;max-width:72ch;}
+
+    .ctaRow{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:10px;}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:11px 14px;border-radius:12px;
+      border:1px solid var(--border);
+      font-weight:900;
+      color:var(--ink);
+      background:rgba(255,255,255,.85);
+      box-shadow:0 12px 30px rgba(2,6,23,.06);
+    }
+    .btn.primary{background:linear-gradient(135deg, rgba(37,99,235,.12), rgba(14,165,233,.10));border-color:rgba(37,99,235,.18);}
+    .btn.primary span{color:var(--accent);}
+    .btn:focus{outline:none;box-shadow:0 0 0 4px var(--focus), 0 12px 30px rgba(2,6,23,.06);} 
+    .note{font-size:13px;color:var(--muted2);}
+
+    /* Layout */
+    .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:16px;margin-top:22px;}
+    @media (max-width:980px){.grid{grid-template-columns:1fr;}}
+
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,1), rgba(248,250,252,1));
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:18px;
+      box-shadow:var(--shadow);
+    }
+    .card h2{margin:0 0 10px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);}
+    .card p{margin:0 0 10px;color:var(--muted);}
+    .list{margin:0;padding-left:18px;color:var(--muted);}
+    .list li{margin:8px 0;}
+    .list strong{color:var(--ink);}
+
+    /* Callout */
+    .callout{
+      background:linear-gradient(135deg, rgba(37,99,235,.06), rgba(14,165,233,.05));
+      border:1px solid rgba(37,99,235,.18);
+      border-radius:16px;
+      padding:14px;
+      margin-top:12px;
+    }
+    .calloutTitle{font-weight:950;margin:0 0 8px;}
+
+    /* Steps */
+    .steps{display:grid;grid-template-columns:repeat(3, 1fr);gap:12px;}
+    @media (max-width:980px){.steps{grid-template-columns:1fr;}}
+    .step{border:1px solid var(--border);border-radius:16px;padding:14px;background:#fff;}
+    .step .n{display:inline-block;width:26px;height:26px;border-radius:8px;background:rgba(37,99,235,.10);color:var(--accent);font-weight:950;line-height:26px;text-align:center;margin-bottom:8px;}
+
+    /* Pricing */
+    .pricing{display:grid;grid-template-columns:repeat(3, 1fr);gap:12px;}
+    @media (max-width:980px){.pricing{grid-template-columns:1fr;}}
+    .price{border:1px solid var(--border);border-radius:18px;padding:16px;background:#fff;}
+    .tier{font-weight:950;}
+    .amt{font-size:28px;font-weight:1000;margin-top:4px;letter-spacing:-.02em;}
+    .desc{font-size:13px;color:var(--muted2);margin-top:6px;}
+    .badge{display:inline-block;font-size:12px;border-radius:999px;padding:3px 8px;border:1px solid var(--border);background:rgba(14,165,233,.08);color:var(--ink);}
+
+    /* FAQ */
+    details{border:1px solid var(--border);border-radius:16px;padding:12px 12px;background:#fff;}
+    details+details{margin-top:10px;}
+    summary{cursor:pointer;font-weight:900;color:var(--ink);} 
+    details p{margin:10px 0 0;color:var(--muted);} 
+
+    footer{margin-top:18px;color:var(--muted2);font-size:13px;}
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <div class="navInner">
+      <div class="brand">
+        <div class="mark" aria-hidden="true"></div>
+        <div>
+          <strong>Stella.ai</strong>
+          <div class="note">AI at Work — Without the Risk</div>
+        </div>
+      </div>
+      <nav class="links" aria-label="Primary">
+        <a href="#problem">Problem</a>
+        <a href="#inside">What you get</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <section class="hero" id="top">
+      <div class="kicker">Practical • Security-aware • IT-first</div>
+      <h1>AI at Work — Without the Risk</h1>
+      <p class="subhead">A practical AI safety playbook for IT teams in security-conscious environments.</p>
+      <p class="value">Stop shadow AI. Keep the speed. Use AI for tickets, documentation, and scripting — without leaking sensitive data.</p>
+
+      <div class="ctaRow">
+        <!-- Replace with Gumroad or Stripe checkout URL -->
+        <!-- Stripe placeholder: https://buy.stripe.com/REPLACE_ME -->
+        <a class="btn primary" href="#pricing"><span>Get the playbook</span> — $19</a>
+        <a class="btn" href="#inside">See what’s inside</a>
+        <span class="note">Instant download (PDF). Not legal advice. No compliance guarantees.</span>
+      </div>
+    </section>
+
+    <div class="grid">
+      <section class="card" id="problem">
+        <h2>The problem</h2>
+        <p>AI usage is already happening inside your organization. Tickets are being summarized in ChatGPT. Scripts are being drafted in Copilot. Log files are being pasted into consumer tools with unclear data protections.</p>
+        <p><strong style="color:var(--ink)">The risk is not AI. The risk is uncontrolled AI.</strong></p>
+        <p>Most IT teams have no formal policy, no approved tools list, and no guidelines for what data is safe to prompt. This playbook is a fast way to move from “everyone improvising” to controlled, documented usage.</p>
+
+        <div class="callout" aria-label="Safe by default">
+          <div class="calloutTitle">Safe by default</div>
+          <ul class="list" style="margin:0;">
+            <li><strong>Sanitization-first prompts</strong></li>
+            <li><strong>Review checkpoints before use</strong></li>
+            <li><strong>Corporate-friendly workflows</strong></li>
+          </ul>
+        </div>
+      </section>
+
+      <aside class="card" id="who">
+        <h2>Who it’s for</h2>
+        <ul class="list">
+          <li>Sysadmins and IT administrators</li>
+          <li>IT managers trying to control shadow AI without banning everything</li>
+          <li>Security-conscious environments where “don’t paste data” isn’t enough</li>
+        </ul>
+        <p class="note" style="margin-top:10px">Not for you if you want hype, guarantees, or “compliance in a PDF.”</p>
+      </aside>
+
+      <section class="card" id="inside" style="grid-column:1 / -1">
+        <h2>What you get</h2>
+        <ul class="list">
+          <li><strong>AI Risk Map</strong> — Green / Yellow / Red classification so people can make consistent daily decisions</li>
+          <li><strong>30 Safe Prompt Templates</strong> — ticket summaries, scripts, KB drafts, exec summaries, outage comms</li>
+          <li><strong>5 Workflow Examples</strong> — before/after patterns you can copy into your environment</li>
+          <li><strong>Copilot vs ChatGPT Comparison</strong> — enterprise lens (neutral, not a product review)</li>
+          <li><strong>Printable Security Checklist</strong> — pre-use, post-use, and team-level controls</li>
+          <li><strong>Manager Scripts</strong> — talk to leadership without sounding reckless</li>
+          <li><strong>30-Day Pilot Plan</strong> — a rollout sequence you can get approved</li>
+        </ul>
+      </section>
+
+      <section class="card" id="how" style="grid-column:1 / -1">
+        <h2>How it works</h2>
+        <div class="steps">
+          <div class="step"><div class="n">1</div><div style="font-weight:950">Buy</div><div class="note">Purchase the PDF (solo, team, or consultant).</div></div>
+          <div class="step"><div class="n">2</div><div style="font-weight:950">Download</div><div class="note">Instant download (PDF). Keep it on your desk.</div></div>
+          <div class="step"><div class="n">3</div><div style="font-weight:950">Apply</div><div class="note">Use the templates + checklist to set safe defaults fast.</div></div>
+        </div>
+      </section>
+
+      <section class="card" id="pricing" style="grid-column:1 / -1">
+        <h2>Pricing</h2>
+        <div class="pricing">
+          <div class="price">
+            <div class="tier">Solo</div>
+            <div class="amt">$19 <span class="badge">Launch</span></div>
+            <div class="desc">Complete playbook (PDF) + updates through v1.x.</div>
+          </div>
+          <div class="price">
+            <div class="tier">Team</div>
+            <div class="amt">$79</div>
+            <div class="desc">Up to 10 users. Share internally without friction.</div>
+          </div>
+          <div class="price">
+            <div class="tier">MSP / Consultant</div>
+            <div class="amt">$199</div>
+            <div class="desc">For client delivery + reuse across engagements.</div>
+          </div>
+        </div>
+
+        <div class="ctaRow" style="margin-top:14px;">
+          <!-- TODO: replace with your Gumroad URL (preferred) or Stripe checkout URL -->
+          <a class="btn primary" href="https://buy.stripe.com/REPLACE_ME">Download now</a>
+          <span class="note">Instant download (PDF). Not legal advice. No compliance guarantees.</span>
+        </div>
+      </section>
+
+      <section class="card" id="faq" style="grid-column:1 / -1">
+        <h2>FAQ</h2>
+        <details>
+          <summary>Is this legal advice?</summary>
+          <p>No. This is operational guidance based on enterprise IT best practices. Use your legal and compliance teams for final policy decisions.</p>
+        </details>
+        <details>
+          <summary>Does this guarantee compliance?</summary>
+          <p>No. It gives your team a practical way to reduce unmanaged risk and document safer defaults. It does not provide legal protection.</p>
+        </details>
+        <details>
+          <summary>Who is this for?</summary>
+          <p>Sysadmins and IT managers in security-conscious environments who want to allow useful AI workflows without turning incident review into a surprise.</p>
+        </details>
+        <details>
+          <summary>Is this technical?</summary>
+          <p>It’s practical. You’ll get templates, scripts, and rollout steps that work across stacks — without requiring a specific tool or platform.</p>
+        </details>
+      </section>
+
+      <section class="card" style="grid-column:1 / -1">
+        <h2>Footer</h2>
+        <p style="margin:0;color:var(--muted)">No fluff. No hype. Just an IT-first playbook for using AI safely.</p>
+        <p class="note" style="margin:10px 0 0;">Contact: <a href="mailto:hello@stella.ai">hello@stella.ai</a> (placeholder)</p>
+      </section>
+    </div>
+
+    <footer>
+      <div>© Stella.ai · Built for calm, security-aware IT teams.</div>
+    </footer>
+  </main>
+</body>
+</html>
