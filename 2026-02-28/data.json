@@ -1,6 +1,6 @@
 {
   "dateLocal": "2026-02-28",
-  "generatedAt": "2026-02-28T13:04:23.557Z",
+  "generatedAt": "2026-02-28T13:06:59.724Z",
   "hn": [
     {
       "title": "Show HN: SplatHash – A lightweight alternative to BlurHash and ThumbHash",
@@ -69,7 +69,7 @@
         {
           "name": "RightNow-AI/openfang",
           "url": "https://github.com/RightNow-AI/openfang",
-          "stars": 4728,
+          "stars": 4733,
           "description": "Open-source Agent Operating System",
           "topics": [
             "agent-framework",
@@ -86,7 +86,7 @@
         {
           "name": "Panniantong/Agent-Reach",
           "url": "https://github.com/Panniantong/Agent-Reach",
-          "stars": 2812,
+          "stars": 2813,
           "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
           "topics": [
             "agent-infrastructure",
@@ -112,7 +112,7 @@
         {
           "name": "agentscope-ai/CoPaw",
           "url": "https://github.com/agentscope-ai/CoPaw",
-          "stars": 1504,
+          "stars": 1505,
           "description": "Your Personal AI Assistant; easy to install, deploy on your own machine or on the cloud; supports multiple chat apps with easily extensible capabilities.",
           "topics": [],
           "take": "Agent/LLM tooling — could change your workflow speed."

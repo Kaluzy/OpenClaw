@@ -14,6 +14,7 @@
     --border:rgba(255,255,255,.10);
     --shadow:0 10px 30px rgba(0,0,0,.35);
     --accent:#60a5fa;
+    --warn:#fbbf24;
   }
   body{margin:0;background:radial-gradient(1200px 700px at 20% 0%, rgba(96,165,250,.08), transparent 55%), var(--bg);color:var(--text);font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;}
   .wrap{max-width:1180px;margin:0 auto;padding:24px;}
@@ -31,6 +32,10 @@
   .tabs{display:flex;gap:10px;align-items:center;justify-content:flex-end;flex-wrap:wrap;}
   .tab{font-size:12px;color:var(--text);border:1px solid var(--border);background:rgba(255,255,255,.02);border-radius:999px;padding:6px 10px;text-decoration:none;font-weight:750;}
   .tab:hover{text-decoration:underline;}
+  .pill{display:inline-block;font-size:12px;color:var(--text);border:1px solid var(--border);background:rgba(96,165,250,.10);border-radius:999px;padding:2px 8px;}
+  .warn{color:var(--warn);font-weight:800;}
+  ul{margin:8px 0 0 18px;padding:0;}
+  li{margin:6px 0;}
 </style>
 </head>
 <body>
@@ -38,7 +43,7 @@
   <div class="top">
     <div>
       <div class="title">AI at Work — Without the Risk</div>
-      <div class="meta">2026-02-28 · workspace tab · generated 2/28/2026, 8:04:23 AM</div>
+      <div class="meta">2026-02-28 · project tab · generated 2/28/2026, 8:06:59 AM</div>
     </div>
     <div class="tabs">
       <a class="tab" href="./index.html">← Back to Brief</a>
@@ -48,31 +53,48 @@
 
   <div class="grid">
     <div class="card">
-      <h2>Today (auto)</h2>
+      <h2>Execution inputs (current)</h2>
       <div class="item">
-        <div style="font-weight:850">Awaiting your inputs</div>
-        <div class="sub" style="margin-top:6px">
-          • Sales URL / platform<br/>
-          • Posting mode (draft-only vs post)<br/>
-          • Personas + CTA policy
+        <div style="font-weight:900">AI at Work — Without the Risk</div>
+        <div class="sub" style="margin-top:6px">Practical AI safety playbook for real IT teams.</div>
+        <div class="sub" style="margin-top:10px"><span class="pill">CTA policy</span> Link only when directly relevant in conversation. Otherwise soft mention/profile link; DM if requested. No aggressive selling.</div>
+        <div class="sub" style="margin-top:10px"><span class="pill">Daily budget</span> 30 min · <span class="pill">Mode</span> draft-only</div>
+      </div>
+
+      
+      <div class="sub" style="margin-top:10px"><span class="warn">Missing to go live:</span></div>
+      <div class="item" style="margin-top:8px">
+        <div class="sub">
+          • Gumroad URL<br/>
+          • Reddit username<br/>
+          • LinkedIn profile link<br/>
+          • X handle<br/>
         </div>
       </div>
-      <div class="sub" style="margin-top:10px">Once set, this will show: 5 threads to engage + 3 draft posts + the day’s 2 actions.</div>
+      
     </div>
 
     <div class="card">
-      <h2>Links</h2>
+      <h2>Today’s 30-minute plan</h2>
       <div class="item">
-        <div class="sub">• Morning Brief: <a class="link" href="./index.html">/index.html</a></div>
-        <div class="sub">• Latest root: <a class="link" href="./">/</a></div>
+        <div style="font-weight:850">Default loop</div>
+        <div class="sub" style="margin-top:6px">
+          1) Find 5 active discussions (Reddit + X + LinkedIn)<br/>
+          2) Draft value-first replies (no selling, link only if directly relevant)<br/>
+          3) Draft 3 posts: LinkedIn + X + 1 Reddit discussion angle<br/>
+          4) Log objections/questions (so tomorrow compounds)
+        </div>
       </div>
-      <div class="sub" style="margin-top:10px">Note: Reddit/X/LinkedIn monitoring will be content-only (no scraping / no spam).</div>
+      <div class="sub" style="margin-top:10px">Once posting is enabled, this page will show the 5 picked threads + ready-to-post drafts.</div>
     </div>
 
     <div class="card" style="grid-column:1 / -1">
-      <h2>Queue (coming soon)</h2>
+      <h2>Guardrails</h2>
       <div class="item">
-        <div class="sub">This section will hold a rolling backlog (objections, recurring questions, high-performing angles) so the content compounds.</div>
+        <div class="sub">
+          <b>Never:</b> spam, exaggerate results, fabricate testimonials, overpromise compliance/legal protection.<br/>
+          <b>Avoid terms:</b> guarantee, regulatory compliance claims, audit-proof / legal protection promises, hype language (revolutionary, game-changing, 10x)
+        </div>
       </div>
     </div>
   </div>
