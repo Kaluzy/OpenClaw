@@ -1,15 +1,20 @@
 {
   "dateLocal": "2026-02-28",
-  "generatedAt": "2026-02-28T22:59:15.867Z",
+  "generatedAt": "2026-03-01T01:38:20.994Z",
   "hn": [
     {
-      "title": "The Windows 95 User Interface: A Case Study in Usability Engineering",
-      "url": "https://dl.acm.org/doi/fullHtml/10.1145/238386.238611",
+      "title": "Pentagon chief blocks officers from Ivy League schools and top universities",
+      "url": "https://fortune.com/2026/02/28/pentagon-officer-education-ivy-league-schools-universities-partners-ai-space/",
       "why": "Worth a skim — potential trend / tactic to steal."
     },
     {
-      "title": "Iran's Ayatollah Ali Khamenei is killed in Israeli strike, ending 36-year rule",
-      "url": "https://www.npr.org/2026/02/28/1123499337/iran-israel-ayatollah-ali-khamenei-killed",
+      "title": "Show HN: Xmloxide – an agent made rust replacement for libxml2",
+      "url": "https://github.com/jonwiggins/xmloxide",
+      "why": "AI/agent signal — workflow + tooling shift."
+    },
+    {
+      "title": "The Windows 95 user interface: A case study in usability engineering (1996)",
+      "url": "https://dl.acm.org/doi/fullHtml/10.1145/238386.238611",
       "why": "Worth a skim — potential trend / tactic to steal."
     },
     {
@@ -18,7 +23,7 @@
       "why": "Worth a skim — potential trend / tactic to steal."
     },
     {
-      "title": "\"We do not think Anthropic should be designated as a supply chain risk\"",
+      "title": "We do not think Anthropic should be designated as a supply chain risk",
       "url": "https://twitter.com/OpenAI/status/2027846016423321831",
       "why": "Worth a skim — potential trend / tactic to steal."
     },
@@ -38,7 +43,7 @@
       "why": "Worth a skim — potential trend / tactic to steal."
     },
     {
-      "title": "Block the \"Upgrade to Tahoe\" Alerts",
+      "title": "Block the “Upgrade to Tahoe” Alerts",
       "url": "https://robservatory.com/block-the-upgrade-to-tahoe-alerts-and-system-settings-indicator/",
       "why": "Worth a skim — potential trend / tactic to steal."
     },
@@ -46,22 +51,17 @@
       "title": "Verified Spec-Driven Development (VSDD)",
       "url": "https://gist.github.com/dollspace-gay/d8d3bc3ecf4188df049d7a4726bb2a00",
       "why": "Worth a skim — potential trend / tactic to steal."
-    },
-    {
-      "title": "The whole thing was a scam",
-      "url": "https://garymarcus.substack.com/p/the-whole-thing-was-scam",
-      "why": "Worth a skim — potential trend / tactic to steal."
     }
   ],
   "github": {
-    "since": "2026-02-21",
+    "since": "2026-02-22",
     "mode": "api-auth",
     "groups": {
       "AI / Agents": [
         {
           "name": "RightNow-AI/openfang",
           "url": "https://github.com/RightNow-AI/openfang",
-          "stars": 5496,
+          "stars": 5683,
           "description": "Open-source Agent Operating System",
           "topics": [
             "agent-framework",
@@ -78,7 +78,7 @@
         {
           "name": "anthropics/financial-services-plugins",
           "url": "https://github.com/anthropics/financial-services-plugins",
-          "stars": 4867,
+          "stars": 4895,
           "description": null,
           "topics": [],
           "take": "Worth a skim — could be a useful building block."
@@ -86,7 +86,7 @@
         {
           "name": "Panniantong/Agent-Reach",
           "url": "https://github.com/Panniantong/Agent-Reach",
-          "stars": 3024,
+          "stars": 3061,
           "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
           "topics": [
             "agent-infrastructure",
@@ -112,7 +112,7 @@
         {
           "name": "agentscope-ai/CoPaw",
           "url": "https://github.com/agentscope-ai/CoPaw",
-          "stars": 1973,
+          "stars": 2053,
           "description": "Your Personal AI Assistant; easy to install, deploy on your own machine or on the cloud; supports multiple chat apps with easily extensible capabilities.",
           "topics": [],
           "take": "Agent/LLM tooling — could change your workflow speed."
@@ -122,7 +122,7 @@
         {
           "name": "cloudflare/vinext",
           "url": "https://github.com/cloudflare/vinext",
-          "stars": 4705,
+          "stars": 4720,
           "description": "Vite plugin that reimplements the Next.js API surface — deploy anywhere",
           "topics": [],
           "take": "Worth a skim — could be a useful building block."
@@ -130,7 +130,7 @@
         {
           "name": "Polymarket/polymarket-cli",
           "url": "https://github.com/Polymarket/polymarket-cli",
-          "stars": 1333,
+          "stars": 1337,
           "description": null,
           "topics": [],
           "take": "Worth a skim — could be a useful building block."
@@ -138,7 +138,7 @@
         {
           "name": "eooce/python-ws",
           "url": "https://github.com/eooce/python-ws",
-          "stars": 819,
+          "stars": 836,
           "description": "build vless / trojan /shadowsocks  proxies on python server,no need core",
           "topics": [
             "proxy",
@@ -163,23 +163,15 @@
         {
           "name": "peteromallet/dataclaw",
           "url": "https://github.com/peteromallet/dataclaw",
-          "stars": 1602,
+          "stars": 1614,
           "description": null,
-          "topics": [],
-          "take": "Worth a skim — could be a useful building block."
-        },
-        {
-          "name": "kevinho/clawfeed",
-          "url": "https://github.com/kevinho/clawfeed",
-          "stars": 1341,
-          "description": "ClawFeed — AI-powered news digest with structured summaries from Twitter/RSS feeds and web dashboard",
           "topics": [],
           "take": "Worth a skim — could be a useful building block."
         },
         {
           "name": "taigrr/spank",
           "url": "https://github.com/taigrr/spank",
-          "stars": 754,
+          "stars": 766,
           "description": "Slap your MacBook, it yells back. Uses Apple Silicon accelerometer via IOKit HID.",
           "topics": [
             "accelerometer",
@@ -189,6 +181,14 @@
             "iokit",
             "macos"
           ],
+          "take": "Worth a skim — could be a useful building block."
+        },
+        {
+          "name": "andyhuo520/aetherviz-master",
+          "url": "https://github.com/andyhuo520/aetherviz-master",
+          "stars": 724,
+          "description": "AetherViz Master - 互动教育可视化建筑师，将任意教学主题转化为沉浸式3D交互网页",
+          "topics": [],
           "take": "Worth a skim — could be a useful building block."
         }
       ]
