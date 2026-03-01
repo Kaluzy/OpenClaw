@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Offboarding Device Return Kit</title>
+  <meta property="og:title" content="Offboarding Device Return Kit" />
+  <meta property="og:description" content="A practical kit to stop device returns from turning into chaos. Templates + checklists. $49." />
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #070a12;
+      --bg-secondary: #0b1020;
+      --bg-card: #0e1630;
+      --text-primary: #f3f4f6;
+      --text-secondary: #9ca3af;
+      --accent: #22c55e;
+      --accent-hover: #34d399;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-hover: rgba(255, 255, 255, 0.14);
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:radial-gradient(900px 500px at 10% 0%, rgba(34,197,94,.10), transparent 60%), var(--bg-primary);color:var(--text-primary);line-height:1.7;}
+    a{color:inherit;text-decoration:none;}
+    .container{max-width:1040px;margin:0 auto;padding:0 22px;}
+    nav{position:sticky;top:0;backdrop-filter: blur(16px);background:rgba(7,10,18,.65);border-bottom:1px solid var(--border-subtle);z-index:10;}
+    .nav-inner{display:flex;justify-content:space-between;align-items:center;padding:14px 0;}
+    .brand{font-weight:800;letter-spacing:-.02em;}
+    .pill{border:1px solid var(--border-subtle);padding:6px 10px;border-radius:999px;color:var(--text-secondary);font-size:12px;}
+    .hero{padding:34px 0 22px;}
+    h1{font-family:'Instrument Serif',serif;font-size:48px;line-height:1.05;letter-spacing:-.02em;}
+    .sub{margin-top:12px;color:var(--text-secondary);font-size:16px;max-width:760px;}
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px;}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;border-radius:12px;font-weight:800;border:1px solid var(--border-subtle);}
+    .btn.primary{background:rgba(34,197,94,.14);border-color:rgba(34,197,94,.35);} 
+    .btn.primary:hover{background:rgba(34,197,94,.20);} 
+    .btn.ghost:hover{border-color:var(--border-hover);} 
+
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0 40px;}
+    @media(max-width:900px){.grid{grid-template-columns:1fr;} h1{font-size:40px;}}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.03), transparent 60%), var(--bg-card);border:1px solid var(--border-subtle);border-radius:16px;padding:14px;}
+    .card h2{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:10px;}
+    ul{margin-left:18px;color:var(--text-primary);}
+    li{margin:8px 0;}
+    .fine{color:var(--text-secondary);font-size:12px;margin-top:10px;}
+    .price{font-size:14px;color:var(--text-secondary);}
+    .price strong{color:var(--text-primary);}
+    code{background:rgba(255,255,255,.06);border:1px solid var(--border-subtle);padding:2px 6px;border-radius:8px;}
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container nav-inner">
+      <div class="brand">Offboarding Device Return Kit</div>
+      <div class="pill">templates + checklists · $49</div>
+    </div>
+  </nav>
+
+  <div class="container hero">
+    <h1>Stop offboarding device returns from turning into chaos.</h1>
+    <div class="sub">A practical kit for IT teams: a 1‑page policy, an IT offboarding checklist, and copy/paste emails that create an audit trail and clear timelines.</div>
+
+    <div class="cta">
+      <a class="btn primary" href="#buy">Get the kit</a>
+      <a class="btn ghost" href="#contents">See what’s inside</a>
+    </div>
+
+    <div class="grid">
+      <div class="card" id="contents">
+        <h2>What’s inside</h2>
+        <ul>
+          <li>1‑page device return policy (simple enough to remember)</li>
+          <li>IT offboarding checklist (device‑return focused)</li>
+          <li>4 email templates (instructions, reminder, escalation, final notice)</li>
+          <li>Evidence checklist (what to log so disputes don’t derail you)</li>
+        </ul>
+        <div class="fine">You can paste into your ticketing system and tweak wording to match your org.</div>
+      </div>
+
+      <div class="card" id="buy">
+        <h2>Pricing</h2>
+        <div class="price"><strong>$49</strong> one‑time. Instant download (zip). No account required.</div>
+        <div class="fine" style="margin-top:10px">Checkout placeholder: link this button to Gumroad (or Stripe later).</div>
+        <div style="margin-top:12px">
+          <a class="btn primary" href="#" onclick="alert('placeholder: link to gumroad checkout'); return false;">Buy on Gumroad</a>
+        </div>
+        <div class="fine" style="margin-top:10px">Disclaimer: operational template only; not legal advice.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Who this is for</h2>
+      <ul>
+        <li>Solo IT admins and small IT teams</li>
+        <li>IT managers who are tired of chasing devices</li>
+        <li>MSPs who need a standard offboarding playbook</li>
+      </ul>
+      <div class="fine">Note: throughout this kit, we use the correct capitalization: “IT team”.</div>
+    </div>
+
+    <div class="fine" style="margin:18px 0 40px">Build: v0 · generated locally in your workspace.</div>
+  </div>
+</body>
+</html>
