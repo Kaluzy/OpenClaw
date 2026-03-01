@@ -1,20 +1,40 @@
 {
   "dateLocal": "2026-03-01",
-  "generatedAt": "2026-03-01T11:00:21.934Z",
+  "generatedAt": "2026-03-01T14:28:10.492Z",
   "hn": [
+    {
+      "title": "AI Made Writing Code Easier. It Made Being an Engineer Harder",
+      "url": "https://www.ivanturkovic.com/2026/02/25/ai-made-writing-code-easier-engineering-harder/",
+      "why": "Worth a skim — potential trend / tactic to steal."
+    },
+    {
+      "title": "How the Federal Government Is Painting Immigrants as Criminals on Social Media",
+      "url": "https://www.npr.org/2026/02/27/nx-s1-5720167/trump-ice-immigration-social-media-deportation-dhs-immigrants-detained-disputes",
+      "why": "Dev productivity signal — CI/CD and delivery leverage."
+    },
+    {
+      "title": "Ghostty – Terminal Emulator",
+      "url": "https://ghostty.org/docs",
+      "why": "Worth a skim — potential trend / tactic to steal."
+    },
+    {
+      "title": "I built a demo of what AI chat will look like when it's \"free\" and ad-supported",
+      "url": "https://99helpers.com/tools/ad-supported-chat",
+      "why": "Worth a skim — potential trend / tactic to steal."
+    },
+    {
+      "title": "Show HN: Vertex.js – A 1kloc SPA Framework",
+      "url": "https://lukeb42.github.io/vertex-manual.html",
+      "why": "Worth a skim — potential trend / tactic to steal."
+    },
+    {
+      "title": "Flightradar24 for Ships",
+      "url": "https://atlas.flexport.com/",
+      "why": "Worth a skim — potential trend / tactic to steal."
+    },
     {
       "title": "Why is the first C++ (m)allocation always 72 KB?",
       "url": "https://joelsiks.com/posts/cpp-emergency-pool-72kb-allocation/",
-      "why": "Worth a skim — potential trend / tactic to steal."
-    },
-    {
-      "title": "Show HN: Terminal-Style Portfolio on the Internet",
-      "url": "https://kuber.studio/",
-      "why": "Worth a skim — potential trend / tactic to steal."
-    },
-    {
-      "title": "Intelligence is a commodity. Context is the real AI Moat",
-      "url": "https://adlrocha.substack.com/p/adlrocha-intelligence-is-a-commodity",
       "why": "Worth a skim — potential trend / tactic to steal."
     },
     {
@@ -31,26 +51,6 @@
       "title": "10-202: Introduction to Modern AI (CMU)",
       "url": "https://modernaicourse.org",
       "why": "Worth a skim — potential trend / tactic to steal."
-    },
-    {
-      "title": "The Science of Detecting LLM-Generated Text",
-      "url": "https://dl.acm.org/doi/10.1145/3624725",
-      "why": "AI/agent signal — workflow + tooling shift."
-    },
-    {
-      "title": "Microgpt",
-      "url": "http://karpathy.github.io/2026/02/12/microgpt/",
-      "why": "AI/agent signal — workflow + tooling shift."
-    },
-    {
-      "title": "The Windows 95 user interface: A case study in usability engineering (1996)",
-      "url": "https://dl.acm.org/doi/fullHtml/10.1145/238386.238611",
-      "why": "Worth a skim — potential trend / tactic to steal."
-    },
-    {
-      "title": "Iran's Ayatollah Ali Khamenei is killed in Israeli strike, ending 36-year rule",
-      "url": "https://www.npr.org/2026/02/28/1123499337/iran-israel-ayatollah-ali-khamenei-killed",
-      "why": "Worth a skim — potential trend / tactic to steal."
     }
   ],
   "github": {
@@ -61,7 +61,7 @@
         {
           "name": "RightNow-AI/openfang",
           "url": "https://github.com/RightNow-AI/openfang",
-          "stars": 6470,
+          "stars": 6770,
           "description": "Open-source Agent Operating System",
           "topics": [
             "agent-framework",
@@ -78,7 +78,7 @@
         {
           "name": "anthropics/financial-services-plugins",
           "url": "https://github.com/anthropics/financial-services-plugins",
-          "stars": 4976,
+          "stars": 5005,
           "description": null,
           "topics": [],
           "take": "Worth a skim — could be a useful building block."
@@ -86,7 +86,7 @@
         {
           "name": "Panniantong/Agent-Reach",
           "url": "https://github.com/Panniantong/Agent-Reach",
-          "stars": 3256,
+          "stars": 3319,
           "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
           "topics": [
             "agent-infrastructure",
@@ -112,7 +112,7 @@
         {
           "name": "agentscope-ai/CoPaw",
           "url": "https://github.com/agentscope-ai/CoPaw",
-          "stars": 2688,
+          "stars": 2919,
           "description": "Your Personal AI Assistant; easy to install, deploy on your own machine or on the cloud; supports multiple chat apps with easily extensible capabilities.",
           "topics": [],
           "take": "Agent/LLM tooling — could change your workflow speed."
@@ -122,7 +122,7 @@
         {
           "name": "cloudflare/vinext",
           "url": "https://github.com/cloudflare/vinext",
-          "stars": 4782,
+          "stars": 4832,
           "description": "Vite plugin that reimplements the Next.js API surface — deploy anywhere",
           "topics": [],
           "take": "Worth a skim — could be a useful building block."
@@ -130,7 +130,7 @@
         {
           "name": "Polymarket/polymarket-cli",
           "url": "https://github.com/Polymarket/polymarket-cli",
-          "stars": 1367,
+          "stars": 1378,
           "description": null,
           "topics": [],
           "take": "Worth a skim — could be a useful building block."
@@ -138,7 +138,7 @@
         {
           "name": "eooce/python-ws",
           "url": "https://github.com/eooce/python-ws",
-          "stars": 987,
+          "stars": 1031,
           "description": "build vless / trojan /shadowsocks  proxies on python server,no need core",
           "topics": [
             "proxy",
@@ -151,21 +151,11 @@
           "take": "Infra/ops tooling — potential reliability + cost leverage."
         }
       ],
-      "Infra": [
-        {
-          "name": "ylytdeng/wechat-decrypt",
-          "url": "https://github.com/ylytdeng/wechat-decrypt",
-          "stars": 799,
-          "description": "WeChat 4.0 database decryptor - extract keys from memory, decrypt SQLCipher 4 databases, real-time message monitor",
-          "topics": [],
-          "take": "Data/DB — likely performance or pipeline leverage."
-        }
-      ],
       "Other": [
         {
           "name": "peteromallet/dataclaw",
           "url": "https://github.com/peteromallet/dataclaw",
-          "stars": 1648,
+          "stars": 1666,
           "description": null,
           "topics": [],
           "take": "Worth a skim — could be a useful building block."
@@ -173,7 +163,7 @@
         {
           "name": "taigrr/spank",
           "url": "https://github.com/taigrr/spank",
-          "stars": 873,
+          "stars": 917,
           "description": "Slap your MacBook, it yells back. Uses Apple Silicon accelerometer via IOKit HID.",
           "topics": [
             "accelerometer",
