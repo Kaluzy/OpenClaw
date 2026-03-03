@@ -3,423 +3,1090 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>7‑Day Local Lead Engine Install</title>
-  <meta name="description" content="A fixed-scope 7-day setup to help more local customers find you on Google and contact you (calls + quote requests)." />
+  <title>7-Day Local Lead Engine Install - Kaluzy</title>
+  <meta name="description" content="A fixed-scope 7-day setup that helps local home service businesses show up on Google and convert more visitors into calls. Maryland." />
   <meta name="robots" content="index,follow" />
   <style>
-    :root{
-      --bg:#070b13;
-      --card:#0b1220;
-      --card2:#0a1020;
-      --ink:#e5e7eb;
-      --mut:#9ca3af;
-      --line:rgba(148,163,184,.18);
-      --shadow:0 18px 60px rgba(0,0,0,.35);
-      --acc:#fb7185;
-      --acc2:#60a5fa;
-      --good:#34d399;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      background:
-        radial-gradient(1200px 700px at 12% -10%, rgba(96,165,250,.16), transparent 60%),
-        radial-gradient(1200px 700px at 88% 10%, rgba(251,113,133,.14), transparent 55%),
-        linear-gradient(180deg, rgba(255,255,255,.02), transparent 22%),
-        var(--bg);
-      color:var(--ink);
-      font:15px/1.65 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
-      -webkit-font-smoothing:antialiased;
-      text-rendering:optimizeLegibility;
-    }
-    a{color:inherit}
-    .wrap{max-width:1020px;margin:0 auto;padding:28px}
-
-    /* header */
-    .header{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:14px}
-    .brand{display:flex;gap:10px;align-items:center}
-    .mark{
-      width:36px;height:36px;border-radius:12px;
-      background:linear-gradient(135deg, rgba(96,165,250,.28), rgba(251,113,133,.24));
-      border:1px solid var(--line);
-      box-shadow:0 10px 30px rgba(0,0,0,.25);
-      display:grid;place-items:center;
-      font-weight:950;
-      letter-spacing:-.02em;
-    }
-    .brandname{font-weight:950;letter-spacing:-.02em}
-    .tagline{color:var(--mut);font-size:13px;margin-top:1px}
-
-    .pillrow{display:flex;flex-wrap:wrap;gap:10px}
-    .pill{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:9px 12px;border-radius:999px;border:1px solid var(--line);
-      text-decoration:none;background:rgba(255,255,255,.03);
-      font-weight:900;
-      color:var(--ink);
-    }
-    .pill{cursor:pointer}
-    .pill:hover{border-color:rgba(251,113,133,.35)}
-
-    /* hero */
-    .hero{display:flex;gap:14px;align-items:stretch;justify-content:space-between;flex-wrap:wrap}
-    .heroLeft{min-width:min(640px, 100%)}
-    .badge{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:900;
-      padding:6px 10px;border-radius:999px;border:1px solid rgba(251,113,133,.35);background:rgba(251,113,133,.12)
-    }
-    .h1{font-size:34px;font-weight:980;letter-spacing:-.03em;margin:10px 0 0}
-    .sub{color:var(--mut);margin-top:8px;max-width:70ch}
-
-    .card{
-      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      border:1px solid var(--line);
-      border-radius:18px;
-      padding:16px;
-      box-shadow:var(--shadow);
+    /* ── Design tokens ── */
+    :root {
+      --bg:          #07090f;
+      --surface:     #0c1118;
+      --surface-2:   #111926;
+      --surface-3:   #16202e;
+      --border:      rgba(255,255,255,.07);
+      --border-mid:  rgba(255,255,255,.11);
+      --border-strong: rgba(255,255,255,.17);
+      --text:        #e2e8f0;
+      --text-sub:    #94a3b8;
+      --text-muted:  #4e5f74;
+      --accent:      #3b82f6;
+      --accent-dim:  rgba(59,130,246,.14);
+      --accent-ring: rgba(59,130,246,.35);
+      --gold:        #f59e0b;
+      --gold-dim:    rgba(245,158,11,.12);
+      --green:       #10b981;
+      --green-dim:   rgba(16,185,129,.12);
+      --r-sm:        10px;
+      --r:           16px;
+      --r-lg:        22px;
+      --r-xl:        30px;
+      --shadow:      0 1px 2px rgba(0,0,0,.5), 0 6px 20px rgba(0,0,0,.3);
+      --shadow-lg:   0 2px 4px rgba(0,0,0,.6), 0 20px 60px rgba(0,0,0,.45);
     }
 
-    .ctaCard{min-width:320px;flex:1}
-    .k{font-weight:950;margin:0 0 8px}
-    /* (price removed; quote-based) */
-    .mut{color:var(--mut)}
-    .small{font-size:12px;color:var(--mut)}
-    .hr{height:1px;background:var(--line);margin:12px 0}
-
-    .primaryBtn{
-      display:inline-flex;align-items:center;justify-content:center;gap:10px;
-      width:100%;
-      margin-top:10px;
-      padding:11px 14px;
-      border-radius:14px;
-      text-decoration:none;
-      font-weight:950;
-      color:var(--ink);
-      border:1px solid rgba(96,165,250,.45);
-      background:linear-gradient(135deg, rgba(96,165,250,.28), rgba(96,165,250,.10));
+    /* ── Reset + base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      background-image:
+        radial-gradient(ellipse 1400px 600px at 60% -5%, rgba(59,130,246,.08), transparent 65%),
+        radial-gradient(ellipse 900px 500px at 5% 30%, rgba(59,130,246,.05), transparent 60%);
+      color: var(--text);
+      font: 15px/1.7 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      min-height: 100vh;
     }
-    .primaryBtn{cursor:pointer}
-    .primaryBtn:hover{border-color:rgba(96,165,250,.70)}
-    .primaryBtn:focus{outline:2px solid rgba(96,165,250,.35); outline-offset:2px}
-    .primaryBtn.compact{width:auto}
+    a { color: inherit; text-decoration: none; }
+    img, svg { display: block; }
+    button { font: inherit; cursor: pointer; }
 
-    /* content grid */
-    .grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:14px}
-    @media(min-width:960px){.grid{grid-template-columns:1.2fr .8fr}}
+    /* ── Layout ── */
+    .container { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
 
-    .ul{margin:0;padding-left:18px}
-    .ul li{margin:7px 0}
-
-    .two{display:grid;grid-template-columns:1fr;gap:12px}
-    @media(min-width:960px){.two{grid-template-columns:1fr 1fr}}
-
-    .mini{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));border:1px solid var(--line);border-radius:16px;padding:14px}
-    .mini .k{margin-bottom:6px}
-
-    .steps{display:grid;grid-template-columns:1fr;gap:10px;margin-top:10px}
-    @media(min-width:960px){.steps{grid-template-columns:repeat(3, 1fr)}}
-    .step{padding:14px;border-radius:16px;border:1px solid var(--line);background:rgba(255,255,255,.02)}
-    .num{font-weight:980;color:rgba(96,165,250,.9)}
-
-    .legal{color:var(--mut);font-size:12px}
-
-    code{background:rgba(0,0,0,.22);border:1px solid var(--line);padding:1px 6px;border-radius:8px}
-
-/* form */
-label.small{display:block;margin-top:6px}
-input[type="text"], input[type="email"], input[type="url"], textarea{
-  width:100%;
-  padding:10px 12px;
-  border-radius:14px;
-  border:1px solid var(--line);
-  background:rgba(0,0,0,.22);
-  color:var(--ink);
-  outline:none;
-}
-input:focus, textarea:focus{border-color:rgba(96,165,250,.55)}
-
-/* form */
-label.small{display:block;margin-top:6px}
-input[type="text"], input[type="email"], input[type="url"], textarea{
-  width:100%;
-  padding:10px 12px;
-  border-radius:14px;
-  border:1px solid var(--line);
-  background:rgba(0,0,0,.22);
-  color:var(--ink);
-  outline:none;
-}
-input:focus, textarea:focus{border-color:rgba(96,165,250,.55)}
-
-    /* modal */
-    .modal{display:none;position:fixed;inset:0;z-index:50}
-    .modalBackdrop{position:absolute;inset:0;background:rgba(0,0,0,.78)}
-    .modalPanel{position:relative;max-width:980px;margin:32px auto;padding:12px}
-    .modalCard{
-      background:var(--card);
-      border:1px solid rgba(148,163,184,.28);
-      border-radius:18px;
-      padding:16px;
-      box-shadow:0 24px 80px rgba(0,0,0,.55);
-      max-height:calc(100vh - 64px);
-      overflow:auto;
+    /* ── Nav ── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      border-bottom: 1px solid var(--border);
+      background: rgba(7,9,15,.85);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
     }
-    @media(max-width:520px){.modalPanel{margin:12px auto;padding:10px}.modalCard{max-height:calc(100vh - 24px)}}
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      height: 60px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+    .logo-mark {
+      width: 34px; height: 34px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, rgba(59,130,246,.3), rgba(59,130,246,.12));
+      border: 1px solid rgba(59,130,246,.3);
+      display: grid; place-items: center;
+      font-weight: 900;
+      font-size: 15px;
+      letter-spacing: -.02em;
+      color: #93c5fd;
+    }
+    .logo-name {
+      font-weight: 800;
+      font-size: 16px;
+      letter-spacing: -.03em;
+      color: var(--text);
+    }
+    .logo-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: .02em;
+      margin-top: 1px;
+    }
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 18px;
+      border-radius: var(--r-sm);
+      font-weight: 700;
+      font-size: 13px;
+      color: #fff;
+      background: var(--accent);
+      border: 1px solid rgba(59,130,246,.6);
+      transition: background .15s, box-shadow .15s;
+      white-space: nowrap;
+    }
+    .nav-cta:hover {
+      background: #2563eb;
+      box-shadow: 0 0 0 3px var(--accent-ring);
+    }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 90px 0 72px;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+    @media (min-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr 400px; gap: 64px; align-items: center; }
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: var(--gold-dim);
+      border: 1px solid rgba(245,158,11,.2);
+      margin-bottom: 22px;
+    }
+    .badge-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      animation: pulse 2.4s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity: 1; }
+      50% { opacity: .45; }
+    }
+
+    .hero-headline {
+      font-size: clamp(34px, 5vw, 54px);
+      font-weight: 900;
+      letter-spacing: -.04em;
+      line-height: 1.08;
+      color: #f8fafc;
+    }
+    .hero-headline .accent { color: var(--accent); }
+
+    .hero-sub {
+      margin-top: 20px;
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--text-sub);
+      max-width: 52ch;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 24px;
+      border-radius: var(--r-sm);
+      font-weight: 700;
+      font-size: 14px;
+      color: #fff;
+      background: var(--accent);
+      border: 1px solid rgba(59,130,246,.5);
+      transition: background .15s, box-shadow .15s, transform .1s;
+    }
+    .btn-primary:hover {
+      background: #2563eb;
+      box-shadow: 0 0 0 3px var(--accent-ring);
+      transform: translateY(-1px);
+    }
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 22px;
+      border-radius: var(--r-sm);
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--text-sub);
+      background: transparent;
+      border: 1px solid var(--border-mid);
+      transition: border-color .15s, color .15s;
+    }
+    .btn-ghost:hover {
+      border-color: var(--border-strong);
+      color: var(--text);
+    }
+
+    .hero-trust {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 28px;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .trust-icon {
+      width: 16px; height: 16px;
+      color: var(--green);
+      flex-shrink: 0;
+    }
+
+    /* ── Hero card (CTA) ── */
+    .hero-card {
+      background: linear-gradient(160deg, var(--surface-2), var(--surface));
+      border: 1px solid var(--border-mid);
+      border-radius: var(--r-lg);
+      padding: 28px;
+      box-shadow: var(--shadow-lg);
+    }
+    .hero-card-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+    .hero-card-title {
+      font-size: 22px;
+      font-weight: 850;
+      letter-spacing: -.03em;
+      line-height: 1.2;
+      color: #f1f5f9;
+    }
+    .hero-card-desc {
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--text-sub);
+      line-height: 1.6;
+    }
+    .hero-card-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 18px 0;
+    }
+    .hero-card-detail {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .hero-card-detail strong { color: var(--text-sub); }
+
+    /* ── Section base ── */
+    section { padding: 72px 0; }
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .section-heading {
+      font-size: clamp(24px, 3.5vw, 36px);
+      font-weight: 850;
+      letter-spacing: -.035em;
+      line-height: 1.15;
+      color: #f1f5f9;
+    }
+    .section-sub {
+      margin-top: 12px;
+      font-size: 15px;
+      color: var(--text-sub);
+      max-width: 54ch;
+      line-height: 1.65;
+    }
+
+    /* ── Divider ── */
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-mid) 30%, var(--border-mid) 70%, transparent);
+    }
+
+    /* ── Deliverables ── */
+    .deliverables-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 40px;
+    }
+    @media (min-width: 640px) { .deliverables-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 960px) { .deliverables-grid { grid-template-columns: 1fr 1fr 1fr; } }
+
+    .deliverable-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 22px 22px 20px;
+      transition: border-color .2s, background .2s;
+    }
+    .deliverable-card:hover {
+      border-color: var(--border-mid);
+      background: var(--surface-2);
+    }
+    .deliverable-icon {
+      width: 38px; height: 38px;
+      border-radius: 10px;
+      background: var(--accent-dim);
+      border: 1px solid rgba(59,130,246,.2);
+      display: grid; place-items: center;
+      font-size: 18px;
+      margin-bottom: 14px;
+    }
+    .deliverable-title {
+      font-size: 14px;
+      font-weight: 750;
+      color: #e2e8f0;
+      letter-spacing: -.01em;
+    }
+    .deliverable-desc {
+      margin-top: 6px;
+      font-size: 13px;
+      color: var(--text-sub);
+      line-height: 1.6;
+    }
+
+    /* ── Steps ── */
+    .steps-section {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      margin-top: 44px;
+    }
+    @media (min-width: 760px) { .steps-grid { grid-template-columns: repeat(3,1fr); } }
+
+    .step {
+      padding: 28px 28px 28px 0;
+      position: relative;
+    }
+    @media (min-width: 760px) {
+      .step + .step {
+        padding-left: 36px;
+        border-left: 1px solid var(--border);
+      }
+    }
+    .step-num {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+    .step-title {
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: -.025em;
+      color: #f1f5f9;
+      margin-bottom: 8px;
+    }
+    .step-desc {
+      font-size: 13px;
+      color: var(--text-sub);
+      line-height: 1.65;
+    }
+
+    /* ── Lanes ── */
+    .lanes-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 40px;
+    }
+    @media (min-width: 700px) { .lanes-grid { grid-template-columns: 1fr 1fr; } }
+
+    .lane-card {
+      border-radius: var(--r-lg);
+      border: 1px solid var(--border-mid);
+      padding: 28px;
+      background: linear-gradient(160deg, var(--surface-2), var(--surface));
+    }
+    .lane-card.preferred {
+      border-color: rgba(59,130,246,.25);
+      background: linear-gradient(160deg, rgba(59,130,246,.07), var(--surface));
+    }
+    .lane-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .lane-tag.blue {
+      color: #93c5fd;
+      background: var(--accent-dim);
+      border: 1px solid rgba(59,130,246,.2);
+    }
+    .lane-tag.gray {
+      color: var(--text-muted);
+      background: rgba(255,255,255,.04);
+      border: 1px solid var(--border);
+    }
+    .lane-title {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -.03em;
+      color: #f1f5f9;
+      margin-bottom: 8px;
+    }
+    .lane-desc {
+      font-size: 14px;
+      color: var(--text-sub);
+      line-height: 1.65;
+    }
+    .lane-note {
+      margin-top: 16px;
+      font-size: 12px;
+      color: var(--text-muted);
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── FAQ ── */
+    .faq-list {
+      margin-top: 40px;
+      display: grid;
+      gap: 12px;
+    }
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 22px 24px;
+      transition: border-color .2s;
+    }
+    .faq-item:hover { border-color: var(--border-mid); }
+    .faq-q {
+      font-size: 15px;
+      font-weight: 750;
+      color: #e2e8f0;
+      letter-spacing: -.01em;
+    }
+    .faq-a {
+      margin-top: 8px;
+      font-size: 13px;
+      color: var(--text-sub);
+      line-height: 1.7;
+    }
+
+    /* ── Quote form section ── */
+    .form-section {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      margin-top: 44px;
+    }
+    @media (min-width: 900px) { .form-grid { grid-template-columns: 1fr 480px; align-items: start; } }
+
+    .form-info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 28px;
+    }
+    .form-info-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .form-info-icon {
+      width: 36px; height: 36px;
+      border-radius: 10px;
+      background: var(--green-dim);
+      border: 1px solid rgba(16,185,129,.2);
+      display: grid; place-items: center;
+      font-size: 16px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .form-info-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #e2e8f0;
+      margin-bottom: 3px;
+    }
+    .form-info-desc {
+      font-size: 13px;
+      color: var(--text-sub);
+      line-height: 1.55;
+    }
+
+    .form-card {
+      background: linear-gradient(160deg, var(--surface-2), var(--surface));
+      border: 1px solid var(--border-mid);
+      border-radius: var(--r-xl);
+      padding: 32px;
+      box-shadow: var(--shadow-lg);
+    }
+    .form-card-title {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -.03em;
+      color: #f1f5f9;
+      margin-bottom: 22px;
+    }
+
+    .field-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    @media (min-width: 520px) { .field-row.two { grid-template-columns: 1fr 1fr; } }
+
+    .field label {
+      display: block;
+      font-size: 12px;
+      font-weight: 650;
+      color: var(--text-sub);
+      letter-spacing: .02em;
+      margin-bottom: 7px;
+    }
+    .field input,
+    .field textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: var(--r-sm);
+      border: 1px solid var(--border-mid);
+      background: rgba(0,0,0,.25);
+      color: var(--text);
+      font: 14px/1.5 ui-sans-serif, system-ui, -apple-system, sans-serif;
+      outline: none;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .field input::placeholder, .field textarea::placeholder { color: var(--text-muted); }
+    .field input:focus, .field textarea:focus {
+      border-color: var(--accent-ring);
+      box-shadow: 0 0 0 3px var(--accent-dim);
+    }
+    .field textarea { min-height: 100px; resize: vertical; }
+
+    .form-submit {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .form-note {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* ── Footer ── */
+    .footer {
+      padding: 36px 0;
+      border-top: 1px solid var(--border);
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .footer-left { font-size: 13px; color: var(--text-muted); }
+    .footer-right {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+    }
+    .footer-right a { color: var(--text-muted); transition: color .15s; }
+    .footer-right a:hover { color: var(--text-sub); }
+
+    /* ── Modal ── */
+    .modal { display: none; position: fixed; inset: 0; z-index: 60; }
+    .modal-backdrop {
+      position: absolute; inset: 0;
+      background: rgba(0,0,0,.82);
+      backdrop-filter: blur(4px);
+    }
+    .modal-panel {
+      position: relative;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 14px;
+    }
+    .modal-card {
+      background: var(--surface-2);
+      border: 1px solid var(--border-mid);
+      border-radius: var(--r-xl);
+      padding: 28px;
+      box-shadow: 0 30px 90px rgba(0,0,0,.7);
+      max-height: calc(100vh - 80px);
+      overflow: auto;
+    }
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .modal-title { font-size: 20px; font-weight: 800; letter-spacing: -.03em; color: #f1f5f9; }
+    .modal-sub { font-size: 13px; color: var(--text-sub); margin-top: 4px; }
+    .modal-close {
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      border: 1px solid var(--border-mid);
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 18px;
+      display: grid; place-items: center;
+      line-height: 1;
+      flex-shrink: 0;
+      transition: border-color .15s, color .15s;
+    }
+    .modal-close:hover { border-color: var(--border-strong); color: var(--text); }
+    @media (max-width: 520px) {
+      .modal-panel { margin: 10px auto; padding: 8px; }
+      .modal-card { max-height: calc(100vh - 20px); }
+    }
+
+    /* ── Utility ── */
+    .sr-only { position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0 }
   </style>
 </head>
 <body>
-  <div class="wrap">
 
-    <div class="header">
-      <div class="brand">
-        <div class="mark">K</div>
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#" class="logo">
+        <div class="logo-mark">K</div>
         <div>
-          <div class="brandname">Kaluzy</div>
-          <div class="tagline">Local visibility + conversion installs for home services (MD)</div>
+          <div class="logo-name">Kaluzy</div>
+          <div class="logo-sub">Local Lead Engine</div>
+        </div>
+      </a>
+      <button class="nav-cta" id="navCta" type="button">Request a quote</button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div>
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Fixed scope &bull; 7-day install &bull; Maryland
+        </div>
+        <h1 class="hero-headline">
+          More calls from Google.<br>
+          <span class="accent">Done in 7 days.</span>
+        </h1>
+        <p class="hero-sub">
+          We run a fixed-scope setup for local home service businesses: your Google listing cleaned up, reviews coming in automatically, and your best service page tuned to convert. You get a before/after summary when we're done.
+        </p>
+        <div class="hero-actions">
+          <button class="btn-primary" id="heroCta" type="button">Request a quote</button>
+          <a class="btn-ghost" href="#included">See what's included</a>
+        </div>
+        <div class="hero-trust">
+          <span class="trust-item">
+            <svg class="trust-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
+            Fixed scope, no retainer
+          </span>
+          <span class="trust-item">
+            <svg class="trust-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
+            5 min of your time to start
+          </span>
+          <span class="trust-item">
+            <svg class="trust-icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/></svg>
+            Waldorf &bull; Frederick &bull; Charles County
+          </span>
         </div>
       </div>
-      <div class="pillrow">
-        <!-- Intentionally no cross-links from the offer page. Keep prospects focused. -->
+
+      <div class="hero-card">
+        <div class="hero-card-label">What you get</div>
+        <div class="hero-card-title">A quote + scope recommendation in 24 hours</div>
+        <p class="hero-card-desc">
+          Fill out the short form. I'll look at your current Google listing, note what needs work, and reply with a clear scope and price.
+        </p>
+        <div class="hero-card-divider"></div>
+        <div class="hero-card-detail">
+          <strong>Included in the reply:</strong> scope recommendation, price based on project size, and the 5-minute access checklist to get started.
+        </div>
+        <button class="btn-primary" id="heroCta2" type="button" style="width:100%;margin-top:18px;justify-content:center;">
+          Request a quote
+        </button>
+        <p style="margin-top:12px;font-size:11px;color:var(--text-muted);text-align:center;">
+          No spam. Reply from stella@kaluzy.com.
+        </p>
       </div>
     </div>
+  </section>
 
-    <div class="hero">
-      <div class="heroLeft">
-        <div class="badge">Maryland • Home Services • Fixed scope • 7 days</div>
-        <h1 class="h1">7‑Day Local Lead Engine Install</h1>
-        <div class="sub">In plain English: we help more local people <b>find you on Google</b> and then <b>actually call or request a quote</b>. It’s a done‑for‑you setup for plumbing/HVAC and other home service businesses.</div>
-      </div>
+  <div class="section-divider"></div>
 
-      <div class="card ctaCard">
-        <div class="k">Get a quote + checklist</div>
-        <div class="mut">Tell me a few basics and I’ll reply with:
-          <ul class="ul" style="margin-top:8px">
-            <li>a clear scope recommendation (what I’d do first)</li>
-            <li>a price based on project heaviness</li>
-            <li>the 5‑minute access checklist</li>
-          </ul>
+  <!-- What's included -->
+  <section id="included">
+    <div class="container">
+      <div class="section-label">What's included</div>
+      <h2 class="section-heading">Everything in one 7-day install</h2>
+      <p class="section-sub">Five things that directly affect how many calls you get from Google. All done-for-you, no monthly fees.</p>
+
+      <div class="deliverables-grid">
+        <div class="deliverable-card">
+          <div class="deliverable-icon">&#127759;</div>
+          <div class="deliverable-title">Your Google listing cleaned up</div>
+          <p class="deliverable-desc">We fix the fields Google uses to decide when and where to show you: services, service areas, categories, and business details.</p>
         </div>
-        <div class="hr"></div>
-        <div class="small"><b>Low interaction:</b> you fill the form (2 minutes) + a 10‑minute call if it’s a fit.</div>
-        <button class="primaryBtn compact" type="button" id="openQuote">Request a quote</button>
-        <div class="legal" style="margin-top:10px">No results are guaranteed. We focus on implementation + measurement.</div>
+        <div class="deliverable-card">
+          <div class="deliverable-icon">&#128247;</div>
+          <div class="deliverable-title">4 posts scheduled</div>
+          <p class="deliverable-desc">Fresh posts on your Google listing keep your profile active and improve click-through. We schedule a month's worth so your profile doesn't go quiet.</p>
+        </div>
+        <div class="deliverable-card">
+          <div class="deliverable-icon">&#11088;</div>
+          <div class="deliverable-title">Reviews on autopilot</div>
+          <p class="deliverable-desc">A simple ask you send after each job (text or email). Templates, your review link, and a basic tracker so reviews come in consistently.</p>
+        </div>
+        <div class="deliverable-card">
+          <div class="deliverable-icon">&#128222;</div>
+          <div class="deliverable-title">Your best page tuned to convert</div>
+          <p class="deliverable-desc">We improve the page most likely to turn a visitor into a call: clearer services, trust signals, faster CTA. One page, done right.</p>
+        </div>
+        <div class="deliverable-card">
+          <div class="deliverable-icon">&#128202;</div>
+          <div class="deliverable-title">Baseline tracking</div>
+          <p class="deliverable-desc">A simple snapshot of where things stand today so we can measure what changed. No dashboards you'll never look at.</p>
+        </div>
+        <div class="deliverable-card">
+          <div class="deliverable-icon">&#128196;</div>
+          <div class="deliverable-title">Before/after summary PDF</div>
+          <p class="deliverable-desc">A clear document showing exactly what changed, what to watch, and what to do next if you want to keep improving.</p>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="grid">
-      <div class="card">
-        <p class="k">What we set up in 7 days</p>
-        <ul class="ul">
-          <li><b>Your Google Business Profile cleaned up</b>: the fields Google uses to decide when to show you (services, areas, categories)</li>
-          <li><b>4 Google updates scheduled</b> (posts that keep your profile active over the next month)</li>
-          <li><b>Review request system</b>: simple text/email templates + your review link + a tiny tracker so reviews happen consistently</li>
-          <li><b>One page improved for more calls</b>: we fix the most important page so mobile visitors call/submit more</li>
-          <li><b>Basic tracking</b>: a simple baseline so we can measure what changed</li>
-          <li><b>Before/after summary</b>: what we changed + what to do next (if anything)</li>
-        </ul>
+  <div class="section-divider"></div>
 
-        <div class="hr"></div>
-        <p class="k">3‑step process (simple)</p>
-        <div class="steps">
-          <div class="step"><div class="num">01</div><div style="font-weight:950;margin-top:6px">Kickoff</div><div class="mut">You answer a few quick questions (services + areas) and add access. I send the checklist.</div></div>
-          <div class="step"><div class="num">02</div><div style="font-weight:950;margin-top:6px">We do the work</div><div class="mut">We set up Google profile + reviews + one page improvement + basic tracking.</div></div>
-          <div class="step"><div class="num">03</div><div style="font-weight:950;margin-top:6px">Wrap-up</div><div class="mut">15‑minute handoff: what changed, what to watch, and what to do next.</div></div>
+  <!-- Steps -->
+  <section class="steps-section">
+    <div class="container">
+      <div class="section-label">How it works</div>
+      <h2 class="section-heading">Three steps. Minimal time from you.</h2>
+
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-num">Step 01</div>
+          <div class="step-title">Kickoff</div>
+          <p class="step-desc">
+            Fill out the short quote form. I review your listing and site, then send a scope + price and the 5-minute access checklist. Your total time: about 10 minutes.
+          </p>
+        </div>
+        <div class="step">
+          <div class="step-num">Step 02</div>
+          <div class="step-title">We do the work</div>
+          <p class="step-desc">
+            Over 7 days we clean up your Google listing, set up the review system, schedule the posts, and improve your service page. You do not need to be involved.
+          </p>
+        </div>
+        <div class="step">
+          <div class="step-num">Step 03</div>
+          <div class="step-title">Handoff</div>
+          <p class="step-desc">
+            A 15-minute call on Day 7. We walk through what changed, what to watch, and answer any questions. You get the before/after PDF.
+          </p>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="card">
-        <p class="k">Two lanes (to reduce friction)</p>
-        <div class="two">
-          <div class="mini">
-            <div class="k">Lane A (preferred)</div>
-            <div class="mut">Fix your existing site + GBP.</div>
-            <div class="hr"></div>
-            <div class="small">Best when your website is “fine” but visibility/conversion is leaking.</div>
-          </div>
-          <div class="mini">
-            <div class="k">Lane B (low‑friction)</div>
-            <div class="mut">No website access? I ship a new landing page + tracking and point GBP to it.</div>
-            <div class="hr"></div>
-            <div class="small">Still requires GBP access.</div>
-          </div>
+  <div class="section-divider"></div>
+
+  <!-- Lanes -->
+  <section>
+    <div class="container">
+      <div class="section-label">Two options</div>
+      <h2 class="section-heading">Pick the lane that fits your situation</h2>
+      <p class="section-sub">Either way, the deliverables are the same. The difference is whether we work on your existing site or build a clean landing page.</p>
+
+      <div class="lanes-grid">
+        <div class="lane-card preferred">
+          <div class="lane-tag blue">Preferred</div>
+          <div class="lane-title">Lane A: Fix what you have</div>
+          <p class="lane-desc">
+            We improve your existing website and clean up your Google listing. This is the right call if your site is live and functional, but visibility and conversion are leaking.
+          </p>
+          <p class="lane-note">Requires: manager access to your Google listing + editor access to your website (no passwords needed, just a role).</p>
         </div>
+        <div class="lane-card">
+          <div class="lane-tag gray">Alternative</div>
+          <div class="lane-title">Lane B: New landing page</div>
+          <p class="lane-desc">
+            No website access, or your site is hard to edit? We build a focused service landing page and point your Google listing to it. Clean, fast, and built to convert.
+          </p>
+          <p class="lane-note">Requires: manager access to your Google listing. No site access needed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="hr"></div>
+  <div class="section-divider"></div>
+
+  <!-- FAQ -->
+  <section>
+    <div class="container">
+      <div class="section-label">Questions</div>
+      <h2 class="section-heading">Straight answers</h2>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">Is this a free audit?</div>
+          <p class="faq-a">No. This is a done-for-you install. I may flag a couple of issues as part of the quote, but the deliverable is implementation and a before/after summary, not a report.</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Do you need my passwords?</div>
+          <p class="faq-a">No. For Google, you add me as a manager through their standard interface. For your website, you can usually add an editor account. If neither is possible, Lane B avoids it entirely.</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How fast will I see results?</div>
+          <p class="faq-a">Some things are immediate: your page starts converting better, review asks go out after every job, and your Google listing looks complete. Google map rankings can take a few weeks to reflect changes - that's why we document a baseline and track it.</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What if I'm not in Waldorf or Frederick?</div>
+          <p class="faq-a">Fill out the form anyway. I'm focused on Maryland home services right now, and if it's a fit I'll say so. If not, I'll tell you quickly.</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Is there a monthly fee after?</div>
+          <p class="faq-a">No. This is a fixed one-time install. If you want ongoing work after the 7 days, we can discuss it, but there is no recurring charge built into this.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Form section -->
+  <section class="form-section" id="quote-section">
+    <div class="container">
+      <div class="form-grid">
         <div>
-          <p class="k">FAQ</p>
-          <div class="mut">
-            <div style="font-weight:950;color:var(--ink);margin-top:8px">Is this a free audit?</div>
-            <div class="mut">No. This is a done‑for‑you install. I may point out a couple issues as proof, but the deliverable is implementation + a before/after snapshot.</div>
+          <div class="section-label">Get started</div>
+          <h2 class="section-heading">Request a quote</h2>
+          <p class="section-sub">Takes about 2 minutes. I'll reply within 24 hours with a scope recommendation and price.</p>
 
-            <div style="font-weight:950;color:var(--ink);margin-top:10px">Do you need my passwords?</div>
-            <div class="mut">Usually no. You can add me as a manager/editor. If access is blocked, Lane B avoids it.</div>
-
-            <div style="font-weight:950;color:var(--ink);margin-top:10px">When will I see results?</div>
-            <div class="mut">Some improvements are immediate (more calls from the site, review asks going out, Google profile completeness). Google rankings can take longer — that’s why we start with a baseline and track changes.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="card" id="request" style="margin-top:12px">
-      <p class="k">Request a quote</p>
-      <div class="mut">Click “Request a quote” above to open the form.</div>
-      <div class="hr"></div>
-      <form class="form" id="quoteForm">
-        <div class="two" style="margin-top:8px">
-          <div class="mini">
-            <div class="k">Your info</div>
-            <label class="small">Name</label>
-            <input required name="name" type="text" placeholder="Your name" />
-            <div style="height:10px"></div>
-            <label class="small">Business name</label>
-            <input required name="business_name" type="text" placeholder="Company" />
-            <div style="height:10px"></div>
-            <label class="small">Email</label>
-            <input required name="reply_to" type="email" placeholder="you@company.com" />
-            <div style="height:10px"></div>
-            <label class="small">Phone (optional)</label>
-            <input name="phone" type="text" placeholder="(###) ###‑####" />
-          </div>
-
-          <div class="mini">
-            <div class="k">Project basics</div>
-            <label class="small">City / service area</label>
-            <input required name="service_area" type="text" placeholder="e.g., Waldorf / Frederick" />
-            <div style="height:10px"></div>
-            <label class="small">Website URL (optional)</label>
-            <input name="website" type="url" placeholder="https://…" />
-            <div style="height:10px"></div>
-            <label class="small">Google Business Profile link (optional)</label>
-            <input name="gbp" type="url" placeholder="https://maps.google.com/…" />
-            <div style="height:10px"></div>
-            <label class="small">What do you want more of?</label>
-            <input required name="goal" type="text" placeholder="More calls, more quotes, better Google visibility…" />
-          </div>
-        </div>
-
-        <div style="margin-top:12px" class="mini">
-          <div class="k">Notes (optional)</div>
-          <textarea name="notes" style="width:100%;min-height:120px;resize:vertical;padding:10px 12px;border-radius:14px;border:1px solid var(--line);background:rgba(0,0,0,.22);color:var(--ink);outline:none;font:14px/1.5 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;" placeholder="Anything I should know? Busy season timing, staff count, budget range, etc."></textarea>
-        </div>
-
-        <input type="hidden" name="source" value="kaluzy.com/agency" />
-
-        <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px">
-          <button type="submit" class="primaryBtn" style="width:auto">Send request</button>
-          <span class="small">You’ll get a reply from Stella.</span>
-        </div>
-      </form>
-
-      <div class="legal" style="margin-top:10px">This form is for quote requests. No spam.</div>
-    </div>
-
-    <!-- modal (opened by Get started / Request a quote) -->
-    <div class="modal" id="quoteModal" aria-hidden="true">
-      <div class="modalBackdrop" id="closeQuote"></div>
-      <div class="modalPanel" role="dialog" aria-modal="true" aria-label="Request a quote">
-        <div class="modalCard">
-          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
-            <div>
-              <div class="k" style="margin:0">Request a quote</div>
-              <div class="mut" style="margin-top:4px">I’ll reply to <b>stella@kaluzy.com</b> with scope + price + the checklist.</div>
+          <div class="form-info-list">
+            <div class="form-info-item">
+              <div class="form-info-icon">&#128172;</div>
+              <div>
+                <div class="form-info-title">You get a clear reply, not a sales pitch</div>
+                <p class="form-info-desc">Scope of what I'd do, price based on the project, and the access checklist if you want to move forward.</p>
+              </div>
             </div>
-            <button type="button" class="pill" id="closeQuoteBtn" aria-label="Close">Close</button>
+            <div class="form-info-item">
+              <div class="form-info-icon">&#9200;</div>
+              <div>
+                <div class="form-info-title">Low time commitment</div>
+                <p class="form-info-desc">2 minutes for the form. Optional 10-minute call if it's a fit. 5 minutes to grant access. Done.</p>
+              </div>
+            </div>
+            <div class="form-info-item">
+              <div class="form-info-icon">&#128077;</div>
+              <div>
+                <div class="form-info-title">No obligation</div>
+                <p class="form-info-desc">If it's not a fit after the quote, I'll tell you. No hard sell, no follow-up sequence.</p>
+              </div>
+            </div>
           </div>
-          <div class="hr"></div>
-          <div id="modalFormMount"></div>
+        </div>
+
+        <div class="form-card">
+          <div class="form-card-title">Your info</div>
+          <form id="quoteForm">
+            <div class="field-row two">
+              <div class="field">
+                <label for="f-name">Your name</label>
+                <input id="f-name" name="name" type="text" placeholder="First name" required />
+              </div>
+              <div class="field">
+                <label for="f-biz">Business name</label>
+                <input id="f-biz" name="business_name" type="text" placeholder="Company" required />
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="f-email">Email</label>
+                <input id="f-email" name="reply_to" type="email" placeholder="you@company.com" required />
+              </div>
+            </div>
+            <div class="field-row two">
+              <div class="field">
+                <label for="f-phone">Phone (optional)</label>
+                <input id="f-phone" name="phone" type="text" placeholder="(###) ###-####" />
+              </div>
+              <div class="field">
+                <label for="f-area">City / service area</label>
+                <input id="f-area" name="service_area" type="text" placeholder="Waldorf / Frederick" required />
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="f-site">Website URL (optional)</label>
+                <input id="f-site" name="website" type="url" placeholder="https://yoursite.com" />
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="f-goal">What do you want more of?</label>
+                <input id="f-goal" name="goal" type="text" placeholder="More calls, more quotes, better Google visibility..." required />
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="f-notes">Anything else I should know? (optional)</label>
+                <textarea id="f-notes" name="notes" placeholder="Busy season timing, staff count, budget range..."></textarea>
+              </div>
+            </div>
+            <input type="hidden" name="source" value="kaluzy.com/agency" />
+            <div class="form-submit">
+              <button type="submit" class="btn-primary">Send request</button>
+              <span class="form-note">Reply from stella@kaluzy.com within 24 hours.</span>
+            </div>
+          </form>
         </div>
       </div>
     </div>
+  </section>
 
-    <script>
-      // Optional: set this to your Google Apps Script Web App URL later
-      // Example: https://script.google.com/macros/s/AKfycb.../exec
-      const QUOTE_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwtMUWhLc76oyGAd1CW_viT0zG52yKSk_87L2zx18MUmMQtjNGJbzIxJeA6GgM75aTu/exec';
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <strong style="color:var(--text-sub)">Kaluzy</strong> &bull; Maryland home services &bull; stella@kaluzy.com
+      </div>
+      <div class="footer-right">
+        <a href="#included">What's included</a>
+        <a href="#quote-section">Get a quote</a>
+      </div>
+    </div>
+  </footer>
 
-      const openBtn = document.getElementById('openQuote');
-      const modal = document.getElementById('quoteModal');
-      const closeBg = document.getElementById('closeQuote');
-      const closeBtn = document.getElementById('closeQuoteBtn');
-      const mount = document.getElementById('modalFormMount');
-      const form = document.getElementById('quoteForm');
-
-      // Move the existing on-page form into the modal (so the page stays clean)
-      if (form && mount) mount.appendChild(form);
-
-      function openModal(){
-        modal.style.display = 'block';
-        modal.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-      }
-      function closeModal(){
-        modal.style.display = 'none';
-        modal.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-      }
-
-      if (openBtn) openBtn.addEventListener('click', openModal);
-      if (closeBg) closeBg.addEventListener('click', closeModal);
-      if (closeBtn) closeBtn.addEventListener('click', closeModal);
-      document.addEventListener('keydown', (e)=>{ if (e.key === 'Escape') closeModal(); });
-
-      async function submitToEndpoint(payload){
-        // Apps Script Web Apps do not reliably support CORS.
-        // Use no-cors and treat a network-level completion as success.
-        await fetch(QUOTE_ENDPOINT, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload),
-        });
-      }
-
-      function asObject(formEl){
-        const fd = new FormData(formEl);
-        const obj = {};
-        for (const [k,v] of fd.entries()) obj[k] = v;
-        return obj;
-      }
-
-      if (form){
-        form.addEventListener('submit', async (e)=>{
-          e.preventDefault();
-          const btn = form.querySelector('button[type=submit]');
-          const old = btn ? btn.textContent : '';
-          if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
-
-          try {
-            const payload = asObject(form);
-            payload.source = payload.source || 'kaluzy.com/agency';
-            payload.userAgent = navigator.userAgent;
-            payload.page = location.href;
-            payload.submittedAt = new Date().toISOString();
-
-            if (!QUOTE_ENDPOINT){
-              // fallback: open mail client (no backend)
-              const subject = encodeURIComponent('Agency quote request — ' + (payload.business_name || ''));
-              const body = encodeURIComponent(JSON.stringify(payload, null, 2));
-              window.location.href = `mailto:stella@kaluzy.com?subject=${subject}&body=${body}`;
-            } else {
-              await submitToEndpoint(payload);
-              alert('Request sent. Stella will reply by email shortly.');
-              form.reset();
-              closeModal();
-            }
-          } catch (err){
-            console.error(err);
-            alert('Could not send. Please email stella@kaluzy.com.');
-          } finally {
-            if (btn) { btn.disabled = false; btn.textContent = old || 'Send request'; }
-          }
-        });
-      }
-
-      // Optional: open modal automatically when #request is visited
-      if (location.hash === '#request') {
-        setTimeout(openModal, 100);
-      }
-    </script>
-
+  <!-- Modal (opened from nav + hero CTAs) -->
+  <div class="modal" id="quoteModal" aria-hidden="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-label="Request a quote">
+      <div class="modal-card">
+        <div class="modal-header">
+          <div>
+            <div class="modal-title">Request a quote</div>
+            <div class="modal-sub">I'll reply from stella@kaluzy.com within 24 hours.</div>
+          </div>
+          <button class="modal-close" id="modalClose" type="button" aria-label="Close">&times;</button>
+        </div>
+        <div id="modalFormMount"></div>
+      </div>
+    </div>
   </div>
+
+  <script>
+    const QUOTE_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwtMUWhLc76oyGAd1CW_viT0zG52yKSk_87L2zx18MUmMQtjNGJbzIxJeA6GgM75aTu/exec';
+
+    // Modal wiring
+    const modal   = document.getElementById('quoteModal');
+    const mount   = document.getElementById('modalFormMount');
+    const form    = document.getElementById('quoteForm');
+    const ctaBtns = [
+      document.getElementById('navCta'),
+      document.getElementById('heroCta'),
+      document.getElementById('heroCta2'),
+    ];
+
+    function openModal() {
+      modal.style.display = 'block';
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    // Move the form into the modal so we have one instance
+    if (form && mount) mount.appendChild(form);
+
+    ctaBtns.forEach(btn => { if (btn) btn.addEventListener('click', openModal); });
+    document.getElementById('modalBackdrop').addEventListener('click', closeModal);
+    document.getElementById('modalClose').addEventListener('click', closeModal);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    if (location.hash === '#request') setTimeout(openModal, 120);
+
+    // Form submit
+    async function submitToEndpoint(payload) {
+      await fetch(QUOTE_ENDPOINT, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+    }
+
+    function formToObject(formEl) {
+      const fd = new FormData(formEl);
+      const obj = {};
+      for (const [k, v] of fd.entries()) obj[k] = v;
+      return obj;
+    }
+
+    if (form) {
+      form.addEventListener('submit', async e => {
+        e.preventDefault();
+        const btn = form.querySelector('button[type=submit]');
+        const orig = btn ? btn.textContent : '';
+        if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+
+        try {
+          const payload = formToObject(form);
+          payload.source      = payload.source || 'kaluzy.com/agency';
+          payload.userAgent   = navigator.userAgent;
+          payload.page        = location.href;
+          payload.submittedAt = new Date().toISOString();
+
+          if (!QUOTE_ENDPOINT) {
+            const subj = encodeURIComponent('Agency quote request - ' + (payload.business_name || ''));
+            const body = encodeURIComponent(JSON.stringify(payload, null, 2));
+            window.location.href = `mailto:stella@kaluzy.com?subject=${subj}&body=${body}`;
+          } else {
+            await submitToEndpoint(payload);
+            alert('Request sent. Stella will reply by email shortly.');
+            form.reset();
+            closeModal();
+          }
+        } catch (err) {
+          console.error(err);
+          alert('Could not send. Please email stella@kaluzy.com directly.');
+        } finally {
+          if (btn) { btn.disabled = false; btn.textContent = orig || 'Send request'; }
+        }
+      });
+    }
+  </script>
+
 </body>
 </html>
