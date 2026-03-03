@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>One-Night Offer Builder</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="kicker">Ship tonight</div>
+    <h1>One‑Night Offer Builder</h1>
+    <p class="sub">Turn “no lead” into a niche + offer + 10 outbound messages in ~10 minutes.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Inputs (keep it rough)</h2>
+      <div class="grid">
+        <label>
+          <span>Product theme</span>
+          <select id="theme">
+            <option value="watchtower">WatchTower (MSP security monitoring)</option>
+            <option value="hwcc">HWCC (school/homework command center)</option>
+            <option value="stella">Stella (AI at Work — without the risk)</option>
+          </select>
+        </label>
+
+        <label>
+          <span>Where you have credibility</span>
+          <input id="cred" placeholder="ex: MSP ops, SOC workflows, small biz IT, parenting/schools" />
+        </label>
+
+        <label>
+          <span>Who you can reach today</span>
+          <input id="reach" placeholder="ex: MSP owners, principals, real-estate agents, dentists" />
+        </label>
+
+        <label>
+          <span>Your constraint</span>
+          <select id="constraint">
+            <option value="no-backend">No backend (static / manual delivery)</option>
+            <option value="light-backend">Light backend (email/webhook + spreadsheet)</option>
+            <option value="full">Can build backend (db + auth)</option>
+          </select>
+        </label>
+
+        <label class="wide">
+          <span>What you hate doing (so automate it)</span>
+          <input id="hate" placeholder="ex: writing updates, triaging alerts, summarizing emails" />
+        </label>
+
+        <label class="wide">
+          <span>Optional: 3 example customers you know</span>
+          <input id="examples" placeholder="ex: 'Bob at Acme MSP; Jane the principal; Mike the realtor'" />
+        </label>
+      </div>
+
+      <div class="actions">
+        <button id="build">Build prototype plan</button>
+        <button id="copy" class="secondary" disabled>Copy output</button>
+      </div>
+      <p class="hint">This page is deterministic (no LLM calls) so it’s shippable tonight. You can swap in an LLM later.</p>
+    </section>
+
+    <section class="card">
+      <h2>Output</h2>
+      <div id="out" class="out">Fill the inputs and hit “Build prototype plan”.</div>
+    </section>
+
+    <footer>
+      <div class="fine">v0.1 — built for speed. Next step: replace templates with an LLM + saved projects.</div>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
