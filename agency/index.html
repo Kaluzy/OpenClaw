@@ -983,7 +983,57 @@
           </div>
           <button class="modal-close" id="modalClose" type="button" aria-label="Close">&times;</button>
         </div>
-        <div id="modalFormMount"></div>
+        <form id="modalQuoteForm">
+          <div class="field-row two">
+            <div class="field">
+              <label for="m-name">Your name</label>
+              <input id="m-name" name="name" type="text" placeholder="First name" required />
+            </div>
+            <div class="field">
+              <label for="m-biz">Business name</label>
+              <input id="m-biz" name="business_name" type="text" placeholder="Company" required />
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="m-email">Email</label>
+              <input id="m-email" name="reply_to" type="email" placeholder="you@company.com" required />
+            </div>
+          </div>
+          <div class="field-row two">
+            <div class="field">
+              <label for="m-phone">Phone (optional)</label>
+              <input id="m-phone" name="phone" type="text" placeholder="(###) ###-####" />
+            </div>
+            <div class="field">
+              <label for="m-area">City / service area</label>
+              <input id="m-area" name="service_area" type="text" placeholder="Waldorf / Frederick" required />
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="m-site">Website URL (optional)</label>
+              <input id="m-site" name="website" type="url" placeholder="https://yoursite.com" />
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="m-goal">What do you want more of?</label>
+              <input id="m-goal" name="goal" type="text" placeholder="More calls, more quotes, better Google visibility..." required />
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="m-notes">Anything else I should know? (optional)</label>
+              <textarea id="m-notes" name="notes" placeholder="Busy season timing, staff count, budget range..."></textarea>
+            </div>
+          </div>
+          <input type="hidden" name="source" value="kaluzy.com/agency" />
+          <div class="form-submit">
+            <button type="submit" class="btn-primary">Send request</button>
+            <span class="form-note">Reply from stella@kaluzy.com within 24 hours.</span>
+          </div>
+        </form>
       </div>
     </div>
   </div>
@@ -992,9 +1042,7 @@
     const QUOTE_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwtMUWhLc76oyGAd1CW_viT0zG52yKSk_87L2zx18MUmMQtjNGJbzIxJeA6GgM75aTu/exec';
 
     // Modal wiring
-    const modal   = document.getElementById('quoteModal');
-    const mount   = document.getElementById('modalFormMount');
-    const form    = document.getElementById('quoteForm');
+    const modal = document.getElementById('quoteModal');
     const ctaBtns = [
       document.getElementById('navCta'),
       document.getElementById('heroCta'),
@@ -1011,9 +1059,6 @@
       modal.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
     }
-
-    // Move the form into the modal so we have one instance
-    if (form && mount) mount.appendChild(form);
 
     ctaBtns.forEach(btn => { if (btn) btn.addEventListener('click', openModal); });
     document.getElementById('modalBackdrop').addEventListener('click', closeModal);
@@ -1039,15 +1084,16 @@
       return obj;
     }
 
-    if (form) {
-      form.addEventListener('submit', async e => {
+    function bindForm(formEl) {
+      if (!formEl) return;
+      formEl.addEventListener('submit', async e => {
         e.preventDefault();
-        const btn = form.querySelector('button[type=submit]');
+        const btn = formEl.querySelector('button[type=submit]');
         const orig = btn ? btn.textContent : '';
         if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
 
         try {
-          const payload = formToObject(form);
+          const payload = formToObject(formEl);
           payload.source      = payload.source || 'kaluzy.com/agency';
           payload.userAgent   = navigator.userAgent;
           payload.page        = location.href;
@@ -1060,7 +1106,7 @@
           } else {
             await submitToEndpoint(payload);
             alert('Request sent. Stella will reply by email shortly.');
-            form.reset();
+            formEl.reset();
             closeModal();
           }
         } catch (err) {
@@ -1071,6 +1117,9 @@
         }
       });
     }
+
+    bindForm(document.getElementById('quoteForm'));
+    bindForm(document.getElementById('modalQuoteForm'));
   </script>
 
 </body>
