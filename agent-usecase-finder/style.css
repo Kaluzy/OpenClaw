@@ -1,0 +1,29 @@
+:root{--bg:#0b0f14;--card:#121824;--ink:#eaf0ff;--muted:#aab6d3;--line:#223049;--accent:#7aa2ff;}
+*{box-sizing:border-box}
+body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:radial-gradient(1200px 600px at 10% 0%, #121a2a, var(--bg));color:var(--ink)}
+header{max-width:1100px;margin:32px auto 12px;padding:0 16px}
+.kicker{color:var(--muted);letter-spacing:.12em;text-transform:uppercase;font-size:12px}
+h1{margin:10px 0 8px;font-size:34px}
+.sub{margin:0;color:var(--muted);max-width:90ch}
+a{color:var(--accent)}
+main{max-width:1100px;margin:0 auto;padding:0 16px 56px}
+.card{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));border:1px solid var(--line);border-radius:14px;padding:14px 14px 12px;margin-top:16px;backdrop-filter: blur(6px)}
+.controls{display:flex;gap:10px;flex-wrap:wrap}
+input,select{padding:10px 10px;border-radius:12px;border:1px solid var(--line);background:#0c111b;color:var(--ink);outline:none}
+#q{flex:1;min-width:240px}
+button{padding:10px 12px;border-radius:12px;border:1px solid rgba(122,162,255,.5);background:rgba(122,162,255,.18);color:var(--ink);cursor:pointer;font-weight:600}
+button.secondary{border-color:var(--line);background:transparent;color:var(--muted)}
+button:disabled{opacity:.5;cursor:not-allowed}
+.meta{display:flex;justify-content:space-between;align-items:center;margin-top:10px;color:var(--muted);font-size:12px}
+.grid{display:grid;grid-template-columns:2fr 1fr;gap:16px}
+.list{display:flex;flex-direction:column;gap:10px;margin-top:10px}
+.item{border:1px solid var(--line);background:#0c111b;border-radius:12px;padding:10px}
+.item h3{margin:0 0 6px;font-size:14px}
+.badges{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px}
+.badge{font-size:11px;color:var(--muted);border:1px solid var(--line);padding:2px 8px;border-radius:999px}
+.desc{color:var(--ink);opacity:.92;font-size:12px;line-height:1.35}
+.row{display:flex;gap:8px;align-items:center;margin-top:8px}
+.row a{font-size:12px}
+.hint{color:var(--muted);font-size:12px;margin:4px 0 0}
+.fine{color:var(--muted);font-size:12px;margin-top:14px}
+@media (max-width:900px){.grid{grid-template-columns:1fr}h1{font-size:28px}}

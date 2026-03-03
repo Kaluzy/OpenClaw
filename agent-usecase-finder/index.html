@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Agent Use‑Case Finder</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="kicker">Built from GitHub (no scraping)</div>
+    <h1>Agent Use‑Case Finder</h1>
+    <p class="sub">Reference dataset: <a href="https://github.com/ashishpatel26/500-AI-Agents-Projects" target="_blank" rel="noreferrer">500+ AI Agent Projects / UseCases</a>. Search, filter, shortlist.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <div class="controls">
+        <input id="q" placeholder="Search (title, description, industry)…" />
+        <select id="industry"><option value="">All industries</option></select>
+        <select id="framework"><option value="">All frameworks</option></select>
+        <button id="clear" class="secondary">Clear</button>
+      </div>
+      <div class="meta">
+        <div id="counts">Loading…</div>
+        <div class="right">
+          <button id="copy" disabled>Copy shortlist</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>Results</h2>
+        <div id="results" class="list"></div>
+      </div>
+
+      <div class="card">
+        <h2>Shortlist (Tonight)</h2>
+        <p class="hint">Pick 3–5. Then build ONE.</p>
+        <div id="shortlist" class="list"></div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="fine">v0.1 — static site + GitHub API data build step. Next: "Build plan" buttons + export to Markdown.</div>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

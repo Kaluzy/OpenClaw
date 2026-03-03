@@ -1,0 +1,214 @@
+{
+  "generatedAt": "2026-03-03T11:43:59.053Z",
+  "source": {
+    "owner": "ashishpatel26",
+    "repo": "500-AI-Agents-Projects",
+    "branch": "main",
+    "path": "README.md"
+  },
+  "counts": {
+    "items": 22,
+    "industries": 19,
+    "frameworks": 0
+  },
+  "industries": [
+    "Agriculture",
+    "Customer Service",
+    "Cybersecurity",
+    "E-commerce",
+    "Education",
+    "Energy",
+    "Entertainment",
+    "Finance",
+    "Gaming",
+    "Health insurance",
+    "Healthcare",
+    "Hospitality",
+    "Human Resources",
+    "Legal",
+    "Manufacturing",
+    "Real Estate",
+    "Retail",
+    "Supply Chain",
+    "Transportation"
+  ],
+  "frameworks": [],
+  "items": [
+    {
+      "title": "**HIA (Health Insights Agent)**",
+      "industry": "Healthcare",
+      "description": "analyses medical reports and provide health insights.",
+      "url": "https://img.shields.io/badge/Code-GitHub-black?logo=github",
+      "source": "README",
+      "framework": ""
+    },
+    {
+      "title": "**AI Health Assistant**",
+      "industry": "Healthcare",
+      "description": "Diagnoses and monitors diseases using patient data.",
+      "url": "https://img.shields.io/badge/Code-GitHub-black?logo=github",
+      "source": "README",
+      "framework": ""
+    },
+    {
+      "title": "**Automated Trading Bot**",
+      "industry": "Finance",
+      "description": "Automates stock trading with real-time market analysis.",
+      "url": "https://img.shields.io/badge/Code-GitHub-black?logo=github",
+      "source": "README",
+      "framework": ""
+    },
+    {
+      "title": "**Virtual AI Tutor**",
+      "industry": "Education",
+      "description": "Provides personalized education tailored to users.",
+      "url": "https://img.shields.io/badge/Code-GitHub-black?logo=github",
+      "source": "README",
+      "framework": ""
+    },
+    {
+      "title": "**24/7 AI Chatbot**",
+      "industry": "Customer Service",
+      "description": "Handles customer queries around the clock.",
+      "url": "https://img.shields.io/badge/Code-GitHub-black?logo=github",
+      "source": "README",
+      "framework": ""
+    },
+    {
+      "title": "**Product Recommendation Agent**",
+      "industry": "Retail",
+      "description": "Suggests products based on user preferences and history.",
+      "url": "https://img.shields.io/badge/Code-GitHub-black?logo=github",
+      "source": "README",
+      "framework": ""
+    },
+    {
+      "title": "**Self-Driving Delivery Agent**",
+      "industry": "Transportation",
+      "description": "Optimizes routes and autonomously delivers packages.",
+      "url": "https://img.shields.io/badge/Code-GitHub-black?logo=github",
+      "source": "README",
+      "framework": ""
+    },
+    {
+      "title": "**Factory Process Monitoring Agent**",
+      "industry": "Manufacturing",
+      "description": "Monitors production lines and ensures quality control.",
+      "url": "https://img.shields.io/badge/Code-GitHub-black?logo=github",
+      "source": "README",
+      "framework": ""
+    },
+    {
+      "title": "**Property Pricing Agent**",
+      "industry": "Real Estate",
+      "description": "Analyzes market trends to determine property prices.",
+      "url": "https://img.shields.io/badge/Code-GitHub-black?logo=github",
+      "source": "README",
+      "framework": ""
+    },
+    {
+      "title": "**Smart Farming Assistant**",
+      "industry": "Agriculture",
+      "description": "Provides insights on crop health and yield predictions.",
+      "url": "https://img.shields.io/badge/Code-GitHub-black?logo=github",
+      "source": "README",
+      "framework": ""
+    },
+    {
+      "title": "**Energy Demand Forecasting Agent**",
+      "industry": "Energy",
+      "description": "Predicts energy usage to optimize grid management.",
+      "url": "https://img.shields.io/badge/Code-GitHub-black?logo=github",
+      "source": "README",
+      "framework": ""
+    },
+    {
+      "title": "**Content Personalization Agent**",
+      "industry": "Entertainment",
+      "description": "Recommends personalized media based on preferences.",
+      "url": "https://img.shields.io/badge/Code-GitHub-black?logo=github",
+      "source": "README",
+      "framework": ""
+    },
+    {
+      "title": "**Legal Document Review Assistant**",
+      "industry": "Legal",
+      "description": "Automates document review and highlights key clauses.",
+      "url": "https://img.shields.io/badge/Code-GitHub-black?logo=github",
+      "source": "README",
+      "framework": ""
+    },
+    {
+      "title": "**Recruitment Recommendation Agent**",
+      "industry": "Human Resources",
+      "description": "Suggests best-fit candidates for job openings.",
+      "url": "https://img.shields.io/badge/Code-GitHub-black?logo=github",
+      "source": "README",
+      "framework": ""
+    },
+    {
+      "title": "**Virtual Travel Assistant**",
+      "industry": "Hospitality",
+      "description": "Plans travel itineraries based on preferences.",
+      "url": "https://img.shields.io/badge/Code-GitHub-black?logo=github",
+      "source": "README",
+      "framework": ""
+    },
+    {
+      "title": "**AI Game Companion Agent**",
+      "industry": "Gaming",
+      "description": "Enhances player experience with real-time assistance.",
+      "url": "https://img.shields.io/badge/Code-GitHub-black?logo=github",
+      "source": "README",
+      "framework": ""
+    },
+    {
+      "title": "**Real-Time Threat Detection Agent**",
+      "industry": "Cybersecurity",
+      "description": "Identifies potential threats and mitigates attacks.",
+      "url": "https://img.shields.io/badge/Code-GitHub-black?logo=github",
+      "source": "README",
+      "framework": ""
+    },
+    {
+      "title": "**E-commerce Personal Shopper Agent**",
+      "industry": "E-commerce",
+      "description": "Helps customers find products they’ll love.",
+      "url": "https://img.shields.io/badge/Code-GitHub-black?logo=github",
+      "source": "README",
+      "framework": ""
+    },
+    {
+      "title": "**Logistics Optimization Agent**",
+      "industry": "Supply Chain",
+      "description": "Plans efficient delivery routes and manages inventory.",
+      "url": "https://img.shields.io/badge/Code-GitHub-black?logo=github",
+      "source": "README",
+      "framework": ""
+    },
+    {
+      "title": "**Vibe Hacking Agent**",
+      "industry": "Cybersecurity",
+      "description": "Autonomous Multi-Agent Based Red Team Testing Service.",
+      "url": "https://img.shields.io/badge/Code-GitHub-black?logo=github",
+      "source": "README",
+      "framework": ""
+    },
+    {
+      "title": "**MediSuite-Ai-Agent**",
+      "industry": "Health insurance",
+      "description": "A medical ai agent that helps automating the process of hospitals / insurance claiming workflow.",
+      "url": "https://img.shields.io/badge/Code-GitHub-black?logo=github",
+      "source": "README",
+      "framework": ""
+    },
+    {
+      "title": "**Lina-Egyptian-Medical-Chatbot**",
+      "industry": "Health insurance",
+      "description": "A medical ai agent that helps automating the process of hospitals / insurance claiming workflow.",
+      "url": "https://img.shields.io/badge/Code-GitHub-black?logo=github",
+      "source": "README",
+      "framework": ""
+    }
+  ]
+}
