@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KEV Patch Sprint Kit (MSP) — 48-hour playbook</title>
+  <meta name="description" content="A simple 48-hour patch sprint kit for MSPs based on CISA KEV: triage, comms templates, and a weekly cadence." />
+  <style>
+    :root{--bg:#070b14;--card:#0f172a;--line:rgba(255,255,255,.12);--text:#e8eefc;--muted:#b5c0dd;--accent:#60a5fa;--accent2:#5eead4;--warn:#fbbf24;}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:radial-gradient(1100px 650px at 10% 0%, rgba(96,165,250,.20), transparent 60%),radial-gradient(900px 600px at 90% 10%, rgba(94,234,212,.18), transparent 55%),linear-gradient(180deg,#050813,var(--bg));color:var(--text);line-height:1.55}
+    a{color:inherit}
+    .wrap{max-width:980px;margin:0 auto;padding:28px 18px 64px}
+    .card{background:rgba(15,23,42,.72);border:1px solid var(--line);border-radius:18px;padding:22px}
+    h1{margin:0 0 10px;font-size:clamp(30px,3.2vw,44px);letter-spacing:-.5px;line-height:1.08}
+    .sub{margin:0 0 16px;color:var(--muted);max-width:70ch}
+    .pill{display:inline-block;font-size:12px;border:1px solid var(--line);padding:6px 10px;border-radius:999px;color:var(--muted);margin-right:8px;margin-bottom:8px}
+    .grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}
+    @media(min-width:900px){.grid{grid-template-columns:1fr 1fr}}
+    ul{margin:10px 0 0 18px;color:var(--muted)}
+    li{margin:7px 0}
+    .btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.16);text-decoration:none;font-weight:800;background:rgba(255,255,255,.06)}
+    .btn.primary{background:linear-gradient(135deg,rgba(94,234,212,.95),rgba(96,165,250,.95));color:#061018;border-color:transparent}
+    .btn:hover{filter:brightness(1.03)}
+    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}
+    .hr{height:1px;background:var(--line);margin:14px 0}
+    .note{color:var(--muted);font-size:13px}
+    .callout{border-left:4px solid rgba(251,191,36,.8);padding:12px 12px 12px 14px;background:rgba(251,191,36,.10);border-radius:12px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div>
+        <span class="pill">MSP</span>
+        <span class="pill">Security ops</span>
+        <span class="pill">48-hour sprint</span>
+        <span class="pill">Weekly cadence</span>
+      </div>
+      <h1>KEV Patch Sprint Kit</h1>
+      <p class="sub">A short, practical kit MSPs can run when KEV items pop: what to patch first, how to communicate it to clients, and how to keep it from turning into chaos.</p>
+
+      <div class="callout">
+        Built around the idea: treat <b>CISA KEV</b> as your “drop everything” list, then run a repeatable sprint so you actually ship patches (not just alerts).
+      </div>
+
+      <div class="grid">
+        <div class="card" style="padding:18px">
+          <b>What’s inside</b>
+          <ul>
+            <li><b>48-hour sprint checklist</b> (Triage → Scope → Remediate → Verify → Report)</li>
+            <li><b>Client email templates</b>: heads-up, maintenance window, completion report</li>
+            <li><b>Ops SOP</b>: who does what (and when) so it doesn’t stall</li>
+            <li><b>Weekly rhythm</b>: 20-minute KEV review meeting template</li>
+          </ul>
+        </div>
+        <div class="card" style="padding:18px">
+          <b>Sources / references</b>
+          <ul>
+            <li>CISA Known Exploited Vulnerabilities Catalog: <a class="mono" href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">cisa.gov/known-exploited-vulnerabilities-catalog</a></li>
+            <li>Optional: map to Microsoft Patch Tuesday + vendor advisories in your stack</li>
+          </ul>
+          <div class="hr"></div>
+          <div class="note">Today: this is a shipping stub (landing + outline). Next: turn it into a downloadable PDF + a “weekly KEV digest” upsell.</div>
+        </div>
+      </div>
+
+      <div class="btnrow">
+        <a class="btn primary" href="mailto:stella@kaluzy.com?subject=Send%20me%20the%20KEV%20Patch%20Sprint%20Kit&body=MSP%20name:%0AWebsite:%0A#%20of%20endpoints:%0ATool%20stack%20(RMM/AV/etc):%0A">Send me the kit</a>
+        <a class="btn" href="https://Kaluzy.github.io/Stella/watchtower/latest/">See WatchTower Pulse</a>
+      </div>
+
+      <p class="note">If you want this monetized today: we can sell it as a $49 kit or bundle it as the front-end to a $399/mo “Weekly KEV + Patch Verification” service.</p>
+    </div>
+
+    <p class="note" style="margin-top:12px">Return: <a href="/Stella/">Kaluzy.github.io/Stella</a></p>
+  </div>
+</body>
+</html>
