@@ -1,0 +1,4 @@
+date,station,time,temp_f,within_range,initials,corrective_action
+,,,opening,,,
+,,,mid-shift,,,
+,,,closing,,,
