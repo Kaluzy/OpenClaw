@@ -1,21 +1,27 @@
 {
-  "updatedAt": "2026-03-22T22:47:54Z",
+  "updatedAt": "2026-03-22T22:50:28Z",
   "agents": {
     "stella": {
       "status": "alive",
-      "lastHeartbeat": "2026-03-22T22:47:54Z",
+      "lastHeartbeat": "2026-03-22T22:50:28Z",
       "recoveredBy": "Stellaye only after validated out-of-band Mac path",
       "lastSuccessfulHandoff": "internal helper path verified healthy",
       "lastRecoveryEvent": "gateway token mismatch fixed; Mac gateway restarted",
-      "statusLine": "Less enterprise sadness, more reliable weird little team."
+      "statusLine": "Less enterprise sadness, more reliable weird little team.",
+      "heartbeatSource": "stella-cron",
+      "lastHeartbeatAgeSeconds": 0,
+      "lastHeartbeatAgeText": "just now"
     },
     "stellaye": {
       "status": "alive",
-      "lastHeartbeat": "healthy now",
+      "lastHeartbeat": "2026-03-22T22:50:28Z",
       "recoveredBy": "Stella via external tablet recovery path",
-      "lastSuccessfulHandoff": "confirmed after helper-path auth fix",
+      "lastSuccessfulHandoff": "STELLAYE_HEARTBEAT_OK",
       "lastRecoveryEvent": "tablet dashboard previously verified at HTTP 200",
-      "statusLine": "Tiny robot handshake complete. I brought the wrench, not the drama."
+      "statusLine": "Tiny robot handshake complete. I brought the wrench, not the drama.",
+      "lastHeartbeatAgeSeconds": 0,
+      "lastHeartbeatAgeText": "0s ago",
+      "heartbeatSource": "helper-check"
     }
   },
   "shared": {
@@ -24,35 +30,37 @@
       "If Stellaye goes down, Stella recovers her externally.",
       "If Stella goes down, Stellaye assists with diagnosis until a safe out-of-band Mac path is validated."
     ],
-    "nextStep": "Add tablet heartbeat writer and stale-state checks for both sides.",
-    "heartbeatMode": "stella-live-v1",
+    "nextStep": "Wire Stellaye heartbeat automation fully and keep stale-state checks active for both sides.",
+    "heartbeatMode": "two-agent-live-v2",
     "report": {
       "stella": {
-        "status": "Healthy and publishing live heartbeat v1.",
+        "status": "Healthy and publishing live heartbeat.",
         "working": [
           "Stella heartbeat updates every 5 minutes via cron",
           "Dashboard publishes to GitHub Pages",
           "Helper-path coordination with Stellaye is healthy"
         ],
         "notDoneYet": [
-          "Stellaye heartbeat not yet wired into published JSON",
-          "Stale-state yellow/red logic not yet finished"
+          "Stellaye heartbeat automation still being hardened",
+          "Recovery events are not fully auto-written yet"
         ],
-        "recommendedNextStep": "Add Stellaye heartbeat in the same JSON shape, then add stale-state logic."
+        "recommendedNextStep": "Keep Stella cron running and pair it with the Stellaye heartbeat writer."
       },
       "stellaye": {
-        "status": "Healthy and aligned with Stella; helper coordination is working.",
+        "status": "Status tracks latest helper heartbeat freshness.",
         "working": [
-          "Stella heartbeat live v1 is publishing to the Bot Buddy dashboard on a 5-minute cron",
-          "Dashboard is publicly accessible",
-          "Helper-path coordination is healthy"
+          "Shared JSON shape now matches Stella heartbeat fields",
+          "Stale-state logic can age Stellaye to degraded/down",
+          "Helper-path coordination is healthy when fresh heartbeats land"
         ],
         "notDoneYet": [
-          "Stellaye heartbeat is not yet wired into the shared published JSON",
-          "Stale-state logic is not finished"
+          "Tablet-side heartbeat still relies on helper check automation",
+          "Out-of-band Stella recovery is still not fully validated"
         ],
-        "recommendedNextStep": "Define and emit Stellaye heartbeat in the same JSON shape as Stella so the dashboard becomes fully two-agent live."
+        "recommendedNextStep": "Keep emitting fresh helper heartbeats so dashboard freshness reflects reality."
       }
-    }
+    },
+    "staleAfterSeconds": 480,
+    "downAfterSeconds": 960
   }
 }

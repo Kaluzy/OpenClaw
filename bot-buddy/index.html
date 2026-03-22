@@ -122,6 +122,7 @@
         </div>
         <dl>
           <div class="row"><dt>Last heartbeat</dt><dd id="stella-lastHeartbeat">—</dd></div>
+          <div class="row"><dt>Heartbeat age</dt><dd id="stella-lastHeartbeatAgeText">—</dd></div>
           <div class="row"><dt>Recovered by</dt><dd id="stella-recoveredBy">—</dd></div>
           <div class="row"><dt>Last successful handoff</dt><dd id="stella-lastSuccessfulHandoff">—</dd></div>
           <div class="row"><dt>Last recovery event</dt><dd id="stella-lastRecoveryEvent">—</dd></div>
@@ -176,6 +177,7 @@
       if (dot) dot.className = `dot ${cls}`;
       setText(`${prefix}-status`, data.status || 'unknown');
       setText(`${prefix}-lastHeartbeat`, data.lastHeartbeat);
+      setText(`${prefix}-lastHeartbeatAgeText`, data.lastHeartbeatAgeText);
       setText(`${prefix}-recoveredBy`, data.recoveredBy);
       setText(`${prefix}-lastSuccessfulHandoff`, data.lastSuccessfulHandoff);
       setText(`${prefix}-lastRecoveryEvent`, data.lastRecoveryEvent);
@@ -222,3 +224,4 @@
   </script>
 </body>
 </html>
+>
