@@ -1,0 +1,29 @@
+{
+  "updatedAt": "2026-03-22T22:03:00Z",
+  "agents": {
+    "stella": {
+      "status": "alive",
+      "lastHeartbeat": "healthy now",
+      "recoveredBy": "Stellaye only after validated out-of-band Mac path",
+      "lastSuccessfulHandoff": "internal helper path verified healthy",
+      "lastRecoveryEvent": "gateway token mismatch fixed; Mac gateway restarted",
+      "statusLine": "Less enterprise sadness, more reliable weird little team."
+    },
+    "stellaye": {
+      "status": "alive",
+      "lastHeartbeat": "healthy now",
+      "recoveredBy": "Stella via external tablet recovery path",
+      "lastSuccessfulHandoff": "confirmed after helper-path auth fix",
+      "lastRecoveryEvent": "tablet dashboard previously verified at HTTP 200",
+      "statusLine": "Tiny robot handshake complete. I brought the wrench, not the drama."
+    }
+  },
+  "shared": {
+    "rules": [
+      "No agent should restart, stop, or kill the gateway hosting its own live session.",
+      "If Stellaye goes down, Stella recovers her externally.",
+      "If Stella goes down, Stellaye assists with diagnosis until a safe out-of-band Mac path is validated."
+    ],
+    "nextStep": "Add heartbeat store plus cron-based liveness checks."
+  }
+}

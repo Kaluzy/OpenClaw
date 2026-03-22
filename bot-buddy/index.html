@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bot Buddy System</title>
+  <style>
+    :root {
+      --bg: #0f1220;
+      --panel: #171b2e;
+      --panel-2: #1d233b;
+      --text: #eef2ff;
+      --muted: #aab3d6;
+      --green: #35d07f;
+      --yellow: #f2c14e;
+      --red: #ff6b6b;
+      --blue: #7cc7ff;
+      --border: rgba(255,255,255,0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: linear-gradient(180deg, #0d1020 0%, #13182a 100%);
+      color: var(--text);
+    }
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+    h1 { margin: 0 0 8px; font-size: 2rem; }
+    .sub { color: var(--muted); margin-bottom: 24px; }
+    .topbar {
+      display:flex; justify-content:space-between; gap:12px; align-items:center; flex-wrap:wrap;
+      margin-bottom: 24px;
+    }
+    .meta {
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+    }
+    .chip {
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px; border-radius:999px;
+      font-size:0.88rem; color:var(--muted);
+      background: rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+    }
+    button {
+      background: #243154;
+      color: var(--text);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 10px 14px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    button:hover { background: #2a3a65; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: linear-gradient(180deg, var(--panel) 0%, var(--panel-2) 100%);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.24);
+    }
+    .agent-head { display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; }
+    .agent-name { font-size:1.2rem; font-weight:700; }
+    .pill {
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px; border-radius:999px; font-size:0.9rem; font-weight:700;
+      background: rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.08);
+      text-transform: capitalize;
+    }
+    .dot { width:10px; height:10px; border-radius:999px; display:inline-block; }
+    .green { background: var(--green); }
+    .yellow { background: var(--yellow); }
+    .red { background: var(--red); }
+    dl { margin:0; display:grid; grid-template-columns: 1fr; gap:10px; }
+    .row { padding:10px 0; border-top:1px solid rgba(255,255,255,0.07); }
+    .row:first-child { border-top:0; }
+    dt { color: var(--muted); font-size:0.86rem; margin-bottom:4px; }
+    dd { margin:0; font-size:0.98rem; }
+    .board { margin-top: 16px; }
+    .wide { margin-top: 16px; }
+    .status-line {
+      margin-top: 8px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(124,199,255,0.08);
+      border: 1px solid rgba(124,199,255,0.14);
+      color: #d9efff;
+    }
+    .small { font-size: 0.88rem; color: var(--muted); }
+    code { color: #d6e7ff; background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 8px; }
+    ul { margin: 10px 0 0 18px; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Bot Buddy System</h1>
+    <div class="sub">A tiny mission-control board for Stella ⭐️ and Stellaye 🛠️</div>
+
+    <div class="topbar">
+      <div class="meta">
+        <div class="chip">Auto-refresh: every 15s</div>
+        <div class="chip">Updated: <span id="updatedAt">loading…</span></div>
+        <div class="chip">Overall: <span id="overallStatus">checking…</span></div>
+      </div>
+      <button id="refreshBtn">Refresh now</button>
+    </div>
+
+    <div class="grid">
+      <section class="card">
+        <div class="agent-head">
+          <div class="agent-name">Stella ⭐️</div>
+          <div class="pill"><span id="stella-dot" class="dot green"></span><span id="stella-status">Alive</span></div>
+        </div>
+        <dl>
+          <div class="row"><dt>Last heartbeat</dt><dd id="stella-lastHeartbeat">—</dd></div>
+          <div class="row"><dt>Recovered by</dt><dd id="stella-recoveredBy">—</dd></div>
+          <div class="row"><dt>Last successful handoff</dt><dd id="stella-lastSuccessfulHandoff">—</dd></div>
+          <div class="row"><dt>Last recovery event</dt><dd id="stella-lastRecoveryEvent">—</dd></div>
+        </dl>
+        <div class="status-line">Stella says: <span id="stella-statusLine">—</span></div>
+      </section>
+
+      <section class="card">
+        <div class="agent-head">
+          <div class="agent-name">Stellaye 🛠️</div>
+          <div class="pill"><span id="stellaye-dot" class="dot green"></span><span id="stellaye-status">Alive</span></div>
+        </div>
+        <dl>
+          <div class="row"><dt>Last heartbeat</dt><dd id="stellaye-lastHeartbeat">—</dd></div>
+          <div class="row"><dt>Recovered by</dt><dd id="stellaye-recoveredBy">—</dd></div>
+          <div class="row"><dt>Last successful handoff</dt><dd id="stellaye-lastSuccessfulHandoff">—</dd></div>
+          <div class="row"><dt>Last recovery event</dt><dd id="stellaye-lastRecoveryEvent">—</dd></div>
+        </dl>
+        <div class="status-line">Stellaye says: <span id="stellaye-statusLine">—</span></div>
+      </section>
+    </div>
+
+    <section class="card wide board">
+      <div class="agent-name">Shared recovery rules</div>
+      <ul id="shared-rules"></ul>
+      <div class="status-line">Today’s mission: <span id="shared-nextStep">—</span></div>
+      <div class="small" style="margin-top:12px;">Files: <code>bot-buddy-dashboard.html</code> + <code>bot-buddy-dashboard.json</code></div>
+    </section>
+  </div>
+
+  <script>
+    const statusClass = {
+      alive: 'green',
+      up: 'green',
+      healthy: 'green',
+      degraded: 'yellow',
+      warning: 'yellow',
+      down: 'red',
+      offline: 'red'
+    };
+
+    function setText(id, value) {
+      const el = document.getElementById(id);
+      if (el) el.textContent = value ?? '—';
+    }
+
+    function applyAgent(prefix, data) {
+      if (!data) return;
+      const rawStatus = (data.status || 'unknown').toLowerCase();
+      const cls = statusClass[rawStatus] || 'yellow';
+      const dot = document.getElementById(`${prefix}-dot`);
+      if (dot) dot.className = `dot ${cls}`;
+      setText(`${prefix}-status`, data.status || 'unknown');
+      setText(`${prefix}-lastHeartbeat`, data.lastHeartbeat);
+      setText(`${prefix}-recoveredBy`, data.recoveredBy);
+      setText(`${prefix}-lastSuccessfulHandoff`, data.lastSuccessfulHandoff);
+      setText(`${prefix}-lastRecoveryEvent`, data.lastRecoveryEvent);
+      setText(`${prefix}-statusLine`, data.statusLine);
+    }
+
+    function renderRules(rules) {
+      const list = document.getElementById('shared-rules');
+      list.innerHTML = '';
+      (rules || []).forEach(rule => {
+        const li = document.createElement('li');
+        li.textContent = rule;
+        list.appendChild(li);
+      });
+    }
+
+    function overallStatus(agents) {
+      const values = Object.values(agents || {}).map(a => (a.status || '').toLowerCase());
+      if (values.some(v => ['down','offline'].includes(v))) return 'degraded';
+      if (values.some(v => ['degraded','warning','unknown'].includes(v))) return 'watching';
+      return 'healthy';
+    }
+
+    async function loadBoard() {
+      try {
+        const res = await fetch(`./bot-buddy-dashboard.json?ts=${Date.now()}`, { cache: 'no-store' });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        setText('updatedAt', data.updatedAt || new Date().toISOString());
+        const overall = overallStatus(data.agents);
+        setText('overallStatus', overall);
+        applyAgent('stella', data.agents?.stella);
+        applyAgent('stellaye', data.agents?.stellaye);
+        renderRules(data.shared?.rules);
+        setText('shared-nextStep', data.shared?.nextStep);
+      } catch (err) {
+        setText('overallStatus', `load error: ${err.message}`);
+      }
+    }
+
+    document.getElementById('refreshBtn').addEventListener('click', loadBoard);
+    loadBoard();
+    setInterval(loadBoard, 15000);
+  </script>
+</body>
+</html>
