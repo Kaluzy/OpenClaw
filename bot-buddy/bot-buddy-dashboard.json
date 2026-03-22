@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-03-22T22:45:42Z",
+  "updatedAt": "2026-03-22T22:47:54Z",
   "agents": {
     "stella": {
       "status": "alive",
-      "lastHeartbeat": "2026-03-22T22:45:42Z",
+      "lastHeartbeat": "2026-03-22T22:47:54Z",
       "recoveredBy": "Stellaye only after validated out-of-band Mac path",
       "lastSuccessfulHandoff": "internal helper path verified healthy",
       "lastRecoveryEvent": "gateway token mismatch fixed; Mac gateway restarted",
@@ -25,6 +25,34 @@
       "If Stella goes down, Stellaye assists with diagnosis until a safe out-of-band Mac path is validated."
     ],
     "nextStep": "Add tablet heartbeat writer and stale-state checks for both sides.",
-    "heartbeatMode": "stella-live-v1"
+    "heartbeatMode": "stella-live-v1",
+    "report": {
+      "stella": {
+        "status": "Healthy and publishing live heartbeat v1.",
+        "working": [
+          "Stella heartbeat updates every 5 minutes via cron",
+          "Dashboard publishes to GitHub Pages",
+          "Helper-path coordination with Stellaye is healthy"
+        ],
+        "notDoneYet": [
+          "Stellaye heartbeat not yet wired into published JSON",
+          "Stale-state yellow/red logic not yet finished"
+        ],
+        "recommendedNextStep": "Add Stellaye heartbeat in the same JSON shape, then add stale-state logic."
+      },
+      "stellaye": {
+        "status": "Healthy and aligned with Stella; helper coordination is working.",
+        "working": [
+          "Stella heartbeat live v1 is publishing to the Bot Buddy dashboard on a 5-minute cron",
+          "Dashboard is publicly accessible",
+          "Helper-path coordination is healthy"
+        ],
+        "notDoneYet": [
+          "Stellaye heartbeat is not yet wired into the shared published JSON",
+          "Stale-state logic is not finished"
+        ],
+        "recommendedNextStep": "Define and emit Stellaye heartbeat in the same JSON shape as Stella so the dashboard becomes fully two-agent live."
+      }
+    }
   }
 }
