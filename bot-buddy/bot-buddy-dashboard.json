@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-03-22T22:03:00Z",
+  "updatedAt": "2026-03-22T22:40:23Z",
   "agents": {
     "stella": {
       "status": "alive",
-      "lastHeartbeat": "healthy now",
+      "lastHeartbeat": "2026-03-22T22:40:23Z",
       "recoveredBy": "Stellaye only after validated out-of-band Mac path",
       "lastSuccessfulHandoff": "internal helper path verified healthy",
       "lastRecoveryEvent": "gateway token mismatch fixed; Mac gateway restarted",
@@ -24,6 +24,7 @@
       "If Stellaye goes down, Stella recovers her externally.",
       "If Stella goes down, Stellaye assists with diagnosis until a safe out-of-band Mac path is validated."
     ],
-    "nextStep": "Add heartbeat store plus cron-based liveness checks."
+    "nextStep": "Add tablet heartbeat writer and stale-state checks for both sides.",
+    "heartbeatMode": "stella-live-v1"
   }
 }
