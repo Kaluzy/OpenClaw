@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-03-23T00:50:36Z",
+  "updatedAt": "2026-03-23T00:52:11Z",
   "agents": {
     "stella": {
       "status": "alive",
-      "lastHeartbeat": "2026-03-23T00:50:36Z",
+      "lastHeartbeat": "2026-03-23T00:52:11Z",
       "recoveredBy": "Stellaye only after validated out-of-band Mac path",
       "lastSuccessfulHandoff": "internal helper path verified healthy",
       "lastRecoveryEvent": "gateway token mismatch fixed; Mac gateway restarted",
@@ -19,8 +19,8 @@
       "lastSuccessfulHandoff": "STELLAYE_HEARTBEAT_OK",
       "lastRecoveryEvent": "tablet dashboard previously verified at HTTP 200",
       "statusLine": "Tiny robot handshake complete. I brought the wrench, not the drama.",
-      "lastHeartbeatAgeSeconds": 7208,
-      "lastHeartbeatAgeText": "2h 0m ago",
+      "lastHeartbeatAgeSeconds": 7303,
+      "lastHeartbeatAgeText": "2h 1m ago",
       "heartbeatSource": "helper-check"
     }
   },
